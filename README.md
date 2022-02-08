@@ -1,10 +1,21 @@
 # Elm-Catwalk
 Team Elm's FEC Project Repo
 
-
-Hello Richard here, please add your names below :
+=================================================
+AUTHORS:
 Cheryl Casas
 Bo Czajka
 Alex Nahas
 Terri Gobble
-Nick Freeman
+Richard Linley
+
+
+==================================================
+INSTALLATION INSTRUCTIONS:
+
+Run NPM install to auto install all your dependencies for this Repo
+
+NPM run watch will allow for transpilation
+NPM run start will boot up the server
+
+==================================================
