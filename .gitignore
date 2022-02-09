@@ -1,3 +1,5 @@
 node_modules
 config.js
 client/dist/bundle.js
+# testing
+#  after you pull, you must uncomment your testing git ignore.
