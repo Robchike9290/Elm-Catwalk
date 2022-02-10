@@ -1,5 +1,7 @@
 import React from 'react'
 import axios from 'axios'
+import Token from './config.js'
+console.log(Token)
 
 
 const getData = () =>{
@@ -7,7 +9,7 @@ const getData = () =>{
 axios({
   method: 'get',
   url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions/?page=1&count=100&product_id=5',
-  headers : {'Authorization': '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'}
+  headers : {'Authorization': Token.TOKEN }
 })
   .then((data) => {
     if (data) {
@@ -20,14 +22,13 @@ const askQuestion = () => {
   axios({
     method: 'post',
     url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions/?page=1&count=100&product_id=5',
-    headers : {'Authorization': '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'}
+    headers : {'Authorization': Token.TOKEN}
   })
     .then((data) => {
       if (data) {
        console.log('data', data);
       }
     });
-
 }
 
 
