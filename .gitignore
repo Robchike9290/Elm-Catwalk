@@ -1,8 +1,4 @@
 node_modules
 config.js
-<<<<<<< Richard
 client/dist/bundle.js
-=======
-client/dist/bundle.js
-testing
->>>>>>> local
+client/dist/styles.css

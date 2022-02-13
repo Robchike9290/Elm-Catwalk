@@ -1,9 +1,15 @@
 import React from "react";
 import Overview from "./Overview/Overview.jsx";
 
-const App = () => {
-   return <div>
-      <Overview/> <br></br> Elm Gang</div>;
+class App extends React.Component {
+   render () {
+
+      return (
+      <div>
+         <Overview/> <br></br>
+         </div>
+      )
+   }
 };
 
 export default App;
