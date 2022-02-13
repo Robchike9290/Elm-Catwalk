@@ -1,7 +1,9 @@
 import React from "react";
+import Overview from "./Overview/Overview.jsx";
 
 const App = () => {
-   return <div>Hello, World! <br></br> Elm Gang</div>;
+   return <div>
+      <Overview/> <br></br> Elm Gang</div>;
 };
 
 export default App;
