@@ -11,7 +11,7 @@ const RelatedProductsList = () => {
 
   return (
     <div>
-      <h1>You have clikced on the left scroll button {count} times!</h1>
+      <h1>You have clicked on the left scroll button {count} times!</h1>
       <button onClick={() => setCount(count + 1)}>
         Left Scroll
       </button>
