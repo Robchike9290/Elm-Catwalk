@@ -1,14 +1,15 @@
 import React from "react";
-// Import...
-  // Add to cart
-  // Code Product Information
-  // Code Style Selector
-  // Image Gallery
+import ComparisonModal from './dist/components/comparsionModal.jsx';
+import RelatedProducts from './dist/components/relatedProducts.jsx';
+import YourOutfit from './dist/components/yourOutfit.jsx';
 
 const App = () => {
-   return (<div>
-
-   </div>);
+  return (<div>
+    <ComparisonModal />
+    <RelatedProducts />
+    <YourOutfit />
+  </div>
+  );
 };
 
 export default App;
