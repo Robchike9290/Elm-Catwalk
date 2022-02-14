@@ -5,17 +5,6 @@ import RelatedProduct from './relatedProduct.jsx';
 const RelatedProductsList = () => {
   const [count, setCount] = useState(0);
 
-  junkFunction(() => {
-    console.log('hi')
-    console.log('bye')
-    console.log('hi again')
-    let taco = {
-      j: 'l'
-      k: 'm'
-      e: 'o'
-    }
-  })
-
   useEffect(() => {
     console.log('You just successfully created an effect!');
   });
