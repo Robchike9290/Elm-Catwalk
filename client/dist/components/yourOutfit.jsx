@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
+import AddToOutfit from './addToOutfit.jsx';
+import OutfitItems from './outfitItems.jsx';
 
 const YourOutfit = () => {
   return (
   <div>
-    I AM YOUR OUTFIT, HEAR ME ROAR!!!
+    <button>Left Scroll</button>
+    <AddToOutfit />
+    <OutfitItems />
+    <button>Right Scroll</button>
   </div>
   )
 }
