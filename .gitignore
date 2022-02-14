@@ -2,3 +2,6 @@ node_modules
 config.js
 client/dist/bundle.js
 client/dist/styles.css
+client/Overview
+client/dist/clear.css
+client/App.js
