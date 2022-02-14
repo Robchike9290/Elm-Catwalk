@@ -13,7 +13,7 @@ class AddToCart extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="AddToCart">
         <div className="cart"><AddToCartButton/></div>
 
         <div className='quantitySelector'>

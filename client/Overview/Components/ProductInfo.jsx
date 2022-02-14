@@ -16,11 +16,11 @@ render () {
 
   return (
 
-    <div>
+    <div className="ProductInfo">
       <ExpandedInfo/>
       <StarRating/>
       <Socials/>
-      <Description/>
+
 
 
     </div>

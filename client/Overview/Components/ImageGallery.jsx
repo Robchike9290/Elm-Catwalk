@@ -11,7 +11,7 @@ class ImageGallery extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="ImageGallery">
         <p className="mainImage">Main Image</p>
         <p className="thumbnails">Thumbnails</p>
 

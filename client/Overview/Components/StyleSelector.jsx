@@ -13,7 +13,7 @@ render () {
 
   return (
 
-    <div>
+    <div className="StyleSelector">
       <ThumbnailSelect/>
     </div>
   )
