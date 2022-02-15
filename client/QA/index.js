@@ -4,25 +4,30 @@ import Token from "./config.js";
 import SearchBar from "./SearchBar.jsx";
 import QuestionList from "./QList/QuestionList.jsx";
 import QuestionPopUp from "./QList/QuestionPopUp.jsx";
+import {productIdContext} from './createContext.js'
 
 const QA = () => {
   const [QpopUp, changeQpopUp] = useState(false);
+  const [listLength, changeListLength] = useState(2);
   const togglePopUp = () => {
     changeQpopUp(!QpopUp);
+    changeListLength(2)
   };
-
+  console.log(listLength)
   return (
     <div>
+      <productIdContext.Provider value={37311}>
       <SearchBar />
       {QpopUp ? (
-        <QuestionPopUp productID={37311} changeQpopUp={changeQpopUp}  />
+        <QuestionPopUp  changeQpopUp={changeQpopUp}   />
       ) : (
         <div>
-        <QuestionList productID={37311} />
+        <QuestionList  listLength = {listLength} />
 
         <button onClick={togglePopUp}>Ask a question</button>
         </div>
       )}
+      </productIdContext.Provider>
 
     </div>
   );

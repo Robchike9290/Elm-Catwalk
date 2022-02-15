@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import axios from 'axios'
 import Token from "../config.js";
+import {productIdContext} from '../createContext.js'
 
-const QuestionPopUp = ({ productID, changeQpopUp }) => {
+const QuestionPopUp = ({ changeQpopUp }) => {
+  const productID = useContext(productIdContext)
   console.log(changeQpopUp)
   const togglePopUp = () => {
     changeQpopUp(false);

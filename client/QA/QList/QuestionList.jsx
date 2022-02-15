@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Question from "./Question.jsx";
 import axios from "axios";
 import Token from "../config.js";
+import { productIdContext } from "../createContext.js";
 
-const QuestionList = ({ productID }) => {
+const QuestionList = ({ listLength }) => {
+  //const [count, changeCount] = useState(0);
+  let count = 0;
+  const productID = useContext(productIdContext);
   const [qList, UpdateQlist] = useState([]);
   useEffect(() => {
     async function fetchQList() {
@@ -16,12 +20,18 @@ const QuestionList = ({ productID }) => {
     }
     fetchQList();
   }, [productID]);
+  console.log(listLength);
 
   return (
     <div>
       <h3>QuestionList</h3>
+
       {qList.map((question) => {
-        return <Question question={question} />;
+        if (count < listLength) {
+          count++
+          console.log(count);
+          return <Question question={question} />;
+        }
       })}
     </div>
   );

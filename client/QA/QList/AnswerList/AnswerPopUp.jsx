@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios'
 import Token from "/Users/alexmnahas/Elm-Catwalk/client/QA/config.js";
 
-const AnswerPopUp = ({ productID, changeApopUp }) => {
+const AnswerPopUp = ({  changeApopUp, id }) => {
   console.log(changeApopUp)
   const togglePopUp = () => {
-    changeQpopUp(false);
+    changeApopUp(false);
   };
   const submitQuestion = () =>{
     const email = document.getElementById('UserEmail').value
@@ -23,12 +23,12 @@ const AnswerPopUp = ({ productID, changeApopUp }) => {
       async function postQuestion() {
         const serverResponse = await axios({
           method: "post",
-          url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions`,
+          url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions/${id}/answers`,
           data: {
             "body": question,
             "name": nickName,
             "email": email,
-            "product_id": productID
+            "photos": []
           },
           headers: { Authorization: Token.TOKEN },
         });

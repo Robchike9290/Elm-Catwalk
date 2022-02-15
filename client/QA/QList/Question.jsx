@@ -1,20 +1,20 @@
-import React from 'react'
 import AnswerList from './AnswerList/AnswerList.jsx'
+import React, { useEffect, useState } from "react";
 import AnswerPopUp from './AnswerList/AnswerPopUp.jsx'
 
 const Question = ({question}) => {
   const [ApopUp, changeApopUp] = useState(false);
   const togglePopUp = () => {
-    changeQpopUp(!ApopUp);
+    changeApopUp(!ApopUp);
   };
 
   return (
     <div>
       <div>Q:{question.question_body}</div>
       <div>Helpful? Yes {question.question_helpfulness}</div>
-      <button>Add Answer</button>
+      <button onClick={togglePopUp}>Add Answer</button>
      <AnswerList answers = {question.answers} />
-     {ApopUp && <AnswerPopUp/>}
+     {ApopUp && <AnswerPopUp  changeApopUp={changeApopUp} id={question.question_id}/>}
     </div>
   )
 }
