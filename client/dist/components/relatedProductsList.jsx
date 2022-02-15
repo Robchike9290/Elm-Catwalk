@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import RelatedProduct from './relatedProduct.jsx';
 
 const RelatedProductsList = () => {
-
-  const [count, setCount] = useState(0);
 
   return (
     <div>
