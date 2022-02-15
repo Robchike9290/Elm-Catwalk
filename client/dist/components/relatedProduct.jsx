@@ -1,14 +1,21 @@
+import React, { useEffect, useState } from 'react';
 import ComparisonModal from './comparisonModal.jsx';
-import React from 'react';
 import Price from './price.jsx';
 import StarButton from './starButton.jsx';
 import StarRating from './starRating.jsx';
 
 const RelatedProduct = () => {
+
+  const [comparisonModalShow, setComparisonModalShow] = useState(false);
+
   return (
     <div>
-      <ComparisonModal />
-      <StarButton />
+      <div>
+        {comparisonModalShow ?
+        <ComparisonModal comparisonModalShow={comparisonModalShow} setComparisonModalShow={setComparisonModalShow} /> :
+        null}
+      </div>
+      <StarButton comparisonModalShow={comparisonModalShow} setComparisonModalShow={setComparisonModalShow}/>
       <img alt="This is the image for the product obatined from the API"></img>
       <p>This is the product category</p>
       <p>This is the product name</p>

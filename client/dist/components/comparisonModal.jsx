@@ -1,7 +1,7 @@
 import React from 'react';
 import XButton from './xButton.jsx';
 
-const ComparisonModal = () => {
+const ComparisonModal = (props) => {
   return (
     <div>
       <table>
@@ -31,7 +31,7 @@ const ComparisonModal = () => {
           </tr>
         </tbody>
       </table>
-      <XButton />
+      <XButton setComparisonModalShow={props.setComparisonModalShow}/>
     </div>
   );
 }

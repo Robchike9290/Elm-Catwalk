@@ -1,9 +1,9 @@
 import React from 'react';
 
-const StarButton = () => {
+const StarButton = (props) => {
   return (
     <div>
-      <button>⭐️</button>
+      <button onClick={() => props.setComparisonModalShow(true)}>⭐️</button>
     </div>
   )
 }

@@ -1,9 +1,9 @@
 import React from 'react';
 
-const XButton = () => {
+const XButton = (props) => {
   return (
     <div>
-      <button>❌</button>
+      <button onClick={() => props.setComparisonModalShow(false)}>❌</button>
     </div>
   )
 }
