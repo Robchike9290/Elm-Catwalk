@@ -3,13 +3,11 @@ import OutfitItem from './outfitItem.jsx';
 
 const OutfitItems = () => {
   return (
-    <div>
-      <p>These are all the items in your outfit.</p>
+    <span>
       <OutfitItem />
       <OutfitItem />
       <OutfitItem />
-      <OutfitItem />
-    </div>
+    </span>
   )
 }
 

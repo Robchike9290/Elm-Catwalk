@@ -5,12 +5,12 @@ import '../src/styles.css';
 const RelatedProductsList = () => {
 
   return (
-    <div class="relatedProductInnerMat">
+    <div class="productInnerMat">
       <button class="carouselButton">◀️</button>
-      <RelatedProduct class="relatedProduct"/>
-      <RelatedProduct class="relatedProduct"/>
-      <RelatedProduct class="relatedProduct"/>
-      <RelatedProduct class="relatedProduct"/>
+      <RelatedProduct/>
+      <RelatedProduct/>
+      <RelatedProduct/>
+      <RelatedProduct/>
       <button class="carouselButton">▶️</button>
     </div>
   )

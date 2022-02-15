@@ -1,14 +1,16 @@
-.relatedProductMat {
+.productMat {
 	background-color: aqua;
+	border: 3px solid black;
 }
 
-.relatedProductInnerMat {
+.productInnerMat {
 	height: 740px;
 	padding-top: 20px;
 	background-color: bisque;
+	border: 3px solid black;
 }
 
-.relatedProduct {
+.product {
 	width: 20%;
 	display: inline-block;
 	background-color: greenyellow;
@@ -16,23 +18,24 @@
 	border: 3px solid black;
 }
 
-.relatedProductImage {
+.productImage {
 	height: 400px;
 	width: 275px;
 	padding: 40px 40px 40px 40px;
+	margin-top: 15px;
 }
 
-.relatedProductData {
+.productData {
 	height: 25px;
 	width: 355px;
 }
 
-.relatedProductStarRating {
+.productStarRating {
 	height: 40px;
 	width: 355px;
 }
 
-.relatedProductComparisonOpen {
+.productAction {
 	margin-top: 15px;
 	margin-left: 335px;
 	position: relative;
@@ -40,10 +43,31 @@
 
 .carouselButton {
 	position: relative;
-	background-color: yellowgreen;
+	background-color: greenyellow;
 	border: 3px solid black;
 	top: -320px;
 	width: 34px;
 	height: 300px;
 	margin: 0 3px;
+}
+
+.addToOutfitButton {
+	position: relative;
+	margin-left: 10px;
+	margin-right: 10px;
+	top: -321px;
+	width: 20%;
+	height: 400px;
+	display: inline-block;
+	background-color: greenyellow;
+	border: 3px solid black;
+}
+
+.salesPrice {
+	color: darkred;
+}
+
+.regularPrice {
+	color: black;
+	text-decoration: line-through;
 }

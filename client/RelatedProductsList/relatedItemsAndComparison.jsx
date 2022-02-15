@@ -5,9 +5,9 @@ import '../src/styles.css';
 
 const RelatedItemsAndComparison = () => {
   return (<div>
-    <h2 class="relatedProductMat">Related Products</h2>
+    <h2 class="productMat">Related Products</h2>
     <RelatedProductsList />
-    <h2 class="relatedProductMat">Your Outfits</h2>
+    <h2 class="productMat">Your Outfits</h2>
     <YourOutfit />
   </div>
   );
