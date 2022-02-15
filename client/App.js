@@ -1,18 +1,6 @@
-<<<<<<< HEAD
-import React from "react";
-import RelatedItemsAndComparison from "./dist/components/relatedItemsAndComparison.jsx";
-
-const App = () => {
-	return (
-		<div>
-			<RelatedItemsAndComparison />
-		</div>
-	);
-=======
 import React, { useContext, useState } from "react";
 import Overview from "./Overview/Overview.jsx";
-
-
+import RelatedItemsAndComparison from "./dist/components/relatedItemsAndComparison.jsx";
 
 // export const AppContext = React.createContext();
 
@@ -35,15 +23,13 @@ import Overview from "./Overview/Overview.jsx";
 // )
 class App extends React.Component {
    render () {
-
       return (
-
-         <div ><Overview/></div>
-
-
+         <div >
+            <Overview/>
+            <RelatedItemsAndComparison/>
+         </div>
       )
    }
->>>>>>> 9f5660a18d62e32f122884bd974e1b2db68033f7
 };
 
 export default App;
