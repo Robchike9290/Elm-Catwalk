@@ -6,12 +6,12 @@ const RelatedProductsList = () => {
 
   return (
     <div class="relatedProductInnerMat">
-      <button>Left Scroll</button>
-      <RelatedProduct />
-      <RelatedProduct />
-      <RelatedProduct />
-      <RelatedProduct />
-      <button>Right Scroll</button>
+      <button class="carouselButton">◀️</button>
+      <RelatedProduct class="relatedProduct"/>
+      <RelatedProduct class="relatedProduct"/>
+      <RelatedProduct class="relatedProduct"/>
+      <RelatedProduct class="relatedProduct"/>
+      <button class="carouselButton">▶️</button>
     </div>
   )
 }

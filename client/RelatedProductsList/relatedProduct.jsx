@@ -10,20 +10,26 @@ const RelatedProduct = () => {
   const [comparisonModalShow, setComparisonModalShow] = useState(false);
 
   return (
-    <div class="relatedProductInnerMat">
+    <span class="relatedProduct">
       <div>
         {comparisonModalShow ?
         <ComparisonModal comparisonModalShow={comparisonModalShow} setComparisonModalShow={setComparisonModalShow} /> :
         null}
       </div>
-      <StarButton class="relatedProductComparisonOpen" comparisonModalShow={comparisonModalShow} setComparisonModalShow={setComparisonModalShow}/>
-      <img class="relatedProductImage" alt="This is the image for the product obatined from the API"></img>
-      <p class="relatedProductData">This is the product category</p>
-      <p class="relatedProductData">This is the product name</p>
-      <Price class="relatedProductData"/>
-      <StarRating class="relatedProductStarRating"/>
+      <p class="relatedProductComparisonOpen">
+        <StarButton comparisonModalShow={comparisonModalShow} setComparisonModalShow={setComparisonModalShow}/>
+      </p>
+      <img class="relatedProductImage relatedProduct" alt="This is the image for the product obatined from the API"></img>
+      <p class="relatedProductData relatedProduct">This is the product category</p>
+      <p class="relatedProductData relatedProduct">This is the product name</p>
+      <p class="relatedProductData relatedProduct">
+        <Price/>
+      </p>
+      <p class="relatedProductStarRating relatedProduct">
+        <StarRating/>
+      </p>
       <br></br>
-    </div>
+    </span>
   )
 }
 

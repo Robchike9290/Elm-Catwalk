@@ -3,32 +3,47 @@
 }
 
 .relatedProductInnerMat {
+	height: 740px;
+	padding-top: 20px;
 	background-color: bisque;
+}
+
+.relatedProduct {
+	width: 20%;
+	display: inline-block;
+	background-color: greenyellow;
+	margin: 3px 10px;
+	border: 3px solid black;
 }
 
 .relatedProductImage {
 	height: 400px;
-	width: 200px;
+	width: 275px;
 	padding: 40px 40px 40px 40px;
 }
 
 .relatedProductData {
 	height: 25px;
-	width: 200px;
-	margin-top: 20px;
+	width: 355px;
 }
 
 .relatedProductStarRating {
 	height: 40px;
-	width: 200px;
-	margin-top: 40px;
+	width: 355px;
 }
 
 .relatedProductComparisonOpen {
-	height: 80px;
-	width: 80px;
-	background-color: aquamarine;
-	position: absolute;
-	top: 15px;
-	right: 155px;
+	margin-top: 15px;
+	margin-left: 335px;
+	position: relative;
+}
+
+.carouselButton {
+	position: relative;
+	background-color: yellowgreen;
+	border: 3px solid black;
+	top: -320px;
+	width: 34px;
+	height: 300px;
+	margin: 0 3px;
 }
