@@ -17,7 +17,11 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: "babel-loader"
+<<<<<<< HEAD
       },
+=======
+      }
+>>>>>>> 9f5660a18d62e32f122884bd974e1b2db68033f7
       // ,
       // {
       //   test: /\.html$/,
@@ -26,10 +30,17 @@ module.exports = {
       // /*Choose only one of the following two: if you're using
       // plain CSS, use the first one, and if you're using a
       // preprocessor, in this case SASS, use the second one*/
+<<<<<<< HEAD
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
       },
+=======
+      // {
+      //   test: /\.css$/,
+      //   use: ["style-loader", "css-loader"],
+      // },
+>>>>>>> 9f5660a18d62e32f122884bd974e1b2db68033f7
       // {
       //   test: /\.scss$/,
       //   use:[
