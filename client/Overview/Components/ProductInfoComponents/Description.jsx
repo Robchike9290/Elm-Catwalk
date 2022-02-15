@@ -1,7 +1,11 @@
 import React from 'react';
 
-const Description = () => {
-  return <div className='bigDescription'>Here is the longer description it exists get at me</div>
+const Description = (props) => {
+  // console.log('indescription', props);
+  return (<div className='bigDescription'>
+    {props.currentProduct.description}
+    </div>
+  )
 }
 
 export default Description;

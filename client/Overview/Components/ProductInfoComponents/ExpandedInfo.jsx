@@ -13,9 +13,11 @@ render () {
   return (
 
     <div>
-      Product Name
-      Price
-      Style - Expanded Style Info
+      {this.props.name}
+      <br></br>
+      {this.props.price}
+      <br></br>
+      {this.props.styleName}
     </div>
   )
 }

@@ -8,14 +8,14 @@ class ImageGallery extends React.Component {
       mainImage: '',
       thumbnails: [],
     }
-    console.log('in image gall', props);
+
     this.handleStateChange = this.handleStateChange.bind(this)
   }
 
   componentDidUpdate () {
-    console.log('updated props',this.props);
+    // console.log('updated props',this.props);
     // this.handleStateChange();
-    console.log(this.state);
+    // console.log(this.state);
   }
 
   handleStateChange () {
