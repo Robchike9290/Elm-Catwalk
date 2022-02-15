@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import Overview from "./Overview/Overview.jsx";
-import RelatedItemsAndComparison from "./dist/components/relatedItemsAndComparison.jsx";
+import RelatedItemsAndComparison from "./RelatedProductsList/relatedItemsAndComparison.jsx";
 
 // export const AppContext = React.createContext();
 
