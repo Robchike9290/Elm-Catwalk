@@ -15,7 +15,9 @@ const ReviewListEntry = ((props) => {
       <div>
         <p>{props.product.body}</p>
         <p>SHOW MORE</p>
-        <div>PHOTOS</div>
+        <div>PHOTOS --->need Modal popout BUILD
+          <img/>
+        </div>
       </div>
       <p>RECOMMENDATION, CHECKMARK ICON</p>
       <p>props.product.response</p>

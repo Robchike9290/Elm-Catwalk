@@ -5,18 +5,18 @@ const SortDropDown = (() => {
   const [isSelected, setIsSelected] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
+
+
   return(
-    <div className='sort-menu'>
+    <div className='sortmenu'>
       {isOpen?
       <div>
-        <ul>
-          <li>Relevant</li>
-          <li>Helpful</li>
-          <li>Newest</li>
-        </ul>
+        <p>relevance</p>
+        <p>helpfulness</p>
+        <p>newest</p>
       </div>:
       <div>
-        <div onClick={()=>setIsOpen(!isOpen)} className='sort-trigger'>Relevant</div>
+        <div onClick={()=>setIsOpen(!isOpen)} className='sort-trigger'>relevance</div>
       </div>
       }
     </div>
