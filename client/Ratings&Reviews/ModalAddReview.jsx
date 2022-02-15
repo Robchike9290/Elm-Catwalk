@@ -2,9 +2,10 @@ import React from 'react';
 
 const ModalAddReview = ((props) => {
   console.log('ModalAddReview', props)
-  // if (addreview === false) {
-  //   return null
-  // }
+  console.log('ADDREVIEWFROMMODAL', props.addreview)
+  if (props.addreview === false) {
+    return null
+  }
   return (
     <div>
       <h3>Write Your Review</h3>
@@ -23,7 +24,7 @@ const ModalAddReview = ((props) => {
       <p>Upload Photos, need upload program</p>
       <p>What is your nickname* input 60 char</p>
       <p>Your email* input 60 char</p>
-      <button>SUBMIT</button>
+      <button onClick={()=>props.setAddReview(false)}>SUBMIT</button>
 
 
     </div>

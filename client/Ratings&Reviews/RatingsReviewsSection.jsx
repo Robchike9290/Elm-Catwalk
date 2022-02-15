@@ -11,14 +11,15 @@ const RatingsReviewsSection = (props) => {
   // console.log(props)
   const[product, setProduct] = useState({});
   const[meta, setMeta] = useState ([]);
+  const[sort, setSort] = useState('relevant');
 
   useEffect(() => {
-    axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews?product_id=${id}&count=15&sort=relevant&page=1`, {headers: {'Authorization': Token.TOKEN}})
+    axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews?product_id=${id}&count=30&sort=${sort}&page=1`, {headers: {'Authorization': Token.TOKEN}})
     .then((data)=>{
       console.log("fromratingsreviews", data.data)
       setProduct(data.data)
     })
-  },[props.id]);
+  },[props.id, sort]);
 
   useEffect(() => {
     axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/meta?product_id=${id}`, {headers: {'Authorization': Token.TOKEN}})
@@ -34,7 +35,7 @@ const RatingsReviewsSection = (props) => {
       <h3>Ratings & Reviews</h3>
       <div className='container'>
        <ReviewBreakdown meta={meta}/>
-       <ReviewList product={product}/>
+       <ReviewList product={product} sort={sort} setSort={setSort}/>
       </div>
     </div>
   )

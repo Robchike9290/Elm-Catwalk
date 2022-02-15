@@ -1,22 +1,27 @@
 import React, { useState } from 'react';
 
-const SortDropDown = (() => {
-  const [isActive, setIsActive] = useState(false);
-  const [isSelected, setIsSelected] = useState(false);
+const SortDropDown = ((props) => {
   const [isOpen, setIsOpen] = useState(false);
-
-
+  const sortTypes = {
+    relevant: 'relevance',
+    helpful: 'most helpful',
+    newest: 'newest'
+  }
+  const handleSort = (sortType) => {
+    props.setSort(sortType),
+    setIsOpen(false)
+  }
 
   return(
     <div className='sortmenu'>
       {isOpen?
       <div>
-        <p>relevance</p>
-        <p>helpfulness</p>
-        <p>newest</p>
+        <p onClick={()=>handleSort('relevant')}>relevance</p>
+        <p onClick={()=>handleSort('helpful')}>most helpful</p>
+        <p onClick={()=>handleSort('newest')}>newest</p>
       </div>:
       <div>
-        <div onClick={()=>setIsOpen(!isOpen)} className='sort-trigger'>relevance</div>
+        <div onClick={()=>setIsOpen(!isOpen)} className='sort-trigger'>{sortTypes[props.sort]}⌵</div>
       </div>
       }
     </div>
