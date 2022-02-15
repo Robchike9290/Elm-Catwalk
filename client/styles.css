@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.breakdown {
+  margin-right: 80px;
+}
+
+.listitem1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reviewlist {
+  height: 500px;
+  overflow-y: scroll;
+}
