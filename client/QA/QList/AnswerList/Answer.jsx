@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Answer = ({answer}) => {
-  console.log('answer', answer)
+
   return (
     <div>
       <div>A: {answer.body}</div>

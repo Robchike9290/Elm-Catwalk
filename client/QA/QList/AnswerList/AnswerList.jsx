@@ -2,7 +2,6 @@ import React from 'react'
 import Answer from './Answer.jsx'
 
 const AnswerList = ({answers}) => {
-  console.log('answers', )
   const sortAnswers = (answers) => {
     const sortedAnswersArr = [];
     //do sorting here
