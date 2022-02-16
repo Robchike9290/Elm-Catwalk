@@ -31,7 +31,7 @@ const ComparisonModal = (props) => {
           </tr>
         </tbody>
       </table>
-      <XButton setComparisonModalShow={props.setComparisonModalShow}/>
+      <XButton hideModal={props.hideModal}/>
     </div>
   );
 }

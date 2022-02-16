@@ -7,17 +7,25 @@ import '../src/relatedProductsListStyles.css';
 
 const RelatedProduct = () => {
 
-  const [comparisonModalShow, setComparisonModalShow] = useState(false);
+  const [isModalShown, setIsModalShown] = useState(false);
+
+  const hideModal = () => {
+    setIsModalShown(false);
+  }
+
+  const showModal = () => {
+    setIsModalShown(true);
+  }
 
   return (
     <span className="product">
       <div>
-        {comparisonModalShow ?
-        <ComparisonModal comparisonModalShow={comparisonModalShow} setComparisonModalShow={setComparisonModalShow} /> :
+        {isModalShown ?
+        <ComparisonModal isModalShown={isModalShown} hideModal={hideModal} /> :
         null}
       </div>
       <p className="productAction">
-        <StarButton comparisonModalShow={comparisonModalShow} setComparisonModalShow={setComparisonModalShow}/>
+        <StarButton isModalShown={isModalShown} showModal={showModal}/>
       </p>
       <img className="productImage product" src="../src/testImage.jpeg" alt="This is the image for the product obatined from the API"></img>
       <p className="productData product">This is the product category</p>
