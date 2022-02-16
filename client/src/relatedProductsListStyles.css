@@ -76,3 +76,52 @@
 	background-color: darkkhaki;
 	content: " the stars will go here &#9733;";
 }
+
+.modal {
+	background-color: bisque;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	width: 730px;
+	height: 400px;
+	border: 3px solid black;
+	z-index: 101;
+}
+
+.modalAction {
+	position: relative;
+	float: right;
+	width: 50px;
+	height: 50px;
+	right: -8px;
+	bottom: -285px;
+}
+
+.modalColumn {
+	width: 220px;
+}
+
+.modalHeading {
+	width: 660px;
+}
+
+.modalTitle {
+	width: 660px;
+	font-size: 24px;
+	text-align: center;
+}
+
+.modalNotScrollable {
+	margin: 10px 0 10px 0;
+	background-color: burlywood;
+}
+
+.modalScrollable {
+	background-color: aliceblue;
+	position: absolute;
+	height: 300px;
+	width: 674px;
+	margin: 0px 0 10px 0;
+	overflow-y: auto;
+}

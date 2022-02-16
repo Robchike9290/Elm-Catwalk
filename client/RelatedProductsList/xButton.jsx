@@ -2,7 +2,7 @@ import React from 'react';
 
 const XButton = (props) => {
   return (
-    <div class="productAction">
+    <div class="modalAction">
       <button onClick={() => props.hideModal()}>❌</button>
     </div>
   )
