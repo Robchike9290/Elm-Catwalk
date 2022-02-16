@@ -11,9 +11,9 @@ const ModalAddReview = ((props) => {
       <h3>Write Your Review</h3>
       <h4>About the PRODUCT NAME</h4>
       <div> Overall Rating *
-      {[...Array(5)].map((star) => {
+      {[...Array(5)].map((star, k) => {
         return (
-          <span className="star">&#9734;</span>
+          <span className="star" key={k}>&#9734;</span>
         );
       })}
         <p>BO STAR RATING (5-'Poor', 'Fair', 'Average', 'Good', 'Great')</p>
@@ -26,7 +26,7 @@ const ModalAddReview = ((props) => {
       <p>PLACEHOLDER CHARACTERISTICS-->BUILD</p>
       <label>
         Review Summary* (60 Char)
-        <input type='text'maxLength={60}/>
+        <input type='text'placeholder='Example: Best purchase ever!' maxLength={60}/>
       </label>
       {/* <p>Review Summary (text input 60 char)</p> */}
 
@@ -34,7 +34,7 @@ const ModalAddReview = ((props) => {
 
       <label>
         Review Body* (text input, min 50, max 1000char)
-        <input type='text'maxLength={1000}/>
+        <input type='text'placeholder='Why did you like the product or not?' maxLength={1000}/>
         character counter
       </label>
 
@@ -43,7 +43,7 @@ const ModalAddReview = ((props) => {
 
       <label>
         What is your nickname* (60 Char)
-        <input type='text' maxLength={60}/>
+        <input type='text' placeholder='Example: jackson11!' maxLength={60}/>
         <br/>
         “For privacy reasons, do not use your full name or email address”
       </label>
@@ -53,7 +53,7 @@ const ModalAddReview = ((props) => {
       {/* <p>What is your nickname* input 60 char</p> */}
       <label>
         Your email* (60 Char)
-        <input type='text' maxLength={60}/>
+        <input type='text' placeholder='Example: jackson11@email.com' maxLength={60}/>
         <br/>
         “For authentication reasons, you will not be emailed”
       </label>

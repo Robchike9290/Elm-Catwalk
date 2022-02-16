@@ -31,14 +31,15 @@ const ReviewBreakdown = ((props) => {
 
   return (
     <div className='breakdown'>
-
-      <h3>{rating}</h3>
-      <div className="star-rating">
-      {[...Array(5)].map((star) => {
-        return (
-          <span className="star">&#9734;</span>
-        );
-      })}
+      <div className='average'>
+        <h3>{rating}</h3>
+        <div className="star-rating">
+        {[...Array(5)].map((star, i) => {
+          return (
+            <span className="star" key={i}>&#9734;</span>
+          );
+        })}
+        </div>
       </div>
       {/* <h3>{rating}, star rating (BO)</h3> */}
 

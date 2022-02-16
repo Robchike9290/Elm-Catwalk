@@ -4,7 +4,7 @@ import ReviewListEntryBody from './ReviewListEntryBody.jsx'
 
 const ReviewListEntry = ((props) => {
   // console.log('ReviwLISTENTRY', props)
-  // console.log('RESPONSE', props.product.response)
+  console.log('RESPONSE', props.product.response)
   // console.log('time', moment(props.product.date).format('LL'))
   let date = moment(props.product.date).format('LL')
   const strSum = props.product.summary
@@ -16,9 +16,9 @@ const ReviewListEntry = ((props) => {
       <div className='listitem1'>
 
       <div className="star-rating">
-      {[...Array(5)].map((star) => {
+      {[...Array(5)].map((star, i) => {
         return (
-          <span className="star">&#9734;</span>
+          <span className="star" key={i}>&#9734;</span>
         );
       })}
       </div>
@@ -37,7 +37,7 @@ const ReviewListEntry = ((props) => {
       {/* <p>{props.product.recommend ? '✓ I recommend this product' : null}</p> */}
       <p>{props.product.recommend && '✓ I recommend this product'}</p>
       <p>{props.product.response && `Response from seller ${props.product.response}`}</p>
-      <p>Was this review helpful? Yes {props.product.helpfulness}</p>
+      <p>Was this review helpful? Yes ({props.product.helpfulness}) | Report</p>
       <hr/>
     </div>
   )
