@@ -54,7 +54,6 @@ const RelatedProductsCarousel = ({ children }) => {
       </div>
     </div>
   );
-
 };
 
 export default RelatedProductsCarousel;

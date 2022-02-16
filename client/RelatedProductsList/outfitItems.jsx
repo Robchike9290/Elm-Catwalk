@@ -1,13 +1,20 @@
 import React from 'react';
-import OutfitItem from './outfitItem.jsx';
+import OutfitItemsCarousel, { OutfitItemsCarouselItem } from './outfitItemsCarousel.jsx';
+import '../src/relatedProductsListStyles.css';
 
 const OutfitItems = () => {
   return (
-    <span>
-      <OutfitItem />
-      <OutfitItem />
-      <OutfitItem />
-    </span>
+    <div className="productInnerMat">
+      <OutfitItemsCarousel>
+        <OutfitItemsCarouselItem></OutfitItemsCarouselItem>
+        <OutfitItemsCarouselItem></OutfitItemsCarouselItem>
+        <OutfitItemsCarouselItem></OutfitItemsCarouselItem>
+        <OutfitItemsCarouselItem></OutfitItemsCarouselItem>
+        <OutfitItemsCarouselItem></OutfitItemsCarouselItem>
+        <OutfitItemsCarouselItem></OutfitItemsCarouselItem>
+        <OutfitItemsCarouselItem></OutfitItemsCarouselItem>
+      </OutfitItemsCarousel>
+    </div>
   )
 }
 

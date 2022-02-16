@@ -44,6 +44,7 @@
 
 .carousel {
 	overflow: hidden;
+	white-space: nowrap;
 }
 
 .carouselButtonLeft {
@@ -79,13 +80,11 @@
 }
 
 .addToOutfitButton {
-	position: relative;
 	margin-left: 10px;
 	margin-right: 10px;
-	top: -321px;
-	width: 20%;
-	height: 400px;
-	display: inline-block;
+	width: 10%;
+	height: 200px;
+	display: inline-flex;
 	background-color: greenyellow;
 	border: 3px solid black;
 }
