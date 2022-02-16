@@ -71,3 +71,8 @@
 	color: black;
 	text-decoration: line-through;
 }
+
+.stars::after {
+	background-color: darkkhaki;
+	content: " the stars will go here &#9733;";
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import RelatedProductsList from './relatedProductsList.jsx';
 import YourOutfit from './yourOutfit.jsx';
-import '../src/styles.css';
+import '../src/relatedProductsListStyles.css';
 
 const RelatedItemsAndComparison = () => {
   return (<div>

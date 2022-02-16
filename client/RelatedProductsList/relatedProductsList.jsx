@@ -1,6 +1,6 @@
 import React from 'react';
 import RelatedProduct from './relatedProduct.jsx';
-import '../src/styles.css';
+import '../src/relatedProductsListStyles.css';
 
 const RelatedProductsList = () => {
 
