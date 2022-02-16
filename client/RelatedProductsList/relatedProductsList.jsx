@@ -6,10 +6,13 @@ const RelatedProductsList = () => {
   return (
     <div className="productInnerMat">
       <RelatedProductsCarousel>
-        <RelatedProductsCarouselItem>Item 1</RelatedProductsCarouselItem>
-        <RelatedProductsCarouselItem>Item 2</RelatedProductsCarouselItem>
-        <RelatedProductsCarouselItem>Item 3</RelatedProductsCarouselItem>
-        <RelatedProductsCarouselItem>Item 4</RelatedProductsCarouselItem>
+        <RelatedProductsCarouselItem></RelatedProductsCarouselItem>
+        <RelatedProductsCarouselItem></RelatedProductsCarouselItem>
+        <RelatedProductsCarouselItem></RelatedProductsCarouselItem>
+        <RelatedProductsCarouselItem></RelatedProductsCarouselItem>
+        <RelatedProductsCarouselItem></RelatedProductsCarouselItem>
+        <RelatedProductsCarouselItem></RelatedProductsCarouselItem>
+        <RelatedProductsCarouselItem></RelatedProductsCarouselItem>
       </RelatedProductsCarousel>
     </div>
   )
