@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import ReviewListEntryBody from './ReviewListEntryBody.jsx'
 
 const ReviewListEntry = ((props) => {
   // console.log('ReviwLISTENTRY', props)
@@ -17,8 +18,8 @@ const ReviewListEntry = ((props) => {
       </div>
       <p className='summary'>{summary}</p>
       <div>
-        <p>{props.product.body}</p>
-        <p>SHOW MORE</p>
+        {/* <p>{props.product.body}</p> */}
+        <ReviewListEntryBody body={props.product.body}/>
         <div>PHOTOS --->need Modal popout BUILD
           <img/>
         </div>
