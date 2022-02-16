@@ -3,8 +3,8 @@ import moment from 'moment';
 import ReviewListEntryBody from './ReviewListEntryBody.jsx'
 
 const ReviewListEntry = ((props) => {
-  console.log('ReviwLISTENTRY', props)
-  console.log('RESPONSE', props.product.response)
+  // console.log('ReviwLISTENTRY', props)
+  // console.log('RESPONSE', props.product.response)
   // console.log('time', moment(props.product.date).format('LL'))
   let date = moment(props.product.date).format('LL')
   const strSum = props.product.summary
@@ -14,7 +14,16 @@ const ReviewListEntry = ((props) => {
   return (
     <div>
       <div className='listitem1'>
-        <p>STAR RATING-BO</p>
+
+      <div className="star-rating">
+      {[...Array(5)].map((star) => {
+        return (
+          <span className="star">&#9734;</span>
+        );
+      })}
+      </div>
+        {/* <p>STAR RATING-BO</p> */}
+
         <p>{props.product.reviewer_name}, {date}</p>
       </div>
       <p className='summary'>{summary}</p>
@@ -28,7 +37,8 @@ const ReviewListEntry = ((props) => {
       {/* <p>{props.product.recommend ? '✓ I recommend this product' : null}</p> */}
       <p>{props.product.recommend && '✓ I recommend this product'}</p>
       <p>{props.product.response && `Response from seller ${props.product.response}`}</p>
-      <p>RATING HELPFULLNUSS {props.product.helpfulness}</p>
+      <p>Was this review helpful? Yes {props.product.helpfulness}</p>
+      <hr/>
     </div>
   )
 

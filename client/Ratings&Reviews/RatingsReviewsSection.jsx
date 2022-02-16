@@ -14,7 +14,7 @@ const RatingsReviewsSection = (props) => {
   const[sort, setSort] = useState('relevant');
 
   useEffect(() => {
-    axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews?product_id=${id}&count=30&sort=${sort}&page=1`, {headers: {'Authorization': Token.TOKEN}})
+    axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews?product_id=${id}&count=169&sort=${sort}&page=1`, {headers: {'Authorization': Token.TOKEN}})
     .then((data)=>{
       // console.log("fromratingsreviews", data.data)
       setProduct(data.data)

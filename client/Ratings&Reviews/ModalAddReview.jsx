@@ -11,6 +11,11 @@ const ModalAddReview = ((props) => {
       <h3>Write Your Review</h3>
       <h4>About the PRODUCT NAME</h4>
       <div> Overall Rating *
+      {[...Array(5)].map((star) => {
+        return (
+          <span className="star">&#9734;</span>
+        );
+      })}
         <p>BO STAR RATING (5-'Poor', 'Fair', 'Average', 'Good', 'Great')</p>
       </div>
       <div> Do you recommend this product *
@@ -19,11 +24,42 @@ const ModalAddReview = ((props) => {
       </div>
       {/* <CharacteristicsAdd /> */}
       <p>PLACEHOLDER CHARACTERISTICS-->BUILD</p>
-      <p>Review Summary (text input 60 char)</p>
-      <p>Review Body* (rext input, min 50, max 1000char) counter needed</p>
+      <label>
+        Review Summary* (60 Char)
+        <input type='text'maxLength={60}/>
+      </label>
+      {/* <p>Review Summary (text input 60 char)</p> */}
+
+      <br/>
+
+      <label>
+        Review Body* (text input, min 50, max 1000char)
+        <input type='text'maxLength={1000}/>
+        character counter
+      </label>
+
+      {/* <p>Review Body* (text input, min 50, max 1000char) counter needed</p> */}
       <p>Upload Photos, need upload program</p>
-      <p>What is your nickname* input 60 char</p>
-      <p>Your email* input 60 char</p>
+
+      <label>
+        What is your nickname* (60 Char)
+        <input type='text' maxLength={60}/>
+        <br/>
+        “For privacy reasons, do not use your full name or email address”
+      </label>
+      <br/>
+      <br/>
+
+      {/* <p>What is your nickname* input 60 char</p> */}
+      <label>
+        Your email* (60 Char)
+        <input type='text' maxLength={60}/>
+        <br/>
+        “For authentication reasons, you will not be emailed”
+      </label>
+      {/* <p>Your email* input 60 char</p> */}
+
+      <br/>
       <button onClick={()=>props.setAddReview(false)}>SUBMIT</button>
 
 
