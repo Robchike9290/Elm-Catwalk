@@ -1,11 +1,12 @@
 .container {
   display: flex;
   justify-content: center;
+  gap: 50px;
 }
 
-.breakdown {
+/* .breakdown {
   margin-right: 90px;
-}
+} */
 
 .listitem1 {
   display: flex;
@@ -19,6 +20,8 @@
 
 .sort {
   display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .summary {
@@ -28,4 +31,79 @@
 
 .average {
   display: flex;
+  align-items: flex-start;
 }
+
+.modal {
+  position: fixed;
+  left: 5;
+  top:5;
+  right:5;
+  bottom:5;
+  background-color: green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.numavg {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+/* button {
+  background-color: transparent;
+} */
+
+#addstar-review {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.on {
+  color: #000;
+}
+.off {
+  color: #ccc;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+

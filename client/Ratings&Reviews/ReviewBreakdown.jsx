@@ -32,7 +32,7 @@ const ReviewBreakdown = ((props) => {
   return (
     <div className='breakdown'>
       <div className='average'>
-        <h3>{rating}</h3>
+        <p className='numavg'>{rating}</p>
         <div className="star-rating">
         {[...Array(5)].map((star, i) => {
           return (

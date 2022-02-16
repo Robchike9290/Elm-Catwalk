@@ -4,6 +4,7 @@ import Token from '../../config.js';
 import ReviewBreakdown from './ReviewBreakdown.jsx';
 import ReviewList from './ReviewList.jsx'
 import '../styles.css';
+import ModalAddReview from './ModalAddReview.jsx'
 // console.log(Token, '<--token')
 
 const RatingsReviewsSection = (props) => {
@@ -12,6 +13,7 @@ const RatingsReviewsSection = (props) => {
   const[product, setProduct] = useState({});
   const[meta, setMeta] = useState ([]);
   const[sort, setSort] = useState('relevant');
+  const [addreview, setAddReview] = useState(false)
 
   useEffect(() => {
     axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews?product_id=${id}&count=169&sort=${sort}&page=1`, {headers: {'Authorization': Token.TOKEN}})
@@ -33,9 +35,10 @@ const RatingsReviewsSection = (props) => {
     // console.log('PRODUCT', product);
     <div>
       <h3>Ratings & Reviews</h3>
+      <ModalAddReview addreview={addreview} setAddReview={setAddReview}/>
       <div className='container'>
        <ReviewBreakdown meta={meta}/>
-       <ReviewList product={product} sort={sort} setSort={setSort}/>
+       <ReviewList product={product} sort={sort} setSort={setSort} addreview={addreview} setAddReview={setAddReview}/>
       </div>
     </div>
   )

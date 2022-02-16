@@ -1,4 +1,5 @@
 import React from 'react';
+import StarForModal from './StarForModal.jsx'
 
 const ModalAddReview = ((props) => {
   // console.log('ModalAddReview', props)
@@ -7,17 +8,10 @@ const ModalAddReview = ((props) => {
     return null
   }
   return (
-    <div>
+    <div className='modal'>
       <h3>Write Your Review</h3>
       <h4>About the PRODUCT NAME</h4>
-      <div> Overall Rating *
-      {[...Array(5)].map((star, k) => {
-        return (
-          <span className="star" key={k}>&#9734;</span>
-        );
-      })}
-        <p>BO STAR RATING (5-'Poor', 'Fair', 'Average', 'Good', 'Great')</p>
-      </div>
+      < StarForModal />
       <div> Do you recommend this product *
         <input type='radio' value='Yes' name='choice'/>Yes
         <input type='radio' value='No' name='choice'/>No
