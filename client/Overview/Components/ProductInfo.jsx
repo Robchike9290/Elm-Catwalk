@@ -4,6 +4,9 @@ import Socials from './ProductInfoComponents/Socials.jsx';
 import StarRating from './ProductInfoComponents/StarRating.jsx';
 // import Description from './ProductInfoComponents/Description.jsx';
 
+// currentStyle={this.state.currentStyle}
+//           currentProduct={this.state.currentProduct} styleList={this.state.styleList}
+
 class ProductInfo extends React.Component {
 constructor(props) {
   super(props);

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
+import { AppContext } from '../context.js';
 import StyleSelector from './Components/StyleSelector.jsx'
 import ProductInfo from './Components/ProductInfo.jsx';
 import ImageGallery from './Components/ImageGallery.jsx';
@@ -8,47 +9,40 @@ import ProductList from './Components/ProductInfoComponents/ProductList.jsx';
 
 
 
-class Overview extends React.Component {
+const Overview = () => {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      price: 0,
-      productList: [],
-      currentProduct: {},
-      currentProductId: 0,
-      currentStyle: {},
-      currentStylePhoto: '',
-      currentStyleThumbnails: [],
-      styleList: []
+  const context = useContext(AppContext);
 
+  // console.log('this is in overview', context)
+  // console.log('show me product id', context.productId)
 
-    }
-    // console.log();
-    this.handleMainPhotoChange = this.handleMainPhotoChange.bind(this);
-    this.handleProductChange = this.handleProductChange.bind(this);
-    this.getStyles = this.getStyles.bind(this)
-  }
-
-  componentDidMount() {
-
+  useEffect(() => {
     axios.get('/products')
       .then((receivedProductList) => {
         // console.log(receivedProductList.data[0]);
+        // console.log('in second axios req', receivedProductList.data[0].id)
 
         axios.get(`products/${receivedProductList.data[0].id}/styles`)
           .then((receivedStyles) => {
+
+            context.setCurrentProductId(receivedProductList.data[0].id);
+            context.setCurrentProduct(receivedProductList.data[0]);
+            context.setProductList(receivedProductList.data);
+            context.setStyleList(receivedStyles.data);
+            context.setCurrentStyle(receivedStyles.data.results[0]);
+            context.setCurrentStylePhoto(receivedStyles.data.results[0].photos[0].url);
+            context.setCurrentStyleThumbnails(receivedStyles.data.results[0].photos);
             // console.log('current style', receivedStyles.data.results[0]);
-            this.setState({
-              price: receivedStyles.data.results[0].original_price,
-              currentProduct: receivedProductList.data[0],
-              currentProductId: receivedProductList.data[0].id,
-              productList: receivedProductList.data,
-              styleList: receivedStyles.data,
-              currentStyle: receivedStyles.data.results[0],
-              currentStylePhoto: receivedStyles.data.results[0].photos[0].url,
-              currentStyleThumbnails: receivedStyles.data.results[0].photos
-            })
+            //   this.setState({
+            //     // price: receivedStyles.data.results[0].original_price,
+            //     // currentProduct: receivedProductList.data[0],
+            //     // currentProductId: receivedProductList.data[0].id,
+            //     // productList: receivedProductList.data,
+            //     styleList: receivedStyles.data,
+            //     currentStyle: receivedStyles.data.results[0],
+            //     currentStylePhoto: receivedStyles.data.results[0].photos[0].url,
+            //     currentStyleThumbnails: receivedStyles.data.results[0].photos
+            //   })
             // console.log('Updated State', this.state);
           })
       })
@@ -56,35 +50,33 @@ class Overview extends React.Component {
         console.error(err);
         console.error('failed in inital GET');
       })
+  }, [])
 
-  }
+  useEffect(() => {
+    // console.log(context.currentProduct);
+    getStyles(context.currentProductId)
 
-  handleMainPhotoChange(newURL) {
-    this.setState({
-      currentStylePhoto: newURL
-    })
+  }, [context.currentProductId])
 
-  }
+// WORKING ON THIS
+  const getStyles = (currentProduct) => {
 
-  handleProductChange(clickedProduct) {
-    this.setState ({
-      currentProduct: clickedProduct
-    })
-    this.getStyles(clickedProduct.id)
+    // console.log('hello');
 
-  }
-
-  getStyles(productId) {
-    axios.get(`products/${productId}/styles`)
+    axios.get(`products/${currentProduct}/styles`)
       .then((receivedStyles) => {
         // console.log('current style', receivedStyles.data.results[0]);
-        this.setState({
-          price: receivedStyles.data.results[0].original_price,
-          styleList: receivedStyles.data,
-          currentStyle: receivedStyles.data.results[0],
-          currentStylePhoto: receivedStyles.data.results[0].photos[0].url,
-          currentStyleThumbnails: receivedStyles.data.results[0].photos
-        })
+        context.setStyleList(receivedStyles.data);
+        context.setCurrentStyle(receivedStyles.data.results[0]);
+        context.setCurrentStylePhoto(receivedStyles.data.results[0].photos[0].url);
+        context.setCurrentStyleThumbnails(receivedStyles.data.results[0].photos);
+        // this.setState({
+        //   // price: receivedStyles.data.results[0].original_price,
+        //   // styleList: ,
+        //   // currentStyle: receivedStyles.data.results[0],
+        //   // currentStylePhoto: receivedStyles.data.results[0].photos[0].url,
+        //   currentStyleThumbnails: receivedStyles.data.results[0].photos
+        // })
         // console.log('Updated State', this.state);
       })
       .catch((err) => {
@@ -94,23 +86,72 @@ class Overview extends React.Component {
 
 
   }
+  // componentDidMount() {
 
-  render() {
-    return (
-      <div className="Overview">
 
-        <ImageGallery currentStyle={this.state.currentStyle} currentStylePhoto={this.state.currentStylePhoto} currentStyleThumbnails={this.state.currentStyleThumbnails} handleMainPhotoChange={this.handleMainPhotoChange} />
-        <StyleSelector />
-        <ProductInfo currentStyle={this.state.currentStyle}
-          currentProduct={this.state.currentProduct} styleList={this.state.styleList} />
+
+  // }
+
+  // handleMainPhotoChange(newURL) {
+  //   this.setState({
+  //     currentStylePhoto: newURL
+  //   })
+
+  // }
+
+  // handleProductChange(clickedProduct) {
+  //   this.setState ({
+  //     currentProduct: clickedProduct
+  //   })
+  //   this.getStyles(clickedProduct.id)
+
+  // }
+
+
+
+
+
+
+return (
+  <div className="Overview">
+
+    <ImageGallery />
+    {/* <StyleSelector />
+        <ProductInfo  />
         <AddToCart />
-        <Description currentProduct={this.state.currentProduct} />
-        <ProductList handleProductChange={this.handleProductChange} productList={this.state.productList} />
+        <Description  /> */}
+    <ProductList />
 
-      </div>
-    )
-  }
+  </div>
+)
+
 }
 
 
 export default Overview;
+
+
+
+// ==========================Garbage Heap
+/*
+// constructor(props) {
+//   super(props)
+//   this.state = {
+//     price: 0,
+//     productList: [],
+//     currentProduct: {},
+//     currentProductId: 0,
+//     currentStyle: {},
+//     currentStylePhoto: '',
+//     currentStyleThumbnails: [],
+//     styleList: []
+
+
+//   }
+
+   // console.log();
+    this.handleMainPhotoChange = this.handleMainPhotoChange.bind(this);
+    this.handleProductChange = this.handleProductChange.bind(this);
+    this.getStyles = this.getStyles.bind(this)
+  }
+*/

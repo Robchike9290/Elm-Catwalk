@@ -1,23 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../../../context.js';
 
-class MainImageThumbnail extends React.Component {
-  constructor(props) {
-    super (props)
+const MainImageThumbnail = ({ style }) => {
 
-    // console.log(props);
-  }
+  const { setCurrentStylePhoto } = useContext(AppContext);
 
-
-  render () {
-    return (
+  return (
 
     <div id="pic">
-      <img height="75" width="50" src={this.props.style.thumbnail_url} onClick={() => {
-        this.props.handleMainPhotoChange(this.props.style.url)
-      }}/>
+      <img height="75" width="50" src={style.thumbnail_url} onClick={() => {
+        setCurrentStylePhoto(style.url)
+      }} />
     </div>
-    )
-  }
+  )
+
 }
 
 export default MainImageThumbnail;
+
+
+
