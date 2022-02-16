@@ -1,8 +1,8 @@
 import React from 'react';
 
 const ModalAddReview = ((props) => {
-  console.log('ModalAddReview', props)
-  console.log('ADDREVIEWFROMMODAL', props.addreview)
+  // console.log('ModalAddReview', props)
+  // console.log('ADDREVIEWFROMMODAL', props.addreview)
   if (props.addreview === false) {
     return null
   }

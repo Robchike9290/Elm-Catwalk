@@ -4,7 +4,7 @@ import SortDropDown from './SortDropDown.jsx'
 import ModalAddReview from './ModalAddReview.jsx'
 
 const ReviewList = ((props) => {
-  console.log('REVIEWSLIST', props)
+  // console.log('REVIEWSLIST', props)
   const [index, setIndex] = useState(2)
   const [addreview, setAddReview] = useState(false)
   // console.log('reviewslength', props.product.results)

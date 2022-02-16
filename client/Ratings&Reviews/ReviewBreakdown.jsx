@@ -1,11 +1,11 @@
 import React from 'react';
 
 const ReviewBreakdown = ((props) => {
-  console.log('METAfromBREAKDOWN', props)
+  // console.log('METAfromBREAKDOWN', props)
   const ratings = props.meta.ratings ? props.meta.ratings : {};
-  console.log('RATINGS', ratings)
+  // console.log('RATINGS', ratings)
   let average = Object.values(ratings)
-  console.log('avg', average)
+  // console.log('avg', average)
 
 
   const total = average.reduce((accum, number, index) => {
@@ -20,7 +20,7 @@ const ReviewBreakdown = ((props) => {
 
   const rating = parseFloat((total.totalPoints / total.totalEntries).toFixed(1))
   // console.log('TOTAL', total)
-  console.log('RATING', rating)
+  // console.log('RATING', rating)
 
   return (
     <div className='breakdown'>
