@@ -4,11 +4,11 @@ import OutfitItems from './outfitItems.jsx';
 
 const YourOutfit = () => {
   return (
-  <div class="productInnerMat">
-    <button class="carouselButton">◀️</button>
-    <AddToOutfit class="addToOutfitButton"/>
+  <div className="productInnerMat">
+    <button className="carouselButton">◀️</button>
+    <AddToOutfit className="addToOutfitButton"/>
     <OutfitItems/>
-    <button class="carouselButton">▶️</button>
+    <button className="carouselButton">▶️</button>
   </div>
   )
 }

@@ -11,34 +11,39 @@
 }
 
 .product {
-	width: 20%;
-	display: inline-block;
+	width: 13%;
 	background-color: greenyellow;
 	margin: 3px 10px;
-	border: 3px solid black;
 }
 
 .productImage {
-	height: 400px;
-	width: 275px;
-	padding: 40px 40px 40px 40px;
+	padding: 180px 89px 180px 89px;
 	margin-top: 15px;
+	border: 3px solid black;
 }
 
 .productData {
 	height: 25px;
-	width: 355px;
+	width: 390px;
+	border: 3px solid black;
 }
 
 .productStarRating {
 	height: 40px;
-	width: 355px;
+	width: 390px;
+	border: 3px solid black;
 }
 
 .productAction {
 	margin-top: 15px;
-	margin-left: 335px;
+	margin-left: 355px;
+	height: 15px;
+	width: 15px;
 	position: relative;
+}
+
+.carousel {
+	overflow: hidden;
 }
 
 .carouselButton {
@@ -49,6 +54,20 @@
 	width: 34px;
 	height: 300px;
 	margin: 0 3px;
+}
+
+.carouselItem {
+	display: inline-flex;
+	height: 700px;
+	background-color: greenyellow;
+	border: 3px solid black;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.inner {
+	white-space: nowrap;
+	transition: transform 0.3s;
 }
 
 .addToOutfitButton {
