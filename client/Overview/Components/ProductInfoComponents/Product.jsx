@@ -3,13 +3,14 @@ import { AppContext } from '../../../context.js';
 
 
 const Product = (props) => {
-  const { currentProductId, setCurrentProductId } = useContext(AppContext);
+  const { currentProductId, setCurrentProductId, setCurrentProduct } = useContext(AppContext);
 
-  // console.log(setCurrentProductId);
-  // console.log('products:::::', props);
-  // handleProductChange={props.handleProductChange}
+  const handleClick = () => {
+    setCurrentProductId(props.product.id);
+    setCurrentProduct(props.product);
+  }
 
-  return (<div onClick={() => {setCurrentProductId(props.product.id)}}>
+  return (<div onClick={() => handleClick()}>
     {props.product.name}
     </div>
   )

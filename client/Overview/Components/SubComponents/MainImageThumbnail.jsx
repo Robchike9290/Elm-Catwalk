@@ -7,7 +7,7 @@ const MainImageThumbnail = ({ style }) => {
 
   return (
 
-    <div id="pic">
+    <div id="pic" >
       <img height="75" width="50" src={style.thumbnail_url} onClick={() => {
         setCurrentStylePhoto(style.url)
       }} />

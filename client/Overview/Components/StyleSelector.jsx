@@ -1,24 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ThumbnailSelect from './SubComponents/ThumbnailSelect.jsx';
+import { AppContext } from '../../context.js'
 
-class StyleSelector extends React.Component {
-constructor(props) {
-  super(props);
-  this.state = {
+const StyleSelector = () =>  {
 
-  }
-}
+  const { styleList } = useContext(AppContext);
 
-render () {
+  // console.log(styleList);
+
 
   return (
 
     <div className="StyleSelector">
-      <ThumbnailSelect/>
+      {styleList.results?.map((thumbnail, key) => (
+        <ThumbnailSelect style={thumbnail} thumbnail={thumbnail.photos[0].thumbnail_url} key={key}/>
+
+      ))}
     </div>
   )
-}
-
 }
 
 export default StyleSelector;

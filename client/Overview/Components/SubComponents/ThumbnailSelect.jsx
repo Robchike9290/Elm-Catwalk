@@ -1,25 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../../../context.js';
 
-class ThumbnailSelect extends React.Component {
-  constructor(props) {
-    super (props)
+const ThumbnailSelect = ({ style, thumbnail }) => {
+  // console.log(props);
+  const { setCurrentStyle, setCurrentStylePhoto, setCurrentStyleThumbnails } = useContext(AppContext);
+  console.log('in thumbselect', style);
+
+  const handleClick = () => {
+    setCurrentStyle(style)
+    setCurrentStylePhoto(style.photos[0].url)
+    setCurrentStyleThumbnails(style.photos)
+
   }
 
+  return (
 
-  render () {
-    return (
+    <div id='stylePic'>
+      <img height='60' width='65' src={thumbnail} onClick={() => handleClick()} />
 
-    <div>
-      <form>
-        <button>Thumbnail</button>
-        <button>Thumbnail</button>
-        <button>Thumbnail</button>
-        <button>Thumbnail</button>
-      </form>
+
 
     </div>
-    )
-  }
+  )
+
 }
 
 export default ThumbnailSelect;
+

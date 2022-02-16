@@ -53,7 +53,6 @@ function App() {
    return (
       <AppProvider>
          <Overview />
-         <Test />
       </AppProvider>
    )
 
