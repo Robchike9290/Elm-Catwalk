@@ -7,10 +7,12 @@ const RelatedProductsList = () => {
   return (
     <div className="productInnerMat">
       <button className="carouselButton">◀️</button>
-      <RelatedProduct/>
-      <RelatedProduct/>
-      <RelatedProduct/>
-      <RelatedProduct/>
+      <div>
+        <RelatedProduct/>
+        <RelatedProduct/>
+        <RelatedProduct/>
+        <RelatedProduct/>
+      </div>
       <button className="carouselButton">▶️</button>
     </div>
   )
