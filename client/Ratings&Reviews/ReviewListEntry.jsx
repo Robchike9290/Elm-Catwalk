@@ -3,7 +3,8 @@ import moment from 'moment';
 import ReviewListEntryBody from './ReviewListEntryBody.jsx'
 
 const ReviewListEntry = ((props) => {
-  console.log('ReviwLISTENTRY', props.product.recommend)
+  console.log('ReviwLISTENTRY', props)
+  console.log('RESPONSE', props.product.response)
   // console.log('time', moment(props.product.date).format('LL'))
   let date = moment(props.product.date).format('LL')
   const strSum = props.product.summary
@@ -26,7 +27,7 @@ const ReviewListEntry = ((props) => {
       </div>
       {/* <p>{props.product.recommend ? '✓ I recommend this product' : null}</p> */}
       <p>{props.product.recommend && '✓ I recommend this product'}</p>
-      <p>props.product.response</p>
+      <p>{props.product.response && `Response from seller ${props.product.response}`}</p>
       <p>RATING HELPFULLNUSS {props.product.helpfulness}</p>
     </div>
   )
