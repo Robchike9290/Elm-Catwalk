@@ -34,17 +34,24 @@
   align-items: flex-start;
 }
 
-.modal {
-  position: fixed;
-  left: 5;
-  top:5;
-  right:5;
-  bottom:5;
-  background-color: green;
+.progress-bar {
+  position: relative;
+  height: 10px;
+  width: 200px;
+  /* border-radius: 50px; */
+  border: 1px solid rgb(155, 211, 228);
+  background: rgb(244, 242, 242);
+}
+
+.filler {
+  background: rgb(98, 198, 141);
+  height: 100%;
+  border-radius: inherit;
+  transition: width .2s ease-in;
+}
+
+.ratings {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .numavg {
@@ -105,5 +112,34 @@
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+}
+
+.modal {
+  z-index: 1000;
+  position: fixed;
+  left: 0;
+  top:0;
+  right:0;
+  bottom:0;
+  background-color: rgb(205, 146, 188);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.photo-modal {
+  position: fixed;
+
+  top:0;
+  margin-top: 100px;
+  width: 500px;
+  height: 500px;
+
+  background-color: rgb(205, 146, 188);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 

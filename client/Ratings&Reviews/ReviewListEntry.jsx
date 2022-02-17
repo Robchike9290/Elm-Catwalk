@@ -1,16 +1,22 @@
 import React from 'react';
 import moment from 'moment';
 import ReviewListEntryBody from './ReviewListEntryBody.jsx'
+import ReviewListPhotos from './ReviewListPhotos.jsx'
 
 const ReviewListEntry = ((props) => {
-  // console.log('ReviwLISTENTRY', props)
-  console.log('RESPONSE', props.product.response)
+
   // console.log('time', moment(props.product.date).format('LL'))
   let date = moment(props.product.date).format('LL')
   const strSum = props.product.summary
   const summary = strSum.substring(0, 59);
   // console.log('SUMMARY', summary)
   const strBody = props.product.body
+  const photos = props.product.photos && props.product.photos.length ? props.product.photos : []
+  console.log('PHOTOS', props.product.photos)
+  console.log('PHOTOS---url', props.product.photos)
+  const photoURL = props.product.photos.map((url, i) => {
+
+  })
   return (
     <div>
       <div className='listitem1'>
@@ -30,8 +36,16 @@ const ReviewListEntry = ((props) => {
       <div>
         {/* <p>{props.product.body}</p> */}
         <ReviewListEntryBody body={props.product.body}/>
-        <div>PHOTOS --->need Modal popout BUILD
-          <img/>
+        <div>
+          {/* {props.product.photos.map((photo) => {
+            return <ReviewListPhotos photos={photo}/>
+          })} */}
+          <ReviewListPhotos photos={props.product.photos}/>
+
+          {/* <div>{props.product.photos ?
+          <ReviewListPhotos photos={props.product.photos}/>
+          : null}
+          </div> */}
         </div>
       </div>
       {/* <p>{props.product.recommend ? '✓ I recommend this product' : null}</p> */}
