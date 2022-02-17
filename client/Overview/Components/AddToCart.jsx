@@ -1,17 +1,13 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
+import { AppContext } from '../../context.js';
 import AddToCartButton from './SubComponents/AddToCartButton.jsx';
 import QuantitySelector from './SubComponents/QuantitySelector.jsx';
 
-class AddToCart extends React.Component {
-  constructor (props) {
-    super(props);
-    this.state = {
+const AddToCart= () =>  {
 
-      cart: []
-    }
-  }
+  const [cart, setCart] = useState({});
+  const { currentStyle } = useContext(AppContext);
 
-  render () {
     return (
       <div className="AddToCart">
         <div className="cart"><AddToCartButton/></div>
@@ -24,7 +20,7 @@ class AddToCart extends React.Component {
 
       </div>
     )
-  }
+
 
 }
 

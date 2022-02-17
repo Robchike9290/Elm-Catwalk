@@ -7,9 +7,9 @@ const OutfitItem = () => {
   return (
     <span className="product">
       <p>
-        <OutfitItemXButton className="productAction"/>
+        <OutfitItemXButton className="outfitItemAction"/>
       </p>
-      <img alt="This is the image for the product." class="productImage"></img>
+      <img alt="This is the image for the product." className="productImage"></img>
       <p className="productData">This is the product category.</p>
       <p className="productData">This is the product name.</p>
       <p className="productData">

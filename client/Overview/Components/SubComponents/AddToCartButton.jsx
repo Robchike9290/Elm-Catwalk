@@ -4,7 +4,7 @@ const AddToCartButton = () => {
 
   return (
     <div>
-      <button className="addToCartButton">Add To Cart</button>
+
     </div>
   )
 

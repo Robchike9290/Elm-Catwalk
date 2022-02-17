@@ -20,13 +20,13 @@ app.use(express.static(__dirname + '/../client/dist'));
 
 app.get("/products", (req, res) => {
 
-   axios.get(baseURL, {headers: {Authorization: TOKEN}})
+   axios.get(`${baseURL}?count=7`, {headers: {Authorization: TOKEN}})
    .then((receivedProductList) => {
    //   console.log(receivedProductList.data);
      res.status(200).send(receivedProductList.data);
    })
    .catch ((err) => {
-   //   console.error(err);
+     console.error(err);
      console.error('failed in server GET');
    })
 })
@@ -39,7 +39,7 @@ app.get("/products/:product_id/styles", (req,res) => {
          res.status(200).send(receivedStylesList.data)
       })
       .catch ((err) => {
-           console.error(err);
+         //   console.error(err);
            console.error('failed in server GET');
          });
 

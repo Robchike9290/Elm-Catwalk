@@ -1,26 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../../../context.js';
 
-class ExpandedInfo extends React.Component {
-constructor(props) {
-  super(props);
-  this.state = {
 
-  }
-}
 
-render () {
+const ExpandedInfo = () =>  {
+
+  const { currentProduct, currentStyle } = useContext(AppContext);
+
 
   return (
 
     <div>
-      {this.props.name}
+      {currentProduct.name}
       <br></br>
-      {this.props.price}
+      {currentProduct.default_price}
       <br></br>
-      {this.props.styleName}
+      Style > {currentStyle.name}
     </div>
   )
-}
+
 
 }
 
