@@ -31,6 +31,17 @@ app.get("/products", (req, res) => {
    })
 })
 
+app.get("/products/:product_id", (req,res) => {
+   axios.get(`${baseURL}${req.params.product_id}`, {headers: {Authorization: TOKEN}})
+      .then((receivedProduct) => {
+         res.status(200).send(receivedProduct.data)
+      })
+      .catch ((err) => {
+         console.error('failed in server GET');
+      });
+
+})
+
 app.get("/products/:product_id/styles", (req,res) => {
    // console.log(req.params);
    axios.get(`${baseURL}${req.params.product_id}/styles`, {headers: {Authorization: TOKEN}})
@@ -43,6 +54,17 @@ app.get("/products/:product_id/styles", (req,res) => {
            console.error('failed in server GET');
          });
 
+})
+
+app.get("/products/:product_id/related", (req,res) => {
+   axios.get(`${baseURL}${req.params.product_id}/related`, {headers: {Authorization: TOKEN}})
+      .then((receivedRelatedProductsList) => {
+         res.status(200).send(receivedRelatedProductsList.data);
+      })
+      .catch ((err) => {
+         console.error('failed in server GET');
+         res.sendStatus(500);
+      });
 })
 
 app.get("/", (req, res) => {

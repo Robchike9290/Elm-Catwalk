@@ -30,7 +30,7 @@ const RelatedProduct = () => {
         <StarButton isModalShown={isModalShown} showModal={showModal}/>
       </p>
       <div>
-        <img className="productImage" src={currentStylePhoto} alt="This is the image for the product."></img>
+      <img className="productImage" src={currentStylePhoto} alt="This is the image for the product."></img>
       </div>
       <p className="productData">This is the product category</p>
       <p className="productData ">This is the product name</p>
