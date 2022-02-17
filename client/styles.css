@@ -31,7 +31,8 @@
 
 .average {
   display: flex;
-  align-items: flex-start;
+  /* align-items: flex-start; */
+  top: 0;
 }
 
 .progress-bar {
@@ -52,6 +53,7 @@
 
 .ratings {
   display: flex;
+  align-content: center;
 }
 
 .numavg {
@@ -117,11 +119,14 @@
 .modal {
   z-index: 1000;
   position: fixed;
-  left: 0;
+  /* left: 0; */
   top:0;
-  right:0;
-  bottom:0;
-  background-color: rgb(205, 146, 188);
+  margin-top: 100px;
+  /* right:0;
+  bottom:0; */
+  width: 700px;
+  height: 700px;
+  background-color: rgb(106, 206, 143);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -130,16 +135,31 @@
 
 .photo-modal {
   position: fixed;
-
   top:0;
   margin-top: 100px;
-  width: 500px;
-  height: 500px;
-
-  background-color: rgb(205, 146, 188);
+  width: 400px;
+  height: 400px;
+  background-color: rgb(153, 216, 182);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
+
+.list-thumbnail {
+  display: flex;
+}
+
+.thumbnail {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+  gap: 30px;
+}
+
+.thumbnail:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
 

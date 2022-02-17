@@ -30,28 +30,20 @@ const ReviewListEntry = ((props) => {
       </div>
         {/* <p>STAR RATING-BO</p> */}
 
-        <p>{props.product.reviewer_name}, {date}</p>
+        <div>{props.product.reviewer_name}, {date}</div>
       </div>
       <p className='summary'>{summary}</p>
       <div>
         {/* <p>{props.product.body}</p> */}
         <ReviewListEntryBody body={props.product.body}/>
         <div>
-          {/* {props.product.photos.map((photo) => {
-            return <ReviewListPhotos photos={photo}/>
-          })} */}
           <ReviewListPhotos photos={props.product.photos}/>
-
-          {/* <div>{props.product.photos ?
-          <ReviewListPhotos photos={props.product.photos}/>
-          : null}
-          </div> */}
         </div>
       </div>
       {/* <p>{props.product.recommend ? '✓ I recommend this product' : null}</p> */}
       <p>{props.product.recommend && '✓ I recommend this product'}</p>
       <p>{props.product.response && `Response from seller ${props.product.response}`}</p>
-      <p>Was this review helpful? Yes ({props.product.helpfulness}) | Report</p>
+      <p>Was this review helpful? Yes({props.product.helpfulness}) | Report</p>
       <hr/>
     </div>
   )

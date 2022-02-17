@@ -9,6 +9,7 @@ const PhotoModal = ((props) => {
   return(
     <div className='photo-modal'>
       <img src={props.photourl} />
+      <br/>
       <button onClick={()=>props.setFullPhoto(false)}>Close</button>
     </div>
   )

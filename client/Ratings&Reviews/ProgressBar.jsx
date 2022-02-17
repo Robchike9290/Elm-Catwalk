@@ -7,9 +7,9 @@ const ProgressBar = ((props) => {
   // console.log('calc', Number(props.ratingArray[0])/props.totalEntries * 100)
   return(
     <div className='ratings'>
-      <p>{props.star} stars</p>
+      <div>{props.star} stars</div>
       <FillerProgressBar percentage={props.percentage}/>
-      <p>{props.value}</p>
+      <div>{props.value}</div>
     </div>
   )
 })

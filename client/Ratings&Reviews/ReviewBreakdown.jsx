@@ -29,7 +29,7 @@ const ReviewBreakdown = ((props) => {
   return (
     <div className='breakdown'>
       <div className='average'>
-        <p className='numavg'>{rating}</p>
+        <div className='numavg'>{rating}</div>
         <div className="star-rating">
         {[...Array(5)].map((star, i) => {
           return (
@@ -40,8 +40,8 @@ const ReviewBreakdown = ((props) => {
       </div>
 
       <p>{props.total.totalEntries} ratings</p>
-      <BreakdownBar ratings={props.meta.ratings} totalEntries={props.total.totalEntries} starpoint={props.starpoint}/>
       <p> {avgRecommended}% of reviews recommend this product</p>
+      <BreakdownBar ratings={props.meta.ratings} totalEntries={props.total.totalEntries} starpoint={props.starpoint}/>
       <div>
         <p>Size Bar Graph Placeholder</p>
       </div>
