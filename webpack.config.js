@@ -19,6 +19,7 @@ module.exports = {
         use: "babel-loader"
       }
       ,
+      // ,
       // {
       //   test: /\.html$/,
       //   use: "html-loader"
@@ -30,6 +31,10 @@ module.exports = {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
       },
+      // {
+      //   test: /\.css$/,
+      //   use: ["style-loader", "css-loader"],
+      // },
       // {
       //   test: /\.scss$/,
       //   use:[
