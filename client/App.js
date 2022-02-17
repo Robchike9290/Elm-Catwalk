@@ -1,5 +1,4 @@
-import React, { useContext, useState } from "react";
-import axios from 'axios';
+import React, { useState } from "react";
 import Overview from "./Overview/Overview.jsx";
 import RelatedItemsAndComparison from "./RelatedProductsList/relatedItemsAndComparison.jsx";
 import { AppContext } from "./context.js";
@@ -15,6 +14,7 @@ const AppProvider = (props) => {
    const [styleList, setStyleList] = useState([]);
    const [currentStar, setCurrentStar] = useState('');
    const [user, setUser] = useState({});
+   const [relatedProducts, setRelatedProducts] = useState([]);
 
    return (
       <AppContext.Provider value={{
@@ -26,7 +26,8 @@ const AppProvider = (props) => {
          currentStylePhoto, setCurrentStylePhoto,
          currentStyleThumbnails, setCurrentStyleThumbnails,
          styleList, setStyleList,
-         currentStar, setCurrentStar
+         currentStar, setCurrentStar,
+         relatedProducts, setRelatedProducts
          }}>
          {props.children}
       </AppContext.Provider>

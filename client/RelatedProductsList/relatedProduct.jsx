@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { AppContext } from '../context.js';
 import ComparisonModal from './comparisonModal.jsx';
 import Price from './price.jsx';
 import StarButton from './starButton.jsx';
@@ -7,6 +8,7 @@ import '../src/relatedProductsListStyles.css';
 
 const RelatedProduct = () => {
 
+  const { currentStylePhoto } = useContext(AppContext);
   const [isModalShown, setIsModalShown] = useState(false);
 
   const hideModal = () => {
@@ -27,7 +29,9 @@ const RelatedProduct = () => {
       <p className="productAction">
         <StarButton isModalShown={isModalShown} showModal={showModal}/>
       </p>
-      <img className="productImage" alt="This is the image for the product."></img>
+      <div>
+        <img className="productImage" src={currentStylePhoto} alt="This is the image for the product."></img>
+      </div>
       <p className="productData">This is the product category</p>
       <p className="productData ">This is the product name</p>
       <p className="productData">

@@ -10,7 +10,7 @@ const { TOKEN } = require('../config.js')
 app.listen(port, () => {
    console.log(`The app server is running on port: ${port}`);
 });
-
+// http://example.com/page?parameter=value&also=another
 const DIST_DIR = path.join(__dirname, "dist");
 const HTML_FILE = path.join(DIST_DIR, "index.html");
 

@@ -17,7 +17,12 @@
 }
 
 .productImage {
-	padding: 180px 96px 180px 96px;
+	/* padding: 180px 96px 180px 96px; */
+	display: flex;
+	justify-content: center;
+	width: 60%;
+	max-width: 420px;
+	max-height: 360px;
 	margin-top: 15px;
 	margin-left: 10px;
 	border: 3px solid black;
