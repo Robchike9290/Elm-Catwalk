@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Product from './Product.jsx'
-const ProductList = (props) => {
-  // console.log('producltist', props);
+import { AppContext } from '../../../context.js';
+
+const ProductList = ({watcher, setWatcher}) => {
+
+  const { productList } = useContext(AppContext);
+
+
   return (<div className='ProductList'>
-    {props.productList.map((product, key) => (
-      <Product handleProductChange={props.handleProductChange} product={product} key={key}/>
+    {productList?.map((product, key) => (
+      <Product  product={product} key={key}/>
     ))}
     </div>
   )

@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../../../context.js';
+
+
 
 const Description = (props) => {
-  // console.log('indescription', props);
-  return (<div className='bigDescription'>
-    {props.currentProduct.description}
-    </div>
+
+  const { currentProduct } = useContext(AppContext) ;
+  return (
+  <div className='bigDescription'>
+    {currentProduct.description}
+  </div>
   )
 }
 
