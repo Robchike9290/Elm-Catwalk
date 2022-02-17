@@ -15,7 +15,7 @@ const ExpandedInfo = () =>  {
       <br></br>
       {currentProduct.default_price}
       <br></br>
-      {currentStyle.name}
+      Style > {currentStyle.name}
     </div>
   )
 

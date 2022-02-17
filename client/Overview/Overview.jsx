@@ -4,7 +4,8 @@ import { AppContext } from '../context.js';
 import StyleSelector from './Components/StyleSelector.jsx'
 import ProductInfo from './Components/ProductInfo.jsx';
 import ImageGallery from './Components/ImageGallery.jsx';
-import AddToCart from './Components/AddToCart.jsx'; import Description from './Components/ProductInfoComponents/Description.jsx';
+import AddToCart from './Components/AddToCart.jsx';
+import Description from './Components/ProductInfoComponents/Description.jsx';
 import ProductList from './Components/ProductInfoComponents/ProductList.jsx';
 
 
@@ -13,12 +14,15 @@ const Overview = () => {
 
   const context = useContext(AppContext);
 
-  // console.log(context);
+
+  console.log(context);
 
 
   useEffect(() => {
+    // drop log to see how often this happens
     axios.get('/products')
       .then((receivedProductList) => {
+        console.log('inside axios get from productId');
         axios.get(`products/${receivedProductList.data[0].id}/styles`)
           .then((receivedStyles) => {
 
@@ -46,6 +50,7 @@ const Overview = () => {
 
     axios.get(`products/${currentProduct}/styles`)
       .then((receivedStyles) => {
+        console.log('inside getproducts request');
         context.setStyleList(receivedStyles.data);
         context.setCurrentStyle(receivedStyles.data.results[0]);
         context.setCurrentStylePhoto(receivedStyles.data.results[0].photos[0].url);

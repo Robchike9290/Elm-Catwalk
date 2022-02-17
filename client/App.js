@@ -26,6 +26,9 @@ const AppProvider = (props) => {
    const [currentStylePhoto, setCurrentStylePhoto] = useState('');
    const [currentStyleThumbnails, setCurrentStyleThumbnails] = useState([]);
    const [styleList, setStyleList] = useState([]);
+   const [currentStar, setCurrentStar] = useState('');
+   const [user, setUser] = useState({});
+
 
 
 
@@ -40,7 +43,8 @@ const AppProvider = (props) => {
          currentStyle, setCurrentStyle,
          currentStylePhoto, setCurrentStylePhoto,
          currentStyleThumbnails, setCurrentStyleThumbnails,
-         styleList, setStyleList
+         styleList, setStyleList,
+         currentStar, setCurrentStar
          }}>
          {props.children}
       </AppContext.Provider>
@@ -52,6 +56,7 @@ function App() {
 
    return (
       <AppProvider>
+
          <Overview />
       </AppProvider>
    )

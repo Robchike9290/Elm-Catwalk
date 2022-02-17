@@ -4,7 +4,7 @@ import { AppContext } from '../../../context.js';
 const ThumbnailSelect = ({ style, thumbnail }) => {
   // console.log(props);
   const { setCurrentStyle, setCurrentStylePhoto, setCurrentStyleThumbnails } = useContext(AppContext);
-  console.log('in thumbselect', style);
+  // console.log('in thumbselect', style);
 
   const handleClick = () => {
     setCurrentStyle(style)
