@@ -31,6 +31,8 @@ const AppProvider = (props) => {
    const [currentStar, setCurrentStar] = useState('');
    const [user, setUser] = useState({});
 
+   //! default assignement above, DO NOT CHANGE TYPE EVER, EVER, to ADD, do it below line 32, and add it to the values in the return object line 41 (*STAR REVIEW AVG - UPDATE EVERYONE WHEN IT IS CREATED)
+
 
 
 
@@ -46,7 +48,7 @@ const AppProvider = (props) => {
          currentStylePhoto, setCurrentStylePhoto,
          currentStyleThumbnails, setCurrentStyleThumbnails,
          styleList, setStyleList,
-         currentStar, setCurrentStar
+         currentStar, setCurrentStar,
          }}>
          {props.children}
       </AppContext.Provider>
@@ -59,7 +61,7 @@ function App() {
    return (
       <AppProvider>
          <Overview />
-         <RatingsReviewsSection id={37311}/>
+         <RatingsReviewsSection/>
       </AppProvider>
    )
 

@@ -163,3 +163,129 @@
 }
 
 
+/* Overview Starts Here */
+.Overview {
+  border: 5px solid red;
+  display: inline-grid;
+  height: 750px;
+  width: 800px;
+  grid-template-columns: repeat(10, 10%);
+  grid-template-rows: repeat(10, 10%) ;
+  background-color: grey;
+}
+
+.bigDescription {
+  grid-column: 1 / span 10;
+  grid-row: 10;
+  border: 5px solid purple;
+}
+
+
+.ProductList {
+  grid-column: 1 / span 10;
+  grid-row: 8 / span 2;
+  border: 5px solid brown;
+}
+
+
+.ImageGallery {
+
+  /* border: 5px solid turquoise; */
+  border: 5px solid wheat;
+  grid-column: 1 / span 6;
+  grid-row:1 / span 7;
+  /* display: flex;
+  justify-content: space-evenly;
+  /* flex-wrap: wrap; */
+  /* flex-direction: row; */
+  /* background-image: ; */
+  position: relative;
+  object-fit: cover;
+
+  /* display: grid;
+  grid-template-columns: repeat(8, 12.5%);
+  grid-template-rows: repeat(8, 12.5%); */
+}
+ #mainImage{
+  position: absolute;
+  object-fit: cover;
+  /* grid-column-start: 5; */
+  /* z-index: 0; */
+}
+#mainImageThumbs {
+  /* z-index: 5; */
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  height: 500px;
+
+  /* grid-column-start: 0; */
+}
+  #pic {
+
+
+}
+#pic img {
+  object-fit: cover;
+}
+
+.AddToCart {
+  /* justify-content: end; */
+  grid-row: 6 / 8;
+  grid-column: 7 / span 4;
+  border: 5px solid green;
+}
+
+.StyleSelector {
+  /* justify-content: left; */
+  grid-column: 7 / span 4;
+  grid-row: 4 / 6;
+  border: 5px solid yellow;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  overflow: hidden;
+  /* grid-template-columns: repeat(4 25%);
+  grid-template-rows: repeat(3 33%); */
+}
+#stylePic img {
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 5px;
+}
+
+/* .StyleSelector  {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+} */
+.StyleSelector button {
+
+  background-color: aqua;
+
+
+}
+
+
+
+.ProductInfo {
+  border: 5px solid black;
+  grid-row: 1 / span 3;
+  grid-column: 7 / span 4;
+  /* justify-content: right; */
+}
+
+
+
+
+
+
+
+
+
+
+
+

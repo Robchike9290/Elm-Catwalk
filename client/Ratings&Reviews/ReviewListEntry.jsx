@@ -12,8 +12,8 @@ const ReviewListEntry = ((props) => {
   // console.log('SUMMARY', summary)
   const strBody = props.product.body
   const photos = props.product.photos && props.product.photos.length ? props.product.photos : []
-  console.log('PHOTOS', props.product.photos)
-  console.log('PHOTOS---url', props.product.photos)
+  // console.log('PHOTOS', props.product.photos)
+  // console.log('PHOTOS---url', props.product.photos)
   const photoURL = props.product.photos.map((url, i) => {
 
   })
@@ -25,6 +25,7 @@ const ReviewListEntry = ((props) => {
       {[...Array(5)].map((star, i) => {
         return (
           <span className="star" key={i}>&#9734;</span>
+          // <span className="star" key={i}>&#11242;</span>
         );
       })}
       </div>
