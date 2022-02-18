@@ -7,27 +7,18 @@ import {AppContext } from '../context.js';
 
 
 const ModalAddReview = ((props) => {
-  const {currentProduct} = useContext(AppContext)
+  const {currentProduct, recommend, setRecommend} = useContext(AppContext)
   const [characterCount, setCharacterCount] = useState(0)
   const [characterCountdown, setCharacterCountdown] = useState(50)
   const characteristics = props.meta.characteristics ? props.meta.characteristics : {}
-  // const {meta} = useContext(AppContext)
-  // console.log('CURRENTPRODUCT', currentProduct.name)
-  console.log('ModalAdd--PROPS', props)
-  // console.log('ModalAddReviewCharacteristics', typeof props.meta.characteristics)
-  const charKeys = Object.keys(characteristics)
-  // console.log('ModalAddReviewCharacteristics', charKeys)
-  // console.log('ADDREVIEWFROMMODAL', props.addreview)
-  // const client = filestack.init('A0xhc19o8SjieAzXbAZzEz');
-  // console.log(`You discovered the Filestack client version! ${filestack.version}`);
-  console.log('CHARACTER---COUNT', characterCount)
-  // const handleCountdown = function ((event) => {
-  //   setCharacterCountdown = characterCountdown-characterCount;
-  //   if (characterCountdown === 0) {
-  //     characterCountdown= 'Minimum Reached!'
-  //   }
+  // const [recommend, setRecommend] = useState('')
+  console.log('RECOMMENT', recommend)
 
-  // })
+
+  const charKeys = Object.keys(characteristics)
+
+  console.log('CHARACTER---COUNT', characterCount)
+
   let countdown = characterCountdown-characterCount
 
   if (countdown <= 0) {
@@ -48,8 +39,8 @@ const ModalAddReview = ((props) => {
         <br/>
         <label>
           Do you recommend this product? *
-          <input type='radio' value='Yes' name='choice'/>Yes
-          <input type='radio' value='No' name='choice'/>No
+          <input type='radio' value='Yes' name='recommend' onClick={()=>setRecommend('Yes')}/>Yes
+          <input type='radio' value='No' name='recommend'onClick={()=>setRecommend('No')}/>No
         </label>
         <br/>
         <br/>

@@ -14,9 +14,9 @@ const ReviewListEntry = ((props) => {
   const photos = props.product.photos && props.product.photos.length ? props.product.photos : []
   // console.log('PHOTOS', props.product.photos)
   // console.log('PHOTOS---url', props.product.photos)
-  const photoURL = props.product.photos.map((url, i) => {
+  // const photoURL = props.product.photos.map((url, i) => {
 
-  })
+  // })
   return (
     <div>
       <div className='listitem1'>

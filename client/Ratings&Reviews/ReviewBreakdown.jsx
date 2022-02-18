@@ -1,11 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import BreakdownBar from './BreakdownBar.jsx'
+import StarRating from './StarRating.jsx'
+import {AppContext } from '../context.js';
 
 const ReviewBreakdown = ((props) => {
+  const {meta} = useContext(AppContext)
   // console.log('METAfromBREAKDOWN', props)
   // console.log('1recomFROMMETA', props.meta.recommended)
-  const ratings = props.meta.ratings ? props.meta.ratings : {};
-  const recommended = props.meta.recommended ? props.meta.recommended : {};
+  //! const ratings = props.meta.ratings ? props.meta.ratings : {};
+  const ratings = meta.ratings ? pmeta.ratings : {};
+  // !  const recommended = props.meta.recommended ? props.meta.recommended : {};
+  const recommended = meta.recommended ? props.meta.recommended : {};
   // console.log('recommendFROMMETA', recommended.true)
   // console.log('RATINGS__FROMMETA', ratings[1])
 
@@ -18,6 +23,8 @@ const ReviewBreakdown = ((props) => {
   //   const totalPoints = number * rating + accum.totalPoints
   //   return {totalEntries, totalPoints}
   // }, {totalPoints: 1,totalEntries: 0})
+
+  // const filtering = reviews.filter
 
   const rating = parseFloat((props.total.totalPoints / props.total.totalEntries).toFixed(1))
   // console.log('TOTAL', total)
@@ -36,12 +43,14 @@ const ReviewBreakdown = ((props) => {
             <span className="star" key={i}>&#9734;</span>
           );
         })}
+        <StarRating/>
         </div>
       </div>
 
       <p>{props.total.totalEntries} ratings</p>
       <p> {avgRecommended}% of reviews recommend this product</p>
-      <BreakdownBar ratings={props.meta.ratings} totalEntries={props.total.totalEntries} starpoint={props.starpoint}/>
+      <BreakdownBar ratings={meta.ratings} totalEntries={props.total.totalEntries} starpoint={props.starpoint}/>
+      {/*       <BreakdownBar ratings={props.meta.ratings} totalEntries={props.total.totalEntries} starpoint={props.starpoint}/> */}
       <div>
         <p>Size Bar Graph Placeholder</p>
       </div>

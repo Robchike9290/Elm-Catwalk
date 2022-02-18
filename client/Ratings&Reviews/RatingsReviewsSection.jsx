@@ -24,6 +24,7 @@ const RatingsReviewsSection = (props) => {
     axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews?product_id=${currentProductId}&count=${total.totalEntries}&sort=${sort}&page=1`, {headers: {'Authorization': Token.TOKEN}})
     .then((data)=>{
       console.log("fromratingsreviews", data.data)
+      console.log("RESULTS", data.data.results.helpfulness)
       setProduct(data.data)
     })
   },[currentProductId, sort, total.totalEntries]);
