@@ -109,9 +109,13 @@
 	color: darkred;
 }
 
-.regularPrice {
+.regularPriceOnSale {
 	color: black;
 	text-decoration: line-through;
+}
+
+.regularPriceOffSale {
+	color: black;
 }
 
 .stars::after {

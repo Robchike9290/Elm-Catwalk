@@ -16,9 +16,13 @@ const Price = (props) => {
 
   return (
     <div>
-      <span className="regularPrice">${props.price}</span>
       <span>
-        {isOnSale ? <span className="salesPrice">${props.salesPrice}</span> : null}
+        {isOnSale ?
+        <span className="regularPriceOnSale">Regular Price: ${props.price}  </span> :
+        <span className="regularPriceOffSale">Price: ${props.price}</span>}
+      </span>
+      <span>
+        {isOnSale ? <span className="salesPrice">Sales Price: ${props.salesPrice}</span> : null}
       </span>
     </div>
   )

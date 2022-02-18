@@ -32,8 +32,8 @@ const RelatedProduct = (props) => {
       <div>
       <img className="productImage" src={currentStylePhoto} alt="This is the image for the product."></img>
       </div>
-      <p className="productData">{props.category}</p>
-      <p className="productData ">{props.name}</p>
+      <p className="productData">Category: {props.category}</p>
+      <p className="productData ">Name: {props.name}</p>
       <p className="productData">
         <Price price={props.price} salesPrice={props.salesPrice}/>
       </p>
