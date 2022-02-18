@@ -9,12 +9,12 @@ import {AppContext } from '../context.js';
 // console.log(Token, '<--token')
 
 const RatingsReviewsSection = (props) => {
-  const {currentProductId} = useContext(AppContext)
+  const {currentProductId, meta, setMeta, product, setProduct} = useContext(AppContext)
   // console.log('CURRENTID', currentProductId)
   const {id} = props;
   // console.log(props)
-  const[product, setProduct] = useState({});
-  const[meta, setMeta] = useState ([]);
+  // const[product, setProduct] = useState({});
+  // const[meta, setMeta] = useState ([]);
   const[sort, setSort] = useState('relevant');
   const [addreview, setAddReview] = useState(false)
   const [total, setTotal] = useState({totalEntries: 100, totalPoints: 1})
@@ -50,10 +50,11 @@ const RatingsReviewsSection = (props) => {
     // console.log('PRODUCT', product);
     <div>
       <h3>Ratings & Reviews</h3>
-      <ModalAddReview addreview={addreview} setAddReview={setAddReview} meta={meta}/>
+      <ModalAddReview addreview={addreview} setAddReview={setAddReview}/>
       <div className='container'>
-       <ReviewBreakdown meta={meta} total={total} setTotal={setTotal} starpoint={starpoint}/>
-       <ReviewList product={product} sort={sort} setSort={setSort} addreview={addreview} setAddReview={setAddReview}/>
+       {/* <ReviewBreakdown meta={meta} total={total} setTotal={setTotal} starpoint={starpoint}/> */}
+       <ReviewBreakdown total={total} setTotal={setTotal} starpoint={starpoint}/>
+       <ReviewList sort={sort} setSort={setSort} addreview={addreview} setAddReview={setAddReview}/>
       </div>
     </div>
   )

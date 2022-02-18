@@ -7,10 +7,11 @@ import {AppContext } from '../context.js';
 
 
 const ModalAddReview = ((props) => {
-  const {currentProduct, recommend, setRecommend} = useContext(AppContext)
+  const {currentProduct, recommend, setRecommend, meta} = useContext(AppContext)
   const [characterCount, setCharacterCount] = useState(0)
   const [characterCountdown, setCharacterCountdown] = useState(50)
-  const characteristics = props.meta.characteristics ? props.meta.characteristics : {}
+  // !const characteristics = props.meta.characteristics ? props.meta.characteristics : {}
+  const characteristics = meta.characteristics ? meta.characteristics : {}
   // const [recommend, setRecommend] = useState('')
   console.log('RECOMMENT', recommend)
 

@@ -8,9 +8,9 @@ const ReviewBreakdown = ((props) => {
   // console.log('METAfromBREAKDOWN', props)
   // console.log('1recomFROMMETA', props.meta.recommended)
   //! const ratings = props.meta.ratings ? props.meta.ratings : {};
-  const ratings = meta.ratings ? pmeta.ratings : {};
+  const ratings = meta.ratings ? meta.ratings : {};
   // !  const recommended = props.meta.recommended ? props.meta.recommended : {};
-  const recommended = meta.recommended ? props.meta.recommended : {};
+  const recommended = meta.recommended ? meta.recommended : {};
   // console.log('recommendFROMMETA', recommended.true)
   // console.log('RATINGS__FROMMETA', ratings[1])
 

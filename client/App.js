@@ -32,13 +32,9 @@ const AppProvider = (props) => {
    const [user, setUser] = useState({});
    const [recommend, setRecommend] = useState('')
    const[meta, setMeta] = useState ([]);
+   const[product, setProduct] = useState({});
 
    //! default assignement above, DO NOT CHANGE TYPE EVER, EVER, to ADD, do it below line 32, and add it to the values in the return object line 41 (*STAR REVIEW AVG - UPDATE EVERYONE WHEN IT IS CREATED)
-
-
-
-
-
 
    return (
       <AppContext.Provider value={{
@@ -52,7 +48,8 @@ const AppProvider = (props) => {
          styleList, setStyleList,
          currentStar, setCurrentStar,
          recommend, setRecommend,
-         meta, setMeta
+         meta, setMeta,
+         product, setProduct,
          }}>
          {props.children}
       </AppContext.Provider>

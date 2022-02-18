@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import ReviewListEntry from './ReviewListEntry.jsx'
 import SortDropDown from './SortDropDown.jsx'
 import ModalAddReview from './ModalAddReview.jsx'
+import {AppContext } from '../context.js';
 
 const ReviewList = ((props) => {
+  const {product} = useContext(AppContext)
   // console.log('REVIEWSLIST', props)
   const [index, setIndex] = useState(2)
-
-  const results = props.product.results && props.product.results.length ? props.product.results : [];
+  // !  const results = props.product.results && props.product.results.length ? props.product.results : [];
+  const results = product.results && product.results.length ? product.results : [];
   // console.log('RESULTS FROM REVIEW LIST', results)
   // console.log('.......RESULTS FROM REVIEW LIST', results.length)
   return (
