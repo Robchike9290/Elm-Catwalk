@@ -7,35 +7,58 @@ import axios from 'axios';
 const RelatedProductsList = () => {
   const context = useContext(AppContext);
 
-  const getRelatedProducts = () => {
+  const getRelatedProductData = () => {
     axios.get(`/products/${context.currentProductId}/related`)
-    .then((relatedProductsList) => {
-      context.setRelatedProductNumbers(relatedProductsList.data);
-      return relatedProductsList.data;
+    .then((receivedRelatedProductNumbers) => {
+      context.setRelatedProductNumbers(receivedRelatedProductNumbers.data);
+      return receivedRelatedProductNumbers.data;
     })
-    .then((relatedProductNumbers) => {
-      const relatedProducts = [];
-      relatedProductNumbers.forEach((productNumber) => {
-        axios.get(`/products/${productNumber}`)
-        .then((productNumber) => {
-          relatedProducts.push(productNumber.data);
+    .then((receivedRelatedProductNumbers) => {
+      const relatedProductsForContext = [];
+      receivedRelatedProductNumbers.forEach((receivedProductNumber) => {
+        axios.get(`/products/${receivedProductNumber}`)
+        .then((receivedProductNumber) => {
+          relatedProductsForContext.push(receivedProductNumber.data);
         })
         .catch((err) => {
           console.error(err);
         })
       })
-      return relatedProducts;
+      return relatedProductsForContext;
     })
-    .then((relatedProductList) => {
-      context.setRelatedProductsList(relatedProductList);
+    .then((relatedProductListForContext) => {
+      context.setRelatedProductsList(relatedProductListForContext);
+      return relatedProductListForContext;
     })
+    .then((relatedProductListForAdditionalRequest) => {
+      getRelatedProductImages(relatedProductListForAdditionalRequest);
+      return relatedProductListForAdditionalRequest;
+    })
+    // .then((receivedRelatedProductImages) => {
+    //   context.setRelatedProductImages(receivedRelatedProductImages);
+    //   return receivedRelatedProductImages;
+    // })
     .catch((err) => {
       console.error(err);
     });
   };
 
+  const getRelatedProductImages = (relatedProductListForAdditionalRequest) => {
+    console.log("Inside function for related products list!");
+    // create an array to store the images for each of the related products
+    const receivedRelatedProductImages = [];
+    // perform a GET request for each of the products
+    // for (let i = 0; i < relatedProductListForAdditionalRequest.length; i++) {
+    //   axios.get(`products/${relatedProductListForAdditionalRequest[i].id}/styles`)
+    //   .then((receivedRelatedProductStyle) => {
+    //     receivedRelatedProductImages.push(receivedRelatedProductStyle);
+    //   })
+    // }
+    return relatedProductListForAdditionalRequest;
+  }
+
   useEffect(() => {
-    getRelatedProducts();
+    getRelatedProductData();
   }, [])
 
   return (
@@ -44,6 +67,7 @@ const RelatedProductsList = () => {
         {context.relatedProductsList.map((product, index) => (
           // still need to get...
             // product image
+            // sales price
             // star rating (from Cheryl)
           <RelatedProductsCarouselItem
           category={product.category}

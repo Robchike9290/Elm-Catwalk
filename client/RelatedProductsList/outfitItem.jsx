@@ -6,19 +6,18 @@ import OutfitItemXButton from './outfitItemXButton.jsx';
 const OutfitItem = () => {
   return (
     <span className="product">
-      <p>
+      <div>
         <OutfitItemXButton className="outfitItemAction"/>
-      </p>
+      </div>
       <img alt="This is the image for the product." className="productImage"></img>
-      <p className="productData">This is the product category.</p>
-      <p className="productData">This is the product name.</p>
-      <p className="productData">
+      <div className="productData">This is the product category.</div>
+      <div className="productData">This is the product name.</div>
+      <div className="productData">
         <Price />
-      </p>
-      <p className="productStarRating">
+      </div>
+      <div className="productStarRating">
         <StarRating />
-      </p>
-      <br></br>
+      </div>
     </span>
   );
 }

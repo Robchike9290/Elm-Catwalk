@@ -6,7 +6,7 @@ const ComparisonModal = (props) => {
     <div className="modal">
       <table>
         <div className="modalNotScrollable">
-          <caption className="modalTitle">Comparing</caption>
+          <caption className="modalTitle">Related Product vs. Currently Selected Product Comparison</caption>
           <thead className="modalHeading">
             <tr>
               <th className="modalColumn">Current Product Name</th>

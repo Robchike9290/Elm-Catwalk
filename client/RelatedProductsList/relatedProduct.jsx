@@ -1,5 +1,4 @@
-import React, { useState, useContext } from 'react';
-import { AppContext } from '../context.js';
+import React, { useState } from 'react';
 import ComparisonModal from './comparisonModal.jsx';
 import Price from './price.jsx';
 import StarButton from './starButton.jsx';
@@ -8,7 +7,6 @@ import '../src/relatedProductsListStyles.css';
 
 const RelatedProduct = (props) => {
 
-  const { currentStylePhoto } = useContext(AppContext);
   const [isModalShown, setIsModalShown] = useState(false);
 
   const hideModal = () => {
@@ -23,24 +21,25 @@ const RelatedProduct = (props) => {
     <span className="product">
       <div>
         {isModalShown ?
-        <ComparisonModal isModalShown={isModalShown} hideModal={hideModal} /> :
+        <div className="modalMat">
+          <ComparisonModal isModalShown={isModalShown} hideModal={hideModal} />
+        </div> :
         null}
       </div>
-      <p className="productAction">
+      <div className="productAction">
         <StarButton isModalShown={isModalShown} showModal={showModal}/>
-      </p>
-      <div>
-      <img className="productImage" src={currentStylePhoto} alt="This is the image for the product."></img>
       </div>
-      <p className="productData">Category: {props.category}</p>
-      <p className="productData ">Name: {props.name}</p>
-      <p className="productData">
+      <div>
+      <img className="productImage" src={props.image} alt="We're sorry, we don't have an image of this yet!"></img>
+      </div>
+      <div className="productData">Category: {props.category}</div>
+      <div className="productData ">Name: {props.name}</div>
+      <div className="productData">
         <Price price={props.price} salesPrice={props.salesPrice}/>
-      </p>
-      <p className="productStarRating">
+      </div>
+      <div className="productStarRating">
         <StarRating/>
-      </p>
-      <br></br>
+      </div>
     </span>
   )
 }
