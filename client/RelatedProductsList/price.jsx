@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-const Price = () => {
+const Price = (props) => {
+
+  const [isOnSale, setIsOnSale] = useState(false);
+
+  const putOnSale = () => {
+    if (props.salesPrice) {
+      setIsOnSale(true);
+    }
+  }
+
+  useEffect(() => {
+    putOnSale();
+  })
+
   return (
     <div>
-      <span className="regularPrice">This is the regular price.</span>
-      <span className="salesPrice">  This is the sales price.</span>
+      <span className="regularPrice">${props.price}</span>
+      <span>
+        {isOnSale ? <span className="salesPrice">${props.salesPrice}</span> : null}
+      </span>
     </div>
   )
 }

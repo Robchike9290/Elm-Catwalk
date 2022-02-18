@@ -2,14 +2,12 @@ import React, { useState } from 'react';
 import RelatedProduct from './relatedProduct.jsx';
 import '../src/relatedProductsListStyles.css';
 
-export const RelatedProductsCarouselItem = ({ children, width }) => {
-
+export const RelatedProductsCarouselItem = (props, { children, width }) => {
   return (
     <div className="carouselItem" style={{ width: width }}>
-      <RelatedProduct/>
+      <RelatedProduct category={props.category} name={props.name} price={props.price}/>
     </div>
   );
-
 };
 
 const RelatedProductsCarousel = ({ children }) => {
@@ -28,7 +26,7 @@ const RelatedProductsCarousel = ({ children }) => {
   return (
     <div className="carousel">
       <div className="inner" style={{ transform: `translateX(-${activeIndex * 23.65}%)` }}>
-        {React.Children.map(children, (child, index) => {
+        {React.Children.map(children, (child) => {
           return React.cloneElement(child, { width: "23.65%" });
         })}
       </div>
