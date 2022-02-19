@@ -14,9 +14,7 @@ const AppProvider = (props) => {
    const [styleList, setStyleList] = useState([]);
    const [currentStar, setCurrentStar] = useState('');
    const [user, setUser] = useState({});
-   const [relatedProductNumbers, setRelatedProductNumbers] = useState([]);
-   const [relatedProductsList, setRelatedProductsList] = useState([]);
-   const [relatedProductsImages, setRelatedProductsImages] = useState([]);
+   const [relatedProductsInfo, setRelatedProductsInfo] = useState([]);
 
    return (
       <AppContext.Provider value={{
@@ -29,9 +27,7 @@ const AppProvider = (props) => {
          currentStyleThumbnails, setCurrentStyleThumbnails,
          styleList, setStyleList,
          currentStar, setCurrentStar,
-         relatedProductNumbers, setRelatedProductNumbers,
-         relatedProductsList, setRelatedProductsList,
-         relatedProductsImages, setRelatedProductsImages
+         relatedProductsInfo, setRelatedProductsInfo,
          }}>
          {props.children}
       </AppContext.Provider>

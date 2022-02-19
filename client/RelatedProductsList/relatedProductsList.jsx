@@ -9,65 +9,71 @@ const RelatedProductsList = () => {
 
   const getRelatedProductNumbers = () => {
     axios.get(`/products/${context.currentProductId}/related`)
-    .then((receivedRelatedProductNumbers) => {
-      context.setRelatedProductNumbers(receivedRelatedProductNumbers.data);
+    .then((response) => {
+      const relatedProductNumbers = response.data;
+      console.log("These are the related product numbers:", relatedProductNumbers);
+
+      const relatedProductMajorityDataPromises = Promise.all(relatedProductNumbers.map(productNumber => {
+        return axios.get(`products/${productNumber}`);
+      }))
+
+      const relatedProductRemainingDataPromises = Promise.all(relatedProductNumbers.map(productNumber => {
+        return axios.get(`products/${productNumber}/styles`);
+      }))
+
+      // const relatedProductReviewsPromises = Promise.all(relatedProductNumbers.map(productNumber => {
+      //   return axios.get(`reviews/${productNumber}`);
+      // }))
+
+      relatedProductMajorityDataPromises.then(resolution => {
+        const productData = [];
+        resolution.forEach(product => {
+          let currentIndex = {};
+          currentIndex.category = product.data.category;
+          currentIndex.default_price = product.data.default_price;
+          currentIndex.name = product.data.name;
+          currentIndex.features = product.data.features;
+          productData.push(currentIndex);
+          console.log("this is the product data array after this iteration:", productData);
+        })
+
+        relatedProductRemainingDataPromises.then(resolution => {
+          for (let i = 0; i < resolution.length; i++) {
+            let productImage = resolution[i].data.results[0].photos[0].url;
+            let productSalesPrice = resolution[i].data.results[0].sale_price;
+            productData[i].image = productImage;
+            productData[i].sale_price = productSalesPrice;
+            console.log("this is the product data array augmented with new data:", productData);
+          }
+
+          context.setRelatedProductsInfo(productData);
+        })
+        .catch(err => {
+          console.error(err);
+        })
+      })
     })
     .catch((err) => {
       console.error(err);
     });
+
   };
-
-  const getRelatedProductList = () => {
-    context.relatedProductNumbers.forEach((productNumber) => {
-      axios.get(`products/${productNumber}`)
-      .then((product) => {
-        context.relatedProductsList.push(product.data);
-        context.setRelatedProductsList(context.relatedProductsList);;
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-    })
-  }
-
-  const getRelatedProductImages = () => {
-    for (let i = 0; i < context.relatedProductNumbers.length; i++) {
-      let productNumber = context.relatedProductNumbers[i];
-      axios.get(`products/${productNumber}/styles`)
-      .then((productStyle) => {
-        context.relatedProductsList[i].sale_price = productStyle.data.results[0].sale_price;
-        context.relatedProductsList[i].image = productStyle.data.results[0].photos[0].url;
-        context.setRelatedProductsList(context.relatedProductsList);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-    }
-  }
 
   useEffect(() => {
     getRelatedProductNumbers();
   }, [context.currentProductId]);
 
-  useEffect(() => {
-    getRelatedProductList();
-    getRelatedProductImages();
-  }, [context.relatedProductNumbers]);
-
-  // useEffect(() => {
-  // }, [context.relatedProductNumbers]);
-
   return (
     <div className="productInnerMat">
       <RelatedProductsCarousel>
-        {context.relatedProductsList.map((product, index) => (
+        {context.relatedProductsInfo.map((product, index) => (
           // still need to get star rating (from Cheryl)
           <RelatedProductsCarouselItem
           category={product.category}
           image={product.image}
           key={index}
-          name={product.name} // async?
-          price={product.default_price}  // async?
+          name={product.name}
+          price={product.default_price}
           salesPrice={product.sale_price}
           >
           </RelatedProductsCarouselItem>
