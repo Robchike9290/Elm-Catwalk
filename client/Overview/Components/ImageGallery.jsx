@@ -1,39 +1,63 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { AppContext } from '../../context.js';
-
+import Carousel, { CarouselItem } from "../richardCarousel.jsx";
+import VerticalCarousel, { VerticalCarouselItem } from "../richardVerticalCarousel.jsx";
 import MainImageThumbnail from './SubComponents/MainImageThumbnail.jsx';
 
 
 
 const ImageGallery = () => {
-  const { currentStyle, currentStylePhoto, setCurrentStylePhoto, currentStyleThumbnails } = useContext(AppContext);
+  const { currentStyle, currentStylePhoto, setCurrentStylePhoto, currentStyleThumbnails, setActiveIndex } = useContext(AppContext);
+
+  const handleClick = () => {
+    console.log('hello');
+
+  }
 
 
 
-    return (
-      <div className="ImageGallery" >
-        <div >
+  return (
+    <div className="ImageGallery" >
+      <div className="carousel-holder" >
 
-        <img  src={currentStylePhoto} height="515" width="470" id="mainImage" alt='frick'/>
-        </div>
-      <div >
-      <ul id="mainImageThumbs">
+        <Carousel>
+          {currentStyle.photos?.map((image, key) => (
+            <CarouselItem key={key}>{image.url}</CarouselItem>
+          ))}
+
+        </Carousel>
+        <VerticalCarousel>
+          {currentStyleThumbnails?.map((style, key) => (
+            <div key={key} onClick={() => setActiveIndex(key)}>
+            <VerticalCarouselItem >{style.thumbnail_url}</VerticalCarouselItem>
+            </div>
+          ))}
+
+        </VerticalCarousel>
+
+
+        {/* <img  src={currentStylePhoto} height="515" width="470" id="mainImage" alt='frick'/> */}
+      </div>
+
+      {/* <ul id="mainImageThumbs">
         {currentStyleThumbnails.map((style, key) => {
           return <MainImageThumbnail style={style} key={key}/>
 
         })}
 
-        </ul>
-
-      </div>
+        </ul> */}
 
 
 
-      </div>
-    )
+
+
+    </div>
+  )
 
 
 }
+
+
 
 
 export default ImageGallery;

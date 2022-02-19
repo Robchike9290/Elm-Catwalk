@@ -19,7 +19,7 @@ import { AppContext } from "./context.js";
 const AppProvider = (props) => {
    // const [currentProduct, setCurrentProduct] = useState(null);
    const [test, testUpdater] = useState(5);
-   const [currentProductId, setCurrentProductId] = useState(37311);
+   const [currentProductId, setCurrentProductId] = useState();
    const [currentProduct, setCurrentProduct] = useState({});
    const [productList, setProductList] = useState([]);
    const [currentStyle, setCurrentStyle] = useState({});
@@ -28,6 +28,7 @@ const AppProvider = (props) => {
    const [styleList, setStyleList] = useState([]);
    const [currentStar, setCurrentStar] = useState('');
    const [user, setUser] = useState({});
+   const [activeIndex, setActiveIndex] = useState(0);
 
 
 
@@ -44,7 +45,8 @@ const AppProvider = (props) => {
          currentStylePhoto, setCurrentStylePhoto,
          currentStyleThumbnails, setCurrentStyleThumbnails,
          styleList, setStyleList,
-         currentStar, setCurrentStar
+         currentStar, setCurrentStar,
+         activeIndex, setActiveIndex
          }}>
          {props.children}
       </AppContext.Provider>
