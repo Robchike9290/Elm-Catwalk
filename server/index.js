@@ -43,10 +43,10 @@ app.get("/products/:product_id", (req,res) => {
 })
 
 app.get("/products/:product_id/styles", (req,res) => {
-   //console.log(req.params);
+   //console.log("Product ID", req.params.product_id);
    axios.get(`${baseURL}${req.params.product_id}/styles`, {headers: {Authorization: TOKEN}})
       .then((receivedStylesList) => {
-         // console.log(data.data);
+         //console.log("Data for productID", receivedStylesList.data);
          res.status(200).send(receivedStylesList.data)
       })
       .catch ((err) => {

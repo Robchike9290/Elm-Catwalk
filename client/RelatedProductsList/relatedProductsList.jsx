@@ -7,59 +7,37 @@ import axios from 'axios';
 const RelatedProductsList = () => {
   const context = useContext(AppContext);
 
-  const getRelatedProductData = () => {
+  const getRelatedProductNumbers = () => {
     axios.get(`/products/${context.currentProductId}/related`)
     .then((receivedRelatedProductNumbers) => {
       context.setRelatedProductNumbers(receivedRelatedProductNumbers.data);
-      return receivedRelatedProductNumbers.data;
     })
-    .then((receivedRelatedProductNumbers) => {
-      const relatedProductsForContext = [];
-      receivedRelatedProductNumbers.forEach((receivedProductNumber) => {
-        axios.get(`/products/${receivedProductNumber}`)
-        .then((receivedProductNumber) => {
-          relatedProductsForContext.push(receivedProductNumber.data);
-        })
-        .catch((err) => {
-          console.error(err);
-        })
-      })
-      return relatedProductsForContext;
-    })
-    .then((relatedProductListForContext) => {
-      context.setRelatedProductsList(relatedProductListForContext);
-      return relatedProductListForContext;
-    })
-    .then((relatedProductListForAdditionalRequest) => {
-      getRelatedProductImages(relatedProductListForAdditionalRequest);
-      return relatedProductListForAdditionalRequest;
-    })
-    // .then((receivedRelatedProductImages) => {
-    //   context.setRelatedProductImages(receivedRelatedProductImages);
-    //   return receivedRelatedProductImages;
-    // })
     .catch((err) => {
       console.error(err);
     });
   };
 
-  const getRelatedProductImages = (relatedProductListForAdditionalRequest) => {
-    console.log("Inside function for related products list!");
-    // create an array to store the images for each of the related products
-    const receivedRelatedProductImages = [];
-    // perform a GET request for each of the products
-    // for (let i = 0; i < relatedProductListForAdditionalRequest.length; i++) {
-    //   axios.get(`products/${relatedProductListForAdditionalRequest[i].id}/styles`)
-    //   .then((receivedRelatedProductStyle) => {
-    //     receivedRelatedProductImages.push(receivedRelatedProductStyle);
-    //   })
-    // }
-    return relatedProductListForAdditionalRequest;
+  const getRelatedProductStyles = () => {
+    context.relatedProductNumbers.forEach((productNumber) => {
+      axios.get(`products/${productNumber}/styles`)
+      .then((productStyle) => {
+        console.log('client side got a response, here is the data:', productStyle.data.results, "END OF DATA");
+        context.relatedProductsStyles.push(productStyle.data.results);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+    })
   }
 
   useEffect(() => {
-    getRelatedProductData();
+    getRelatedProductNumbers();
   }, [])
+
+  useEffect(() => {
+    console.log("the related products in the context have changed!");
+    getRelatedProductStyles();
+  }, [context.relatedProductNumbers]);
 
   return (
     <div className="productInnerMat">
