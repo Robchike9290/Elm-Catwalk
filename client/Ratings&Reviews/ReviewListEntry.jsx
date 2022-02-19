@@ -5,7 +5,7 @@ import ReviewListPhotos from './ReviewListPhotos.jsx'
 import RatingIcon from './RatingIcon.jsx'
 
 const ReviewListEntry = ((props) => {
-  console.log('REVIEWLISTENTRY', props)
+  // console.log('REVIEWLISTENTRY', props)
 
   // console.log('time', moment(props.product.date).format('LL'))
   let date = moment(props.product.date).format('LL')
@@ -17,8 +17,8 @@ const ReviewListEntry = ((props) => {
   // console.log('PHOTOS', props.product.photos)
   // console.log('PHOTOS---url', props.product.photos)
   // const photoURL = props.product.photos.map((url, i) => {
-
   // })
+
   return (
     <div>
       <div className='listitem1'>
@@ -32,7 +32,7 @@ const ReviewListEntry = ((props) => {
         </div>
         <div>{props.product.reviewer_name}, {date}</div>
       </div>
-      <p className='summary'>{summary}</p>
+        <p className='summary'>{summary}</p>
       <div>
         <ReviewListEntryBody body={props.product.body}/>
         <div>
@@ -40,8 +40,15 @@ const ReviewListEntry = ((props) => {
         </div>
       </div>
       <p>{props.product.recommend && '✓ I recommend this product'}</p>
-      <p>{props.product.response && `Response from seller ${props.product.response}`}</p>
-      <p>Was this review helpful? Yes({props.product.helpfulness}) | Report</p>
+      <div className='seller-response'>{props.product.response && `Response from seller ${props.product.response}`}</div>
+      <div className='Ind-helpfulness'>
+        <p>Was this review helpful?</p>
+        <p onClick={(e)=>props.updateHelpfulness(e, props.product.review_id)}>Yes</p>
+        <p>({props.product.helpfulness})</p>
+        <p> | </p>
+        <p onClick={(e)=>props.updateReport(e, props.product.review_id)}>Report</p>
+      </div>
+
       <hr/>
     </div>
   )

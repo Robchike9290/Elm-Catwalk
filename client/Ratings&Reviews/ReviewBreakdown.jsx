@@ -17,7 +17,6 @@ const ReviewBreakdown = ((props) => {
     <div className='breakdown'>
       <div className='average'>
         <div className='numavg'>{rating}</div>
-
         <div className="star-rating">
           {[...Array(5)].map((item, index) => {
             index += 1
@@ -26,9 +25,7 @@ const ReviewBreakdown = ((props) => {
             )
           })}
         </div>
-
       </div>
-
       <p>{props.total.totalEntries} ratings</p>
       <p> {avgRecommended}% of reviews recommend this product</p>
       <BreakdownBar ratings={meta.ratings} totalEntries={props.total.totalEntries} starpoint={props.starpoint}/>
@@ -38,7 +35,6 @@ const ReviewBreakdown = ((props) => {
       <div>
         <p>Comfort Bar Graph Placeholder</p>
       </div>
-
     </div>
   )
 })

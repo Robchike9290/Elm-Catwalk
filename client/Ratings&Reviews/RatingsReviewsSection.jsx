@@ -62,6 +62,19 @@ const RatingsReviewsSection = (props) => {
     // console.log('FILTERED PRODUCT     ', filteredProduct)
   },[selectedratings, product])
   // console.log('TOTAL---->', starpoint)
+  const updateHelpfulness = ((e, review_id) => {
+    axios.put(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${review_id}/helpful`, {headers: {'Authorization': Token.TOKEN}})
+    .then((data) => {
+      setProduct(data.data)
+    })
+  })
+
+  const updateReport = ((e, review_id) => {
+    axios.put(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${review_id}/report`, {headers: {'Authorization': Token.TOKEN}})
+    .then((data) => {
+      setProduct(data.data)
+    })
+  })
   return (
     // console.log('PRODUCT', product);
     <div>
@@ -69,7 +82,7 @@ const RatingsReviewsSection = (props) => {
       <ModalAddReview addreview={addreview} setAddReview={setAddReview}/>
       <div className='container'>
        <ReviewBreakdown total={total} setTotal={setTotal} starpoint={starpoint}/>
-       <ReviewList sort={sort} setSort={setSort} addreview={addreview} setAddReview={setAddReview}/>
+       <ReviewList sort={sort} setSort={setSort} addreview={addreview} setAddReview={setAddReview} updateHelpfulness={updateHelpfulness} updateReport={updateReport}/>
       </div>
     </div>
   )

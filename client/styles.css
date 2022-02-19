@@ -176,6 +176,15 @@
   display: flex;
 }
 
+.seller-response {
+  background: skyblue;
+}
+
+.Ind-helpfulness {
+  display: flex;
+  gap: 5px;
+}
+
 
 /* Overview Starts Here */
 .Overview {
