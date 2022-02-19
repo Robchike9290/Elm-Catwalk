@@ -15,14 +15,14 @@ const Overview = () => {
   const context = useContext(AppContext);
 
 
-  //console.log(context);
+  // console.log(context);
 
 
   useEffect(() => {
     // drop log to see how often this happens
     axios.get('/products')
       .then((receivedProductList) => {
-        //console.log('inside axios get from productId');
+        // console.log('inside axios get from productId');
         axios.get(`products/${receivedProductList.data[0].id}/styles`)
           .then((receivedStyles) => {
 
@@ -50,7 +50,7 @@ const Overview = () => {
 
     axios.get(`products/${currentProduct}/styles`)
       .then((receivedStyles) => {
-        //console.log('inside getproducts request');
+        // console.log('inside getproducts request');
         context.setStyleList(receivedStyles.data);
         context.setCurrentStyle(receivedStyles.data.results[0]);
         context.setCurrentStylePhoto(receivedStyles.data.results[0].photos[0].url);
