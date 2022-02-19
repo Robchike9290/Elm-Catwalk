@@ -7,6 +7,8 @@ import '../src/relatedProductsListStyles.css';
 
 const RelatedProduct = (props) => {
 
+  console.log(props);
+
   const [isModalShown, setIsModalShown] = useState(false);
 
   const hideModal = () => {

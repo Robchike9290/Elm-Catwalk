@@ -5,7 +5,7 @@ import '../src/relatedProductsListStyles.css';
 export const RelatedProductsCarouselItem = (props, { children, width }) => {
   return (
     <div className="carouselItem" style={{ width: width }}>
-      <RelatedProduct category={props.category} name={props.name} price={props.price}/>
+      <RelatedProduct category={props.category} name={props.name} price={props.price} salesPrice={props.sale_price} image={props.image}/>
     </div>
   );
 };

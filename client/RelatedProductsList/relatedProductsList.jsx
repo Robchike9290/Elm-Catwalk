@@ -17,12 +17,12 @@ const RelatedProductsList = () => {
     });
   };
 
-  const getRelatedProductStyles = () => {
+  const getRelatedProductList = () => {
     context.relatedProductNumbers.forEach((productNumber) => {
-      axios.get(`products/${productNumber}/styles`)
-      .then((productStyle) => {
-        console.log('client side got a response, here is the data:', productStyle.data.results, "END OF DATA");
-        context.relatedProductsStyles.push(productStyle.data.results);
+      axios.get(`products/${productNumber}`)
+      .then((product) => {
+        context.relatedProductsList.push(product.data);
+        context.setRelatedProductsList(context.relatedProductsList);;
       })
       .catch((err) => {
         console.error(err);
@@ -30,29 +30,45 @@ const RelatedProductsList = () => {
     })
   }
 
-  useEffect(() => {
-    getRelatedProductNumbers();
-  }, [])
+  const getRelatedProductImages = () => {
+    for (let i = 0; i < context.relatedProductNumbers.length; i++) {
+      let productNumber = context.relatedProductNumbers[i];
+      axios.get(`products/${productNumber}/styles`)
+      .then((productStyle) => {
+        context.relatedProductsList[i].sale_price = productStyle.data.results[0].sale_price;
+        context.relatedProductsList[i].image = productStyle.data.results[0].photos[0].url;
+        context.setRelatedProductsList(context.relatedProductsList);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+    }
+  }
 
   useEffect(() => {
-    console.log("the related products in the context have changed!");
-    getRelatedProductStyles();
+    getRelatedProductNumbers();
+  }, [context.currentProductId]);
+
+  useEffect(() => {
+    getRelatedProductList();
+    getRelatedProductImages();
   }, [context.relatedProductNumbers]);
+
+  // useEffect(() => {
+  // }, [context.relatedProductNumbers]);
 
   return (
     <div className="productInnerMat">
       <RelatedProductsCarousel>
         {context.relatedProductsList.map((product, index) => (
-          // still need to get...
-            // product image
-            // sales price
-            // star rating (from Cheryl)
+          // still need to get star rating (from Cheryl)
           <RelatedProductsCarouselItem
           category={product.category}
+          image={product.image}
           key={index}
-          name={product.name}
-          price={product.default_price}
-          salesPrice={product.sales_price}
+          name={product.name} // async?
+          price={product.default_price}  // async?
+          salesPrice={product.sale_price}
           >
           </RelatedProductsCarouselItem>
         ))}
