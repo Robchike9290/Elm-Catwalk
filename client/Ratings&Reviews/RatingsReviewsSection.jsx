@@ -9,12 +9,9 @@ import {AppContext } from '../context.js';
 // console.log(Token, '<--token')
 
 const RatingsReviewsSection = (props) => {
-  const {currentProductId, meta, setMeta, product, setProduct} = useContext(AppContext)
+  const {currentProductId, meta, setMeta, product, setProduct, selectedratings, setSelectedRatings, productresults, setProductResults} = useContext(AppContext)
   // console.log('CURRENTID', currentProductId)
   const {id} = props;
-  // console.log(props)
-  // const[product, setProduct] = useState({});
-  // const[meta, setMeta] = useState ([]);
   const[sort, setSort] = useState('relevant');
   const [addreview, setAddReview] = useState(false)
   const [total, setTotal] = useState({totalEntries: 100, totalPoints: 1})
@@ -23,8 +20,8 @@ const RatingsReviewsSection = (props) => {
   useEffect(() => {
     axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews?product_id=${currentProductId}&count=${total.totalEntries}&sort=${sort}&page=1`, {headers: {'Authorization': Token.TOKEN}})
     .then((data)=>{
-      console.log("fromratingsreviews", data.data)
-      console.log("RESULTS", data.data.results.helpfulness)
+      // console.log("fromratingsreviews", data.data)
+      // console.log("RESULTS", data.data.results.helpfulness)
       setProduct(data.data)
     })
   },[currentProductId, sort, total.totalEntries]);
@@ -45,6 +42,25 @@ const RatingsReviewsSection = (props) => {
       setStarPoint(average)
     })
   },[currentProductId]);
+
+  // console.log('PRODUCT--->FILTER', product)
+  useEffect(() => {
+    // console.log('PRODUCT HERE', product)
+    if (!selectedratings.length && product.results) {
+      return setProductResults(product.results)
+    }
+    // console.log('PRODUCT--->FILTER', product)
+    const filteredProduct = product?.results?.filter((item, i) => {
+      // console.log('PRODUCT--->ITEM', item)
+      return selectedratings.some((element)=> {
+        return element === item.rating
+      })
+      // console.log('TYPEOF SELECTED RATINGS', selectedratings.some)
+    })
+    const results = filteredProduct || []
+    setProductResults(results)
+    // console.log('FILTERED PRODUCT     ', filteredProduct)
+  },[selectedratings, product])
   // console.log('TOTAL---->', starpoint)
   return (
     // console.log('PRODUCT', product);
@@ -52,7 +68,6 @@ const RatingsReviewsSection = (props) => {
       <h3>Ratings & Reviews</h3>
       <ModalAddReview addreview={addreview} setAddReview={setAddReview}/>
       <div className='container'>
-       {/* <ReviewBreakdown meta={meta} total={total} setTotal={setTotal} starpoint={starpoint}/> */}
        <ReviewBreakdown total={total} setTotal={setTotal} starpoint={starpoint}/>
        <ReviewList sort={sort} setSort={setSort} addreview={addreview} setAddReview={setAddReview}/>
       </div>

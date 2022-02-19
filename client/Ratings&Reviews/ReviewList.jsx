@@ -5,11 +5,11 @@ import ModalAddReview from './ModalAddReview.jsx'
 import {AppContext } from '../context.js';
 
 const ReviewList = ((props) => {
-  const {product} = useContext(AppContext)
+  const {product, productresults} = useContext(AppContext)
   // console.log('REVIEWSLIST', props)
   const [index, setIndex] = useState(2)
-  // !  const results = props.product.results && props.product.results.length ? props.product.results : [];
   const results = product.results && product.results.length ? product.results : [];
+  // console.log('PRODUCT RESULTS FROM REVIEW LIST', productresults)
   // console.log('RESULTS FROM REVIEW LIST', results)
   // console.log('.......RESULTS FROM REVIEW LIST', results.length)
   return (
@@ -19,7 +19,7 @@ const ReviewList = ((props) => {
       <SortDropDown sort={props.sort} setSort={props.setSort}/>
       </div>
       <div className='reviewlist'>
-      {results.slice(0, index).map((product, i) => {
+      {productresults.slice(0, index).map((product, i) => {
         return <ReviewListEntry product={product} key={i}/>
       })}
       </div>

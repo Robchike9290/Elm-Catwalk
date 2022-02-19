@@ -2,8 +2,10 @@ import React from 'react';
 import moment from 'moment';
 import ReviewListEntryBody from './ReviewListEntryBody.jsx'
 import ReviewListPhotos from './ReviewListPhotos.jsx'
+import RatingIcon from './RatingIcon.jsx'
 
 const ReviewListEntry = ((props) => {
+  console.log('REVIEWLISTENTRY', props)
 
   // console.log('time', moment(props.product.date).format('LL'))
   let date = moment(props.product.date).format('LL')
@@ -20,28 +22,23 @@ const ReviewListEntry = ((props) => {
   return (
     <div>
       <div className='listitem1'>
-
-      <div className="star-rating">
-      {[...Array(5)].map((star, i) => {
-        return (
-          <span className="star" key={i}>&#9734;</span>
-          // <span className="star" key={i}>&#11242;</span>
-        );
-      })}
-      </div>
-        {/* <p>STAR RATING-BO</p> */}
-
+        <div className="star-rating">
+          {[...Array(5)].map((item, index) => {
+            index += 1
+            return (
+              <RatingIcon rating={props.product.rating} index={index}/>
+            )
+          })}
+        </div>
         <div>{props.product.reviewer_name}, {date}</div>
       </div>
       <p className='summary'>{summary}</p>
       <div>
-        {/* <p>{props.product.body}</p> */}
         <ReviewListEntryBody body={props.product.body}/>
         <div>
           <ReviewListPhotos photos={props.product.photos}/>
         </div>
       </div>
-      {/* <p>{props.product.recommend ? '✓ I recommend this product' : null}</p> */}
       <p>{props.product.recommend && '✓ I recommend this product'}</p>
       <p>{props.product.response && `Response from seller ${props.product.response}`}</p>
       <p>Was this review helpful? Yes({props.product.helpfulness}) | Report</p>
