@@ -3,15 +3,16 @@ import { AppContext } from '../context.js';
 import RelatedProductsCarousel, { RelatedProductsCarouselItem } from './relatedProductsCarousel.jsx';
 import '../src/relatedProductsListStyles.css';
 import axios from 'axios';
+// const config = require('../../config.js');
 
 const RelatedProductsList = () => {
   const context = useContext(AppContext);
+  // console.log(config.TOKEN);
 
   const getRelatedProductNumbers = () => {
     axios.get(`/products/${context.currentProductId}/related`)
     .then((response) => {
       const relatedProductNumbers = response.data;
-      console.log("These are the related product numbers:", relatedProductNumbers);
 
       const relatedProductMajorityDataPromises = Promise.all(relatedProductNumbers.map(productNumber => {
         return axios.get(`products/${productNumber}`);
@@ -22,8 +23,11 @@ const RelatedProductsList = () => {
       }))
 
       // const relatedProductReviewsPromises = Promise.all(relatedProductNumbers.map(productNumber => {
-      //   return axios.get(`reviews/${productNumber}`);
-      // }))
+      //   console.log("trying reviews API!");
+      //   return axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/meta/37311`, {
+      //     authorization: config.TOKEN
+      //   });
+      // }));
 
       relatedProductMajorityDataPromises.then(resolution => {
         const productData = [];
@@ -34,18 +38,14 @@ const RelatedProductsList = () => {
           currentIndex.name = product.data.name;
           currentIndex.features = product.data.features;
           productData.push(currentIndex);
-          console.log("this is the product data array after this iteration:", productData);
         })
-
         relatedProductRemainingDataPromises.then(resolution => {
           for (let i = 0; i < resolution.length; i++) {
             let productImage = resolution[i].data.results[0].photos[0].url;
             let productSalesPrice = resolution[i].data.results[0].sale_price;
             productData[i].image = productImage;
             productData[i].sale_price = productSalesPrice;
-            console.log("this is the product data array augmented with new data:", productData);
           }
-
           context.setRelatedProductsInfo(productData);
         })
         .catch(err => {
@@ -70,6 +70,7 @@ const RelatedProductsList = () => {
           // still need to get star rating (from Cheryl)
           <RelatedProductsCarouselItem
           category={product.category}
+          features={product.features}
           image={product.image}
           key={index}
           name={product.name}
