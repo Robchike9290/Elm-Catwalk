@@ -1,43 +1,49 @@
-import React, { useEffect, useState } from "react";
-import axios from 'axios'
+import React, { useEffect, useState, useContext } from "react";
+import axios from "axios";
 import Token from "/Users/alexmnahas/Elm-Catwalk/client/QA/config.js";
+import { qListContext } from "/Users/alexmnahas/Elm-Catwalk/client/QA/createContextQlist.js";
+import { productIdContext } from "/Users/alexmnahas/Elm-Catwalk/client/QA/createContext.js";
 
-const AnswerPopUp = ({  changeApopUp, id }) => {
-  console.log(changeApopUp)
+const AnswerPopUp = ({ changeApopUp, id }) => {
+  const UpdateQlist = useContext(qListContext);
+  const productID = useContext(productIdContext);
+  console.log(changeApopUp);
   const togglePopUp = () => {
     changeApopUp(false);
   };
-  const submitQuestion = () =>{
-    const email = document.getElementById('UserEmail').value
-    const nickName = document.getElementById('UserNickname').value
-    const question = document.getElementById('UserQuestion').value
-    if(!question){
-      alert('Question Field cannot be blank');
-      return
-    }else if (!nickName){
-      alert('Nickname Field cannot be blank');
-      return
-    }else if(!email || !email.includes("@")){
-      alert('enter a valild email');
-    }else{
+  const submitQuestion = () => {
+    const email = document.getElementById("UserEmail").value;
+    const nickName = document.getElementById("UserNickname").value;
+    const answer = document.getElementById("UserQuestion").value;
+    if (!answer) {
+      alert("Answer Field cannot be blank");
+      return;
+    } else if (!nickName) {
+      alert("Nickname Field cannot be blank");
+      return;
+    } else if (!email || !email.includes("@")) {
+      alert("enter a valild email");
+    } else {
       async function postQuestion() {
         const serverResponse = await axios({
           method: "post",
-          url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions/${id}/answers`,
+          url: `answers`,
           data: {
-            "body": question,
-            "name": nickName,
-            "email": email,
-            "photos": []
+            body: answer,
+            name: nickName,
+            email: email,
+            photos: [],
+            id: id,
           },
           headers: { Authorization: Token.TOKEN },
         });
-        console.log(serverResponse)
+        const newQlist = await axios.get(`/questions/${productID}`);
+        await UpdateQlist(newQlist.data.results);
         togglePopUp();
+      }
+      postQuestion();
     }
-    postQuestion();
-  }
-}
+  };
 
   return (
     <div>
@@ -66,7 +72,7 @@ const AnswerPopUp = ({  changeApopUp, id }) => {
           submitQuestion();
         }}
       >
-        SubmitQuestion
+        Submit Answer
       </button>
     </div>
   );

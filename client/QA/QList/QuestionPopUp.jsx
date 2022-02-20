@@ -3,12 +3,9 @@ import axios from 'axios'
 import Token from "../config.js";
 import {productIdContext} from '../createContext.js'
 
-const QuestionPopUp = ({ changeQpopUp }) => {
+const QuestionPopUp = ({ togglePopUp }) => {
   const productID = useContext(productIdContext)
-  console.log(changeQpopUp)
-  const togglePopUp = () => {
-    changeQpopUp(false);
-  };
+
   const submitQuestion = () =>{
     const email = document.getElementById('UserEmail').value
     const nickName = document.getElementById('UserNickname').value
@@ -25,7 +22,7 @@ const QuestionPopUp = ({ changeQpopUp }) => {
       async function postQuestion() {
         const serverResponse = await axios({
           method: "post",
-          url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions`,
+          url: "/questions",
           data: {
             "body": question,
             "name": nickName,
@@ -34,7 +31,6 @@ const QuestionPopUp = ({ changeQpopUp }) => {
           },
           headers: { Authorization: Token.TOKEN },
         });
-        console.log(serverResponse)
         togglePopUp();
     }
     postQuestion();
@@ -72,6 +68,7 @@ const QuestionPopUp = ({ changeQpopUp }) => {
       >
         SubmitQuestion
       </button>
+      <button onClick={togglePopUp}>exit</button>
     </div>
   );
 };
