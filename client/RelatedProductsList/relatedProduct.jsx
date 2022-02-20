@@ -70,7 +70,13 @@ const RelatedProduct = (props) => {
       <div>
         {isModalShown ?
         <div className="modalMat">
-          <ComparisonModal isModalShown={isModalShown} hideModal={hideModal} />
+          <ComparisonModal
+          comparedProductValues={comparedProductValues}
+          currentProductValues={currentProductValues}
+          hideModal={hideModal}
+          isModalShown={isModalShown}
+          modalProperties={modalProperties}
+          />
         </div> :
         null}
       </div>
