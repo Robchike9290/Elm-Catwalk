@@ -38,7 +38,7 @@ const RelatedProductsCarousel = ({ children }) => {
         })}
       </div>
       <div>
-        <span>
+        <span>{activeIndex > 0 ?
           <button className="carouselButtonLeft"
             onClick={() => {
               updateIndex(activeIndex - 1);
@@ -46,8 +46,11 @@ const RelatedProductsCarousel = ({ children }) => {
           >
             ◀️
           </button>
+          :
+          null
+          }
         </span>
-        <span>
+        <span> {activeIndex < React.Children.count(children) - 1 ?
           <button className="carouselButtonRight"
             onClick={() => {
               updateIndex(activeIndex + 1);
@@ -55,6 +58,9 @@ const RelatedProductsCarousel = ({ children }) => {
           >
             ▶️
           </button>
+          :
+          null
+        }
         </span>
       </div>
     </div>
