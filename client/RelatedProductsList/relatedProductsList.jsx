@@ -3,7 +3,7 @@ import { AppContext } from '../context.js';
 import RelatedProductsCarousel, { RelatedProductsCarouselItem } from './relatedProductsCarousel.jsx';
 import '../src/relatedProductsListStyles.css';
 import axios from 'axios';
-// const config = require('../../config.js');
+const config = require('../../config.js');
 
 const RelatedProductsList = () => {
   const context = useContext(AppContext);
@@ -22,12 +22,13 @@ const RelatedProductsList = () => {
         return axios.get(`products/${productNumber}/styles`);
       }))
 
-      // const relatedProductReviewsPromises = Promise.all(relatedProductNumbers.map(productNumber => {
-      //   console.log("trying reviews API!");
-      //   return axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/meta/37311`, {
-      //     authorization: config.TOKEN
-      //   });
-      // }));
+      const relatedProductReviewsPromises = Promise.all(relatedProductNumbers.map(productNumber => {
+        return axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/meta/?product_id=${productNumber}`, {
+          headers: {
+            authorization: config.TOKEN
+          }
+        });
+      }));
 
       relatedProductMajorityDataPromises.then(resolution => {
         const productData = [];
@@ -38,6 +39,12 @@ const RelatedProductsList = () => {
           currentIndex.name = product.data.name;
           currentIndex.features = product.data.features;
           productData.push(currentIndex);
+        })
+        relatedProductReviewsPromises.then(resolution => {
+          for (let i = 0; i < resolution.length; i++) {
+            let productRatings = resolution[i].data.ratings;
+            productData[i].ratings = productRatings;
+          }
         })
         relatedProductRemainingDataPromises.then(resolution => {
           for (let i = 0; i < resolution.length; i++) {
