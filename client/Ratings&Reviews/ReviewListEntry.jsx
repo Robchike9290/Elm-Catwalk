@@ -22,14 +22,14 @@ const ReviewListEntry = ((props) => {
   return (
     <div>
       <div className='listitem1'>
-        {/* <div className="star-rating">
+        <div className="star-rating">
           {[...Array(5)].map((item, index) => {
             index += 1
             return (
               <RatingIcon rating={props.product.rating} index={index}/>
             )
           })}
-        </div> */}
+        </div>
         <div>{props.product.reviewer_name}, {date}</div>
       </div>
         <p className='summary'>{summary}</p>

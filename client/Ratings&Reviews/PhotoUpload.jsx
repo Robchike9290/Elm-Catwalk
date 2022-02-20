@@ -22,14 +22,16 @@ class PhotoUpload extends Component {
   }
   uploadFiles(e) {
       e.preventDefault()
-      console.log(this.state.file)
+      console.log('UPLOAD FILES', this.state.file)
   }
   render() {
+      console.log('FROM PHOTO', this.state.file)
+      console.log('FILE ARRAY', this.fileArray)
       return (
           <form>
               <div className="form-group multi-preview">
-                  {(this.fileArray || []).map(url => (
-                      <img src={url} alt="..." />
+                  {(this.fileArray || []).map((url, i) => (
+                      <img key={i} src={url} alt="..." />
                   ))}
               </div>
               <div className="form-group">

@@ -5,7 +5,7 @@ import Gauge from './Gauge.jsx'
 import {AppContext } from '../context.js';
 
 const ReviewBreakdown = ((props) => {
-  const {meta} = useContext(AppContext)
+  const {meta, currentStar, setCurrentStar} = useContext(AppContext)
   const ratings = meta.ratings ? meta.ratings : {};
   const recommended = meta.recommended ? meta.recommended : {};
   // const [rating, setRating] = useState(0)
@@ -13,6 +13,10 @@ const ReviewBreakdown = ((props) => {
   const rating = parseFloat((props.total.totalPoints / props.total.totalEntries).toFixed(1))
 
   const avgRecommended = parseFloat(((recommended.true / props.total.totalEntries) * 100).toFixed(2))
+
+  setCurrentStar(rating)
+
+  // console.log('CURRENT----STAR', currentStar)
 
   return (
     <div className='breakdown'>

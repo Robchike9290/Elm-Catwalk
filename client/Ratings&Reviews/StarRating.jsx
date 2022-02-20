@@ -5,19 +5,18 @@ const StarRating = ((props)=> {
   console.log('FILL FROM STAR RATING', fill)
   return(
   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill={fill} viewBox="0 0 24 24" stroke="currentColor">
-  {/* // <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill='url(#grad25)' viewBox="0 0 24 24" stroke="currentColor"> */}
     <defs>
-    <linearGradient id="grad25" x1="1" x2="0" y1="1" y2="100%">
-        <stop offset="25%" stop-color="black"/>
-        <stop offset="75%" stop-color="white"/>
+    <linearGradient id="grad25" x1="0" x2="1" y1="1" y2="100%">
+        <stop offset="30%" stop-color="black"/>
+        <stop offset="70%" stop-color="white"/>
     </linearGradient>
-    <linearGradient id="grad50" x1="1" x2="0" y1="1" y2="100%">
-        <stop offset="50%" stop-color="black" stop-opacity='2' />
-        <stop offset="50%" stop-color="white"/>
+    <linearGradient id="grad50" x1="0" x2="1" y1="1" y2="100%">
+        <stop offset="55%" stop-color="black" stop-opacity='2' />
+        <stop offset="45%" stop-color="white"/>
     </linearGradient>
-    <linearGradient id="grad75" x1="1" x2="0" y1="1" y2="100%">
-        <stop offset="75%" stop-color="black"/>
-        <stop offset="25%" stop-color="white"/>
+    <linearGradient id="grad75" x1="0" x2="1" y1="1" y2="100%">
+        <stop offset="73%" stop-color="black"/>
+        <stop offset="27%" stop-color="white"/>
     </linearGradient>
     <linearGradient id="grad100" x1="0" x2="0" y1="0" y2="100%">
         <stop offset="100%" stop-color="black"/>

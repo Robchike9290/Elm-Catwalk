@@ -18,18 +18,28 @@ const RatingIcons=((props) => {
     } else {
       const wholeNum = Math.floor(props.rating)
       const decimalNum = props.rating - Math.floor(props.rating)
-      if (wholeNum === props.index) {
-        let nextIndex = props.index + 1
-        if (decimalNum < .25 && decimalNum > .0) {
-          console.log ('in memo', (decimalNum < .25 && decimalNum > .0), 'index', props.index, 'next', nextIndex)
-          return 'grad25'
+      if (wholeNum >= props.index) {
+        return 'grad100'
+      }
+      if ((props.index - props.rating) > 1) {
+        return 'none'
+      }
+      if (wholeNum < props.index && decimalNum > 0) {
+        // if ((decimalNum >= .25) && (decimalNum < .5)) {
+        //   return 'url(#grad25)'
+        // }
+        if (decimalNum < .5) {
+          return 'url(#grad25)'
         }
-        if (wholeNum >= props.index) {
-          return 'grad100'
+        if ((decimalNum >= .5) && (decimalNum < .75)) {
+          console.log ('in memo', (decimalNum < .25 && decimalNum > .0), 'index', props.index,)
+          return 'url(#grad50)'
+        }
+        if ((decimalNum >= .75) && (decimalNum <= .9)) {
+          console.log ('in memo', (decimalNum < .25 && decimalNum > .0), 'index', props.index,)
+          return 'url(#grad75)'
         }
       }
-
-
     }
     return 'none'
   }, [props.rating, props.index]);

@@ -6,6 +6,7 @@ import ReviewList from './ReviewList.jsx'
 import '../styles.css';
 import ModalAddReview from './ModalAddReview.jsx'
 import {AppContext } from '../context.js';
+// import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 console.log(Token, '<--token', Token.TOKEN)
 
 const RatingsReviewsSection = (props) => {
