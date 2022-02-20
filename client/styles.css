@@ -51,6 +51,31 @@
   transition: width .2s ease-in;
 }
 
+.range-slider {
+  position: inherit;
+  height: 10px;
+  width: 250px;
+  /* background: rgb(244, 242, 242); */
+}
+
+
+.slider {
+  width: inherit;
+
+}
+
+.gauge {
+  margin-bottom: auto;
+  font-size: small;
+}
+
+.gauge-range {
+  display: flex;
+  font-size: small;
+  width: 250px;
+  justify-content: space-between;
+}
+
 .ratings {
   display: flex;
   align-content: center;

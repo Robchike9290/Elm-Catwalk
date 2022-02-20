@@ -7,7 +7,7 @@ import '../styles.css';
 import ModalAddReview from './ModalAddReview.jsx'
 import {AppContext } from '../context.js';
 // import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-console.log(Token, '<--token', Token.TOKEN)
+// console.log(Token, '<--token', Token.TOKEN)
 
 const RatingsReviewsSection = (props) => {
   const {currentProductId, meta, setMeta, product, setProduct, selectedratings, setSelectedRatings, productresults, setProductResults} = useContext(AppContext)
@@ -63,23 +63,24 @@ const RatingsReviewsSection = (props) => {
     // console.log('FILTERED PRODUCT     ', filteredProduct)
   },[selectedratings, product])
   // console.log('TOTAL---->', starpoint)
-  const updateHelpfulness = ((e, review_id) => {
-    axios.put(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${review_id}/helpful`, {headers: {'Authorization': Token.TOKEN}})
-    .then((data) => {
-      console.log('updateHelpfulness data', data)
-      setProduct(data.data)
-    })
-    .catch((err) => {
-      console.log('updateHelpfulness error', err)
-    })
-  })
 
-  const updateReport = ((e, review_id) => {
-    axios.put(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${review_id}/report`, {headers: {'Authorization': Token.TOKEN}})
-    .then((data) => {
-      setProduct(data.data)
-    })
-  })
+  // const updateHelpfulness = ((e, review_id) => {
+  //   axios.put(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${review_id}/helpful`, {headers: {'Authorization': Token.TOKEN}})
+  //   .then((data) => {
+  //     console.log('updateHelpfulness data', data)
+  //     setProduct(data.data)
+  //   })
+  //   .catch((err) => {
+  //     console.log('updateHelpfulness error', err)
+  //   })
+  // })
+
+  // const updateReport = ((e, review_id) => {
+  //   axios.put(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${review_id}/report`, {headers: {'Authorization': Token.TOKEN}})
+  //   .then((data) => {
+  //     setProduct(data.data)
+  //   })
+  // })
 
   // const addReviewModal = ((e) => {
   //   axios.post('https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews')
@@ -91,7 +92,8 @@ const RatingsReviewsSection = (props) => {
       <ModalAddReview addreview={addreview} setAddReview={setAddReview}/>
       <div className='container'>
        <ReviewBreakdown total={total} setTotal={setTotal} starpoint={starpoint}/>
-       <ReviewList sort={sort} setSort={setSort} addreview={addreview} setAddReview={setAddReview} updateHelpfulness={updateHelpfulness} updateReport={updateReport}/>
+       {/* <ReviewList sort={sort} setSort={setSort} addreview={addreview} setAddReview={setAddReview} updateHelpfulness={updateHelpfulness} updateReport={updateReport}/> */}
+       <ReviewList sort={sort} setSort={setSort} addreview={addreview} setAddReview={setAddReview} />
       </div>
     </div>
   )

@@ -32,7 +32,7 @@ const RatingIcons=((props) => {
           return 'url(#grad25)'
         }
         if ((decimalNum >= .5) && (decimalNum < .75)) {
-          console.log ('in memo', (decimalNum < .25 && decimalNum > .0), 'index', props.index,)
+          // console.log ('in memo', (decimalNum < .25 && decimalNum > .0), 'index', props.index,)
           return 'url(#grad50)'
         }
         if ((decimalNum >= .75) && (decimalNum <= .9)) {
@@ -43,12 +43,7 @@ const RatingIcons=((props) => {
     }
     return 'none'
   }, [props.rating, props.index]);
-  // console.log('FILL', fill)
-  // const fillfill = ((props.rating) => {
-  //   const wholeNum = Math.floor(props.rating)
-  //   const decimalNum = props.rating - Math.floor(props.rating)
 
-  // })
   return (
     <div>
       <StarRating fill={fill}/>

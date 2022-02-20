@@ -42,6 +42,7 @@ const AppProvider = (props) => {
    const [characteristic, setCharacteristic] = useState({});
    const [selectedratings, setSelectedRatings] = useState([])
    const [productresults, setProductResults] = useState([])
+   const [charMeaning, setCharMeaning] = useState([])
 
    //! default assignement above, DO NOT CHANGE TYPE EVER, EVER, to ADD, do it below line 32, and add it to the values in the return object line 41 (*STAR REVIEW AVG - UPDATE EVERYONE WHEN IT IS CREATED)
 
@@ -68,6 +69,7 @@ const AppProvider = (props) => {
          characteristic, setCharacteristic,
          selectedratings, setSelectedRatings,
          productresults, setProductResults,
+         charMeaning, setCharMeaning,
          }}>
          {props.children}
       </AppContext.Provider>
