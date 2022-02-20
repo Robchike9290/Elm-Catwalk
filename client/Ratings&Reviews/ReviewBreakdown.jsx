@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import BreakdownBar from './BreakdownBar.jsx'
 import RatingIcon from './RatingIcon.jsx'
+import Gauge from './Gauge.jsx'
 import {AppContext } from '../context.js';
 
 const ReviewBreakdown = ((props) => {
@@ -31,6 +32,7 @@ const ReviewBreakdown = ((props) => {
       <BreakdownBar ratings={meta.ratings} totalEntries={props.total.totalEntries} starpoint={props.starpoint}/>
       <div>
         <p>Size Bar Graph Placeholder</p>
+        {/* <Gauge/> */}
       </div>
       <div>
         <p>Comfort Bar Graph Placeholder</p>

@@ -6,7 +6,7 @@ import ReviewList from './ReviewList.jsx'
 import '../styles.css';
 import ModalAddReview from './ModalAddReview.jsx'
 import {AppContext } from '../context.js';
-// console.log(Token, '<--token')
+console.log(Token, '<--token', Token.TOKEN)
 
 const RatingsReviewsSection = (props) => {
   const {currentProductId, meta, setMeta, product, setProduct, selectedratings, setSelectedRatings, productresults, setProductResults} = useContext(AppContext)
@@ -65,7 +65,11 @@ const RatingsReviewsSection = (props) => {
   const updateHelpfulness = ((e, review_id) => {
     axios.put(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${review_id}/helpful`, {headers: {'Authorization': Token.TOKEN}})
     .then((data) => {
+      console.log('updateHelpfulness data', data)
       setProduct(data.data)
+    })
+    .catch((err) => {
+      console.log('updateHelpfulness error', err)
     })
   })
 
@@ -75,6 +79,10 @@ const RatingsReviewsSection = (props) => {
       setProduct(data.data)
     })
   })
+
+  // const addReviewModal = ((e) => {
+  //   axios.post('https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews')
+  // })
   return (
     // console.log('PRODUCT', product);
     <div>
