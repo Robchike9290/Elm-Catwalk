@@ -11,6 +11,7 @@ export const RelatedProductsCarouselItem = (props, { children, width }) => {
       features={props.features}
       image={props.image}
       price={props.price}
+      ratings={props.ratings}
       salesPrice={props.sale_price}
       />
     </div>

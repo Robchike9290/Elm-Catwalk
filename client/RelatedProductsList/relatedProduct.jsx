@@ -40,10 +40,10 @@ const RelatedProduct = (props) => {
     currentValues.push(currentProductSalesPrice);
 
     for (let prop in props) {
-      if (prop !== 'image' && !allProperties.includes(prop)) {
+      if (prop !== 'image' && prop !== 'ratings' && !allProperties.includes(prop)) {
         allProperties.push(prop);
       }
-      if (prop !== 'image') {
+      if (prop !== 'image' && prop !== 'ratings') {
         comparedValues.push(props[prop]);
       }
     }
@@ -92,7 +92,7 @@ const RelatedProduct = (props) => {
         <Price price={props.price} salesPrice={props.salesPrice}/>
       </div>
       <div className="productStarRating">
-        <StarRating/>
+        <StarRating ratings={props.ratings}/>
       </div>
     </span>
   )

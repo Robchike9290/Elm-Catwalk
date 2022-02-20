@@ -82,6 +82,7 @@ const RelatedProductsList = () => {
           key={index}
           name={product.name}
           price={product.default_price}
+          ratings={product.ratings}
           salesPrice={product.sale_price}
           >
           </RelatedProductsCarouselItem>
