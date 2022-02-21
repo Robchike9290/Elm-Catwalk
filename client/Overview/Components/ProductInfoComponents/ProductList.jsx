@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext } from 'react';
 import Product from './Product.jsx'
 import { AppContext } from '../../../context.js';

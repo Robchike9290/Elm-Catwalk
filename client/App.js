@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 
 import QA from "./QA/index.js"
 import React, { useContext, useState } from "react";

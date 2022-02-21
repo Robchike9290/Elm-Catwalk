@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect, useContext } from 'react';
 import { AppContext } from '../../context.js';
 import Carousel, { CarouselItem } from "../richardCarousel.jsx";
