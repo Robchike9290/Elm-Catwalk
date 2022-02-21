@@ -1,8 +1,8 @@
 import AnswerList from './AnswerList/AnswerList.jsx'
 import React, { useEffect, useState, useContext } from "react";
 import AnswerPopUp from './AnswerList/AnswerPopUp.jsx'
-import { qListContext } from "/Users/alexmnahas/Elm-Catwalk/client/QA/createContextQlist.js";
-import { productIdContext } from "/Users/alexmnahas/Elm-Catwalk/client/QA/createContext.js";
+import { qListContext } from "../../../client/QA/createContextQlist.js";
+import { productIdContext } from "../../../client/QA/createContext.js";
 import axios from 'axios'
 import Highlighter from "react-highlight-words";
 

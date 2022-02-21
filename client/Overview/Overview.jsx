@@ -15,7 +15,7 @@ const Overview = () => {
   const context = useContext(AppContext);
 
 
-  // console.log(context);
+  // console.log(context.currentProductId);
 
 
   useEffect(() => {
@@ -38,10 +38,20 @@ const Overview = () => {
   }, [])
 
   useEffect(() => {
+    // console.log(context.currentProductID)
+    getStyles(context.currentProductId);
 
-    getStyles(context.currentProductId)
 
   }, [context.currentProductId])
+
+
+  // const getFeatures = (currentProductID) => {
+
+  //     .catch((err) => {
+  //       console.error(err);
+  //       console.error('failed in front end feature GET');
+  //     })
+  // }
 
 
   const getStyles = (currentProduct) => {
@@ -55,6 +65,12 @@ const Overview = () => {
         context.setCurrentStyle(receivedStyles.data.results[0]);
         context.setCurrentStylePhoto(receivedStyles.data.results[0].photos[0].url);
         context.setCurrentStyleThumbnails(receivedStyles.data.results[0].photos);
+      })
+      .then((receivedStyles) => {
+        axios.get(`products/${currentProduct}`)
+          .then((receivedFeatures) => {
+        context.setCurrentProductFeatures(receivedFeatures.data);
+      })
       })
       .catch((err) => {
         console.error(err);

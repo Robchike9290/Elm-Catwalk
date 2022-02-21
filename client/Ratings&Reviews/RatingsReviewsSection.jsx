@@ -1,9 +1,9 @@
 import React, {useEffect, useState, useContext} from 'react';
 import axios from 'axios';
-import Token from '/Users/alexmnahas/Elm-Catwalk/client/QA/config.js';
+import Token from '../../config.js';
 import ReviewBreakdown from './ReviewBreakdown.jsx';
 import ReviewList from './ReviewList.jsx'
-import '../styles.css';
+// import '../styles.css';
 import ModalAddReview from './ModalAddReview.jsx'
 import {AppContext } from '../context.js';
 // import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';

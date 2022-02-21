@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
-import Token from "../config.js";
+import Token from "../../../config.js";
 import { productIdContext } from "../createContext.js";
 
 const QuestionPopUp = ({ togglePopUp }) => {

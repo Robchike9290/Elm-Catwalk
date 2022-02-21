@@ -37,6 +37,9 @@ const QuantitySelector = () => {
         // console.log(selectedSize, currentObject.size);
         let counter = 1;
         while (counter < currentObject.quantity + 1) {
+          if (counter === 16) {
+            break;
+          }
           array.push(counter);
           counter++;
         }

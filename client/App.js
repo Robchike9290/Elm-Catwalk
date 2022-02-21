@@ -1,7 +1,7 @@
 
 import QA from "./QA/index.js"
 import React, { useContext, useState } from "react";
-import Token from '/Users/alexmnahas/Elm-Catwalk/client/config.js'
+import Token from '../config.js'
 import RatingsReviewsSection from './Ratings&Reviews/RatingsReviewsSection.jsx'
 import axios from 'axios';
 import Overview from "./Overview/Overview.jsx";
@@ -41,6 +41,8 @@ const AppProvider = (props) => {
    const [currentStyleThumbnails, setCurrentStyleThumbnails] = useState([]);
    const [styleList, setStyleList] = useState([]);
    const [user, setUser] = useState({});
+   const [activeIndex, setActiveIndex] = useState(0);
+   const [currentProductFeatures, setCurrentProductFeatures] = useState({})
 
    // ! Cheryl
    const [recommend, setRecommend] = useState(false);
@@ -67,6 +69,8 @@ const AppProvider = (props) => {
          currentStylePhoto, setCurrentStylePhoto,
          currentStyleThumbnails, setCurrentStyleThumbnails,
          styleList, setStyleList,
+         activeIndex, setActiveIndex,
+         currentProductFeatures, setCurrentProductFeatures,
 
          // ! Cheryl
          recommend, setRecommend,
