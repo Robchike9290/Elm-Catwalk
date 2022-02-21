@@ -6,7 +6,6 @@ import RatingIcon from './RatingIcon.jsx'
 
 const ReviewListEntry = ((props) => {
   // console.log('REVIEWLISTENTRY', props)
-
   // console.log('time', moment(props.product.date).format('LL'))
   let date = moment(props.product.date).format('LL')
   const strSum = props.product.summary
@@ -14,10 +13,6 @@ const ReviewListEntry = ((props) => {
   // console.log('SUMMARY', summary)
   const strBody = props.product.body
   const photos = props.product.photos && props.product.photos.length ? props.product.photos : []
-  // console.log('PHOTOS', props.product.photos)
-  // console.log('PHOTOS---url', props.product.photos)
-  // const photoURL = props.product.photos.map((url, i) => {
-  // })
 
   return (
     <div>
@@ -26,7 +21,9 @@ const ReviewListEntry = ((props) => {
           {[...Array(5)].map((item, index) => {
             index += 1
             return (
+              <div key={index}>
               <RatingIcon rating={props.product.rating} index={index}/>
+              </div>
             )
           })}
         </div>

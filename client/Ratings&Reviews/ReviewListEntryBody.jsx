@@ -20,5 +20,4 @@ const ReviewListEntryBody = ((props) => {
   }
 })
 
-
 export default ReviewListEntryBody;

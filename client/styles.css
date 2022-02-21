@@ -1,16 +1,24 @@
+.R-R-parent {
+  width: 950;
+}
+
 .container {
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 60px;
 }
 
-/* .breakdown {
-  margin-right: 90px;
-} */
+.breakdown {
+  width: 300;
+}
 
 .listitem1 {
   display: flex;
   justify-content: space-between;
+}
+
+.review-list-parent {
+  width: 650px;
 }
 
 .reviewlist {
@@ -61,12 +69,14 @@
 
 .slider {
   width: inherit;
+  height: 6px;
 
 }
 
 .gauge {
   margin-bottom: auto;
   font-size: small;
+  font-weight: bold;
 }
 
 .gauge-range {
@@ -79,6 +89,7 @@
 .ratings {
   display: flex;
   align-content: center;
+  gap: 5px;
 }
 
 .numavg {
@@ -210,6 +221,10 @@
   gap: 5px;
 }
 
+.add-review {
+  justify-content: center;
+}
+
 
 /* Overview Starts Here */
 .Overview {
@@ -271,10 +286,7 @@
 
   /* grid-column-start: 0; */
 }
-  #pic {
 
-
-}
 #pic img {
   object-fit: cover;
 }

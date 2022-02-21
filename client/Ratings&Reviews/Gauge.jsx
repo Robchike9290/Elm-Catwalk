@@ -22,7 +22,7 @@ const Gauge = ((props)=> {
     // console.log('GUAGEVALUES', props.type[key].value)
     typeRating = props.type[key].value
   }
-  console.log('charMeaningGauge', charMeaningGauge[type][0])
+  // console.log('charMeaningGauge', charMeaningGauge[type][0])
   // console.log('charMeaningGauge', charMeaning)
   // console.log('GAUGE', type, typeRating, meta)
   return (

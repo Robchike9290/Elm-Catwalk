@@ -28,9 +28,9 @@ const AppProvider = (props) => {
    const [currentStylePhoto, setCurrentStylePhoto] = useState('');
    const [currentStyleThumbnails, setCurrentStyleThumbnails] = useState([]);
    const [styleList, setStyleList] = useState([]);
-   const [currentStar, setCurrentStar] = useState('');
    const [user, setUser] = useState({});
 
+   // ! Cheryl
    const [recommend, setRecommend] = useState(false);
    const[meta, setMeta] = useState ([]);
    const[product, setProduct] = useState({});
@@ -42,9 +42,8 @@ const AppProvider = (props) => {
    const [characteristic, setCharacteristic] = useState({});
    const [selectedratings, setSelectedRatings] = useState([])
    const [productresults, setProductResults] = useState([])
-   const [charMeaning, setCharMeaning] = useState([])
-
-   //! default assignement above, DO NOT CHANGE TYPE EVER, EVER, to ADD, do it below line 32, and add it to the values in the return object line 41 (*STAR REVIEW AVG - UPDATE EVERYONE WHEN IT IS CREATED)
+   const [average, setAverage] = useState(0);
+   // ! Cheryl
 
    return (
       <AppContext.Provider value={{
@@ -56,8 +55,8 @@ const AppProvider = (props) => {
          currentStylePhoto, setCurrentStylePhoto,
          currentStyleThumbnails, setCurrentStyleThumbnails,
          styleList, setStyleList,
-         currentStar, setCurrentStar,
 
+         // ! Cheryl
          recommend, setRecommend,
          meta, setMeta,
          product, setProduct,
@@ -69,7 +68,8 @@ const AppProvider = (props) => {
          characteristic, setCharacteristic,
          selectedratings, setSelectedRatings,
          productresults, setProductResults,
-         charMeaning, setCharMeaning,
+         average, setAverage,
+         // ! Cheryl
          }}>
          {props.children}
       </AppContext.Provider>

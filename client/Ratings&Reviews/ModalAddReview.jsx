@@ -12,6 +12,7 @@ const ModalAddReview = ((props) => {
   const [characterCount, setCharacterCount] = useState(0)
   const [characterCountdown, setCharacterCountdown] = useState(50)
   const characteristics = meta.characteristics ? meta.characteristics : {}
+  const [uploadPhoto, setUploadPhoto] = useState(false);
   // console.log('RECOMMEND', recommend)
   // console.log('SUMMARY', summary)
   // console.log('BODY', body)
@@ -19,16 +20,19 @@ const ModalAddReview = ((props) => {
   // console.log('EMAIL', email)
   // console.log('CHARACTER---COUNT', characterCount)
 
-
-
   const charKeys = Object.keys(characteristics)
-
 
   let countdown = characterCountdown-characterCount
 
   const handleBody = ((value) => {
     setCharacterCount(value.length)
     setBody(value)
+  })
+
+  const handleUploadClick = ((e) => {
+    e.prevent.default()
+    e.stop.Propagation()
+    setUploadPhoto(true)
   })
 
   if (countdown <= 0) {
@@ -75,9 +79,13 @@ const ModalAddReview = ((props) => {
         </label>
         <br/>
         <label>
-          <PhotoUpload/>
+          Upload Product Photos Here (5 max)
+          <button onClick={(e)=>handleUploadClick(e)}>Upload Photos</button>
+          <PhotoUpload setUploadPhoto={setUploadPhoto} uploadPhoto={uploadPhoto}/>
           {/* <p>Upload Photos, need upload program</p> */}
         </label>
+        <br/>
+        <br/>
         <label>
           What is your nickname* (60 Char)
           <input type='text' placeholder='Example: jackson11!' maxLength={60} onChange={(e)=>setName(e.target.value)}/>
@@ -93,7 +101,7 @@ const ModalAddReview = ((props) => {
         </label>
         <br/>
         {/* <button onClick={()=>props.setAddReview(false)}>SUBMIT</button> */}
-        <ValidationSubmitReview/>
+        <ValidationSubmitReview addreview={props.addreview} setAddReview={props.setAddReview} />
       </form>
     </div>
   )

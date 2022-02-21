@@ -13,7 +13,6 @@ const CharacteristicsAdd = ((props) => {
     'Fit': ['Runs tight', 'Runs slightly tight', 'Perfect', 'Runs slightly long', 'Runs long']
   }
 
-
   const charObject = ((index) => {
     setSelect(charMeaning[props.characteristic][index])
     setCharacteristic({

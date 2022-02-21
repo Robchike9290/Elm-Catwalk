@@ -13,12 +13,13 @@ const ProgressBar = ((props) => {
     if (isSelected) {
       const ratingsIndex = ratings.indexOf(props.star)
       const splicedRating = ratings.slice(ratingsIndex, 1)
-      // console.log('RATINGSAFTER SPLICE AND INDEX', {ratingsIndex, ratings})
+      console.log('RATINGSAFTER SPLICE AND INDEX', {ratingsIndex, ratings}, splicedRating)
       setSelectedRatings(splicedRating)
       setIsSelected(!isSelected)
     } else {
       setSelectedRatings([...selectedratings, props.star])
       setIsSelected(true)
+      console.log('RATINGSAFTER ADD AND INDEX', ratings, selectedratings)
     }
   }
   // console.log('calc', Number(props.ratingArray[0])/props.totalEntries * 100)

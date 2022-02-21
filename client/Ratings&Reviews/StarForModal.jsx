@@ -9,7 +9,6 @@ const StarForModal = () => {
   console.log('ADDSTARRATING', rating)
   // const starValues = ['Poor', 'Fair', 'Average', 'Good', 'Great']
   // const handleStar - ((starValue) => {
-
   // })
   return (
     <div className="add-star-rating"> Overall Rating*
@@ -29,7 +28,6 @@ const StarForModal = () => {
           </button>
           <ToolTipStarModal starIndex={starIndex}/>
           </div>
-
           // <{starValue}
         );
       })}
