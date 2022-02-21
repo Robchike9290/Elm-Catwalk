@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Token from "./config.js";
+import Token from "../../config.js";
 
 import QuestionList from "./QList/QuestionList.jsx";
 import QuestionPopUp from "./QList/QuestionPopUp.jsx";
