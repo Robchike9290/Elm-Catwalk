@@ -3,11 +3,19 @@ import OutfitItem from './outfitItem.jsx';
 import OutfitAddItem from './outfitAddItem.jsx';
 import '../src/relatedProductsListStyles.css';
 
-export const OutfitItemsCarouselItem = ({ children, width }) => {
+export const OutfitItemsCarouselItem = (props, { children, width }) => {
 
   return (
     <div className="carouselItem" style={{ width: width }}>
-      <OutfitItem/>
+      <OutfitItem
+      name={props.name}
+      category={props.category}
+      features={props.features}
+      image={props.image}
+      price={props.price}
+      ratings={props.ratings}
+      salesPrice={props.sale_price}
+      />
     </div>
   );
 
@@ -37,7 +45,7 @@ const OutfitItemsCarousel = ({ children }) => {
         })}
       </span>
       <div>
-        <span>
+        <span>{activeIndex > 0 ?
           <button className="carouselButtonLeft"
             onClick={() => {
               updateIndex(activeIndex - 1);
@@ -45,8 +53,11 @@ const OutfitItemsCarousel = ({ children }) => {
           >
             ◀️
           </button>
+          :
+          null
+          }
         </span>
-        <span>
+        <span> {activeIndex < React.Children.count(children) - 1 ?
           <button className="carouselButtonRight"
             onClick={() => {
               updateIndex(activeIndex + 1);
@@ -54,6 +65,9 @@ const OutfitItemsCarousel = ({ children }) => {
           >
             ▶️
           </button>
+          :
+          null
+        }
         </span>
       </div>
     </div>

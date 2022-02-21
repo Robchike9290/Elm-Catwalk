@@ -1,12 +1,12 @@
 import React from 'react';
-import OutfitItems from './outfitItems.jsx';
+import OutfitItemsList from './outfitItemsList.jsx';
 
 const YourOutfit = () => {
   return (
   <div>
     <div>
       <span>
-        <OutfitItems/>
+        <OutfitItemsList/>
       </span>
     </div>
   </div>
