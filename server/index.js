@@ -73,7 +73,7 @@ app.get("/products/:product_id/styles", (req,res) => {
 })
 
 app.get("/products/:product_id", (req,res) => {
-   console.log(req.params);
+  //  console.log(req.params);
    axios.get(`${baseURL}${req.params.product_id}`, {headers: {Authorization: TOKEN}})
       .then((receivedFeaturesList) => {
          // console.log(data.data);
