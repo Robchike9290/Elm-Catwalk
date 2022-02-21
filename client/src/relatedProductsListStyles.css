@@ -1,17 +1,20 @@
+.relatedProductsAndComparison {
+	width: 75%;
+	margin: auto;
+	padding: 20px;
+}
+
 .productMat {
-	background-color: aqua;
-	border: 3px solid black;
+	border: 0px solid black;
 }
 
 .productInnerMat {
 	height: 705px;
 	padding-top: 20px;
-	background-color: bisque;
-	border: 3px solid black;
+	border: 0px solid black;
 }
 
 .product {
-	background-color: greenyellow;
 	margin: 3px 10px;
 }
 
@@ -34,7 +37,7 @@
 	margin-top: 15px;
 	margin-left: 10px;
 	margin-right: 10px;
-	border: 3px solid black;
+	border: 1px solid black;
 }
 
 .productData {
@@ -43,7 +46,7 @@
 	margin-top: 10px;
 	margin-left: 10px;
 	margin-right: 10px;
-	border: 3px solid black;
+	border: 1px solid black;
 }
 
 .productStarRating {
@@ -52,7 +55,7 @@
 	margin-top: 10px;
 	margin-left: 10px;
 	margin-right: 10px;
-	border: 3px solid black;
+	border: 1px solid black;
 }
 
 .productAction {
@@ -69,8 +72,7 @@
 }
 
 .carouselButtonLeft {
-	background-color: greenyellow;
-	border: 3px solid black;
+	border: 0px solid black;
 	width: 34px;
 	height: 30px;
 	margin: 10px 10px;
@@ -78,8 +80,7 @@
 }
 
 .carouselButtonRight {
-	background-color: greenyellow;
-	border: 3px solid black;
+	border: 0px solid black;
 	width: 34px;
 	height: 30px;
 	margin: 10px 10px;
@@ -89,8 +90,7 @@
 .carouselItem {
 	display: inline-block;
 	height: 625px;
-	background-color: greenyellow;
-	border: 3px solid black;
+	border: 1px solid black;
 	margin-left: 10px;
 	margin-right: 10px;
 }
@@ -106,8 +106,7 @@
 	width: 10%;
 	height: 705px;
 	display: inline-block;
-	background-color: greenyellow;
-	border: 3px solid black;
+	border: 1px solid black;
 	vertical-align: top;
 	text-align: center;
 }
