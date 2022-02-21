@@ -24,11 +24,18 @@
   "dependencies": {
     "axios": "^0.25.0",
     "babel-jest": "^27.5.1",
+<<<<<<< HEAD
     "eslint-plugin-react-hooks": "^4.3.0",
     "express": "^4.17.2",
     "file-loader": "^6.2.0",
+=======
+    "bootstrap": "^5.1.3",
+    "express": "^4.17.2",
+    "filestack-js": "^3.25.0",
+>>>>>>> c6cc1e04ace9a5c04fe4560603ce8c0dda8a3730
     "html-webpack-plugin": "^5.5.0",
     "jquery": "^3.6.0",
+    "moment": "^2.29.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.2.1",

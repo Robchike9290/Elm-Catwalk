@@ -1,6 +1,11 @@
 node_modules
 config.js
 client/dist/bundle.js
+<<<<<<< HEAD
+=======
+styles.css
+
+>>>>>>> c6cc1e04ace9a5c04fe4560603ce8c0dda8a3730
 client/dist/styles.css
 client/dist/APIToken.js
 # client/Overview
