@@ -14,14 +14,15 @@ export const VerticalCarouselItem = ({ children, height }) => {
 
 const VerticalCarousel = ( { children }) => {
   const { activeIndex, setActiveIndex } = useContext(AppContext);
+  const [verticalIndex, setVerticalIndex] = useState(0)
   const { currentStyle } = useContext(AppContext);
 
-  useEffect ( () => {
+  // useEffect ( () => {
 
-    setActiveIndex(0);
-  }
+  //   setActiveIndex(0);
+  // }
 
-  , [currentStyle])
+  // , [currentStyle])
 
   const updateIndex = (newIndex) => {
     if (newIndex < 0) {
@@ -30,29 +31,30 @@ const VerticalCarousel = ( { children }) => {
       newIndex = React.Children.count(children) - 1;
     }
 
-    setActiveIndex(newIndex);
+    setVerticalIndex(newIndex);
   }
 
   return (
     <div className="vertical-carousel">
       <div
         className="vertical-inner"
-        style={{ transform: `translateY(-${activeIndex * 20}%)` }}>
+        style={{ transform: `translateY(-${verticalIndex * 20}%)` }}>
         {React.Children.map(children, (child, index) => {
           return React.cloneElement(child, { height: "20%" });
         })}
       </div>
+
       <div className='vertical-indicators'>
         <button className="vertical-prev"
           onClick={() => {
-            updateIndex(activeIndex - 1);
+            updateIndex(verticalIndex - 1);
           }}
         >
           	 &#9660;
           </button>
           <button className="vertical-next"
           onClick={() => {
-            updateIndex(activeIndex + 1);
+            updateIndex(verticalIndex + 1);
           }}
         >
            &#9650;

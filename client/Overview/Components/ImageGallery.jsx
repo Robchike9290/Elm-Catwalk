@@ -7,7 +7,7 @@ import MainImageThumbnail from './SubComponents/MainImageThumbnail.jsx';
 
 
 const ImageGallery = () => {
-  const { currentStyle, currentStylePhoto, setCurrentStylePhoto, currentStyleThumbnails, setActiveIndex } = useContext(AppContext);
+  const { currentStyle, currentStylePhoto, setCurrentStylePhoto, currentStyleThumbnails, activeIndex, setActiveIndex } = useContext(AppContext);
 
   const handleClick = () => {
     console.log('hello');
@@ -27,8 +27,12 @@ const ImageGallery = () => {
 
         </Carousel>
         <VerticalCarousel>
+
           {currentStyleThumbnails?.map((style, key) => (
-            <div key={key} onClick={() => setActiveIndex(key)}>
+            (key === activeIndex) ? <div className="active-thumbnail" key={key} onClick={() => setActiveIndex(key)}>
+            <VerticalCarouselItem >{style.thumbnail_url}</VerticalCarouselItem>
+            </div> :
+            <div className="vertica l-thumbnail" key={key} onClick={() => setActiveIndex(key)}>
             <VerticalCarouselItem >{style.thumbnail_url}</VerticalCarouselItem>
             </div>
           ))}

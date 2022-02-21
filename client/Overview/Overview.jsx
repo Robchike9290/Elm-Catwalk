@@ -15,7 +15,7 @@ const Overview = () => {
   const context = useContext(AppContext);
 
 
-  // console.log(context);
+  console.log(context);
 
 
   useEffect(() => {
