@@ -16,10 +16,10 @@ const ReviewListPhotos = ((props) => {
     return null
   }
   return(
-    <div className='list-thumbnail'>
+    <div className='cc-list-thumbnail'>
       {props.photos.map((photo, i) => {
         return (
-          <div onClick={()=>handleClick(photo.url)} className='thumbnail' key={i}>
+          <div onClick={()=>handleClick(photo.url)} className='cc-thumbnail' key={i}>
             <img src={photo.url} height="100" width="150" alt="Image preview"></img>
           </div>
         )

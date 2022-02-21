@@ -38,10 +38,10 @@ const ReviewBreakdown = ((props) => {
   // console.log('CURRENT----type', charTypes)
 
   return (
-    <div className='breakdown'>
-      <div className='average'>
-        <div className='numavg'>{averageRating}</div>
-        <div className="star-rating">
+    <div className='cc-breakdown'>
+      <div className='cc-average'>
+        <div className='cc-numavg'>{averageRating}</div>
+        <div className='cc-star-rating'>
           {[...Array(5)].map((item, index) => {
             index += 1
             return (
