@@ -5,7 +5,7 @@ import Token from '/Users/alexmnahas/Elm-Catwalk/client/config.js'
 import RatingsReviewsSection from './Ratings&Reviews/RatingsReviewsSection.jsx'
 import axios from 'axios';
 import Overview from "./Overview/Overview.jsx";
-import Test from "./Overview/test.jsx";
+import RelatedItemsAndComparison from "./RelatedProductsList/relatedItemsAndComparison.jsx";
 import { AppContext } from "./context.js";
 // const App = () => {
 //    return (
@@ -18,20 +18,7 @@ import { AppContext } from "./context.js";
 // import React, { useContext, useState } from "react";
 // import Overview from "./Overview/Overview.jsx";
 
-
-// Should give related products
-// /products/:product_id/related
-
-
-
-
-
-// [productID, updateProductId] = useState()
-// [average, averageUpdate] = useState()
-
-
 const AppProvider = (props) => {
-   // const [currentProduct, setCurrentProduct] = useState(null);
    const [test, testUpdater] = useState(5);
    const [currentProductId, setCurrentProductId] = useState(37311);
    const [currentProduct, setCurrentProduct] = useState({});
@@ -41,6 +28,7 @@ const AppProvider = (props) => {
    const [currentStyleThumbnails, setCurrentStyleThumbnails] = useState([]);
    const [styleList, setStyleList] = useState([]);
    const [user, setUser] = useState({});
+   const [relatedProductsInfo, setRelatedProductsInfo] = useState([]);
 
    // ! Cheryl
    const [recommend, setRecommend] = useState(false);
@@ -67,6 +55,8 @@ const AppProvider = (props) => {
          currentStylePhoto, setCurrentStylePhoto,
          currentStyleThumbnails, setCurrentStyleThumbnails,
          styleList, setStyleList,
+         user, setUser,
+         relatedProductsInfo, setRelatedProductsInfo,
 
          // ! Cheryl
          recommend, setRecommend,
@@ -89,18 +79,20 @@ const AppProvider = (props) => {
 }
 
 function App() {
-
-
    return (
       <AppProvider>
          <Overview />
+<<<<<<< HEAD
          <QA/>
+=======
+         <RelatedItemsAndComparison/>
+>>>>>>> 73c33925b88a9724de40a60c05fb32a5a36bf417
          <RatingsReviewsSection/>
       </AppProvider>
    )
-
 }
 
+<<<<<<< HEAD
 // function App() {
 
 //    const [test, testUpdater] = useState(5);
@@ -183,6 +175,8 @@ function App() {
 //    }
 // };
 
+=======
+>>>>>>> 73c33925b88a9724de40a60c05fb32a5a36bf417
 export default App;
 //       )
 //    }

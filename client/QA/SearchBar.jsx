@@ -30,7 +30,7 @@ const SearchBar = ({UpdateQlist, qList, baseList, updateHighlightedWords}) => {
       {/* <form action="/" method="get" className="search_form"> */}
         <input
           type="search"
-          className="search__input"
+          className="a_search__input"
           id="search"
           placeholder="search for questions"
           name="s"

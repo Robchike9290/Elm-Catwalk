@@ -2,6 +2,7 @@ node_modules
 config.js
 client/QA/config.js
 client/dist/bundle.js
+<<<<<<< HEAD
 styles.css
 package-lock.json
 client/dist/styles.css
@@ -13,3 +14,5 @@ client/dist/clear.css
 # testing
 #  after you pull, you must uncomment your testing git ignore.
 
+=======
+>>>>>>> 73c33925b88a9724de40a60c05fb32a5a36bf417
