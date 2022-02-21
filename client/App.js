@@ -1,4 +1,6 @@
 import React, { useContext, useState } from "react";
+import Token from '../config.js'
+import RatingsReviewsSection from './Ratings&Reviews/RatingsReviewsSection.jsx'
 import axios from 'axios';
 import Overview from "./Overview/Overview.jsx";
 import Test from "./Overview/test.jsx";
@@ -19,22 +21,31 @@ import { AppContext } from "./context.js";
 const AppProvider = (props) => {
    // const [currentProduct, setCurrentProduct] = useState(null);
    const [test, testUpdater] = useState(5);
-   const [currentProductId, setCurrentProductId] = useState();
+   const [currentProductId, setCurrentProductId] = useState(37311);
    const [currentProduct, setCurrentProduct] = useState({});
    const [productList, setProductList] = useState([]);
    const [currentStyle, setCurrentStyle] = useState({});
    const [currentStylePhoto, setCurrentStylePhoto] = useState('');
    const [currentStyleThumbnails, setCurrentStyleThumbnails] = useState([]);
    const [styleList, setStyleList] = useState([]);
-   const [currentStar, setCurrentStar] = useState('');
    const [user, setUser] = useState({});
    const [activeIndex, setActiveIndex] = useState(0);
    const [currentProductFeatures, setCurrentProductFeatures] = useState({})
 
-
-
-
-
+   // ! Cheryl
+   const [recommend, setRecommend] = useState(false);
+   const[meta, setMeta] = useState ([]);
+   const[product, setProduct] = useState({});
+   const [rating, setRating] = useState(0);
+   const [summary, setSummary] = useState('');
+   const [body, setBody] = useState('');
+   const [name, setName] = useState('');
+   const [email, setEmail] = useState('');
+   const [characteristic, setCharacteristic] = useState({});
+   const [selectedratings, setSelectedRatings] = useState([])
+   const [productresults, setProductResults] = useState([])
+   const [average, setAverage] = useState(0);
+   // ! Cheryl
 
    return (
       <AppContext.Provider value={{
@@ -46,9 +57,23 @@ const AppProvider = (props) => {
          currentStylePhoto, setCurrentStylePhoto,
          currentStyleThumbnails, setCurrentStyleThumbnails,
          styleList, setStyleList,
-         currentStar, setCurrentStar,
          activeIndex, setActiveIndex,
-         currentProductFeatures, setCurrentProductFeatures
+         currentProductFeatures, setCurrentProductFeatures,
+
+         // ! Cheryl
+         recommend, setRecommend,
+         meta, setMeta,
+         product, setProduct,
+         rating, setRating,
+         summary, setSummary,
+         body, setBody,
+         name, setName,
+         email, setEmail,
+         characteristic, setCharacteristic,
+         selectedratings, setSelectedRatings,
+         productresults, setProductResults,
+         average, setAverage,
+         // ! Cheryl
          }}>
          {props.children}
       </AppContext.Provider>
@@ -60,8 +85,8 @@ function App() {
 
    return (
       <AppProvider>
-
          <Overview />
+         <RatingsReviewsSection/>
       </AppProvider>
    )
 

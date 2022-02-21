@@ -32,7 +32,7 @@ app.get("/products", (req, res) => {
 })
 
 app.get("/products/:product_id/styles", (req,res) => {
-   console.log(req.params);
+   // console.log(req.params);
    axios.get(`${baseURL}${req.params.product_id}/styles`, {headers: {Authorization: TOKEN}})
       .then((receivedStylesList) => {
          // console.log(data.data);
