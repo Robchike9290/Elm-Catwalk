@@ -32,7 +32,7 @@ app.get("/products", (req, res) => {
 })
 
 app.get("/products/:product_id/styles", (req,res) => {
-   // console.log(req.params);
+   console.log(req.params);
    axios.get(`${baseURL}${req.params.product_id}/styles`, {headers: {Authorization: TOKEN}})
       .then((receivedStylesList) => {
          // console.log(data.data);
@@ -40,7 +40,21 @@ app.get("/products/:product_id/styles", (req,res) => {
       })
       .catch ((err) => {
          //   console.error(err);
-           console.error('failed in server GET');
+         //   console.error('failed in server GET');
+         });
+
+})
+
+app.get("/products/:product_id", (req,res) => {
+   console.log(req.params);
+   axios.get(`${baseURL}${req.params.product_id}`, {headers: {Authorization: TOKEN}})
+      .then((receivedFeaturesList) => {
+         // console.log(data.data);
+         res.status(200).send(receivedFeaturesList.data)
+      })
+      .catch ((err) => {
+         //   console.error(err);
+           console.error('failed in server features GET');
          });
 
 })

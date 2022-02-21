@@ -29,6 +29,7 @@ const AppProvider = (props) => {
    const [currentStar, setCurrentStar] = useState('');
    const [user, setUser] = useState({});
    const [activeIndex, setActiveIndex] = useState(0);
+   const [currentProductFeatures, setCurrentProductFeatures] = useState({})
 
 
 
@@ -46,7 +47,8 @@ const AppProvider = (props) => {
          currentStyleThumbnails, setCurrentStyleThumbnails,
          styleList, setStyleList,
          currentStar, setCurrentStar,
-         activeIndex, setActiveIndex
+         activeIndex, setActiveIndex,
+         currentProductFeatures, setCurrentProductFeatures
          }}>
          {props.children}
       </AppContext.Provider>
