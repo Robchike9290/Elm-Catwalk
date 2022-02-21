@@ -7,7 +7,7 @@ const ProductList = ({watcher, setWatcher}) => {
   const { productList } = useContext(AppContext);
 
 
-  return (<div className='ProductList'>
+  return (<div className='rl-ProductList'>
     {productList?.map((product, key) => (
       <Product  product={product} key={key}/>
     ))}

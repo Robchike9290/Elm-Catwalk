@@ -13,7 +13,7 @@ const ProductInfo = () =>  {
 
   return (
 
-    <div className="ProductInfo">
+    <div className="rl-ProductInfo">
       <ExpandedInfo />
       <StarRating/>
       <Socials/>

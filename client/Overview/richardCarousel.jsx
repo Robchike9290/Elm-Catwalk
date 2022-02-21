@@ -5,7 +5,7 @@ import { AppContext } from '../context.js';
 
 export const CarouselItem = ({ children, width }) => {
   return (
-    <div className="carousel-item" style={{ width: width }}>
+    <div className="rl-carousel-item" style={{ width: width }}>
     <img height="515" width="470" src={children}/>
     </div>
   );
@@ -33,23 +33,23 @@ const Carousel = ( { children }) => {
   }
 
   return (
-    <div className="carousel">
+    <div className="rl-carousel">
       <div
-        className="inner"
+        className="rl-inner"
         style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
         {React.Children.map(children, (child, index) => {
           return React.cloneElement(child, { width: "100%" });
         })}
       </div>
-      <div className='indicators'>
-        <button className="prev"
+      <div className='rl-indicators'>
+        <button className="rl-prev"
           onClick={() => {
             updateIndex(activeIndex - 1);
           }}
         >
           	&#10094;
           </button>
-          <button className="next"
+          <button className="rl-next"
           onClick={() => {
             updateIndex(activeIndex + 1);
           }}

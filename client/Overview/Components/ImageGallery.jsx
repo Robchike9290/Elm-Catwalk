@@ -18,7 +18,7 @@ const ImageGallery = () => {
 
   return (
     <div className="ImageGallery" >
-      <div className="carousel-holder" >
+      <div className="rl-carousel-holder" >
 
         <Carousel>
           {currentStyle.photos?.map((image, key) => (
