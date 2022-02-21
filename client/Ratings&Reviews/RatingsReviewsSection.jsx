@@ -1,6 +1,6 @@
 import React, {useEffect, useState, useContext} from 'react';
 import axios from 'axios';
-import Token from '../../config.js';
+import Token from '/Users/alexmnahas/Elm-Catwalk/client/QA/config.js';
 import ReviewBreakdown from './ReviewBreakdown.jsx';
 import ReviewList from './ReviewList.jsx'
 import '../styles.css';
