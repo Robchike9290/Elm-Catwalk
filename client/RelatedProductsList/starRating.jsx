@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { AppContext } from '../context.js';
 import '../src/relatedProductsListStyles.css';
+import RatingIcon from '../../client/Ratings&Reviews/RatingIcon.jsx'
 
 const StarRating = (props) => {
 
@@ -24,7 +25,21 @@ const StarRating = (props) => {
   // ADD CHERYL'S FUNCTIONALITY IN HERE WHEN IT IS COMPLETE...CHECK WHETHER HAVING MISSING RATINGVALUES WILL BREAK ANYTHING
   return (
     <div>
-      <span>Users rate this product {averageStarRating} stars out of 5.00. <br></br>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <div>
+        <span>
+          Users rate this product {averageStarRating} stars out of 5.00.
+        </span>
+      </div>
+      <div className='cc-star-rating'>
+        {[...Array(5)].map((item, index) => {
+        index += 1
+        return (
+        <div key={index}>
+        <RatingIcon rating={averageStarRating} index={index}/>
+        </div>
+        )
+        })}
+      </div>
     </div>
   )
 }
