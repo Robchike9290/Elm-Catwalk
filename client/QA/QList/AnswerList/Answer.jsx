@@ -18,7 +18,6 @@ const Answer = ({ answer }) => {
         const newQlist = await axios.get(`/questions/${productID}`);
         await UpdateQlist(newQlist.data.results);
         changeAhelpful(true);
-        //await forceReRender(!Render)
         changehelpfullness(helpfulness + 1);
       }
       markAasHelpful();
@@ -32,8 +31,6 @@ const Answer = ({ answer }) => {
         const serverResponse = await axios.put(`/answers/${answer.id}/report`);
         const newQlist = await axios.get(`/questions/${productID}`);
         await UpdateQlist(newQlist.data.results);
-
-        //await forceReRender(!Render)
       }
       report();
     }

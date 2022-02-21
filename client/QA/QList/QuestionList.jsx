@@ -7,7 +7,6 @@ import SearchBar from "../SearchBar.jsx";
 import { qListContext } from "../createContextQlist.js";
 
 const QuestionList = ({ togglePopUp }) => {
-  //const [count, changeCount] = useState(0);
   let count = 0;
   const [highlightedWords, updateHighlightedWords] = useState(null)
   const [qList, UpdateQlist] = useState([]);
