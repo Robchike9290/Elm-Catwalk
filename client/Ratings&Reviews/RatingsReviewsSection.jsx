@@ -70,12 +70,12 @@ const RatingsReviewsSection = (props) => {
 
     axios.put(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${review_id}/helpful`, {headers: {'Authorization': Token.TOKEN}})
     console.log('SECONDupdateHelpfulness token', Token.TOKEN)
-    // .then(() => {
-    //   console.log(SUCCESS)
-    // })
-    // .catch((err) => {
-    //   console.log('updateHelpfulness error', err)
-    // })
+    .then(() => {
+      console.log(SUCCESS)
+    })
+    .catch((err) => {
+      console.log('updateHelpfulness error', err)
+    })
   })
 
   const updateReport = ((e, review_id) => {

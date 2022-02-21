@@ -2,7 +2,6 @@ node_modules
 config.js
 client/dist/bundle.js
 styles.css
-
 client/dist/styles.css
 client/dist/APIToken.js
 # client/Overview
