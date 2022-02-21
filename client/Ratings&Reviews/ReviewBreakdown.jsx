@@ -23,7 +23,7 @@ const ReviewBreakdown = ((props) => {
 
   const avgRecommended = parseFloat(((recommended.true / props.total.totalEntries) * 100).toFixed(2))
 
-  console.log('AVERAGE', average)
+  // console.log('AVERAGE', average)
 
   //!tie the rating or if still causing warning, rename variable setCurrentStar(rating)
 

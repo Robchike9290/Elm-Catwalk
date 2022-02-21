@@ -66,8 +66,10 @@ const RatingsReviewsSection = (props) => {
   // console.log('TOTAL---->', starpoint)
 
   const updateHelpfulness = ((e, review_id) => {
+    console.log('FIRSTupdateHelpfulness token', Token.TOKEN)
+
     axios.put(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${review_id}/helpful`, {headers: {'Authorization': Token.TOKEN}})
-    // console.log('updateHelpfulness token', Token.TOKEN)
+    console.log('SECONDupdateHelpfulness token', Token.TOKEN)
     // .then(() => {
     //   console.log(SUCCESS)
     // })
