@@ -16,8 +16,8 @@ const ReviewListEntry = ((props) => {
 
   return (
     <div>
-      <div className='listitem1'>
-        <div className="star-rating">
+      <div className='cc-listitem1'>
+        <div className="cc-star-rating">
           {[...Array(5)].map((item, index) => {
             index += 1
             return (
@@ -29,7 +29,7 @@ const ReviewListEntry = ((props) => {
         </div>
         <div>{props.product.reviewer_name}, {date}</div>
       </div>
-        <p className='summary'>{summary}</p>
+        <p className='cc-summary'>{summary}</p>
       <div>
         <ReviewListEntryBody body={props.product.body}/>
         <div>
@@ -37,8 +37,8 @@ const ReviewListEntry = ((props) => {
         </div>
       </div>
       <p>{props.product.recommend && '✓ I recommend this product'}</p>
-      <div className='seller-response'>{props.product.response && `Response from seller ${props.product.response}`}</div>
-      <div className='Ind-helpfulness'>
+      <div className='cc-seller-response'>{props.product.response && `Response from seller ${props.product.response}`}</div>
+      <div className='cc-Ind-helpfulness'>
         <p>Was this review helpful?</p>
         <p onClick={(e)=>props.updateHelpfulness(e, props.product.review_id)}>Yes</p>
         <p>({props.product.helpfulness})</p>

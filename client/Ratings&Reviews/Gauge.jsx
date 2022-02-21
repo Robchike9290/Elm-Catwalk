@@ -28,9 +28,9 @@ const Gauge = ((props)=> {
   return (
     <div>
       {/* <p style='margin-bottom: auto;'>{type}</p> */}
-      <p className='gauge'>{type}</p>
+      <p className='cc-gauge'>{type}</p>
       <GaugeSelector percentage={typeRating}/>
-      <div className='gauge-range'>
+      <div className='cc-gauge-range'>
         <p>{charMeaningGauge[type][0]}</p>
         <p>{charMeaningGauge[type][1]}</p>
         <p>{charMeaningGauge[type][2]}</p>

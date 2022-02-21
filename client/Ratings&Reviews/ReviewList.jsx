@@ -26,12 +26,12 @@ const ReviewList = ((props) => {
     return null;
   }
   return (
-    <div className='review-list-parent'>
-      <div className='sort'>
+    <div className='cc-review-list-parent'>
+      <div className='cc-sort'>
       <p>{results.length} reviews, sorted by </p>
       <SortDropDown sort={props.sort} setSort={props.setSort}/>
       </div>
-      <div className='reviewlist'>
+      <div className='cc-reviewlist'>
       {productresults.slice(0, index).map((product, i) => {
         return <ReviewListEntry product={product} key={i} updateHelpfulness={props.updateHelpfulness} updateReport={props.updateReport}/>
       })}
