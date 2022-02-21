@@ -33,7 +33,7 @@ const AnswerList = ({ answers }) => {
     <div>
       <div>
     <ul className="list">
-        {Alist.sort((a, b) => {
+        {Alist.length === 0 ? (<div>Be the first to Answer</div>) : (Alist.sort((a, b) => {
     return b.helpfulness - a.helpfulness;
   }).map((answer) => {
           if (count < answerListLength) {
@@ -41,11 +41,11 @@ const AnswerList = ({ answers }) => {
             console.log(answer.id)
             return <li key={answer.id}><Answer answer={answer} /></li>;
           }
-        })}
+        }))}
         </ul>
       </div>
       {Alist.length > 2 && (
-        <button onClick={toggleAList}>{listAButtonTitle}</button>
+        <div onClick={toggleAList}>{listAButtonTitle}</div>
       )}
     </div>
   );

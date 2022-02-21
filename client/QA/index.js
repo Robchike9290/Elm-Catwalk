@@ -15,15 +15,16 @@ const QA = () => {
   };
 
   return (
-    <div>
-      <productIdContext.Provider value={37311}>
-        {QpopUp ? (
+    <div id="parent">
+      <h1 id="title"> QUESTIONS & ANSWERS</h1>
+      <productIdContext.Provider value={37511}>
+        {QpopUp && (
           <QuestionPopUp togglePopUp={togglePopUp} />
-        ) : (
+        ) }
           <div>
             <QuestionList togglePopUp={togglePopUp} />
           </div>
-        )}
+
       </productIdContext.Provider>
     </div>
   );

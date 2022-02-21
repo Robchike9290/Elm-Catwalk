@@ -25,18 +25,19 @@ const SearchBar = ({UpdateQlist, qList, baseList, updateHighlightedWords}) => {
 
 
   return (
-    <div className="wrap">
+    <div className="search__container">
       <div className="search">
-      <form action="/" method="get">
+      {/* <form action="/" method="get" className="search_form"> */}
         <input
-          type="text"
-          className="searchInput"
+          type="search"
+          className="search__input"
           id="search"
-          placeholder="'search for questions'"
+          placeholder="search for questions"
           name="s"
           onChange={e => handleChange(e)}
           />
-      </form>
+          {/* <button className="search_button"></button> */}
+      {/* </form> */}
           </div>
     </div>
   );

@@ -154,3 +154,21 @@ app.put("/answers/:answer_id", (req, res) => {
       console.log("failed in server GET");
     });
 });
+
+app.put("/answers/:answer_id/report", (req, res) => {
+  axios({
+    method: "put",
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/answers/${Number(
+      req.params.answer_id
+    )}/report`,
+    headers: { Authorization: TOKEN },
+  })
+    .then((apiresponse) => {
+      console.log('apiresponse')
+      res.status(200).send(apiresponse.data);
+    })
+    .catch((err) => {
+      console.error(err);
+      console.log("failed in server GET");
+    });
+});

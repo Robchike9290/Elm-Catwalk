@@ -55,18 +55,17 @@ const QuestionList = ({ togglePopUp }) => {
     <div>
       <qListContext.Provider value={UpdateQlist}>
       {baseList.length > 0 && <SearchBar UpdateQlist={UpdateQlist} qList={qList} baseList={baseList} updateHighlightedWords={updateHighlightedWords} />}
-      <h3>QuestionList</h3>
-    <ul className="list">
+    <ul className="list" id="scrollable">
       {qList.map((question) => {
         if (count < listLength) {
           count++;
-          return <li key = {question.question_id} > <Question question={question} highlightedWords={highlightedWords} /></li>;
+          return <li  className ="qList" key = {question.question_id}  > <Question question={question} highlightedWords={highlightedWords} /></li>;
         }
       })}
       </ul>
-      <button onClick={togglePopUp}>Ask a question</button>
+      <button className="button" onClick={togglePopUp}>Ask a question</button>
       {qList.length > 2 && (
-        <button onClick={toggleList} id="listButton">
+        <button className="button" onClick={toggleList} id="listButton">
           {" "}
           {listButtonTitle}
         </button>

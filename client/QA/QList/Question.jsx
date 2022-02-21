@@ -29,15 +29,18 @@ const Question = ({question, highlightedWords}) => {
   }
 
   return (
-    <div>
+    <div className="question">
+      <div className="question_header">
       <Highlighter
+      id="left"
+      className="question_body"
     highlightClassName="YourHighlightClass"
     searchWords={[highlightedWords]}
     autoEscape={true}
-    textToHighlight={"Q:" +question.question_body}
-  />,
-      <div onClick ={toggleQhelpful}>Helpful? Yes {question.question_helpfulness}</div>
-      <button onClick={togglePopUp}>Add Answer</button>
+    textToHighlight={question.question_body}
+  />
+      <div id="middle" >Helpful? <u onClick ={toggleQhelpful}>Yes</u> ({question.question_helpfulness})  | <u onClick={togglePopUp}>Add Answer</u></div>
+      </div>
      <AnswerList answers = {question.answers} />
      {ApopUp && <AnswerPopUp  changeApopUp={changeApopUp} id={question.question_id}/>}
     </div>
