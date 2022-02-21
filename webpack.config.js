@@ -10,15 +10,25 @@ module.exports = {
     filename: "bundle.js",
     path: DIST_DIR,
   },
-  // devtool: 'eval-source-map',
+  devtool: 'eval-source-map',
   module: {
-    rules:[
+    rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: "babel-loader"
-      }
-      ,
+        use: "babel-loader",
+      },
+      {
+        test: /\.(png|jp(e*)g|svg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'images/[hash]-[name].[ext]',
+            },
+          },
+        ],
+      },
       // ,
       // {
       //   test: /\.html$/,
@@ -46,13 +56,13 @@ module.exports = {
     ],
   },
 
-  mode: 'development',
+  mode: "development",
   resolve: {
-    extensions: ['.js', '.jsx']
-  }
-//   plugins: [
-//     new HTMLWebpackPlugin({
-//       template: "index.html"
-//     }),
-//   ]
-}
+    extensions: [".js", ".jsx"],
+  },
+  //   plugins: [
+  //     new HTMLWebpackPlugin({
+  //       template: "index.html"
+  //     }),
+  //   ]
+};
