@@ -32,7 +32,7 @@ const AppProvider = (props) => {
    const [currentProductFeatures, setCurrentProductFeatures] = useState({})
    const [relatedProductsInfo, setRelatedProductsInfo] = useState([]);
 
-   // ! Cheryl
+   // ! Cheryl Hello
    const [recommend, setRecommend] = useState(false);
    const[meta, setMeta] = useState ([]);
    const[product, setProduct] = useState({});
