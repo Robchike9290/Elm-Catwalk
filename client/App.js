@@ -1,3 +1,5 @@
+
+import QA from "./QA/index.js"
 import React, { useContext, useState } from "react";
 import Token from '../config.js'
 import RatingsReviewsSection from './Ratings&Reviews/RatingsReviewsSection.jsx'
@@ -5,6 +7,16 @@ import axios from 'axios';
 import Overview from "./Overview/Overview.jsx";
 import Test from "./Overview/test.jsx";
 import { AppContext } from "./context.js";
+// const App = () => {
+//    return (
+//       <div>
+
+
+
+//    </div>);
+// }
+// import React, { useContext, useState } from "react";
+// import Overview from "./Overview/Overview.jsx";
 
 
 // Should give related products
@@ -86,6 +98,7 @@ function App() {
    return (
       <AppProvider>
          <Overview />
+         <QA/>
          <RatingsReviewsSection/>
       </AppProvider>
    )
@@ -155,10 +168,17 @@ function App() {
 //  }
 
 
+// )
 // class App extends React.Component {
 //    render () {
 
 //       return (
+// class App extends React.Component {
+//    render () {
+
+//       return (
+
+//          <div ><Overview/></div>
 
 //          <div ><Overview/></div>
 
@@ -168,3 +188,8 @@ function App() {
 // };
 
 export default App;
+//       )
+//    }
+// };
+
+
