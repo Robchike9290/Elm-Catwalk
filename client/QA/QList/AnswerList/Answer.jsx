@@ -40,7 +40,7 @@ const Answer = ({ answer }) => {
     <div>
       <div>A: {answer.body}</div>
       {answer.photos.map((photo) =>{
-        return <img src={photo} width="60" height="auto" ></img>
+        return <img className="thumb" src={photo} width="60" height="auto" ></img>
       })}
       <div className="answer_info">
         <div id="leftA">by {answer.answerer_name},{dateFormat(answer.date, "dddd, mmmm dS, yyyy")} |  Helpful? <u onClick={toggleAhelpful}>Yes</u> ({helpfulness})  | <u onClick={toggleReport}>{Areport}</u></div>

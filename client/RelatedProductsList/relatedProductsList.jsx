@@ -3,7 +3,7 @@ import { AppContext } from '../context.js';
 import RelatedProductsCarousel, { RelatedProductsCarouselItem } from './relatedProductsCarousel.jsx';
 import '../src/relatedProductsListStyles.css';
 import axios from 'axios';
-const config = require('../../config.js');
+import config from '../config.js';
 
 const RelatedProductsList = () => {
   const context = useContext(AppContext);

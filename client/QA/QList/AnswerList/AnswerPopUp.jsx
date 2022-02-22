@@ -35,7 +35,7 @@ const AnswerPopUp = ({ changeApopUp, id }) => {
             photos: [],
             id: id,
           },
-          headers: { Authorization: Token.TOKEN },
+
         });
         const newQlist = await axios.get(`/questions/${productID}`);
         await UpdateQlist(newQlist.data.results);
