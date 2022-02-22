@@ -24,6 +24,12 @@ export const OutfitItemsCarouselItem = (props, { children, width }) => {
 const OutfitItemsCarousel = ({ children }) => {
 
   const [activeIndex, setActiveIndex] = useState(0);
+  const [outfitProducts, setOutfitProducts] = useState([]);
+
+  const addCurrentProductToOutfit = () => {
+    console.log('attempting to add a new product to the outfit!');
+    setOutfitProducts(['hi there, I am an outfit']);
+  }
 
   const updateIndex = (newIndex) => {
     if (newIndex < 0) {
@@ -37,7 +43,9 @@ const OutfitItemsCarousel = ({ children }) => {
   return (
     <div className="carousel">
       <span>
-        <OutfitAddItem/>
+        <button className="addToOutfitButton" onClick={() => {addCurrentProductToOutfit()}}>
+          Add the currently<br></br> displyed item<br></br> to your outfit
+        </button>
       </span>
       <span className="inner" style={{ transform: `translateX(-${activeIndex * 23.65}%)` }}>
         {React.Children.map(children, (child, index) => {
