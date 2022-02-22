@@ -9,13 +9,22 @@ const StarRating = (props) => {
   const calculateStarRatings = () => {
     let totalRatingPoints = 0;
     let totalRatings = 0;
-    for (let key in props.ratings) {
-      let currentRatingPoints = key;
-      let currentRatingPointsOccurrence = props.ratings[key];
-      totalRatingPoints += (Number(currentRatingPoints) * Number(currentRatingPointsOccurrence));
-      totalRatings += Number(currentRatingPointsOccurrence);
+    let averageRatingProps = 0;
+    let averageRatingState = 0;
+    if (props.ratings) {
+      for (let key in props.ratings) {
+        let currentRatingPoints = key;
+        let currentRatingPointsOccurrence = props.ratings[key];
+        totalRatingPoints += (Number(currentRatingPoints) * Number(currentRatingPointsOccurrence));
+        totalRatings += Number(currentRatingPointsOccurrence);
+      }
+      averageRatingState = (Math.round(totalRatingPoints / totalRatings * 4) / 4).toFixed(2);
+    } else {
+      averageRatingProps = props.averageRating.toFixed(2);
     }
-    setAverageStarRating((Math.round(totalRatingPoints / totalRatings * 4) / 4).toFixed(2));
+    console.log("this is the average rating in the related prodcuts list:", averageRatingState);
+    console.log("this is the average rating in the outfit items list:", averageRatingProps);
+    setAverageStarRating(averageRatingState || averageRatingProps);
   }
 
   useEffect(() => {

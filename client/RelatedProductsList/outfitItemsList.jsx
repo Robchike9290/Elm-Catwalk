@@ -55,8 +55,8 @@ const OutfitItems = () => {
       <span>
         <OutfitItemsCarousel>
           <span>{outfitProducts[0]}</span>
-          <span>{outfitProducts[0]}</span>
-          <span>{outfitProducts[0]}</span>
+          <span>{outfitProducts[1]}</span>
+          <span>{outfitProducts[2]}</span>
         </OutfitItemsCarousel>
       </span>
     </div>
