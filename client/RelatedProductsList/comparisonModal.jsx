@@ -130,9 +130,9 @@ const ComparisonModal = (props) => {
           <caption className="modalTitle">Related Product vs. Current Product Comparison</caption>
           <thead className="modalHeading">
             <tr>
-              <th className="modalHeading">Current Product Name</th>
-              <th className="modalHeading">Characteristic</th>
-              <th className="modalHeading">Related Product Name</th>
+              <th className="modalHeadingColumn">Current Product Name</th>
+              <th className="modalHeadingColumn">Characteristic</th>
+              <th className="modalHeadingColumn">Related Product Name</th>
             </tr>
           </thead>
         </div>

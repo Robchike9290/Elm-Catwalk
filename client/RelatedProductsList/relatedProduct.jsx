@@ -84,7 +84,7 @@ const RelatedProduct = (props) => {
         <StarButton isModalShown={isModalShown} showModal={showModal}/>
       </div>
       <div className="productImageMat">
-      <img className="productImage" src={props.image} alt=" No image yet! 📸"></img>
+        <img className="productImage" src={props.image} alt=" No image yet! 📸"></img>
       </div>
       <div className="productData">Category: {props.category}</div>
       <div className="productData ">Name: {props.name}</div>
