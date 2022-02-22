@@ -1,6 +1,15 @@
+#app {
+  /* background-color: #373F51; */
+  /* background-color: #6F8695; */
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #e0e5e8;
+}
+
 .Overview {
   /* border: 5px solid red; */
   /* display: flex; */
+  /* background-color: #ECEBE4; */
+  background-color: #ECEBE4;
   margin-left: auto;
   margin-right: auto;
   /* justify-content: center; */
@@ -10,7 +19,7 @@
   width: 75%;
   grid-template-columns: repeat(10, 10%);
   grid-template-rows: repeat(10, 10%) ;
-  background-color: rgb(230, 230, 230);
+  /* background-color: rgb(230, 230, 230); */
 }
 
 .bigDescription {
@@ -32,6 +41,13 @@
   padding: 5px;
 }
 
+.rl-expanded-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
 .rl-ProductList div {
   cursor: pointer
 }
@@ -41,6 +57,8 @@
 
   /* border: 5px solid turquoise; */
   /* border: 5px solid wheat; */
+  /* box-shadow: 5px 5px #888888; */
+
   grid-column: 1 / span 6;
   grid-row:1 / span 7;
    /* display: flex; */
@@ -83,30 +101,151 @@
 
 .AddToCart {
   /* justify-content: end; */
+  /* box-shadow: 5px 5px #888888; */
+
   grid-row: 6 / 8;
   grid-column: 7 / span 4;
-  display: grid;
-  grid-template-columns: repeat(3, 33%);
-  grid-template-rows: repeat(3, 33%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  /* grid-template-columns: repeat(3, 33%);
+  grid-template-rows: repeat(3, 33%); */
   /* border: 5px solid green; */
 }
+
 
 .AddToCart div {
   grid-column: 2 / span 2;
 }
 
-.StyleSelector {
-  /* justify-content: left; */
+.quantitySelector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.addToCartButton {
+  align-items: center;
+  background-color: #5BBBBB;
+
+  border: 2px solid #000;
+  box-sizing: border-box;
+  color: #000;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: Inter,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: -.8px;
+  line-height: 24px;
+  min-width: 172.8px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+}
+
+.rl-size {
+  align-items: center;
+  background-color: #668F80;
+
+  border: 2px solid #000;
+  box-sizing: border-box;
+  color: #000;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: Inter,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: -.8px;
+  line-height: 24px;
+  min-width: 172.8px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  display: flex;
+  justify-content: flex-end;
+
+
+}
+
+.rl-size select {
+  right: 0%;
+}
+
+.rl-quantity {
+  align-items: center;
+  background-color: #668F80;
+
+  border: 2px solid #000;
+  box-sizing: border-box;
+  color: #000;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: Inter,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: -.8px;
+  line-height: 24px;
+  min-width: 172.8px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+}
+
+.style-selector-holder {
   grid-column: 7 / span 4;
   grid-row: 4 / 6;
-  /* border: 5px solid yellow; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+
+
+}
+.StyleSelector {
+  /* justify-content: left; */
+   /* border: 5px solid yellow; */
+
+  box-shadow: 5px 5px #888888;
   width: 300px;
+  max-height: 165px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   overflow: hidden;
-  background-color: rgb(189, 189, 189);
+  background-color: #D9BCB6;
+  /* background-color: #9e788f; */
   /* grid-template-columns: repeat(4 25%);
   grid-template-rows: repeat(3 33%); */
 }
@@ -117,7 +256,8 @@
 #active-stylePic {
   display: flex;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
 }
 #active-stylePic span {
   position: absolute;
@@ -155,6 +295,8 @@
   /* display: grid;
   grid-template-columns: repeat(3, 33%);
   grid-template-rows: repeat(3, 33%) ; */
+  /* box-shadow: 5px 5px #888888; */
+
 
   display: flex;
   flex-direction: column;

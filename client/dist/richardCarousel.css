@@ -1,17 +1,23 @@
 .rl-carousel-holder {
   display: flex;
   overflow: hidden;
+  /* box-shadow: 5px 5px #888888; */
+
   height: 515px;
 }
 
 .rl-carousel {
   overflow: hidden;
+  border: 3px solid grey;
+
   object-fit: cover;
 }
 
 .rl-inner {
   white-space: nowrap;
   object-fit: cover;
+  /* cursor: pointer; */
+
   transition: transform 0.3s
 }
 
@@ -20,12 +26,14 @@
   align-items: center;
   justify-content: center;
 
+
   height: 515px;
   /* color: #fff; */
 }
 
 .rl-carousel-item img {
   object-fit: cover;
+  min-width: 400px;
 }
 .rl-indicators {
 
@@ -76,6 +84,7 @@
   height: 450px;
   width: 65px;
   position: absolute;
+  /* border: 3px solid grey; */
 }
 
 .vertical-inner {
@@ -96,7 +105,7 @@
 
 .vertical-carousel-item img {
   object-fit: cover;
-  /* margin: 2px; */
+  margin: 1px;
 }
 .vertical-indicators {
 
@@ -138,7 +147,10 @@
 }
 
 
-.active-thumbnail {
+.active-thumbnail img {
   /* border-radius: 50%; */
-  border: 3px solid red;
+  border: 3px solid #5BBBBB;
+  object-fit: cover;
+  border-radius: 50%;
+  /* margin: 5px; */
 }

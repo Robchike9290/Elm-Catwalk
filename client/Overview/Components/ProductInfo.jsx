@@ -19,7 +19,7 @@ const ProductInfo = () =>  {
 
     <div className="rl-ProductInfo">
       <ExpandedInfo />
-      <div className='cc-star-rating'>
+      <div className='cc-star-rating'>Rating:
         {[...Array(5)].map((item, index) => {
           index += 1
           return (

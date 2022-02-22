@@ -11,7 +11,7 @@ const ExpandedInfo = () => {
 
   return (
 
-    <div>
+    <div className="rl-expanded-info">
       {currentProduct.name}
       <br></br>
       {(currentStyle.sale_price === null) ? <div>${currentStyle.original_price}</div> :
@@ -20,6 +20,8 @@ const ExpandedInfo = () => {
           <span> 	&#32;     	&#32;     	&#32;        </span>
           <span id='strikethrough'>${currentStyle.original_price}</span>
         </div>}
+      <br></br>
+      Category || {currentProduct.category}
       <br></br>
       Style &#62; {currentStyle.name}
     </div>

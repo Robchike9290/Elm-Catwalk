@@ -4,7 +4,7 @@ import { AppContext } from '../../../context.js';
 
 const QuantitySelector = () => {
 
-  const { currentStyle } = useContext(AppContext);
+  const { currentStyle, currentProduct } = useContext(AppContext);
   const [styleKeyArray, setStyleKeyArray] = useState([]);
   const [selectedSize, setSelectedSize] = useState('');
   const [selectedQuantity, setSelectedQuantity] = useState(1);
@@ -13,12 +13,12 @@ const QuantitySelector = () => {
 
   useEffect(() => {
     let temp = [];
-    let size = 'XS'
+    // let size = 'XS'
     for (let key in currentStyle.skus) {
       temp.push(currentStyle.skus[key]);
     }
     setStyleKeyArray(temp);
-    setSelectedSize(size);
+    // setSelectedSize(size);
 
     // return () => {
     //   styleKeyArray = [];
@@ -57,6 +57,14 @@ const QuantitySelector = () => {
   }, [selectedSize])
 
 
+  const handleSubmit = () => {
+    (selectedQuantity === 1)
+    ? window.alert(`${selectedQuantity} ${selectedSize} ${currentStyle.name} ${currentProduct.name} has been added to cart `)
+    : (currentProduct.name[currentProduct.name.length-1] === 's') ? window.alert(`${selectedQuantity} ${selectedSize} ${currentStyle.name} ${currentProduct.name} have been added to cart `) : window.alert(`${selectedQuantity} ${selectedSize} ${currentStyle.name} ${currentProduct.name}s have been added to cart `)
+
+
+  }
+
 
 
 
@@ -66,7 +74,7 @@ const QuantitySelector = () => {
   return (
 
     <>
-      <div>
+      <div className='rl-size'>
         Size:
 
         <select onChange={() => setSelectedSize(event.target.value)}>
@@ -80,7 +88,7 @@ const QuantitySelector = () => {
         </select>
 
       </div>
-      <div> Quantity:
+      <div className='rl-quantity'> Quantity:
         <select onChange={() => setSelectedQuantity(event.target.value)}>
 
           {selectedSizeQuantity.map((number, key) => (
@@ -92,7 +100,7 @@ const QuantitySelector = () => {
       </div>
 
       <div>
-        <input className="addToCartButton" type="submit" value="Submit" />
+        <input onClick={() => handleSubmit()} className="addToCartButton" type="submit" value="Add To Cart" />
       </div>
       </>
 
