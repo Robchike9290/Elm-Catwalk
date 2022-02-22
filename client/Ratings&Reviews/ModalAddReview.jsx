@@ -43,7 +43,7 @@ const ModalAddReview = ((props) => {
     return null
   }
   return (
-    <div className='modal'>
+    <div className='cc-modal'>
       <h3>Write Your Review</h3>
       <form >
         <label>

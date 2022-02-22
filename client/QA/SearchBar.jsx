@@ -25,7 +25,7 @@ const SearchBar = ({UpdateQlist, qList, baseList, updateHighlightedWords}) => {
 
 
   return (
-    <div className="search__container">
+    <div className="a_search__container">
       <div className="search">
       {/* <form action="/" method="get" className="search_form"> */}
         <input

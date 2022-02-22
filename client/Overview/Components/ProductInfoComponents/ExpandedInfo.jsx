@@ -3,9 +3,10 @@ import { AppContext } from '../../../context.js';
 
 
 
-const ExpandedInfo = () =>  {
+const ExpandedInfo = () => {
 
   const { currentProduct, currentStyle } = useContext(AppContext);
+
 
 
   return (
@@ -13,9 +14,14 @@ const ExpandedInfo = () =>  {
     <div>
       {currentProduct.name}
       <br></br>
-      {currentProduct.default_price}
+      {(currentStyle.sale_price === null) ? <div>${currentStyle.original_price}</div> :
+        <div >
+          <span id='rl-sale-price'>${currentStyle.sale_price}</span>
+          <span> 	&#32;     	&#32;     	&#32;        </span>
+          <span id='strikethrough'>${currentStyle.original_price}</span>
+        </div>}
       <br></br>
-      Style > {currentStyle.name}
+      Style &#62; {currentStyle.name}
     </div>
   )
 

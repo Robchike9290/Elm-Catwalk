@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000;
 const baseURL = "https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/";
 const baseURLQA = "https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa";
 
-const { TOKEN } = require("../client/QA/config.js");
+const { TOKEN } = require("../config.js");
 
 app.listen(port, () => {
   console.log(`The app server is running on port: ${port}`);
@@ -78,7 +78,21 @@ app.get("/products/:product_id/styles", (req,res) => {
       })
       .catch ((err) => {
          //   console.error(err);
-           console.error('failed in server GET');
+         //   console.error('failed in server GET');
+         });
+
+})
+
+app.get("/products/:product_id", (req,res) => {
+  //  console.log(req.params);
+   axios.get(`${baseURL}${req.params.product_id}`, {headers: {Authorization: TOKEN}})
+      .then((receivedFeaturesList) => {
+         // console.log(data.data);
+         res.status(200).send(receivedFeaturesList.data)
+      })
+      .catch ((err) => {
+         //   console.error(err);
+           console.error('failed in server features GET');
          });
 
 })

@@ -38,7 +38,7 @@ const AnswerList = ({ answers }) => {
   }).map((answer) => {
           if (count < answerListLength) {
             count++;
-            console.log(answer.id)
+            // console.log(answer.id)
             return <li key={answer.id}><Answer answer={answer} /></li>;
           }
         }))}

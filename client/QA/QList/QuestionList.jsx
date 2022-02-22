@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import Question from "./Question.jsx";
 import axios from "axios";
-import Token from "../config.js";
+import Token from "../../../config.js";
 import { productIdContext } from "../createContext.js";
 import SearchBar from "../SearchBar.jsx";
 import { qListContext } from "../createContextQlist.js";
@@ -17,7 +17,7 @@ const QuestionList = ({ togglePopUp }) => {
   const [listButtonTitle, changelistButtonTitle] = useState(
     "Show More Questions"
   );
-  console.log('at the top', qList);
+  // console.log('at the top', qList);
 
 
 
@@ -31,7 +31,7 @@ const QuestionList = ({ togglePopUp }) => {
   useEffect(() => {
     async function fetchQList() {
       const questionListData = await axios.get(`/questions/${productID}`);
-      console.log("quetsionListData", questionListData);
+      // console.log("quetsionListData", questionListData);
       UpdateQlist(questionListData.data.results);
       UpdateBaseList(questionListData.data.results);
     }

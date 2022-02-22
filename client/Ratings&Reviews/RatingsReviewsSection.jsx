@@ -1,9 +1,9 @@
 import React, {useEffect, useState, useContext} from 'react';
 import axios from 'axios';
-import Token from '/Users/alexmnahas/Elm-Catwalk/client/QA/config.js';
+import Token from '../../config.js';
 import ReviewBreakdown from './ReviewBreakdown.jsx';
 import ReviewList from './ReviewList.jsx'
-import '../styles.css';
+// import '../styles.css';
 import ModalAddReview from './ModalAddReview.jsx'
 import {AppContext } from '../context.js';
 // import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -70,12 +70,12 @@ const RatingsReviewsSection = (props) => {
 
     axios.put(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${review_id}/helpful`, {headers: {'Authorization': Token.TOKEN}})
     console.log('SECONDupdateHelpfulness token', Token.TOKEN)
-    // .then(() => {
-    //   console.log(SUCCESS)
-    // })
-    // .catch((err) => {
-    //   console.log('updateHelpfulness error', err)
-    // })
+    .then(() => {
+      console.log(SUCCESS)
+    })
+    .catch((err) => {
+      console.log('updateHelpfulness error', err)
+    })
   })
 
   const updateReport = ((e, review_id) => {
@@ -93,10 +93,10 @@ const RatingsReviewsSection = (props) => {
   // })
   return (
     // console.log('PRODUCT', product);
-    <div className='R-R-parent'>
+    <div className='cc-R-R-parent'>
       <h3>Ratings & Reviews</h3>
       <ModalAddReview addreview={addreview} setAddReview={setAddReview}/>
-      <div className='container'>
+      <div className='cc-container'>
        <ReviewBreakdown total={total} setTotal={setTotal} starpoint={starpoint}/>
        <ReviewList sort={sort} setSort={setSort} addreview={addreview} setAddReview={setAddReview} updateHelpfulness={updateHelpfulness} updateReport={updateReport}/>
        {/* <ReviewList sort={sort} setSort={setSort} addreview={addreview} setAddReview={setAddReview} /> */}

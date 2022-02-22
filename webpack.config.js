@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const path = require("path");
 // const webpack = require("webpack");
 // const HTMLWebpackPlugin = require("html-webpack-plugin");
@@ -10,15 +11,25 @@ module.exports = {
     filename: "bundle.js",
     path: DIST_DIR,
   },
-  // devtool: 'eval-source-map',
+  devtool: 'eval-source-map',
   module: {
-    rules:[
+    rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: "babel-loader"
-      }
-      ,
+        use: "babel-loader",
+      },
+      {
+        test: /\.(png|jp(e*)g|svg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'images/[hash]-[name].[ext]',
+            },
+          },
+        ],
+      },
       // ,
       // {
       //   test: /\.html$/,
@@ -46,8 +57,9 @@ module.exports = {
     ],
   },
 
-  mode: 'development',
+  mode: "development",
   resolve: {
+<<<<<<< HEAD
     extensions: ['.js', '.jsx']
   }
 //   plugins: [
@@ -56,3 +68,13 @@ module.exports = {
 //     }),
 //   ]
 }
+=======
+    extensions: [".js", ".jsx"],
+  },
+  //   plugins: [
+  //     new HTMLWebpackPlugin({
+  //       template: "index.html"
+  //     }),
+  //   ]
+};
+>>>>>>> ec3a98f89d05330eb793d3d8b003ec0fdef1a7f0

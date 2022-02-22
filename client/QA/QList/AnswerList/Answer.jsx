@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
-import { qListContext } from "/Users/alexmnahas/Elm-Catwalk/client/QA/createContextQlist.js";
-import { productIdContext } from "/Users/alexmnahas/Elm-Catwalk/client/QA/createContext.js";
+import { qListContext } from "../../../../client/QA/createContextQlist.js";
+import { productIdContext } from "../../../../client/QA/createContext.js";
 import axios from "axios";
 import dateFormat, { masks } from "dateformat";
 
@@ -39,8 +39,8 @@ const Answer = ({ answer }) => {
   return (
     <div>
       <div>A: {answer.body}</div>
-      {answer.photos.map((photo) =>{
-        return <img className="thumb" src={photo} width="60" height="auto" ></img>
+      {answer.photos.map((photo, key) =>{
+        return <img key={key}  className="thumb" src={photo} width="60" height="auto" ></img>
       })}
       <div className="answer_info">
         <div id="leftA">by {answer.answerer_name},{dateFormat(answer.date, "dddd, mmmm dS, yyyy")} |  Helpful? <u onClick={toggleAhelpful}>Yes</u> ({helpfulness})  | <u onClick={toggleReport}>{Areport}</u></div>
