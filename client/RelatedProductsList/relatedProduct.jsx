@@ -4,7 +4,7 @@ import ComparisonModal from './comparisonModal.jsx';
 import Price from './price.jsx';
 import StarButton from './starButton.jsx';
 import StarRating from './starRating.jsx';
-import '../src/relatedProductsListStyles.css';
+import '../src/relatedProductsListStylesDarkMode.css';
 
 const RelatedProduct = (props) => {
   const [isModalShown, setIsModalShown] = useState(false);

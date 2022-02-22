@@ -3,7 +3,8 @@
 	margin: auto;
 	padding: 20px;
 	font-family: Arial, Helvetica, sans-serif, bold;
-	background-color: #e0e5e8;
+	background-color: #373f51;
+	color: white;
 }
 
 .bSectionTitle {
@@ -14,43 +15,43 @@
 .productInnerMat {
 	height: 705px;
 	padding-top: 20px;
-	background-color: #d9bcb6;
+	background-color: #9e788f;
 	border: 0px solid black;
-	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.9);
 }
 
 .product {
 	margin: 3px 10px;
-	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.9);
 }
 
 .productBox {
 	height: 700px;
-	background-color: #eceee4;
-	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
+	background-color: #373f51;
+	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.9);
 }
 
 .productImage {
 	margin: auto;
 	text-align: center;
 	overflow-wrap: break-word;
-	background-color: #eceee4;
+	background-color: #373f51;
 	width: 230px;
-	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.9);
 }
 
 .productImageMat {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: #eceee4;
+	background-color: #373f51;
 	height: 350px;
 	width: 300px;
 	margin-top: 15px;
 	margin-left: 10px;
 	margin-right: 10px;
 	border: 0px solid black;
-	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.9);
 }
 
 .productData {
@@ -60,9 +61,9 @@
 	margin-left: 10px;
 	margin-right: 10px;
 	font-size: 13px;
-	background-color: #eceee4;
+	background-color: #373f51;
 	border: 0px solid black;
-	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.9);
 }
 
 .productStarRating {
@@ -72,9 +73,9 @@
 	margin-left: 10px;
 	margin-right: 10px;
 	font-size: 13px;
-	background-color: #eceee4;
+	background-color: #373f51;
 	border: 0px solid black;
-	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.9);
 }
 
 .productAction {
@@ -82,9 +83,9 @@
 	margin-left: 280px;
 	height: 15px;
 	width: 15px;
-	background-color: #eceee4;
+	background-color: #373f51;
 	position: relative;
-	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.9);
 }
 
 .carousel {
@@ -99,7 +100,7 @@
 	height: 30px;
 	margin: 10px 10px;
 	float: left;
-	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.9);
 }
 
 .carouselButtonRight {
@@ -107,9 +108,9 @@
 	border-radius: 4px;
 	width: 34px;
 	height: 30px;
-	margin: 10px 10px;
+	margin: 20px 10px;
 	float: right;
-	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.9);
 }
 
 .carouselItem {
@@ -118,8 +119,8 @@
 	margin-left: 10px;
 	margin-right: 10px;
 	border: 0px solid black;
-	background-color: #eceee4;
-	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
+	background-color: #373f51;
+	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.9);
 }
 
 .inner {
@@ -135,7 +136,9 @@
 	display: inline-block;
 	vertical-align: top;
 	text-align: center;
-	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
+	background-color: #373f51;
+	color: white;
+	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.9);
 }
 
 .outfitItemAction {
@@ -144,7 +147,7 @@
 	height: 15px;
 	width: 15px;
 	position: relative;
-	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.9);
 }
 
 .salesPrice {
@@ -152,12 +155,12 @@
 }
 
 .regularPriceOnSale {
-	color: black;
+	color: white;
 	text-decoration: line-through;
 }
 
 .regularPriceOffSale {
-	color: black;
+	color: white;
 }
 
 .stars::after {
@@ -166,14 +169,15 @@
 }
 
 .modal {
-	background-color: #eceee4;
+	background-color: #373f51;
 	position: fixed;
 	top: 50%;
 	left: 50%;
 	overflow: hidden;
 	transform: translateX(-50%) translateY(-50%);
 	width: 660px;
-	height: 400px;
+	height: 450px;
+	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.9);
 	border: 0px solid black;
 	z-index: 102;
 }
@@ -184,7 +188,7 @@
 	width: 50px;
 	height: 50px;
 	right: -16px;
-	background-color: #eceee4;
+	background-color: #373f51;
 	bottom: -280px;
 }
 
@@ -192,14 +196,14 @@
 	width: 220px;
 	line-height: 1.3em;
 	font-size: 12px;
-	background-color: #eceee4;
+	background-color: #373f51;
 	text-align: center;
 }
 
 .modalHeading {
 	width: 660px;
 	line-height: 2.8em;
-	background-color: #eceee4;
+	background-color: #373f51;
 	border-bottom: 1px solid black;
 }
 
@@ -207,12 +211,12 @@
 	width: 220px;
 	text-align: center;
 	font-size: 15px;
-	background-color: #eceee4;
+	background-color: #373f51;
 }
 
 .modalMat {
-	background-color: #d9bcb6;
-	height: 100%;
+	background-color: #9e788f;
+	height: 110%;
 	left: 0;
 	position: fixed;
 	top: 0;
@@ -221,7 +225,7 @@
 }
 
 .modalTitle {
-	background-color: #eceee4;
+	background-color: #373f51;
 	width: 660px;
 	font-size: 24px;
 	text-align: center;
@@ -229,11 +233,11 @@
 
 .modalNotScrollable {
 	margin: 10px 0 10px 0;
-	background-color: #eceee4;
+	background-color: #373f51;
 }
 
 .modalScrollable {
-	background-color: #eceee4;
+	background-color: #373f51;
 	position: absolute;
 	height: 300px;
 	width: 674px;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import RelatedProduct from './relatedProduct.jsx';
-import '../src/relatedProductsListStyles.css';
+import '../src/relatedProductsListStylesDarkMode.css';
 
 export const RelatedProductsCarouselItem = (props, { children, width }) => {
   return (

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import OutfitItem from './outfitItem.jsx';
 import OutfitAddItem from './outfitAddItem.jsx';
-import '../src/relatedProductsListStyles.css';
+import '../src/relatedProductsListStylesDarkMode.css';
 
 export const OutfitItemsCarouselItem = (props, { children, width }) => {
 
@@ -27,8 +27,18 @@ const OutfitItemsCarousel = ({ children }) => {
   const [outfitProducts, setOutfitProducts] = useState([]);
 
   const addCurrentProductToOutfit = () => {
-    console.log('attempting to add a new product to the outfit!');
-    setOutfitProducts(['hi there, I am an outfit']);
+    let currentOutfitItems = outfitProducts.slice();
+    let newOutfitItem = createNewOutfitItem();
+
+    currentOutfitItems.push(newOutfitItem);
+
+    setOutfitProducts(currentOutfitItems);
+  }
+
+  const createNewOutfitItem = () => {
+    return (
+      <OutfitItem></OutfitItem>
+    )
   }
 
   const updateIndex = (newIndex) => {

@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import { AppContext } from '../context.js';
 import RelatedProductsCarousel, { RelatedProductsCarouselItem } from './relatedProductsCarousel.jsx';
-import '../src/relatedProductsListStyles.css';
+import '../src/relatedProductsListStylesDarkMode.css';
 import axios from 'axios';
 const config = require('../../config.js');
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { AppContext } from '../context.js';
-import '../src/relatedProductsListStyles.css';
+import '../src/relatedProductsListStylesDarkMode.css';
 import RatingIcon from '../../client/Ratings&Reviews/RatingIcon.jsx'
 
 const StarRating = (props) => {
