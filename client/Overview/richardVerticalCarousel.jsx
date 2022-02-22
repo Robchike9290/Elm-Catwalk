@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect, useContext } from 'react';
 import { AppContext } from '../context.js';
 // import "../dist/richardCarousel.css";
@@ -16,13 +17,21 @@ const VerticalCarousel = ( { children }) => {
   const { activeIndex, setActiveIndex } = useContext(AppContext);
   const [verticalIndex, setVerticalIndex] = useState(0)
   const { currentStyle } = useContext(AppContext);
+  // console.log(activeIndex)
+  useEffect ( () => {
+    if(activeIndex < 6) {
+      // console.log('big')
+      setVerticalIndex(0);
+    }
 
-  // useEffect ( () => {
+    if(activeIndex > 6) {
+      // console.log('lil');
+      setVerticalIndex(3);
+    }
+  }
 
-  //   setActiveIndex(0);
-  // }
-
-  // , [currentStyle])
+  , [activeIndex])
+  // can make a useeffect that fires when active index changes. If it's like 5, set vertical index to 5 or something
 
   const updateIndex = (newIndex) => {
     if (newIndex < 0) {
@@ -47,14 +56,14 @@ const VerticalCarousel = ( { children }) => {
       <div className='vertical-indicators'>
         <button className="vertical-prev"
           onClick={() => {
-            updateIndex(verticalIndex - 1);
+            updateIndex(verticalIndex + 1);
           }}
         >
           	 &#9660;
           </button>
           <button className="vertical-next"
           onClick={() => {
-            updateIndex(verticalIndex + 1);
+            updateIndex(verticalIndex - 1);
           }}
         >
            &#9650;

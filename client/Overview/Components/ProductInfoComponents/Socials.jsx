@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Socials = () => {
-  return <div>Socials</div>
+  return <div>Instagram || Facebook || Twitter || Pintrest</div>
 }
 
 export default Socials;

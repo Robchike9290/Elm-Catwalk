@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect, useContext } from 'react';
 import { AppContext } from '../../../context.js';
 
@@ -64,8 +65,9 @@ const QuantitySelector = () => {
 
   return (
 
-    <form onSubmit={() => console.log('submitted:', selectedSize, selectedQuantity)}>
-      <div>Size:
+    <>
+      <div>
+        Size:
 
         <select onChange={() => setSelectedSize(event.target.value)}>
           {/* set value = sku.quantity, bypass a bunch of code. */}
@@ -92,9 +94,9 @@ const QuantitySelector = () => {
       <div>
         <input className="addToCartButton" type="submit" value="Submit" />
       </div>
+      </>
 
 
-    </form>
 
   )
 
@@ -103,6 +105,9 @@ const QuantitySelector = () => {
 
 export default QuantitySelector
 
+
+{/* <form onSubmit={() => console.log('submitted:', selectedSize, selectedQuantity)}>
+</form> */}
 // {currentStyle.skus?.map((sku, key) => (
 //   <option> {sku.size}</option>
 // ))}

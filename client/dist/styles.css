@@ -6,7 +6,8 @@
   /* justify-content: center; */
   display: grid;
   height: 750px;
-  width: 800px;
+  padding: 20px;
+  width: 75%;
   grid-template-columns: repeat(10, 10%);
   grid-template-rows: repeat(10, 10%) ;
   background-color: rgb(230, 230, 230);
@@ -15,14 +16,24 @@
 .bigDescription {
   grid-column: 1 / span 10;
   grid-row: 10;
-  /* border: 5px solid purple; */
+  padding: 5px;
+  border: 3px solid black;
 }
 
 
 .rl-ProductList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   grid-column: 1 / span 10;
   grid-row: 8 / span 2;
-  /* border: 5px solid brown; */
+  border: 3px solid black;
+  padding: 5px;
+}
+
+.rl-ProductList div {
+  cursor: pointer
 }
 
 
@@ -89,6 +100,7 @@
   grid-column: 7 / span 4;
   grid-row: 4 / 6;
   /* border: 5px solid yellow; */
+  width: 300px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -97,6 +109,10 @@
   background-color: rgb(189, 189, 189);
   /* grid-template-columns: repeat(4 25%);
   grid-template-rows: repeat(3 33%); */
+}
+
+.StyleSelector div {
+  cursor: pointer
 }
 #active-stylePic {
   display: flex;
@@ -135,14 +151,27 @@
   /* border: 5px solid black; */
   grid-row: 1 / span 3;
   grid-column: 7 / span 4;
-  display: grid;
+  min-width: 100px;
+  /* display: grid;
   grid-template-columns: repeat(3, 33%);
-  grid-template-rows: repeat(3, 33%) ;
+  grid-template-rows: repeat(3, 33%) ; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+#strikethrough {
+  text-decoration: line-through;
+}
+#rl-sale-price {
+  color: red;
 }
 
-.rl-ProductInfo div {
-  grid-column: 2 / span 2;
-}
+/* .rl-ProductInfo div {
+   grid-column: 2 / span 2;
+  position: absolute;
+} */
 
 /* CHERYL */
 
