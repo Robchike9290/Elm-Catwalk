@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { AppContext } from '../context.js';
 import XButton from './xButton.jsx';
 
 const ComparisonModal = (props) => {
 
   const [modalData, setModalData] = useState([]);
+  const context = useContext(AppContext);
+  const currentProductFeatures = context.currentProductFeatures.features;
 
   const createTableData = () => {
     const nonFeatureRows = [];
@@ -23,7 +26,7 @@ const ComparisonModal = (props) => {
           currentProperty = 'Product Name';
         } else if (currentProperty === 'category') {
           currentProperty = 'Product Category';
-        } else if (currentProperty === 'price') {
+        } else if (currentProperty === 'price' || currentProperty === 'default_price') {
           currentProperty = 'Regular Price';
         } else if (currentProperty === 'salesPrice') {
           currentProperty = 'Sales Price';
@@ -45,8 +48,7 @@ const ComparisonModal = (props) => {
       }
 
       if (currentProperty === 'features') {
-        // TEST DATA - REMOVE AND REPLACE WITH REAL DATA ONCE RICHARD RECONSTRUCTS STATE FOR FURTHER TESTING
-        currentProductValue = [{feature: 'Fabric', value: 'Kashmere'}, {feature: 'Sole', value: 'Rubber'}, {feature: 'Embroidery', value: 'True'}];
+        let currentProductValue = currentProductFeatures;
 
         if (currentProductValue.length) {
           for (let j = 0; j < currentProductValue.length; j++) {

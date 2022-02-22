@@ -7,7 +7,6 @@ const config = require('../../config.js');
 
 const RelatedProductsList = () => {
   const context = useContext(AppContext);
-  // console.log(config.TOKEN);
 
   const getRelatedProductNumbers = () => {
     axios.get(`/products/${context.currentProductId}/related`)
@@ -74,7 +73,6 @@ const RelatedProductsList = () => {
     <div className="productInnerMat">
       <RelatedProductsCarousel>
         {context.relatedProductsInfo.map((product, index) => (
-          // still need to get star rating (from Cheryl)
           <RelatedProductsCarouselItem
           category={product.category}
           features={product.features}

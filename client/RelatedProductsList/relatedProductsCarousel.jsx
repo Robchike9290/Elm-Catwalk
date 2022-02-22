@@ -8,11 +8,11 @@ export const RelatedProductsCarouselItem = (props, { children, width }) => {
       <RelatedProduct
       name={props.name}
       category={props.category}
+      price={props.price}
+      salesPrice={props.sale_price}
       features={props.features}
       image={props.image}
-      price={props.price}
       ratings={props.ratings}
-      salesPrice={props.sale_price}
       />
     </div>
   );
