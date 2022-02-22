@@ -2,9 +2,6 @@ import React, { useEffect, useContext } from 'react';
 import { AppContext } from '../context.js';
 import OutfitAddItem from './outfitAddItem.jsx';
 import OutfitItemsCarousel, { OutfitItemsCarouselItem } from './outfitItemsCarousel.jsx';
-import '../src/relatedProductsListStylesDarkMode.css';
-
-
 
 const OutfitItems = () => {
   const context = useContext(AppContext);

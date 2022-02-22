@@ -160,11 +160,6 @@
 	color: black;
 }
 
-.stars::after {
-	background-color: darkkhaki;
-	content: " the stars will go here &#9733;";
-}
-
 .modal {
 	background-color: #eceee4;
 	position: fixed;

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import OutfitItem from './outfitItem.jsx';
 import OutfitAddItem from './outfitAddItem.jsx';
-import '../src/relatedProductsListStylesDarkMode.css';
 
 export const OutfitItemsCarouselItem = (props, { children, width }) => {
 
