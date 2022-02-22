@@ -13,13 +13,13 @@ const RatingIcons=((props) => {
   const fill = useMemo(() => {
     if (Number.isInteger(props.rating)) {
       if (props.rating >= props.index) {
-        return 'grad100'
+        return 'url(#grad100)'
       }
     } else {
       const wholeNum = Math.floor(props.rating)
       const decimalNum = props.rating - Math.floor(props.rating)
       if (wholeNum >= props.index) {
-        return 'grad100'
+        return 'url(#grad100)'
       }
       if ((props.index - props.rating) > 1) {
         return 'none'

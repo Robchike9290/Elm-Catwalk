@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import moment from 'moment';
 import ReviewListEntryBody from './ReviewListEntryBody.jsx'
 import ReviewListPhotos from './ReviewListPhotos.jsx'
 import RatingIcon from './RatingIcon.jsx'
+import axios from 'axios'
 
 const ReviewListEntry = ((props) => {
   // console.log('REVIEWLISTENTRY', props)
@@ -13,9 +14,26 @@ const ReviewListEntry = ((props) => {
   // console.log('SUMMARY', summary)
   const strBody = props.product.body
   const photos = props.product.photos && props.product.photos.length ? props.product.photos : []
+  console.log(props.product.helpfulness)
+
+  const updateHelpfulness = async () => {
+    // if(!props.rHelpful) {
+      // async function markAsHelpful() {
+    const serverResponse = await
+    axios.put(`reviews/${props.product.review_id}`); console.log(serverResponse)
+      // }
+      // markAsHelpful()
+    props.setRHelpful(true)
+  }
+
+   const updateReport = async() => {
+    const serverResponse = await
+    axios.put(`reviews/${props.product.review_id}`); console.log(serverResponse)
+    props.setReported(true)
+  }
 
   return (
-    <div>
+    <div className='cc-reviewEntry'>
       <div className='cc-listitem1'>
         <div className="cc-star-rating">
           {[...Array(5)].map((item, index) => {
@@ -40,13 +58,13 @@ const ReviewListEntry = ((props) => {
       <div className='cc-seller-response'>{props.product.response && `Response from seller ${props.product.response}`}</div>
       <div className='cc-Ind-helpfulness'>
         <p>Was this review helpful?</p>
-        <p onClick={(e)=>props.updateHelpfulness(e, props.product.review_id)}>Yes</p>
+        <u onClick={updateHelpfulness}>Yes</u>
         <p>({props.product.helpfulness})</p>
         <p> | </p>
-        <p onClick={(e)=>props.updateReport(e, props.product.review_id)}>Report</p>
+        <p onClick={updateReport}>Report</p>
       </div>
 
-      <hr/>
+      <hr className='cc-space'/>
     </div>
   )
 

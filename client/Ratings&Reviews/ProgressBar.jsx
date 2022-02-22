@@ -27,7 +27,7 @@ const ProgressBar = ((props) => {
 
   return(
     <div className='cc-ratings' onClick={toggleRating}>
-      <div>{props.star} stars</div>
+      <div className='cc-starNumber'>{props.star} stars</div>
       <FillerProgressBar percentage={props.percentage}/>
       <div>{props.value}</div>
     </div>

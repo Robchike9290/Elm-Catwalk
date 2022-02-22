@@ -44,10 +44,10 @@ const ModalAddReview = ((props) => {
   }
   return (
     <div className='cc-modal'>
-      <h3>Write Your Review</h3>
+      <h3 className='cc-modalHeader'>Write Your Review</h3>
       <form >
         <label>
-          About the {currentProduct.name}
+          About product: {currentProduct.name}
           < StarForModal />
         </label>
         <br/>
@@ -100,8 +100,10 @@ const ModalAddReview = ((props) => {
           “For authentication reasons, you will not be emailed”
         </label>
         <br/>
+        <label className='cc-modalFooter'>
         {/* <button onClick={()=>props.setAddReview(false)}>SUBMIT</button> */}
         <ValidationSubmitReview addreview={props.addreview} setAddReview={props.setAddReview} />
+        </label>
       </form>
     </div>
   )

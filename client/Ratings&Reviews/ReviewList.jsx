@@ -33,7 +33,7 @@ const ReviewList = ((props) => {
       </div>
       <div className='cc-reviewlist'>
       {productresults.slice(0, index).map((product, i) => {
-        return <ReviewListEntry product={product} key={i} updateHelpfulness={props.updateHelpfulness} updateReport={props.updateReport}/>
+        return <ReviewListEntry product={product} key={i} rHelpful={props.rHelpful} setRHelpful={props.setRHelpful} reported={props.reported} setReported={props.setReported}/>
       })}
       </div>
       {moreReview && <button onClick={moreReviewButton}>MORE REVIEWS</button>}

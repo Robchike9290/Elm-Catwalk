@@ -51,9 +51,11 @@ const ReviewBreakdown = ((props) => {
             )
           })}
         </div>
+      <br/>
+      <br/>
       </div>
-      <p> {avgRecommended}% of reviews recommend this product</p>
-      <p>{selectedratings} (SELECTED RATINGS GO HERE)</p>
+      <p className='cc-averageRecommended'> {avgRecommended}% of reviews recommend this product</p>
+      <p className='cc-selected-ratings'>{selectedratings} (SELECTED RATINGS GO HERE)</p>
       <BreakdownBar ratings={meta.ratings} totalEntries={props.total.totalEntries} starpoint={props.starpoint}/>
       <p>{props.total.totalEntries} ratings</p>
       <div>
