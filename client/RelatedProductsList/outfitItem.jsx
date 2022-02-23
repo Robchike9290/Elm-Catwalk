@@ -7,7 +7,7 @@ const OutfitItem = (props) => {
   return (
     <span className="product">
       <div className="outfitItemAction">
-        <OutfitItemXButton/>
+        <OutfitItemXButton name={props.name}/>
       </div>
       <div className="productImageMat">
         <img alt="This is the image for the product." className="productImage" src={props.image}></img>

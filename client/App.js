@@ -8,16 +8,6 @@ import axios from 'axios';
 import Overview from "./Overview/Overview.jsx";
 import RelatedItemsAndComparison from "./RelatedProductsList/relatedItemsAndComparison.jsx";
 import { AppContext } from "./context.js";
-// const App = () => {
-//    return (
-//       <div>
-
-
-
-//    </div>);
-// }
-// import React, { useContext, useState } from "react";
-// import Overview from "./Overview/Overview.jsx";
 
 const AppProvider = (props) => {
    const [test, testUpdater] = useState(5);
@@ -32,8 +22,7 @@ const AppProvider = (props) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const [currentProductFeatures, setCurrentProductFeatures] = useState({})
    const [relatedProductsInfo, setRelatedProductsInfo] = useState([]);
-
-   // ! Cheryl
+   const [outfitProducts, setOutfitProducts] = useState([]);
    const [recommend, setRecommend] = useState(false);
    const[meta, setMeta] = useState ([]);
    const[product, setProduct] = useState({});
@@ -62,8 +51,7 @@ const AppProvider = (props) => {
          currentProductFeatures, setCurrentProductFeatures,
          user, setUser,
          relatedProductsInfo, setRelatedProductsInfo,
-
-         // ! Cheryl
+         outfitProducts, setOutfitProducts,
          recommend, setRecommend,
          meta, setMeta,
          product, setProduct,
@@ -76,7 +64,6 @@ const AppProvider = (props) => {
          selectedratings, setSelectedRatings,
          productresults, setProductResults,
          average, setAverage,
-         // ! Cheryl
          }}>
          {props.children}
       </AppContext.Provider>

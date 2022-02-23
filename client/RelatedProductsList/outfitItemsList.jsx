@@ -8,7 +8,7 @@ const OutfitItems = () => {
 
   const context = useContext(AppContext);
 
-  const [outfitProducts, setOutfitProducts] = useState([]);
+  // const [outfitProducts, setOutfitProducts] = useState([]);
 
   const OutfitItemsCarouselItem = () => {
     return (
@@ -28,7 +28,7 @@ const OutfitItems = () => {
   };
 
   const addCurrentProductToOutfit = () => {
-    let currentOutfitItems = outfitProducts.slice();
+    let currentOutfitItems = context.outfitProducts.slice();
     let newOutfitItem = OutfitItemsCarouselItem();
     let isAlreadyInYourOutfit = false;
 
@@ -44,7 +44,7 @@ const OutfitItems = () => {
       currentOutfitItems.push(newOutfitItem);
     }
 
-    setOutfitProducts(currentOutfitItems);
+    context.setOutfitProducts(currentOutfitItems);
   }
 
   return (
@@ -56,9 +56,9 @@ const OutfitItems = () => {
       </span>
       <span>
         <OutfitItemsCarousel>
-          <span>{outfitProducts[0]}</span>
-          <span>{outfitProducts[1]}</span>
-          <span>{outfitProducts[2]}</span>
+          {context.outfitProducts.map((product, index) => (
+            <span key={index}>{context.outfitProducts[index]}</span>
+          ))}
         </OutfitItemsCarousel>
       </span>
     </div>
