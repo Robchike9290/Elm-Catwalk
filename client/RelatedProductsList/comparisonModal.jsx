@@ -128,27 +128,23 @@ const ComparisonModal = (props) => {
   return (
     <div className="modal">
       <table>
-        <div className="modalNotScrollable">
-          <caption className="modalTitle">Related Product vs. Current Product Comparison</caption>
-          <thead className="modalHeading">
-            <tr>
-              <th className="modalHeadingColumn">Current Product Name</th>
-              <th className="modalHeadingColumn">Characteristic</th>
-              <th className="modalHeadingColumn">Related Product Name</th>
+        <caption className="modalTitle modalNotScrollable">Related Product vs. Current Product Comparison</caption>
+        <thead className="modalHeading modalNotScrollable">
+          <tr>
+            <th className="modalHeadingColumn">Current Product Name</th>
+            <th className="modalHeadingColumn">Characteristic</th>
+            <th className="modalHeadingColumn">Related Product Name</th>
+          </tr>
+        </thead>
+        <tbody className="modalScrollable">
+          {modalData.map((row, index) => (
+            <tr key={index}>
+              <td className="modalColumn">{row[0]}</td>
+              <td className="modalColumn">{row[1]}</td>
+              <td className="modalColumn">{row[2]}</td>
             </tr>
-          </thead>
-        </div>
-        <div className="modalScrollable">
-          <tbody>
-            {modalData.map((row, index) => (
-              <tr key={index}>
-                <td className="modalColumn">{row[0]}</td>
-                <td className="modalColumn">{row[1]}</td>
-                <td className="modalColumn">{row[2]}</td>
-              </tr>
-            ))}
-          </tbody>
-        </div>
+          ))}
+        </tbody>
       </table>
       <XButton hideModal={props.hideModal}/>
     </div>
