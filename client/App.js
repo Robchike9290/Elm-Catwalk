@@ -23,6 +23,7 @@ const AppProvider = (props) => {
    const [currentProductFeatures, setCurrentProductFeatures] = useState({})
    const [relatedProductsInfo, setRelatedProductsInfo] = useState([]);
    const [outfitProducts, setOutfitProducts] = useState([]);
+   const [relatedProductsActiveIndex, setRelatedProductsActiveIndex] = useState(0);
    const [recommend, setRecommend] = useState(false);
    const[meta, setMeta] = useState ([]);
    const[product, setProduct] = useState({});
@@ -35,7 +36,6 @@ const AppProvider = (props) => {
    const [selectedratings, setSelectedRatings] = useState([])
    const [productresults, setProductResults] = useState([])
    const [average, setAverage] = useState(0);
-   // ! Cheryl
 
    return (
       <AppContext.Provider value={{
@@ -52,6 +52,7 @@ const AppProvider = (props) => {
          user, setUser,
          relatedProductsInfo, setRelatedProductsInfo,
          outfitProducts, setOutfitProducts,
+         relatedProductsActiveIndex, setRelatedProductsActiveIndex,
          recommend, setRecommend,
          meta, setMeta,
          product, setProduct,

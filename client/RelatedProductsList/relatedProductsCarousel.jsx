@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import RelatedProduct from './relatedProduct.jsx';
+import {AppContext} from '../context.js';
 
 export const RelatedProductsCarouselItem = (props, { children, width }) => {
   return (
@@ -19,6 +20,7 @@ export const RelatedProductsCarouselItem = (props, { children, width }) => {
 
 const RelatedProductsCarousel = ({ children }) => {
 
+  const context = useContext(AppContext);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const updateIndex = (newIndex) => {
@@ -27,21 +29,21 @@ const RelatedProductsCarousel = ({ children }) => {
     } else if (newIndex >= React.Children.count(children)) {
       newIndex = React.Children.count(children) - 1;
     }
-    setActiveIndex(newIndex);
+    context.setRelatedProductsActiveIndex(newIndex);
   }
 
   return (
     <div className="carousel">
-      <div className="inner" style={{ transform: `translateX(-${activeIndex * 23.65}%)` }}>
+      <div className="inner" style={{ transform: `translateX(-${context.relatedProductsActiveIndex * 340}px)` }}>
         {React.Children.map(children, (child) => {
-          return React.cloneElement(child, { width: "23.65%" });
+          return React.cloneElement(child);
         })}
       </div>
       <div>
-        <span>{activeIndex > 0 ?
+        <span>{context.relatedProductsActiveIndex > 0 ?
           <button className="carouselButtonLeft"
             onClick={() => {
-              updateIndex(activeIndex - 1);
+              updateIndex(context.relatedProductsActiveIndex - 1);
             }}
           >
             ◀️
@@ -50,10 +52,10 @@ const RelatedProductsCarousel = ({ children }) => {
           null
           }
         </span>
-        <span> {activeIndex < React.Children.count(children) - 1 ?
+        <span> {context.relatedProductsActiveIndex < React.Children.count(children) - 1 ?
           <button className="carouselButtonRight"
             onClick={() => {
-              updateIndex(activeIndex + 1);
+              updateIndex(context.relatedProductsActiveIndex + 1);
             }}
           >
             ▶️
