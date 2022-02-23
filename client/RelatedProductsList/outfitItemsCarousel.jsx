@@ -21,7 +21,7 @@ const OutfitItemsCarousel = ({ children }) => {
           return React.cloneElement(child, { width: "23.65%" });
         })}
       </span>
-      <span>
+      <div>
         <div>{activeIndex > 0 ?
           <button className="carouselButtonLeft"
             onClick={() => {
@@ -46,7 +46,7 @@ const OutfitItemsCarousel = ({ children }) => {
           null
         }
         </div>
-      </span>
+      </div>
     </span>
   )
 };

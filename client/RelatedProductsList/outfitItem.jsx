@@ -10,7 +10,7 @@ const OutfitItem = (props) => {
         <OutfitItemXButton name={props.name}/>
       </div>
       <div className="productImageMat">
-        <img alt="This is the image for the product." className="productImage" src={props.image}></img>
+        <img alt=" No image yet! 📸" className="productImage" src={props.image}></img>
       </div>
       <div className="productData">Category: {props.category}</div>
       <div className="productData">Name: {props.name}</div>
