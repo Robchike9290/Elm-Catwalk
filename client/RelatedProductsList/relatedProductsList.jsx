@@ -2,30 +2,49 @@ import React, { useEffect, useContext } from 'react';
 import { AppContext } from '../context.js';
 import RelatedProductsCarousel, { RelatedProductsCarouselItem } from './relatedProductsCarousel.jsx';
 import axios from 'axios';
+
 const config = require('../../config.js');
+
+const firstController = new AbortController();
+const firstSignal = firstController.signal;
+const secondController = new AbortController();
+const secondSignal = secondController.signal;
+const thirdController = new AbortController();
+const thirdSignal = thirdController.signal;
+const fourthController = new AbortController();
+const fourthSignal = fourthController.signal;
 
 const RelatedProductsList = () => {
   const context = useContext(AppContext);
 
   const getRelatedProductNumbers = () => {
-    axios.get(`/products/${context.currentProductId}/related`)
+    axios.get(`/products/${context.currentProductId}/related`, {signal: firstSignal})
     .then((response) => {
       const relatedProductNumbers = response.data;
 
+      firstController.abort();
+
       const relatedProductMajorityDataPromises = Promise.all(relatedProductNumbers.map(productNumber => {
-        return axios.get(`products/${productNumber}`);
+        return axios.get(`products/${productNumber}`, {signal: secondSignal});
+        secondController.abort();
       }))
+
+
 
       const relatedProductRemainingDataPromises = Promise.all(relatedProductNumbers.map(productNumber => {
-        return axios.get(`products/${productNumber}/styles`);
+        return axios.get(`products/${productNumber}/styles`, {signal: thirdSignal});
+        thirdController.abort();
       }))
 
+
       const relatedProductReviewsPromises = Promise.all(relatedProductNumbers.map(productNumber => {
-        return axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/meta/?product_id=${productNumber}`, {
+        return axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/meta/?product_id=${productNumber}`,
+        {
           headers: {
             authorization: config.TOKEN
           }
         });
+        fourthController.abort();
       }));
 
       relatedProductMajorityDataPromises.then(resolution => {

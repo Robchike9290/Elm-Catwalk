@@ -8,8 +8,6 @@ const OutfitItems = () => {
 
   const context = useContext(AppContext);
 
-  // const [outfitProducts, setOutfitProducts] = useState([]);
-
   const OutfitItemsCarouselItem = () => {
     return (
       <span className="carouselItem" >
