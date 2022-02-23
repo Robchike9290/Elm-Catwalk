@@ -11,8 +11,6 @@ const OutfitItems = () => {
   const [outfitProducts, setOutfitProducts] = useState([]);
 
   const OutfitItemsCarouselItem = () => {
-    console.log('current product in context:', context.currentProduct);
-    // style={{ width: 25% }}
     return (
       <span className="carouselItem" >
         <OutfitItem
@@ -23,27 +21,31 @@ const OutfitItems = () => {
         averageRating={context.average}
         salesPrice={context.styleList.results[0].sale_price}
         width='25%'
-        >TEST OUTFIT ITEM</OutfitItem>
+        >
+        </OutfitItem>
       </span>
     );
-
   };
 
   const addCurrentProductToOutfit = () => {
-    console.log("firing the add outfit item button fom the outfitItemsList component!");
     let currentOutfitItems = outfitProducts.slice();
     let newOutfitItem = OutfitItemsCarouselItem();
+    let isAlreadyInYourOutfit = false;
 
-    currentOutfitItems.push(newOutfitItem);
+    for (let i = 0; i < currentOutfitItems.length; i++) {
+      let currentOutfitItemName = JSON.stringify(currentOutfitItems[i].props.children.props.name);
+      let newOutfitItemName = JSON.stringify(newOutfitItem.props.children.props.name);
+      if (currentOutfitItemName === newOutfitItemName) {
+        isAlreadyInYourOutfit = true;
+      }
+    }
+
+    if (!isAlreadyInYourOutfit) {
+      currentOutfitItems.push(newOutfitItem);
+    }
 
     setOutfitProducts(currentOutfitItems);
   }
-
-  // const createNewOutfitItem = () => {
-  //   return (
-  //     <OutfitItem></OutfitItem>
-  //   )
-  // }
 
   return (
     <div className="productInnerMat">

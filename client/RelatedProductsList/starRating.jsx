@@ -22,15 +22,12 @@ const StarRating = (props) => {
     } else {
       averageRatingProps = props.averageRating.toFixed(2);
     }
-    console.log("this is the average rating in the related prodcuts list:", averageRatingState);
-    console.log("this is the average rating in the outfit items list:", averageRatingProps);
     setAverageStarRating(averageRatingState || averageRatingProps);
   }
 
   useEffect(() => {
     calculateStarRatings();
   }, [])
-  // ADD CHERYL'S FUNCTIONALITY IN HERE WHEN IT IS COMPLETE...CHECK WHETHER HAVING MISSING RATINGVALUES WILL BREAK ANYTHING
   return (
     <div>
       <div>
