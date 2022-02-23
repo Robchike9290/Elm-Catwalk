@@ -6,7 +6,7 @@ import { productIdContext } from "../createContext.js";
 import SearchBar from "../SearchBar.jsx";
 import { qListContext } from "../createContextQlist.js";
 
-const QuestionList = ({ togglePopUp }) => {
+const QuestionList = ({ togglePopUp, QpopUp }) => {
   let count = 0;
   const [highlightedWords, updateHighlightedWords] = useState(null)
   const [qList, UpdateQlist] = useState([]);
@@ -30,13 +30,15 @@ const QuestionList = ({ togglePopUp }) => {
   sortQuestions();
   useEffect(() => {
     async function fetchQList() {
+      console.log('productID in qList', productID)
       const questionListData = await axios.get(`/questions/${productID}`);
-      // console.log("quetsionListData", questionListData);
       UpdateQlist(questionListData.data.results);
       UpdateBaseList(questionListData.data.results);
     }
+    if(productID){
     fetchQList();
-  }, [productID]);
+    }
+  }, [productID, QpopUp]);
 
   const toggleList = () => {
     if (!listBool) {

@@ -59,16 +59,6 @@ module.exports = {
 
   mode: "development",
   resolve: {
-<<<<<<< HEAD
-    extensions: ['.js', '.jsx']
-  }
-//   plugins: [
-//     new HTMLWebpackPlugin({
-//       template: "index.html"
-//     }),
-//   ]
-}
-=======
     extensions: [".js", ".jsx"],
   },
   //   plugins: [
@@ -77,4 +67,3 @@ module.exports = {
   //     }),
   //   ]
 };
->>>>>>> ec3a98f89d05330eb793d3d8b003ec0fdef1a7f0

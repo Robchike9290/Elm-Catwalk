@@ -4,13 +4,12 @@ import Token from "../../../../config.js";
 import { qListContext } from "../../../../client/QA/createContextQlist.js";
 import { productIdContext } from "../../../../client/QA/createContext.js";
 
-const AnswerPopUp = ({ changeApopUp, id }) => {
+const AnswerPopUp = ({ togglePopUp, id, changeAlist }) => {
   const UpdateQlist = useContext(qListContext);
   const productID = useContext(productIdContext);
-  console.log(changeApopUp);
-  const togglePopUp = () => {
-    changeApopUp(false);
-  };
+  // const togglePopUp = () => {
+  //   changeApopUp(false);
+  // };
   const submitQuestion = () => {
     const email = document.getElementById("UserEmail").value;
     const nickName = document.getElementById("UserNickname").value;
@@ -37,22 +36,23 @@ const AnswerPopUp = ({ changeApopUp, id }) => {
           },
 
         });
-        const newQlist = await axios.get(`/questions/${productID}`);
-        await UpdateQlist(newQlist.data.results);
-        togglePopUp();
+        const newAList = await axios.get(`/questions/${id}/answers`)
+        console.log('serverresponse', newAList)
+        await changeAlist(newAList.data.results)
+        await togglePopUp();
       }
       postQuestion();
     }
   };
 
   return (
-    <div className="modal" onClick={togglePopUp}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <div className="modal.header">
+    <div className="a_modal" onClick={togglePopUp}>
+      <div className="a_modal-content" onClick={(e) => e.stopPropagation()}>
+        <div className="a_modal-header">
           <h3>Ask a question about (add product name)</h3>
           <button onClick={togglePopUp}>exit</button>
         </div>
-        <div className="modal-body">
+        <div className="a_modal-body">
           <form action="/" method="get">
             <input
               type="text"
@@ -73,7 +73,7 @@ const AnswerPopUp = ({ changeApopUp, id }) => {
               name="Email"
             />
           </form>
-          <div className="modal-footer">
+          <div className="a_modal-footer">
             <button
               onClick={(e) => {
                 submitQuestion();

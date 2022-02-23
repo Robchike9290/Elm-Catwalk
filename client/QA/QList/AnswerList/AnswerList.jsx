@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Answer from "./Answer.jsx";
+import AnswerPopUp from './AnswerPopUp.jsx'
 
-const AnswerList = ({ answers }) => {
+const AnswerList = ({ answers, id, togglePopUp, ApopUp}) => {
   let count = 0;
   const [sortType, changeSortType] = useState("popular");
-  const [Alist, changeAlist] = useState(Object.values(answers).sort((a, b) => {
+
+  const [Alist, changeAlist] = useState(answers.sort((a, b) => {
+    if(a && b){
     return b.helpfulness - a.helpfulness;
+    }
   }));
   const [answerListLength, changeanswerListLength] = useState(2);
   const [listABool, changeAListBool] = useState(false);
@@ -16,6 +20,8 @@ const AnswerList = ({ answers }) => {
   Alist.sort((a, b) => {
     return b.helpfulness - a.helpfulness;
   });
+
+
 
   const toggleAList = () => {
     if (!listABool) {
@@ -31,6 +37,7 @@ const AnswerList = ({ answers }) => {
 
   return (
     <div>
+      {ApopUp && <AnswerPopUp  togglePopUp={togglePopUp} id={id} changeAlist={changeAlist} />}
       <div>
     <ul className="list">
         {Alist.length === 0 ? (<div>Be the first to Answer</div>) : (Alist.sort((a, b) => {
@@ -38,8 +45,7 @@ const AnswerList = ({ answers }) => {
   }).map((answer) => {
           if (count < answerListLength) {
             count++;
-            // console.log(answer.id)
-            return <li key={answer.id}><Answer answer={answer} /></li>;
+            return <li key={answer.id} className ="aList"><Answer answer={answer} key={answer.id} changeAlist={changeAlist} id={id}/></li>;
           }
         }))}
         </ul>
@@ -47,6 +53,7 @@ const AnswerList = ({ answers }) => {
       {Alist.length > 2 && (
         <div onClick={toggleAList}>{listAButtonTitle}</div>
       )}
+
     </div>
   );
 };

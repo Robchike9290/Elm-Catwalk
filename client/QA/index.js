@@ -10,7 +10,6 @@ import { AppContext } from "../context.js";
 const QA = () => {
 
   const productID = useContext(AppContext)
-  console.log('productID', productID)
   const [QpopUp, changeQpopUp] = useState(false);
   const togglePopUp = () => {
     changeQpopUp(!QpopUp);
@@ -24,7 +23,7 @@ const QA = () => {
           <QuestionPopUp togglePopUp={togglePopUp} />
         ) }
           <div>
-            <QuestionList togglePopUp={togglePopUp} />
+            <QuestionList togglePopUp={togglePopUp} QpopUp={QpopUp} />
           </div>
 
       </productIdContext.Provider>

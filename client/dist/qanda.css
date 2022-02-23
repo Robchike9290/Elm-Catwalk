@@ -192,6 +192,7 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.
 
 }
 
+
 .a_modal.enter-done {
   opacity: 1;
   pointer-events: visible;
@@ -202,10 +203,23 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.
 }
 
 .a_modal-content {
-  width: 500px;
-  background-color: #fff;
-  transition: all 0.3s ease-in-out;
-  transform: translateY(-200px);
+  width: 60rem;
+  padding: 4rem 2rem;
+  border-radius: .8rem;
+
+  color: grey;
+  background: white;
+  box-shadow: var(--m-shadow, .4rem .4rem 10.2rem .2rem) var(--shadow-1);
+  position: relative;
+
+  overflow: hidden;
+
+
+  border-radius: 4rem;
+  width: 140%;
+  -webkit-box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
+-moz-box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
+box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
 }
 
 
@@ -217,9 +231,10 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.
 
 
 .a_modal-body {
-  padding: 10px;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  display: flex;
+  padding: 0;
+  border-radius: 4rem;
+  font-family: 'PT Sans', sans-serif;
 }
 
 .question {
@@ -251,6 +266,12 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.
 .qList::marker {
   content: 'Q:';
   font-size: 20px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif, bold;
+}
+.aList::marker {
+  content: 'A:';
+  font-size: 15px;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif, bold;
 }
@@ -330,6 +351,7 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.
   width: 75%;
   margin: auto;
   padding: 20px;
+
 }
 
 #scrollable {

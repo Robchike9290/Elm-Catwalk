@@ -48,24 +48,32 @@ const QuestionPopUp = ({ togglePopUp }) => {
         </div>
         <div className="a_modal-body">
           <form action="/" method="get">
+            <ul>
+              <li>
             <input
               type="text"
               id="UserQuestion"
               placeholder="Ask Your Question Here"
               name="submit question"
             />
+            </li>
+            <li>
             <input
               type="text"
               id="UserNickname"
               placeholder="What's your NickName?"
               name="nickName"
             />
+            </li>
+            <li>
             <input
               type="text"
               id="UserEmail"
               placeholder="What's your Email?"
               name="Email"
             />
+            </li>
+            </ul>
           </form>
           <div className="a_modal-footer">
             <button
