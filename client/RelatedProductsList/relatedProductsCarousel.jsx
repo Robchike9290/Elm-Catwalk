@@ -21,7 +21,6 @@ export const RelatedProductsCarouselItem = (props, { children, width }) => {
 const RelatedProductsCarousel = ({ children }) => {
 
   const context = useContext(AppContext);
-  const [activeIndex, setActiveIndex] = useState(0);
 
   const updateIndex = (newIndex) => {
     if (newIndex < 0) {

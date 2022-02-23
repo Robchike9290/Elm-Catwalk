@@ -1,3 +1,7 @@
+* {
+	color: black;
+}
+
 .relatedProductsAndComparison {
 	width: 75%;
 	margin: auto;
@@ -151,12 +155,10 @@
 }
 
 .regularPriceOnSale {
-	color: black;
 	text-decoration: line-through;
 }
 
 .regularPriceOffSale {
-	color: black;
 }
 
 .modal {
@@ -179,7 +181,7 @@
 	height: 50px;
 	right: -16px;
 	background-color: #eceee4;
-	bottom: -280px;
+	bottom: -331px;
 }
 
 .modalColumn {

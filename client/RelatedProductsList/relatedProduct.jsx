@@ -68,7 +68,7 @@ const RelatedProduct = (props) => {
     <span className="product">
       <div>
         {isModalShown ?
-        <div className="modalMat">
+        <div className="modalMat" style={{ transform: `translateX(${context.relatedProductsActiveIndex * 340}px)` }}>
           <ComparisonModal
           comparedProductValues={comparedProductValues}
           currentProductValues={currentProductValues}
