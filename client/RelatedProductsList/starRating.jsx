@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { AppContext } from '../context.js';
-<<<<<<< HEAD
-import '../src/relatedProductsListStyles.css';
-=======
->>>>>>> d481e1b220c762145b58655129090ceff5ae0d32
 import RatingIcon from '../../client/Ratings&Reviews/RatingIcon.jsx'
 
 const StarRating = (props) => {
