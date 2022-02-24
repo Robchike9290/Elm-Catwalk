@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../context.js';
 import RatingIcon from '../../client/Ratings&Reviews/RatingIcon.jsx'
 
 const StarRating = (props) => {
+
+  const context = useContext(AppContext);
 
   const [averageStarRating, setAverageStarRating] = useState(0);
 
@@ -20,7 +22,7 @@ const StarRating = (props) => {
       }
       averageRatingState = (Math.round(totalRatingPoints / totalRatings * 4) / 4).toFixed(2);
     } else {
-      averageRatingProps = props.averageRating.toFixed(2);
+      averageRatingProps = context.average.toFixed(2);
     }
     setAverageStarRating(averageRatingState || averageRatingProps);
   }
