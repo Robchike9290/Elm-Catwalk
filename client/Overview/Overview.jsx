@@ -8,6 +8,7 @@ import ImageGallery from './Components/ImageGallery.jsx';
 import AddToCart from './Components/AddToCart.jsx';
 import Description from './Components/ProductInfoComponents/Description.jsx';
 import ProductList from './Components/ProductInfoComponents/ProductList.jsx';
+import BigGallery from './Components/BigImageGallery.jsx';
 
 
 
@@ -82,14 +83,19 @@ const Overview = () => {
   }
 
   return (
-    <div className="Overview">
+    <div >
 
-      <ImageGallery />
+      {(!context.bigGallery) ? <div className="Overview"> <ImageGallery />
       <StyleSelector />
       <ProductInfo />
       <AddToCart />
-      <Description />
       <ProductList />
+      <Description />
+     </div> :<div className="Overview"><BigGallery/>
+     <ProductList />
+       <Description />
+      </div> }
+
 
     </div>
   )

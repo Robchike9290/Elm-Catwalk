@@ -32,6 +32,7 @@ const AppProvider = (props) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const [currentProductFeatures, setCurrentProductFeatures] = useState({})
    const [relatedProductsInfo, setRelatedProductsInfo] = useState([]);
+   const [bigGallery, setBigGallery] = useState(false);
 
    // ! Cheryl
    const [recommend, setRecommend] = useState(false);
@@ -62,6 +63,7 @@ const AppProvider = (props) => {
          currentProductFeatures, setCurrentProductFeatures,
          user, setUser,
          relatedProductsInfo, setRelatedProductsInfo,
+         bigGallery, setBigGallery,
 
          // ! Cheryl
          recommend, setRecommend,

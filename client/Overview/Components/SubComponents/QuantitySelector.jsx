@@ -18,7 +18,7 @@ const QuantitySelector = () => {
       temp.push(currentStyle.skus[key]);
     }
     setStyleKeyArray(temp);
-    // setSelectedSize(size);
+    setSelectedSize('Select A Size');
 
     // return () => {
     //   styleKeyArray = [];
@@ -74,10 +74,10 @@ const QuantitySelector = () => {
   return (
 
     <>
-      <div className='rl-size'>
-        Size:
+      <div >
 
-        <select onChange={() => setSelectedSize(event.target.value)}>
+
+        <select className='rl-size' onChange={() => setSelectedSize(event.target.value)}>
           {/* set value = sku.quantity, bypass a bunch of code. */}
           <option>Select A Size</option>
           {styleKeyArray.map((sku, key) => (
@@ -88,8 +88,8 @@ const QuantitySelector = () => {
         </select>
 
       </div>
-      <div className='rl-quantity'> Quantity:
-        <select onChange={() => setSelectedQuantity(event.target.value)}>
+      <div >
+        <select className='rl-quantity' onChange={() => setSelectedQuantity(event.target.value)} >
 
           {selectedSizeQuantity.map((number, key) => (
             <option key={key} value={number}>{number}</option>
@@ -100,7 +100,7 @@ const QuantitySelector = () => {
       </div>
 
       <div>
-        <input onClick={() => handleSubmit()} className="addToCartButton" type="submit" value="Add To Cart" />
+        <input onClick={() => handleSubmit()} className="addToCartButton" type="submit" value="Add To Cart            +" />
       </div>
       </>
 
