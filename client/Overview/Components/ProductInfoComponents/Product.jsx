@@ -12,7 +12,7 @@ const Product = (props) => {
   }
 
   return (<div onClick={() => handleClick()}>
-    {props.product.name}  <span>⬅️</span>
+    {props.product.name}  <span><i className="fa-solid fa-circle-arrow-left"></i></span>
     </div>
   )
 }

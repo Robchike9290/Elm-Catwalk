@@ -4,7 +4,7 @@ import { AppContext } from '../../../context.js';
 
 const QuantitySelector = () => {
 
-  const { currentStyle } = useContext(AppContext);
+  const { currentStyle, currentProduct } = useContext(AppContext);
   const [styleKeyArray, setStyleKeyArray] = useState([]);
   const [selectedSize, setSelectedSize] = useState('');
   const [selectedQuantity, setSelectedQuantity] = useState(1);
@@ -13,12 +13,12 @@ const QuantitySelector = () => {
 
   useEffect(() => {
     let temp = [];
-    let size = 'XS'
+    // let size = 'XS'
     for (let key in currentStyle.skus) {
       temp.push(currentStyle.skus[key]);
     }
     setStyleKeyArray(temp);
-    setSelectedSize(size);
+    setSelectedSize('Select A Size');
 
     // return () => {
     //   styleKeyArray = [];
@@ -57,6 +57,14 @@ const QuantitySelector = () => {
   }, [selectedSize])
 
 
+  const handleSubmit = () => {
+    (selectedQuantity === 1)
+    ? window.alert(`${selectedQuantity} ${selectedSize} ${currentStyle.name} ${currentProduct.name} has been added to cart `)
+    : (currentProduct.name[currentProduct.name.length-1] === 's') ? window.alert(`${selectedQuantity} ${selectedSize} ${currentStyle.name} ${currentProduct.name} have been added to cart `) : window.alert(`${selectedQuantity} ${selectedSize} ${currentStyle.name} ${currentProduct.name}s have been added to cart `)
+
+
+  }
+
 
 
 
@@ -66,10 +74,10 @@ const QuantitySelector = () => {
   return (
 
     <>
-      <div>
-        Size:
+      <div >
 
-        <select onChange={() => setSelectedSize(event.target.value)}>
+
+        <select className='rl-size' onChange={() => setSelectedSize(event.target.value)}>
           {/* set value = sku.quantity, bypass a bunch of code. */}
           <option>Select A Size</option>
           {styleKeyArray.map((sku, key) => (
@@ -80,8 +88,8 @@ const QuantitySelector = () => {
         </select>
 
       </div>
-      <div> Quantity:
-        <select onChange={() => setSelectedQuantity(event.target.value)}>
+      <div >
+        <select className='rl-quantity' onChange={() => setSelectedQuantity(event.target.value)} >
 
           {selectedSizeQuantity.map((number, key) => (
             <option key={key} value={number}>{number}</option>
@@ -92,7 +100,7 @@ const QuantitySelector = () => {
       </div>
 
       <div>
-        <input className="addToCartButton" type="submit" value="Submit" />
+        <input onClick={() => handleSubmit()} className="addToCartButton" type="submit" value="Add To Cart            +" />
       </div>
       </>
 

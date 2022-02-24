@@ -18,7 +18,7 @@ const ThumbnailSelect = ({ style, thumbnail }) => {
     <div>
       {(currentStylePhoto === style.photos[0].url)
         ? <div id='active-stylePic'>
-          <span id='check'>✅</span>
+          <span id='check'><i className="fa-solid fa-check"></i></span>
         <img height='60' width='65' src={thumbnail} onClick={() => handleClick()} /></div>
         : <div id='stylePic'>
           <img height='60' width='65' src={thumbnail} onClick={() => handleClick()} /></div>}

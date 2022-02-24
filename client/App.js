@@ -22,6 +22,7 @@ const AppProvider = (props) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const [currentProductFeatures, setCurrentProductFeatures] = useState({})
    const [relatedProductsInfo, setRelatedProductsInfo] = useState([]);
+   const [bigGallery, setBigGallery] = useState(false);
 
    // ! Cheryl Hello
    const [outfitProducts, setOutfitProducts] = useState([]);
@@ -52,6 +53,7 @@ const AppProvider = (props) => {
          currentProductFeatures, setCurrentProductFeatures,
          user, setUser,
          relatedProductsInfo, setRelatedProductsInfo,
+         bigGallery, setBigGallery,
 
          // ! Cheryl
          outfitProducts, setOutfitProducts,
@@ -74,6 +76,7 @@ const AppProvider = (props) => {
 }
 
 function App() {
+   document.documentElement.setAttribute('data-theme', 'light');
    return (
       <AppProvider>
          <Overview />

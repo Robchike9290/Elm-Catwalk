@@ -13,8 +13,8 @@ const ProductInfo = () =>  {
   return (
 
     <div className="rl-ProductInfo">
-      <ExpandedInfo />
-      <div className='cc-star-rating'>
+
+      <div className='rl-star-rating'>
         {[...Array(5)].map((item, index) => {
           index += 1
           return (
@@ -23,7 +23,9 @@ const ProductInfo = () =>  {
             </div>
             )
           })}
+          <span id='read-all-reviews'>Read all reviews</span>
       </div>
+      <ExpandedInfo />
       {/* // <StarRating/> */}
       <Socials/>
 
