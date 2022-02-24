@@ -63,9 +63,9 @@ const QuestionList = ({ togglePopUp }) => {
         }
       })}
       </ul>
-      <button className="button" onClick={togglePopUp}>Ask a question</button>
+      <button className="a_button" onClick={togglePopUp}>Ask a question</button>
       {qList.length > 2 && (
-        <button className="button" onClick={toggleList} id="listButton">
+        <button className="a_button" onClick={toggleList} id="listButton">
           {" "}
           {listButtonTitle}
         </button>

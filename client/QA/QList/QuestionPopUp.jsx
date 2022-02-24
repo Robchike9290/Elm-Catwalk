@@ -1,3 +1,5 @@
+/* eslint-disable no-inner-declarations */
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import Token from "../../../config.js";
@@ -38,13 +40,13 @@ const QuestionPopUp = ({ togglePopUp }) => {
   };
 
   return (
-    <div className="modal" onClick={togglePopUp}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <div className="modal.header">
+    <div className="a_modal" onClick={togglePopUp}>
+      <div className="a_modal-content" onClick={(e) => e.stopPropagation()}>
+        <div className="a_modal.header">
           <h3>Ask a question about (add product name)</h3>
           <button onClick={togglePopUp}>exit</button>
         </div>
-        <div className="modal-body">
+        <div className="a_modal-body">
           <form action="/" method="get">
             <input
               type="text"
@@ -65,7 +67,7 @@ const QuestionPopUp = ({ togglePopUp }) => {
               name="Email"
             />
           </form>
-          <div className="modal-footer">
+          <div className="a_modal-footer">
             <button
               onClick={(e) => {
                 submitQuestion();

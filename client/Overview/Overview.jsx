@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { AppContext } from '../context.js';
@@ -7,6 +8,8 @@ import ImageGallery from './Components/ImageGallery.jsx';
 import AddToCart from './Components/AddToCart.jsx';
 import Description from './Components/ProductInfoComponents/Description.jsx';
 import ProductList from './Components/ProductInfoComponents/ProductList.jsx';
+import BigGallery from './Components/BigImageGallery.jsx';
+import MastHead from './Components/MastHead.jsx';
 
 
 
@@ -15,7 +18,7 @@ const Overview = () => {
   const context = useContext(AppContext);
 
 
-  // console.log(context.currentProductId);
+  // console.log(context);
 
 
   useEffect(() => {
@@ -69,8 +72,8 @@ const Overview = () => {
       .then((receivedStyles) => {
         axios.get(`products/${currentProduct}`)
           .then((receivedFeatures) => {
-        context.setCurrentProductFeatures(receivedFeatures.data);
-      })
+            context.setCurrentProductFeatures(receivedFeatures.data);
+          })
       })
       .catch((err) => {
         console.error(err);
@@ -80,15 +83,25 @@ const Overview = () => {
 
   }
 
-  return (
-    <div className="Overview">
+  const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 
-      <ImageGallery />
-      <StyleSelector />
-      <ProductInfo />
-      <AddToCart />
-      <Description />
-      <ProductList />
+
+  return (
+    <div >
+
+      <MastHead />
+
+      {(!context.bigGallery) ? <div className="Overview"> <ImageGallery />
+        <StyleSelector />
+        <ProductInfo />
+        <AddToCart />
+        <ProductList />
+        <Description />
+      </div> : <div className="Overview"><BigGallery />
+        <ProductList />
+        <Description />
+      </div>}
+
 
     </div>
   )

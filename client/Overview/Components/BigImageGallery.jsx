@@ -7,21 +7,21 @@ import MainImageThumbnail from './SubComponents/MainImageThumbnail.jsx';
 
 
 
-const ImageGallery = () => {
+const BigGallery = () => {
   const { currentStyle, currentStylePhoto, setCurrentStylePhoto, currentStyleThumbnails, activeIndex, setActiveIndex, bigGallery, setBigGallery } = useContext(AppContext);
 
   const handleClick = () => {
-    // console.log('hello');
-    setBigGallery(true);
+    // console.log('hi');
+    setBigGallery(false);
 
   }
 
 
 
   return (
-    <div className="ImageGallery" >
-      <div className="rl-carousel-holder" >
-        <button className="rl-expand-view-button" onClick={() => handleClick()}><i className="fa-solid fa-expand"></i></button>
+    <div className="big-image-gallery" >
+      <div className="rl-big-carousel-holder" >
+      <button className="rl-expand-view-button" onClick={() => handleClick()}><i className="fa-solid fa-compress"></i></button>
 
         <Carousel>
           {currentStyle.photos?.map((image, key) => (
@@ -67,4 +67,4 @@ const ImageGallery = () => {
 
 
 
-export default ImageGallery;
+export default BigGallery;

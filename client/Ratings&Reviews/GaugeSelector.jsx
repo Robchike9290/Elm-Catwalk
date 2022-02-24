@@ -9,8 +9,8 @@ const GaugeSelector= ((props) => {
   })
 
   return (
-    <div className='range-slider'>
-      <input type='range' min={slider.min} max={slider.max} value={props.percentage} readOnly='readOnly' className='slider' id='myRange'></input>
+    <div className='cc-range-slider'>
+      <input type='range' min={slider.min} max={slider.max} value={props.percentage} readOnly='readOnly' className='cc-slider' id='myRange'></input>
     </div>
   )
 

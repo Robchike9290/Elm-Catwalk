@@ -70,12 +70,12 @@ const RatingsReviewsSection = (props) => {
 
     axios.put(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${review_id}/helpful`, {headers: {'Authorization': Token.TOKEN}})
     console.log('SECONDupdateHelpfulness token', Token.TOKEN)
-    // .then(() => {
-    //   console.log(SUCCESS)
-    // })
-    // .catch((err) => {
-    //   console.log('updateHelpfulness error', err)
-    // })
+    .then(() => {
+      console.log(SUCCESS)
+    })
+    .catch((err) => {
+      console.log('updateHelpfulness error', err)
+    })
   })
 
   const updateReport = ((e, review_id) => {
@@ -93,10 +93,10 @@ const RatingsReviewsSection = (props) => {
   // })
   return (
     // console.log('PRODUCT', product);
-    <div className='R-R-parent'>
+    <div className='cc-R-R-parent'>
       <h3>Ratings & Reviews</h3>
       <ModalAddReview addreview={addreview} setAddReview={setAddReview}/>
-      <div className='container'>
+      <div className='cc-container'>
        <ReviewBreakdown total={total} setTotal={setTotal} starpoint={starpoint}/>
        <ReviewList sort={sort} setSort={setSort} addreview={addreview} setAddReview={setAddReview} updateHelpfulness={updateHelpfulness} updateReport={updateReport}/>
        {/* <ReviewList sort={sort} setSort={setSort} addreview={addreview} setAddReview={setAddReview} /> */}

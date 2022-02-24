@@ -26,7 +26,7 @@ const ProgressBar = ((props) => {
   // console.log('SELECTED RATINGS FROM PROGRESS BAR', selectedratings)
 
   return(
-    <div className='ratings' onClick={toggleRating}>
+    <div className='cc-ratings' onClick={toggleRating}>
       <div>{props.star} stars</div>
       <FillerProgressBar percentage={props.percentage}/>
       <div>{props.value}</div>
