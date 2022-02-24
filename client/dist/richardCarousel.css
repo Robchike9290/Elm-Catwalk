@@ -1,0 +1,136 @@
+.carousel-holder {
+  display: flex;
+  overflow: hidden;
+  height: 515px;
+}
+
+.carousel {
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.inner {
+  white-space: nowrap;
+  object-fit: cover;
+  transition: transform 0.3s
+}
+
+.carousel-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 515px;
+  /* color: #fff; */
+}
+
+.carousel-item img {
+  object-fit: cover;
+}
+.indicators {
+/*
+  display: flex;
+  justify-content: center; */
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 5px;
+  background-color:rgba(0, 0, 0, 0.3);
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.vertical-carousel {
+  overflow: hidden;
+  object-fit: cover;
+  margin: 35px;
+  height: 450px;
+  width: 65px;
+  position: absolute;
+}
+
+.vertical-inner {
+  white-space: nowrap;
+  object-fit: cover;
+  width: 65px;
+  transition: transform 0.3s
+}
+
+.vertical-carousel-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  width: 75px;
+  /* color: #fff; */
+}
+
+.vertical-carousel-item img {
+  object-fit: cover;
+  /* margin: 2px; */
+}
+.vertical-indicators {
+
+  display: flex;
+  justify-content: center;
+}
+
+.vertical-prev, .vertical-next {
+  cursor: pointer;
+  position: absolute;
+
+  width: auto;
+  margin-top: -22px;
+  padding: 5px;
+  background-color:rgba(0, 0, 0, 0.3);
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  transition: 0.6s ease;
+  border-radius: 3px 3px 3px 3px;
+  user-select: none;
+
+}
+
+.vertical-prev:hover, .vertical-next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.vertical-prev {
+  top: 95%;
+}
+
+
+.vertical-next {
+
+  top: 5%;
+
+  /* border-radius: 3px 3px 3px 3px; */
+}
+
+
+.active-thumbnail {
+  /* border-radius: 50%; */
+  border: 3px solid red;
+}
