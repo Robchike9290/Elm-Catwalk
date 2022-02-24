@@ -46,26 +46,33 @@ const QuestionPopUp = ({ togglePopUp }) => {
           <h3>Ask a question about (add product name)</h3>
           <button onClick={togglePopUp}>exit</button>
         </div>
-        <div className="a_modal-body">
           <form action="/" method="get">
+            <ul className="a_modal-body">
+              <li>
             <input
               type="text"
               id="UserQuestion"
               placeholder="Ask Your Question Here"
               name="submit question"
             />
+            </li>
+            <li>
             <input
               type="text"
               id="UserNickname"
               placeholder="What's your NickName?"
               name="nickName"
             />
+            </li>
+            <li>
             <input
               type="text"
               id="UserEmail"
               placeholder="What's your Email?"
               name="Email"
             />
+            </li>
+            </ul>
           </form>
           <div className="a_modal-footer">
             <button
@@ -76,7 +83,7 @@ const QuestionPopUp = ({ togglePopUp }) => {
               SubmitQuestion
             </button>
           </div>
-        </div>
+
       </div>
     </div>
   );

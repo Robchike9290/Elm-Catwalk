@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { AppContext } from '../context.js';
@@ -15,7 +16,7 @@ const Overview = () => {
   const context = useContext(AppContext);
 
 
-  // console.log(context.currentProductId);
+  // console.log(context);
 
 
   useEffect(() => {

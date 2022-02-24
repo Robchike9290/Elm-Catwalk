@@ -27,33 +27,41 @@
 .rl-carousel-item img {
   object-fit: cover;
 }
-/* .rl-indicators {
-/*
+.rl-indicators {
+
   display: flex;
-  justify-content: center; */
-} */
+  justify-content: center;
+}
 
 .rl-prev, .rl-next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 55%;
   width: auto;
   margin-top: -22px;
-  padding: 5px;
-  background-color:rgba(0, 0, 0, 0.3);
-  color: white;
+  /* padding: 5px; */
+  background-color:rgb(0, 0, 0, 0.2);
+   color: white;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
+
   user-select: none;
 
 }
 
 .rl-prev:hover, .rl-next:hover {
   background-color: rgba(0,0,0,0.8);
+  border-radius: 0 3px 3px 0;
 }
 
+.rl-prev {
+  left: 30%;
+}
+
+.rl-next {
+  right: 20%;
+}
 
 .rl-carousel {
   right: 0;

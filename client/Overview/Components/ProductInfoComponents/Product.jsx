@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext } from 'react';
 import { AppContext } from '../../../context.js';
 
@@ -11,7 +12,7 @@ const Product = (props) => {
   }
 
   return (<div onClick={() => handleClick()}>
-    {props.product.name}
+    {props.product.name}  <span>⬅️</span>
     </div>
   )
 }

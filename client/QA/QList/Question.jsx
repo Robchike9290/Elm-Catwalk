@@ -10,12 +10,12 @@ import Highlighter from "react-highlight-words";
 const Question = ({question, highlightedWords}) => {
 
   const UpdateQlist = useContext(qListContext);
+  const [aList, changeAList] = useState(Object.values(question.answers))
   const productID = useContext(productIdContext);
   const [Qhelpful, changeQhelpful] = useState(false)
   const [ApopUp, changeApopUp] = useState(false);
-  const togglePopUp = () => {
-    changeApopUp(!ApopUp);
-  };
+  const[testBool, changeTestBool] = useState(false)
+
   const toggleQhelpful = () =>{// need to make a database for persisent data
     changeQhelpful(true)
     if(!Qhelpful){
@@ -27,6 +27,30 @@ const Question = ({question, highlightedWords}) => {
     markasHelpful();
   }
   }
+
+  const togglePopUp = () => {
+    changeApopUp(!ApopUp);
+  };
+
+  // axios.get(`/questions/${question.question_id}/answers`)
+  // .then((res)=>{
+  //   return res.data.results
+  // })
+  // .then((res)=>{console.log('list', res)})
+
+  // useEffect(() => {
+  //   async function fetchAList() {
+  //     const answerListData = await axios.get(`/questions/${question.question_id}/answers`);
+  //     console.log('answerListData', answerListData)
+  //     changeAList(answerListData.data.results);
+  //   }
+  //   if(question){
+  //   fetchAList();
+  //   }
+  // }, [question]);
+
+
+
 
   return (
     <div className="question">
@@ -41,8 +65,8 @@ const Question = ({question, highlightedWords}) => {
   />
       <div id="middle" >Helpful? <u onClick ={toggleQhelpful}>Yes</u> ({question.question_helpfulness})  | <u onClick={togglePopUp}>Add Answer</u></div>
       </div>
-     <AnswerList answers = {question.answers} />
-     {ApopUp && <AnswerPopUp  changeApopUp={changeApopUp} id={question.question_id}/>}
+     <AnswerList answers = {aList}  id={question.question_id} togglePopUp={togglePopUp} ApopUp={ApopUp}/>
+
     </div>
   )
 }

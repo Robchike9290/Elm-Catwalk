@@ -26,6 +26,17 @@ button {
   background-color: #D9BCB6;
   font-weight: bold;
 }
+#strikethrough {
+  text-decoration: line-through;
+}
+#rl-sale-price {
+  color: red;
+}
+
+/* .rl-ProductInfo div {
+   grid-column: 2 / span 2;
+  position: absolute;
+} */
 
 .cc-heading {
   /* position:relative; */
