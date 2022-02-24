@@ -9,6 +9,7 @@ import AddToCart from './Components/AddToCart.jsx';
 import Description from './Components/ProductInfoComponents/Description.jsx';
 import ProductList from './Components/ProductInfoComponents/ProductList.jsx';
 import BigGallery from './Components/BigImageGallery.jsx';
+import MastHead from './Components/MastHead.jsx';
 
 
 
@@ -71,8 +72,8 @@ const Overview = () => {
       .then((receivedStyles) => {
         axios.get(`products/${currentProduct}`)
           .then((receivedFeatures) => {
-        context.setCurrentProductFeatures(receivedFeatures.data);
-      })
+            context.setCurrentProductFeatures(receivedFeatures.data);
+          })
       })
       .catch((err) => {
         console.error(err);
@@ -82,19 +83,24 @@ const Overview = () => {
 
   }
 
+  const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+
   return (
     <div >
 
+      <MastHead />
+
       {(!context.bigGallery) ? <div className="Overview"> <ImageGallery />
-      <StyleSelector />
-      <ProductInfo />
-      <AddToCart />
-      <ProductList />
-      <Description />
-     </div> :<div className="Overview"><BigGallery/>
-     <ProductList />
-       <Description />
-      </div> }
+        <StyleSelector />
+        <ProductInfo />
+        <AddToCart />
+        <ProductList />
+        <Description />
+      </div> : <div className="Overview"><BigGallery />
+        <ProductList />
+        <Description />
+      </div>}
 
 
     </div>

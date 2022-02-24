@@ -6,7 +6,7 @@ import { AppContext } from '../../../context.js';
 const Description = (props) => {
 
   const { currentProduct, currentProductFeatures } = useContext(AppContext) ;
-  console.log(currentProductFeatures);
+  // console.log(currentProductFeatures);
   return (
   <div
   className='bigDescription'>
