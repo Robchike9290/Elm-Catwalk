@@ -1,26 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import RelatedProduct from './relatedProduct.jsx';
-import '../src/relatedProductsListStyles.css';
+import {AppContext} from '../context.js';
 
-export const RelatedProductsCarouselItem = (props, { children, width }) => {
+export const RelatedProductsCarouselItem = (props, { width }) => {
   return (
-    <div className="carouselItem" style={{ width: width }}>
+    <span className="carouselItem" style={{ width: width }}>
       <RelatedProduct
       name={props.name}
       category={props.category}
+      price={props.price}
+      salesPrice={props.sale_price}
       features={props.features}
       image={props.image}
-      price={props.price}
       ratings={props.ratings}
-      salesPrice={props.sale_price}
       />
-    </div>
+    </span>
   );
 };
 
 const RelatedProductsCarousel = ({ children }) => {
 
-  const [activeIndex, setActiveIndex] = useState(0);
+  const context = useContext(AppContext);
 
   const updateIndex = (newIndex) => {
     if (newIndex < 0) {
@@ -28,21 +28,21 @@ const RelatedProductsCarousel = ({ children }) => {
     } else if (newIndex >= React.Children.count(children)) {
       newIndex = React.Children.count(children) - 1;
     }
-    setActiveIndex(newIndex);
+    context.setRelatedProductsActiveIndex(newIndex);
   }
 
   return (
     <div className="carousel">
-      <div className="inner" style={{ transform: `translateX(-${activeIndex * 23.65}%)` }}>
-        {React.Children.map(children, (child) => {
-          return React.cloneElement(child, { width: "23.65%" });
+      <div className="inner" style={{ transform: `translateX(-${context.relatedProductsActiveIndex * 340}px)` }}>
+        {React.Children.map(children, (child, index) => {
+          return React.cloneElement(child, index);
         })}
       </div>
       <div>
-        <span>{activeIndex > 0 ?
+        <span>{context.relatedProductsActiveIndex > 0 ?
           <button className="carouselButtonLeft"
             onClick={() => {
-              updateIndex(activeIndex - 1);
+              updateIndex(context.relatedProductsActiveIndex - 1);
             }}
           >
             ◀️
@@ -51,10 +51,10 @@ const RelatedProductsCarousel = ({ children }) => {
           null
           }
         </span>
-        <span> {activeIndex < React.Children.count(children) - 1 ?
+        <span> {context.relatedProductsActiveIndex < React.Children.count(children) - 1 ?
           <button className="carouselButtonRight"
             onClick={() => {
-              updateIndex(activeIndex + 1);
+              updateIndex(context.relatedProductsActiveIndex + 1);
             }}
           >
             ▶️

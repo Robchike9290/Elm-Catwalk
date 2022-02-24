@@ -1,31 +1,33 @@
 import React, { useEffect, useContext } from 'react';
 import { AppContext } from '../context.js';
 import RelatedProductsCarousel, { RelatedProductsCarouselItem } from './relatedProductsCarousel.jsx';
-import '../src/relatedProductsListStyles.css';
 import axios from 'axios';
-import config from '../config.js';
+
+const config = require('../../config.js');
 
 const RelatedProductsList = () => {
-  const context = useContext(AppContext);
-  // console.log(config.TOKEN);
 
-  const getRelatedProductNumbers = () => {
-    axios.get(`/products/${context.currentProductId}/related`)
+  const context = useContext(AppContext);
+
+  const getRelatedProductNumbers = (firstSignal, secondSignal, thirdSignal, fourthSignal) => {
+    axios.get(`/products/${context.currentProductId}/related`, {signal: firstSignal})
     .then((response) => {
       const relatedProductNumbers = response.data;
 
       const relatedProductMajorityDataPromises = Promise.all(relatedProductNumbers.map(productNumber => {
-        return axios.get(`products/${productNumber}`);
+        return axios.get(`products/${productNumber}`, {signal: firstSignal});
       }))
 
       const relatedProductRemainingDataPromises = Promise.all(relatedProductNumbers.map(productNumber => {
-        return axios.get(`products/${productNumber}/styles`);
+        return axios.get(`products/${productNumber}/styles`, {signal: firstSignal});
       }))
 
       const relatedProductReviewsPromises = Promise.all(relatedProductNumbers.map(productNumber => {
-        return axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/meta/?product_id=${productNumber}`, {
+        return axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/meta/?product_id=${productNumber}`,
+        {
           headers: {
-            authorization: config.TOKEN
+            authorization: config.TOKEN,
+            signal: firstSignal
           }
         });
       }));
@@ -40,12 +42,14 @@ const RelatedProductsList = () => {
           currentIndex.features = product.data.features;
           productData.push(currentIndex);
         })
+
         relatedProductReviewsPromises.then(resolution => {
           for (let i = 0; i < resolution.length; i++) {
             let productRatings = resolution[i].data.ratings;
             productData[i].ratings = productRatings;
           }
         })
+
         relatedProductRemainingDataPromises.then(resolution => {
           for (let i = 0; i < resolution.length; i++) {
             let productImage = resolution[i].data.results[0].photos[0].url;
@@ -58,8 +62,11 @@ const RelatedProductsList = () => {
         .catch(err => {
           console.error(err);
         })
+
       })
+
     })
+
     .catch((err) => {
       console.error(err);
     });
@@ -67,25 +74,35 @@ const RelatedProductsList = () => {
   };
 
   useEffect(() => {
-    getRelatedProductNumbers();
+
+    const firstController = new AbortController();
+    const firstSignal = firstController.signal;
+
+    getRelatedProductNumbers(
+      firstSignal
+    );
+
+    return function () {
+      firstController.abort();
+    }
+
   }, [context.currentProductId]);
 
   return (
     <div className="productInnerMat">
       <RelatedProductsCarousel>
         {context.relatedProductsInfo.map((product, index) => (
-          // still need to get star rating (from Cheryl)
-          <RelatedProductsCarouselItem
-          category={product.category}
-          features={product.features}
-          image={product.image}
-          key={index}
-          name={product.name}
-          price={product.default_price}
-          ratings={product.ratings}
-          salesPrice={product.sale_price}
-          >
-          </RelatedProductsCarouselItem>
+            <RelatedProductsCarouselItem
+            category={product.category}
+            features={product.features}
+            image={product.image}
+            key={index}
+            name={product.name}
+            price={product.default_price}
+            ratings={product.ratings}
+            salesPrice={product.sale_price}
+            >
+            </RelatedProductsCarouselItem>
         ))}
       </RelatedProductsCarousel>
     </div>

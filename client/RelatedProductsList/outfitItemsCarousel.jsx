@@ -1,25 +1,5 @@
 import React, { useState } from 'react';
 import OutfitItem from './outfitItem.jsx';
-import OutfitAddItem from './outfitAddItem.jsx';
-import '../src/relatedProductsListStyles.css';
-
-export const OutfitItemsCarouselItem = (props, { children, width }) => {
-
-  return (
-    <div className="carouselItem" style={{ width: width }}>
-      <OutfitItem
-      name={props.name}
-      category={props.category}
-      features={props.features}
-      image={props.image}
-      price={props.price}
-      ratings={props.ratings}
-      salesPrice={props.sale_price}
-      />
-    </div>
-  );
-
-};
 
 const OutfitItemsCarousel = ({ children }) => {
 
@@ -35,17 +15,14 @@ const OutfitItemsCarousel = ({ children }) => {
   }
 
   return (
-    <div className="carousel">
-      <span>
-        <OutfitAddItem/>
-      </span>
-      <span className="inner" style={{ transform: `translateX(-${activeIndex * 23.65}%)` }}>
-        {React.Children.map(children, (child, index) => {
-          return React.cloneElement(child, { width: "23.65%" });
+    <span className="carousel">
+      <span className="inner" style={{ transform: `translateX(-${activeIndex * 340}px)` }}>
+        {React.Children.map(children, (child) => {
+          return React.cloneElement(child);
         })}
       </span>
       <div>
-        <span>{activeIndex > 0 ?
+        <div>{activeIndex > 0 ?
           <button className="carouselButtonLeft"
             onClick={() => {
               updateIndex(activeIndex - 1);
@@ -56,8 +33,8 @@ const OutfitItemsCarousel = ({ children }) => {
           :
           null
           }
-        </span>
-        <span> {activeIndex < React.Children.count(children) - 1 ?
+        </div>
+        <div> {activeIndex < React.Children.count(children) - 1 ?
           <button className="carouselButtonRight"
             onClick={() => {
               updateIndex(activeIndex + 1);
@@ -68,9 +45,9 @@ const OutfitItemsCarousel = ({ children }) => {
           :
           null
         }
-        </span>
+        </div>
       </div>
-    </div>
+    </span>
   )
 };
 
