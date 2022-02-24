@@ -46,9 +46,8 @@ const QuestionPopUp = ({ togglePopUp }) => {
           <h3>Ask a question about (add product name)</h3>
           <button onClick={togglePopUp}>exit</button>
         </div>
-        <div className="a_modal-body">
           <form action="/" method="get">
-            <ul>
+            <ul className="a_modal-body">
               <li>
             <input
               type="text"
@@ -84,7 +83,7 @@ const QuestionPopUp = ({ togglePopUp }) => {
               SubmitQuestion
             </button>
           </div>
-        </div>
+
       </div>
     </div>
   );
