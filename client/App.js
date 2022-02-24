@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 
 import QA from "./QA/index.js"
 import React, { useContext, useState } from "react";
@@ -7,16 +8,6 @@ import axios from 'axios';
 import Overview from "./Overview/Overview.jsx";
 import RelatedItemsAndComparison from "./RelatedProductsList/relatedItemsAndComparison.jsx";
 import { AppContext } from "./context.js";
-// const App = () => {
-//    return (
-//       <div>
-
-
-
-//    </div>);
-// }
-// import React, { useContext, useState } from "react";
-// import Overview from "./Overview/Overview.jsx";
 
 const AppProvider = (props) => {
    const [test, testUpdater] = useState(5);
@@ -33,6 +24,8 @@ const AppProvider = (props) => {
    const [relatedProductsInfo, setRelatedProductsInfo] = useState([]);
 
    // ! Cheryl Hello
+   const [outfitProducts, setOutfitProducts] = useState([]);
+   const [relatedProductsActiveIndex, setRelatedProductsActiveIndex] = useState(0);
    const [recommend, setRecommend] = useState(false);
    const[meta, setMeta] = useState ([]);
    const[product, setProduct] = useState({});
@@ -44,7 +37,6 @@ const AppProvider = (props) => {
    const [characteristic, setCharacteristic] = useState({});
    const [productresults, setProductResults] = useState([])
    const [average, setAverage] = useState(0);
-   // ! Cheryl
 
    return (
       <AppContext.Provider value={{
@@ -62,6 +54,8 @@ const AppProvider = (props) => {
          relatedProductsInfo, setRelatedProductsInfo,
 
          // ! Cheryl
+         outfitProducts, setOutfitProducts,
+         relatedProductsActiveIndex, setRelatedProductsActiveIndex,
          recommend, setRecommend,
          meta, setMeta,
          product, setProduct,
@@ -73,7 +67,6 @@ const AppProvider = (props) => {
          characteristic, setCharacteristic,
          productresults, setProductResults,
          average, setAverage,
-         // ! Cheryl
          }}>
          {props.children}
       </AppContext.Provider>
@@ -174,8 +167,5 @@ function App() {
 // };
 
 export default App;
-//       )
-//    }
-// };
 
 

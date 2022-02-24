@@ -38,6 +38,158 @@ button {
   font-family: Arial, Helvetica, sans-serif;
   /* background-color: #D9BCB6; */
 
+.Overview {
+  /* border: 5px solid red; */
+  /* display: flex; */
+  margin-left: auto;
+  margin-right: auto;
+  /* justify-content: center; */
+  display: grid;
+  height: 750px;
+  width: 800px;
+  grid-template-columns: repeat(10, 10%);
+  grid-template-rows: repeat(10, 10%) ;
+  background-color: rgb(230, 230, 230);
+}
+
+.bigDescription {
+  grid-column: 1 / span 10;
+  grid-row: 10;
+  /* border: 5px solid purple; */
+}
+
+
+.rl-ProductList {
+  grid-column: 1 / span 10;
+  grid-row: 8 / span 2;
+  /* border: 5px solid brown; */
+}
+
+
+.ImageGallery {
+
+  /* border: 5px solid turquoise; */
+  /* border: 5px solid wheat; */
+  grid-column: 1 / span 6;
+  grid-row:1 / span 7;
+   /* display: flex; */
+  /* justify-content: space-evenly; */
+  /* flex-wrap: wrap; */
+  /* flex-direction: row; */
+  /* background-image: ; */
+  position: relative;
+  object-fit: cover;
+
+  /* display: grid;
+  grid-template-columns: repeat(8, 12.5%);
+  grid-template-rows: repeat(8, 12.5%); */
+}
+
+ #mainImage{
+  position: absolute;
+  object-fit: cover;
+  /* grid-column-start: 5; */
+  /* z-index: 0; */
+}
+#mainImageThumbs {
+  /* z-index: 5; */
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  height: 500px;
+
+  /* grid-column-start: 0; */
+}
+  /* #pic {
+
+
+} */
+#pic img {
+  object-fit: cover;
+}
+
+.AddToCart {
+  /* justify-content: end; */
+  grid-row: 6 / 8;
+  grid-column: 7 / span 4;
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  grid-template-rows: repeat(3, 33%);
+  /* border: 5px solid green; */
+}
+
+.AddToCart div {
+  grid-column: 2 / span 2;
+}
+
+.StyleSelector {
+  /* justify-content: left; */
+  grid-column: 7 / span 4;
+  grid-row: 4 / 6;
+  /* border: 5px solid yellow; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  overflow: hidden;
+  background-color: rgb(189, 189, 189);
+  /* grid-template-columns: repeat(4 25%);
+  grid-template-rows: repeat(3 33%); */
+}
+#active-stylePic {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+#active-stylePic span {
+  position: absolute;
+}
+#active-stylePic img {
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 5px;
+}
+#stylePic img {
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 5px;
+}
+
+/* .StyleSelector  {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+} */
+/* .StyleSelector button {
+
+  /* background-color: aqua; */
+
+
+
+
+
+
+.rl-ProductInfo {
+  /* border: 5px solid black; */
+  grid-row: 1 / span 3;
+  grid-column: 7 / span 4;
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  grid-template-rows: repeat(3, 33%) ;
+}
+
+.rl-ProductInfo div {
+  grid-column: 2 / span 2;
+}
+
+/* CHERYL */
+
+
+
+.cc-R-R-parent {
+  width: 850;
 }
 
 .cc-container {
@@ -49,6 +201,7 @@ button {
   border-radius: 5px;
   box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
   overflow-x: auto;
+  gap: 60px;
 }
 
 /* Review Breakdown */
@@ -59,6 +212,7 @@ button {
   margin-left: 20px;
   box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
   padding: 20px;
+  width: 300;
 }
 
 .cc-average {
@@ -101,6 +255,14 @@ button {
   overflow-y: scroll;
   box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
   padding: 10px;
+/* ReviewList */
+.cc-review-list-parent {
+  width: 550px;
+}
+
+.cc-reviewlist {
+  height: 400px;
+  overflow-y: scroll;
 }
 
 .cc-sort {
@@ -130,6 +292,14 @@ button {
   display: flex;
   justify-content: space-between;
 
+  align-items: center;
+  gap: 5px;
+}
+
+/* Review List Entry */
+.cc-listitem1 {
+  display: flex;
+  justify-content: space-between;
 }
 
 .cc-summary {
@@ -213,6 +383,11 @@ button {
 
 .cc-starNumber {
   width: 50px;
+
+.cc-ratings {
+  display: flex;
+  align-content: center;
+  gap: 5px;
 }
 
 /* Filler Progress Bar */
@@ -227,6 +402,13 @@ button {
 
 .cc-filler {
   background: #668f80;
+  /* border-radius: 50px; */
+  border: 1px solid rgb(155, 211, 228);
+  background: rgb(244, 242, 242);
+}
+
+.cc-filler {
+  background: rgb(98, 198, 141);
   height: 100%;
   border-radius: inherit;
   transition: width .2s ease-in;
@@ -293,6 +475,17 @@ input[type=range]::-webkit-slider-runnable-track  {
   box-shadow: none;
   border: none;
   background: transparent;
+.cc-range-slider {
+  position: inherit;
+  height: 10px;
+  width: 250px;
+  /* background: rgb(244, 242, 242); */
+}
+
+.cc-slider {
+  width: inherit;
+  height: 6px;
+
 }
 
 /* button {
@@ -396,6 +589,23 @@ td {
   width: 75%;
   display: flex;
   justify-content: center;
+.cc-modal {
+  z-index: 1000;
+  padding: 100px;
+  position: fixed;
+  /* left: 0; */
+  top:0;
+  margin-top: 10px;
+  /* right:0;
+  bottom:0; */
+  width: 700px;
+  height: 600px;
+  overflow-y: scroll;
+  background-color: rgb(106, 206, 143);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 /* Star for Modal */
@@ -415,6 +625,14 @@ td {
 }
 .off {
   color: #FEFAE0;
+  cursor: pointer;
+}
+
+.on {
+  color: #000;
+}
+.off {
+  color: #ccc;
 }
 
 /* Tool Tip Star Modal */
@@ -422,6 +640,7 @@ td {
   visibility: hidden;
   width: 120px;
   background-color: rgb(43, 194, 136);
+  background-color: #555;
   color: #fff;
   text-align: center;
   border-radius: 6px;
@@ -459,6 +678,9 @@ td {
   width: 460px;
   height: 400px;
   background-color: rgb(104, 112, 181);
+  width: 400px;
+  height: 400px;
+  background-color: rgb(153, 216, 182);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -467,6 +689,8 @@ td {
   border:3px solid aquamarine
 }
 
+
+}
 
 .thumbnail:hover {
   box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);

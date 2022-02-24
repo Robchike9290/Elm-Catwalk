@@ -154,7 +154,7 @@ table {
 
 
 
-.search__input {
+.a_search__input {
   width: 100%;
   padding: 12px 24px;
 
@@ -178,7 +178,7 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.
   transform-style: preserve-3d;
 }
 
-.modal {
+.a_modal {
   position: fixed;
   left: 0;
   top: 0;
@@ -192,16 +192,16 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.
 
 }
 
-.modal.enter-done {
+.a_modal.enter-done {
   opacity: 1;
   pointer-events: visible;
 }
 
-.modal.exit {
+.a_modal.exit {
   opacity: 0;
 }
 
-.modal-content {
+.a_modal-content {
   width: 500px;
   background-color: #fff;
   transition: all 0.3s ease-in-out;
@@ -209,14 +209,14 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.
 }
 
 
-.modal-header,
-.modal-footer {
+.a_modal-header,
+.a_modal-footer {
   padding: 10px;
 }
 
 
 
-.modal-body {
+.a_modal-body {
   padding: 10px;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
@@ -269,7 +269,7 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.
 
 
 
-.button {
+.a_button {
   align-items: center;
   background-color: #fff;
   border: 2px solid #000;
@@ -296,30 +296,30 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.
   touch-action: manipulation;
 }
 
-.button:focus {
+.a_button:focus {
   color: blue;
 }
 
 
 
-.button:focus {
+.a_button:focus {
   color: #171e29;
 }
 
-.button:hover {
+.a_button:hover {
   border-color: #06f;
   color: #06f;
   fill: #06f;
 }
 
-.button:active {
+.a_button:active {
   border-color: #06f;
   color: #06f;
   fill: #06f;
 }
 
 @media (min-width: 768px) {
-  .button {
+  .a_button {
     min-width: 170px;
   }
 }

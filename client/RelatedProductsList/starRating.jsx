@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { AppContext } from '../context.js';
+<<<<<<< HEAD
 import '../src/relatedProductsListStyles.css';
+=======
+>>>>>>> d481e1b220c762145b58655129090ceff5ae0d32
 import RatingIcon from '../../client/Ratings&Reviews/RatingIcon.jsx'
 
 const StarRating = (props) => {
@@ -10,32 +13,42 @@ const StarRating = (props) => {
   const calculateStarRatings = () => {
     let totalRatingPoints = 0;
     let totalRatings = 0;
-    for (let key in props.ratings) {
-      let currentRatingPoints = key;
-      let currentRatingPointsOccurrence = props.ratings[key];
-      totalRatingPoints += (Number(currentRatingPoints) * Number(currentRatingPointsOccurrence));
-      totalRatings += Number(currentRatingPointsOccurrence);
+    let averageRatingProps = 0;
+    let averageRatingState = 0;
+    if (props.ratings) {
+      for (let key in props.ratings) {
+        let currentRatingPoints = key;
+        let currentRatingPointsOccurrence = props.ratings[key];
+        totalRatingPoints += (Number(currentRatingPoints) * Number(currentRatingPointsOccurrence));
+        totalRatings += Number(currentRatingPointsOccurrence);
+      }
+      averageRatingState = (Math.round(totalRatingPoints / totalRatings * 4) / 4).toFixed(2);
+    } else {
+      averageRatingProps = props.averageRating.toFixed(2);
     }
-    setAverageStarRating((Math.round(totalRatingPoints / totalRatings * 4) / 4).toFixed(2));
+    setAverageStarRating(averageRatingState || averageRatingProps);
   }
 
   useEffect(() => {
     calculateStarRatings();
   }, [])
-  // ADD CHERYL'S FUNCTIONALITY IN HERE WHEN IT IS COMPLETE...CHECK WHETHER HAVING MISSING RATINGVALUES WILL BREAK ANYTHING
   return (
-    // <div>
-    //   <span>Users rate this product {averageStarRating} stars out of 5.00. <br></br>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-    // </div>
-    <div className='cc-star-rating'>
-      {[...Array(5)].map((item, index) => {
-      index += 1
-      return (
-       <div key={index}>
-       <RatingIcon rating={averageStarRating} index={index}/>
-       </div>
-      )
-      })}
+    <div>
+      <div>
+        <span>
+          Users rate this product {averageStarRating} stars out of 5.00.
+        </span>
+      </div>
+      <div className='cc-star-rating'>
+        {[...Array(5)].map((item, index) => {
+        index += 1
+        return (
+        <div key={index}>
+        <RatingIcon rating={averageStarRating} index={index}/>
+        </div>
+        )
+        })}
+      </div>
     </div>
   )
 }

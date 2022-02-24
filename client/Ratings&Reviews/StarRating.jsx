@@ -29,3 +29,41 @@ const StarRating = ((props)=> {
 })
 
 export default StarRating;
+
+// DARK MODE STARS
+{/* <linearGradient id="grad25" x1="0" x2="1" y1="1" y2="100%">
+<stop offset="20%" stopColor="white"/>
+<stop offset="80%" stopColor="#373f51"/>
+</linearGradient>
+<linearGradient id="grad50" x1="0" x2="1" y1="1" y2="100%">
+<stop offset="55%" stopColor="white"/>
+<stop offset="45%" stopColor="373f51"/>
+</linearGradient>
+<linearGradient id="grad75" x1="0" x2="1" y1="1" y2="100%">
+<stop offset="73%" stopColor="white"/>
+<stop offset="27%" stopColor="373f51"/>
+</linearGradient>
+<linearGradient id="grad100" x1="0" x2="0" y1="0" y2="100%">
+<stop offset="100%" stopColor="white"/>
+<stop offset="0%" stopColor="373f51"/>
+</linearGradient> */}
+
+//LIGHT MODE STARS
+{/* <defs>
+<linearGradient id="grad25" x1="0" x2="1" y1="1" y2="100%">
+    <stop offset="20%" stopColor="black"/>
+    <stop offset="80%" stopColor="white"/>
+</linearGradient>
+<linearGradient id="grad50" x1="0" x2="1" y1="1" y2="100%">
+    <stop offset="55%" stopColor="black"/>
+    <stop offset="45%" stopColor="white"/>
+</linearGradient>
+<linearGradient id="grad75" x1="0" x2="1" y1="1" y2="100%">
+    <stop offset="73%" stopColor="black"/>
+    <stop offset="27%" stopColor="white"/>
+</linearGradient>
+<linearGradient id="grad100" x1="0" x2="0" y1="0" y2="100%">
+    <stop offset="100%" stopColor="black"/>
+    <stop offset="0%" stopColor="white"/>
+</linearGradient>
+</defs> */}

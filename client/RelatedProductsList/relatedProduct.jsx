@@ -4,7 +4,6 @@ import ComparisonModal from './comparisonModal.jsx';
 import Price from './price.jsx';
 import StarButton from './starButton.jsx';
 import StarRating from './starRating.jsx';
-import '../src/relatedProductsListStyles.css';
 
 const RelatedProduct = (props) => {
   const [isModalShown, setIsModalShown] = useState(false);
@@ -69,7 +68,7 @@ const RelatedProduct = (props) => {
     <span className="product">
       <div>
         {isModalShown ?
-        <div className="modalMat">
+        <div className="modalMat" style={{ transform: `translateX(${context.relatedProductsActiveIndex * 340}px)` }}>
           <ComparisonModal
           comparedProductValues={comparedProductValues}
           currentProductValues={currentProductValues}
@@ -84,7 +83,7 @@ const RelatedProduct = (props) => {
         <StarButton isModalShown={isModalShown} showModal={showModal}/>
       </div>
       <div className="productImageMat">
-      <img className="productImage" src={props.image} alt="We don't have an image of this yet!"></img>
+        <img className="productImage" src={props.image} alt=" No image yet! 📸"></img>
       </div>
       <div className="productData">Category: {props.category}</div>
       <div className="productData ">Name: {props.name}</div>
