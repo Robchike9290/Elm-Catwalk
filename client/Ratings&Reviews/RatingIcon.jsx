@@ -36,7 +36,7 @@ const RatingIcons=((props) => {
           return 'url(#grad50)'
         }
         if ((decimalNum >= .75) && (decimalNum <= .9)) {
-          console.log ('in memo', (decimalNum < .25 && decimalNum > .0), 'index', props.index,)
+          // console.log ('in memo', (decimalNum < .25 && decimalNum > .0), 'index', props.index,)
           return 'url(#grad75)'
         }
       }

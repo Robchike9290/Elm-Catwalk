@@ -42,7 +42,6 @@ const AppProvider = (props) => {
    const [name, setName] = useState('');
    const [email, setEmail] = useState('');
    const [characteristic, setCharacteristic] = useState({});
-   const [selectedratings, setSelectedRatings] = useState([])
    const [productresults, setProductResults] = useState([])
    const [average, setAverage] = useState(0);
    // ! Cheryl
@@ -72,7 +71,6 @@ const AppProvider = (props) => {
          name, setName,
          email, setEmail,
          characteristic, setCharacteristic,
-         selectedratings, setSelectedRatings,
          productresults, setProductResults,
          average, setAverage,
          // ! Cheryl
@@ -86,8 +84,8 @@ function App() {
    return (
       <AppProvider>
          <Overview />
-         <QA/>
          <RelatedItemsAndComparison/>
+         <QA/>
          <RatingsReviewsSection/>
       </AppProvider>
    )

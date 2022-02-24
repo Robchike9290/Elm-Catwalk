@@ -14,7 +14,7 @@ const ReviewListEntry = ((props) => {
   // console.log('SUMMARY', summary)
   const strBody = props.product.body
   const photos = props.product.photos && props.product.photos.length ? props.product.photos : []
-  console.log(props.product.helpfulness)
+  // console.log(props.product.helpfulness)
 
   const updateHelpfulness = async () => {
     // if(!props.rHelpful) {
@@ -58,12 +58,15 @@ const ReviewListEntry = ((props) => {
       <div className='cc-seller-response'>{props.product.response && `Response from seller ${props.product.response}`}</div>
       <div className='cc-Ind-helpfulness'>
         <p>Was this review helpful?</p>
-        <u onClick={updateHelpfulness}>Yes</u>
+        <div className='cc-helpfulLink'>
+          <u onClick={updateHelpfulness}>Yes</u>
+        </div>
         <p>({props.product.helpfulness})</p>
         <p> | </p>
-        <p onClick={updateReport}>Report</p>
+        <div className='cc-reportLink'>
+          <u onClick={updateReport}>Report</u>
+        </div>
       </div>
-
       <hr className='cc-space'/>
     </div>
   )

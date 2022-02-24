@@ -7,19 +7,19 @@ const StarRating = ((props)=> {
   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill={fill} viewBox="0 0 24 24" stroke="currentColor">
     <defs>
     <linearGradient id="grad25" x1="0" x2="1" y1="1" y2="100%">
-        <stop offset="20%" stopColor="blue"/>
+        <stop offset="20%" stopColor="#6f8695"/>
         <stop offset="80%" stopColor="white"/>
     </linearGradient>
     <linearGradient id="grad50" x1="0" x2="1" y1="1" y2="100%">
-        <stop offset="55%" stopColor="blue"/>
+        <stop offset="55%" stopColor="#6f8695"/>
         <stop offset="45%" stopColor="white"/>
     </linearGradient>
     <linearGradient id="grad75" x1="0" x2="1" y1="1" y2="100%">
-        <stop offset="73%" stopColor="blue"/>
+        <stop offset="73%" stopColor="#6f8695"/>
         <stop offset="27%" stopColor="white"/>
     </linearGradient>
     <linearGradient id="grad100" x1="0" x2="0" y1="0" y2="100%">
-        <stop offset="100%" stopColor="blue"/>
+        <stop offset="100%" stopColor="#6f8695"/>
         <stop offset="0%" stopColor="white"/>
     </linearGradient>
     </defs>

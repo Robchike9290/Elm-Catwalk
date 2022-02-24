@@ -30,8 +30,8 @@ const ModalAddReview = ((props) => {
   })
 
   const handleUploadClick = ((e) => {
-    e.prevent.default()
-    e.stop.Propagation()
+    e.preventDefault()
+    e.stopPropagation()
     setUploadPhoto(true)
   })
 
@@ -44,10 +44,12 @@ const ModalAddReview = ((props) => {
   }
   return (
     <div className='cc-modal'>
-      <h3 className='cc-modalHeader'>Write Your Review</h3>
-      <form >
+      <h3 className='cc-modalHeader'>WE LOVE HEARING FROM YOU!</h3>
+      <form className='cc-modal-form1'>
+        <label id='cc-modal-form2'>
+          How was your experience with "{currentProduct.name}?"
+        </label>
         <label>
-          About product: {currentProduct.name}
           < StarForModal />
         </label>
         <br/>
@@ -66,16 +68,16 @@ const ModalAddReview = ((props) => {
         </label>
         <br/>
         <label>
-          Review Summary (60 Char)
-          <input type='text'placeholder='Example: Best purchase ever!' maxLength={60} onChange={(e)=>setSummary(e.target.value)}/>
+          Review Summary max 60 Char
+          <input id='modalsummary' name="modal-summary" rows="5" cols="70" type='text'placeholder='Example: Best purchase ever!' maxLength={60} onChange={(e)=>setSummary(e.target.value)}/>
         </label>
         <br/>
         <label>
-          Review Body* (text input, min 50, max 1000char)
-          <input type='text'placeholder='Why did you like the product or not?' maxLength={1000} onChange={(e)=>handleBody(e.target.value)}/>
-          <p>
+          Review Body*
+          <p className='character-counter'>
             Min Characters: {countdown}
           </p>
+          <textarea id='modalbody' name="modal-body" rows="5" cols="70" type='text'placeholder='Why did you like the product or not?' maxLength={1000} onChange={(e)=>handleBody(e.target.value)}/>
         </label>
         <br/>
         <label>
@@ -87,14 +89,14 @@ const ModalAddReview = ((props) => {
         <br/>
         <br/>
         <label>
-          What is your nickname* (60 Char)
+          What is your nickname*
           <input type='text' placeholder='Example: jackson11!' maxLength={60} onChange={(e)=>setName(e.target.value)}/>
           <br/>
           “For privacy reasons, do not use your full name or email address”
         </label>
         <br/>
         <label>
-          Your email* (60 Char)
+          Your email*
           <input type='text' placeholder='Example: jackson11@email.com' maxLength={60} onChange={(e)=>setEmail(e.target.value)}/>
           <br/>
           “For authentication reasons, you will not be emailed”
