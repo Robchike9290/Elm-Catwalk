@@ -14,14 +14,14 @@ export const CarouselItem = ({ children, width }) => {
 
 const Carousel = ( { children }) => {
   const { activeIndex, setActiveIndex } = useContext(AppContext);
-  const { currentStyle } = useContext(AppContext);
+  const { currentStyle, currentProduct } = useContext(AppContext);
 
   useEffect ( () => {
 
     setActiveIndex(0);
   }
 
-  , [currentStyle])
+  , [currentProduct])
 
   const updateIndex = (newIndex) => {
     if (newIndex < 0) {

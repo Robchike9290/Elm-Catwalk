@@ -9,8 +9,8 @@ const ProductList = ({watcher, setWatcher}) => {
 
 
   return (<div className='rl-ProductList'>
-  Products:
-  <br></br>
+  <span>Products:</span>
+
     {productList?.map((product, key) => (
       <Product  product={product} key={key}/>
     ))}
