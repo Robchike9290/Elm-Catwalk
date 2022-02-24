@@ -16,9 +16,9 @@ const OutfitItemsCarousel = ({ children }) => {
 
   return (
     <span className="carousel">
-      <span className="inner" style={{ transform: `translateX(-${activeIndex * 23.65}%)` }}>
-        {React.Children.map(children, (child, index) => {
-          return React.cloneElement(child, { width: "23.65%" });
+      <span className="inner" style={{ transform: `translateX(-${activeIndex * 340}px)` }}>
+        {React.Children.map(children, (child) => {
+          return React.cloneElement(child);
         })}
       </span>
       <div>

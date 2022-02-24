@@ -5,46 +5,31 @@ import axios from 'axios';
 
 const config = require('../../config.js');
 
-const firstController = new AbortController();
-const firstSignal = firstController.signal;
-const secondController = new AbortController();
-const secondSignal = secondController.signal;
-const thirdController = new AbortController();
-const thirdSignal = thirdController.signal;
-const fourthController = new AbortController();
-const fourthSignal = fourthController.signal;
-
 const RelatedProductsList = () => {
+
   const context = useContext(AppContext);
 
-  const getRelatedProductNumbers = () => {
+  const getRelatedProductNumbers = (firstSignal, secondSignal, thirdSignal, fourthSignal) => {
     axios.get(`/products/${context.currentProductId}/related`, {signal: firstSignal})
     .then((response) => {
       const relatedProductNumbers = response.data;
 
-      firstController.abort();
-
       const relatedProductMajorityDataPromises = Promise.all(relatedProductNumbers.map(productNumber => {
-        return axios.get(`products/${productNumber}`, {signal: secondSignal});
-        secondController.abort();
+        return axios.get(`products/${productNumber}`, {signal: firstSignal});
       }))
-
-
 
       const relatedProductRemainingDataPromises = Promise.all(relatedProductNumbers.map(productNumber => {
-        return axios.get(`products/${productNumber}/styles`, {signal: thirdSignal});
-        thirdController.abort();
+        return axios.get(`products/${productNumber}/styles`, {signal: firstSignal});
       }))
-
 
       const relatedProductReviewsPromises = Promise.all(relatedProductNumbers.map(productNumber => {
         return axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/meta/?product_id=${productNumber}`,
         {
           headers: {
-            authorization: config.TOKEN
+            authorization: config.TOKEN,
+            signal: firstSignal
           }
         });
-        fourthController.abort();
       }));
 
       relatedProductMajorityDataPromises.then(resolution => {
@@ -57,12 +42,14 @@ const RelatedProductsList = () => {
           currentIndex.features = product.data.features;
           productData.push(currentIndex);
         })
+
         relatedProductReviewsPromises.then(resolution => {
           for (let i = 0; i < resolution.length; i++) {
             let productRatings = resolution[i].data.ratings;
             productData[i].ratings = productRatings;
           }
         })
+
         relatedProductRemainingDataPromises.then(resolution => {
           for (let i = 0; i < resolution.length; i++) {
             let productImage = resolution[i].data.results[0].photos[0].url;
@@ -75,8 +62,11 @@ const RelatedProductsList = () => {
         .catch(err => {
           console.error(err);
         })
+
       })
+
     })
+
     .catch((err) => {
       console.error(err);
     });
@@ -84,7 +74,21 @@ const RelatedProductsList = () => {
   };
 
   useEffect(() => {
-    getRelatedProductNumbers();
+
+    const firstController = new AbortController();
+    const firstSignal = firstController.signal;
+
+    getRelatedProductNumbers(
+      firstSignal
+    );
+
+    return function () {
+      firstController.abort();
+      // secondController.abort();
+      // thirdController.abort();
+      // fourthController.abort();
+    }
+
   }, [context.currentProductId]);
 
   return (

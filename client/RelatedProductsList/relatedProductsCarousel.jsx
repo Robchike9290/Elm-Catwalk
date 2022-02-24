@@ -34,8 +34,8 @@ const RelatedProductsCarousel = ({ children }) => {
   return (
     <div className="carousel">
       <div className="inner" style={{ transform: `translateX(-${context.relatedProductsActiveIndex * 340}px)` }}>
-        {React.Children.map(children, (child) => {
-          return React.cloneElement(child);
+        {React.Children.map(children, (child, index) => {
+          return React.cloneElement(child, index);
         })}
       </div>
       <div>
