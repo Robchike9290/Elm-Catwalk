@@ -8,7 +8,7 @@ const BreakdownBar = ((props) => {
   return (
     <div>
     {props.starpoint.map((value, p) => {
-      return <ProgressBar key={p} star={p+1} percentage={(value/props.totalEntries)*100} value={value}/>
+      return <ProgressBar key={p} star={p+1} percentage={(value/props.totalEntries)*100} value={value} selectedratings={props.selectedratings} setSelectedRatings={props.setSelectedRatings} setSelectedLength={props.setSelectedLength}/>
     })}
   </div>
   )

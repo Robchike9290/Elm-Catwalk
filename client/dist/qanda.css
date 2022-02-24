@@ -22,6 +22,12 @@ providing a space for you to apply styles to your app's outermost HTML element -
   License: none (public domain)
 */
 
+:root {
+  --blue: #6495ed;
+  --white: #faf0e6;
+}
+
+
 html,
 body,
 div,
@@ -192,6 +198,7 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.
 
 }
 
+
 .a_modal.enter-done {
   opacity: 1;
   pointer-events: visible;
@@ -202,10 +209,25 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.
 }
 
 .a_modal-content {
-  width: 500px;
-  background-color: #fff;
-  transition: all 0.3s ease-in-out;
-  transform: translateY(-200px);
+  width: 60rem;
+  padding: 4rem 2rem;
+  border-radius: .8rem;
+  height: 50%;
+
+  color: grey;
+  background: white;
+  box-shadow: var(--m-shadow, .4rem .4rem 10.2rem .2rem) var(--shadow-1);
+  position: relative;
+  overflow: hidden;
+  border-radius: 4rem;
+  width: 50%;
+  -webkit-box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
+-moz-box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
+box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
+display: flex;
+justify-content: space-between;
+flex-direction: column;
+align-items: center;
 }
 
 
@@ -217,9 +239,17 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.
 
 
 .a_modal-body {
-  padding: 10px;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  width: 500px;
+  height: 350px;
+  display: flex;
+  padding: 0;
+  border-radius: 4rem;
+  font-family: 'PT Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
 }
 
 .question {
@@ -251,6 +281,12 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.
 .qList::marker {
   content: 'Q:';
   font-size: 20px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif, bold;
+}
+.aList::marker {
+  content: 'A:';
+  font-size: 15px;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif, bold;
 }
@@ -330,6 +366,8 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.
   width: 75%;
   margin: auto;
   padding: 20px;
+  background-color: var(--blue);
+
 }
 
 #scrollable {
@@ -345,3 +383,73 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.
   font-size: 30px;
 
 }
+
+
+.thumb {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+
+.thumb:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+input,
+textarea {
+  background: none;
+  color: black;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid white;
+
+}
+/* input:focus {
+  outline: none;
+}
+&:focus ~ label,
+&:valid ~ label {
+  top: -14px;
+  font-size: 12px;
+  color: $hl-color;
+}
+&:focus ~ .bar:before {
+  width: $width;
+} */
+
+input[type="password"] {
+  letter-spacing: 0.3em;
+}
+
+label {
+  color: black;
+  font-size: 16px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 300ms ease all;
+}
+
+/* .bar {
+  position: relative;
+  display: block;
+  width: $width;
+  &:before {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 0px;
+    position: absolute;
+    background: $hl-color;
+    transition: $trans-time ease all;
+    left: 0%;
+  }
+} */

@@ -8,16 +8,6 @@ import axios from 'axios';
 import Overview from "./Overview/Overview.jsx";
 import RelatedItemsAndComparison from "./RelatedProductsList/relatedItemsAndComparison.jsx";
 import { AppContext } from "./context.js";
-// const App = () => {
-//    return (
-//       <div>
-
-
-
-//    </div>);
-// }
-// import React, { useContext, useState } from "react";
-// import Overview from "./Overview/Overview.jsx";
 
 const AppProvider = (props) => {
    const [test, testUpdater] = useState(5);
@@ -34,7 +24,9 @@ const AppProvider = (props) => {
    const [relatedProductsInfo, setRelatedProductsInfo] = useState([]);
    const [bigGallery, setBigGallery] = useState(false);
 
-   // ! Cheryl
+   // ! Cheryl Hello
+   const [outfitProducts, setOutfitProducts] = useState([]);
+   const [relatedProductsActiveIndex, setRelatedProductsActiveIndex] = useState(0);
    const [recommend, setRecommend] = useState(false);
    const[meta, setMeta] = useState ([]);
    const[product, setProduct] = useState({});
@@ -44,10 +36,8 @@ const AppProvider = (props) => {
    const [name, setName] = useState('');
    const [email, setEmail] = useState('');
    const [characteristic, setCharacteristic] = useState({});
-   const [selectedratings, setSelectedRatings] = useState([])
    const [productresults, setProductResults] = useState([])
    const [average, setAverage] = useState(0);
-   // ! Cheryl
 
    return (
       <AppContext.Provider value={{
@@ -66,6 +56,8 @@ const AppProvider = (props) => {
          bigGallery, setBigGallery,
 
          // ! Cheryl
+         outfitProducts, setOutfitProducts,
+         relatedProductsActiveIndex, setRelatedProductsActiveIndex,
          recommend, setRecommend,
          meta, setMeta,
          product, setProduct,
@@ -75,10 +67,8 @@ const AppProvider = (props) => {
          name, setName,
          email, setEmail,
          characteristic, setCharacteristic,
-         selectedratings, setSelectedRatings,
          productresults, setProductResults,
          average, setAverage,
-         // ! Cheryl
          }}>
          {props.children}
       </AppContext.Provider>
@@ -180,8 +170,5 @@ function App() {
 // };
 
 export default App;
-//       )
-//    }
-// };
 
 

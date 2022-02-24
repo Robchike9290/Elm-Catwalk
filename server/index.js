@@ -5,7 +5,6 @@ const path = require("path");
 const port = process.env.PORT || 3000;
 const baseURL = "https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/";
 const baseURLQA = "https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa";
-
 const { TOKEN } = require("../config.js");
 
 app.listen(port, () => {
@@ -117,7 +116,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/questions/:product_id", (req, res) => {
-  // console.log(req.params);
+   console.log('in server', req.params);
 
   axios({
     method: "get",
@@ -126,6 +125,23 @@ app.get("/questions/:product_id", (req, res) => {
       product_id: req.params.product_id,
       count: 10000,
     },
+    headers: { Authorization: TOKEN },
+  })
+    .then((questionListData) => {
+      res.status(200).send(questionListData.data);
+    })
+    .catch((err) => {
+      console.error(err);
+      console.log("failed in server GET");
+    });
+});
+
+app.get("/questions/:question_id/answers", (req, res) => {
+  // console.log(req.params);
+
+  axios({
+    method: "get",
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions/${req.params.question_id}/answers`,
     headers: { Authorization: TOKEN },
   })
     .then((questionListData) => {
@@ -225,6 +241,40 @@ app.put("/answers/:answer_id/report", (req, res) => {
   })
     .then((apiresponse) => {
       console.log('apiresponse')
+      res.status(200).send(apiresponse.data);
+    })
+    .catch((err) => {
+      console.error(err);
+      console.log("failed in server GET");
+    });
+});
+
+app.put("/reviews/:review_id", (req, res) => {
+  axios({
+    method: "put",
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${Number(
+      req.params.review_id
+    )}/helpful`,
+    headers: { Authorization: TOKEN },
+  })
+    .then((apiresponse) => {
+      res.status(200).send(apiresponse.data);
+    })
+    .catch((err) => {
+      console.error(err);
+      console.log("failed in server GET");
+    });
+});
+
+app.put("/reviews/:review_id", (req, res) => {
+  axios({
+    method: "put",
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${Number(
+      req.params.review_id
+    )}/report`,
+    headers: { Authorization: TOKEN },
+  })
+    .then((apiresponse) => {
       res.status(200).send(apiresponse.data);
     })
     .catch((err) => {

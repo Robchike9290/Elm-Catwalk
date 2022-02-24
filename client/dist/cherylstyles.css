@@ -1,0 +1,521 @@
+
+@media (min-width: 768px) {
+  .button {
+    min-width: 170px;
+  }
+}
+
+#app {
+  background-color: #E0E5E8;
+  margin-bottom: 40px;
+}
+.cc-R-R-parent {
+  /* background-color: #D9BCB6; */
+  width: 75%;
+  margin: auto;
+  /* padding: 20px; */
+  font-family: Arial, Helvetica, sans-serif, bold;
+  border-radius: 5px;
+  /* border: 3px solid #bd897e; */
+  box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
+
+}
+
+/* cc-button {
+  border-radius: 5px;
+  background-color: #D9BCB6;
+  font-weight: bold;
+} */
+
+.cc-heading {
+  /* position:relative; */
+  padding: 10px;
+  width: 100%;
+  font-size: 30px;
+  /* font-weight: bold; */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  /* background-color: #D9BCB6; */
+
+}
+
+.cc-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  background-color: #ECEEE4;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+/* Review Breakdown */
+
+.cc-breakdown {
+  position:relative;
+  width: 90%;
+  margin-left: 20px;
+  box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.cc-average {
+  display: flex;
+  /* align-items: flex-start; */
+  top: 0;
+}
+
+.cc-numavg {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.cc-star-rating {
+  display: flex;
+}
+
+.cc-selected-ratings {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.cc-averageRecommended {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+/* ReviewList */
+
+.cc-review-list-parent {
+  width: 650px;
+  box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.cc-reviewlist {
+  margin-top: 20px;
+  height: 525px;
+  width: 575px;
+  overflow-y: scroll;
+  box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.cc-sort {
+  display: flex;
+  align-items: top;
+  gap: 5px;
+  height:30px;
+}
+
+.cc-sortmenu:hover {
+  color: #668f80;
+}
+
+
+
+/* Review List Entry */
+.cc-reviewEntry {
+  width: 500px;
+  gap: 5px, 40px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  border-bottom: 2px solid gray;
+}
+.cc-listitem1 {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.cc-summary {
+  font-weight: bold;
+  font-size: large;
+}
+
+.cc-seller-response {
+  background: skyblue;
+}
+
+.cc-Ind-helpfulness {
+  display: flex;
+  gap: 5px;
+}
+.cc-helpfulLink:hover {
+  color:#668f80;
+}
+
+.cc-reportLink:hover {
+  color:rgb(143, 57, 57);
+}
+
+.cc-space {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* ReviewListPhotos */
+
+.cc-list-thumbnail {
+  display: flex;
+}
+
+.cc-thumbnail {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+  gap: 30px;
+}
+
+/* Star Rating */
+.w-6 {
+  width: .9em;
+}
+
+.h-6 {
+  height: .9em;
+}
+
+/* Progress Bar */
+/* ! */
+/* .cc-ratings {
+  display: flex;
+  align-content: center;
+  gap: 5px;
+  font-size: medium;
+} */
+
+#cc-ratings {
+  display: flex;
+  align-content: center;
+  gap: 5px;
+  font-size: medium;
+}
+
+#cc-ratings:hover {
+  background: rgb(237, 207, 132);
+  width: 281px;
+}
+
+.yes {
+  background-color: #D9BCB6;
+  width: 281px;
+  border-radius: 4%;
+}
+/* .no {
+  background-color: #FEFAE0;
+} */
+
+.cc-starNumber {
+  width: 50px;
+}
+
+/* Filler Progress Bar */
+.cc-progress-bar {
+  position: relative;
+  height: 10px;
+  width: 200px;
+  border-radius: 2px;
+  border: 1px solid rgb(155, 211, 228);
+  background: #E0E5E8;
+}
+
+.cc-filler {
+  background: #668f80;
+  height: 100%;
+  border-radius: inherit;
+  transition: width .2s ease-in;
+}
+
+/* GAUGE */
+.cc-gauge {
+  margin-bottom: auto;
+  font-size: small;
+  font-weight: bold;
+  margin-top: revert;
+  /* width: 250px; */
+}
+
+.cc-gauge-range {
+  display: flex;
+  font-size: small;
+  width: 250px;
+  justify-content: space-between;
+  margin-top: 11px;
+  /* height: 10px; */
+}
+
+/* GAUGE SELECTOR */
+/* .cc-range-slider {
+  position: inherit;
+  height: 10px;
+  width: 250px;
+  margin-top: revert;
+} */
+
+/* .cc-slider {
+  width: inherit;
+  height: 6px;
+
+} */
+
+
+input[type="range"] {
+  -webkit-appearance: none;
+  margin-right: 15px;
+  width: 250px;
+  height: 7px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  background-image: linear-gradient(#366f44, #d7cac5);
+  background-size: 70% 100%;
+  /* background-repeat: no-repeat; */
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  border-radius: 20%;
+  background: #6b7d72;
+  /* border: 10px solid black; */
+  cursor: ew-resize;
+  box-shadow: 0 0 2px 0 #555;
+  transition: background .3s ease-in-out;
+}
+
+input[type=range]::-webkit-slider-runnable-track  {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+/* button {
+  background-color: transparent;
+} */
+
+/* Modal */
+.cc-modalContainer {
+  position: absolute;
+  width: 75%;
+  display: flex;
+  justify-content: center;
+
+}
+.cc-modal {
+  z-index: 1000;
+  padding: 20px;
+  position: relative;
+  /* left: 0; */
+  top:10px;
+  margin-top: 5px;
+  max-height: 450px;
+  overflow-y: auto;
+  /* right:0;
+  bottom:0; */
+  width: 700px;
+  /* height: 700px; */
+  /* overflow-y: scroll; */
+  background-color: #668F80;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 25px;
+  border:5px solid #E0E5E8;
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.cc-modal-form1 {
+  width:650px;
+  padding: 10px;
+  justify-content: center;
+}
+
+.cc-modalHeader{
+  position: relative;
+  font-size: larger;
+  font-weight: bold;
+}
+
+#cc-modal-form2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: medium;
+  margin-bottom: 10px;
+}
+
+table {
+  table-layout: fixed;
+  width: 600px;
+  border: 1px solid red;
+  text-align: center;
+}
+
+td {
+  border: 1px solid blue;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+  border-bottom: 10px;
+}
+.cc-modal-characteristics {
+  /* display:flex; */
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.cc-modal-selcharacteristics {
+  /* display:flex; */
+  text-align: center;
+  font-size: small;
+}
+
+#modalsummary {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#modalbody {
+  margin-top: 20px;
+}
+
+.character-counter {
+  font-size: small;
+}
+
+.cc-photoupload-container {
+  position: absolute;
+  width: 75%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Star for Modal */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+#addstar-review {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;;
+}
+
+.on {
+  color: #373F51;
+}
+.off {
+  color: #FEFAE0;
+}
+
+/* Tool Tip Star Modal */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgb(43, 194, 136);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.cc-photo-modal {
+  position: fixed;
+  top:0;
+  margin-top: 100px;
+  width: 460px;
+  height: 400px;
+  background-color: rgb(104, 112, 181);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 25px;
+  border:3px solid aquamarine
+}
+
+
+.thumbnail:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.add-review {
+  justify-content: center;
+}
+
+.cc-elm-street {
+  margin-right: 10px;
+  margin-top: 20px;
+  position: absolute;
+  right:0;
+  font-size: small;
+  background-color: #E0E5E8;
+}
+
+.photo-upload {
+  position: fixed;
+  top: 0px;
+  margin-top: 5px;
+  height:600px;
+  width:600px;
+  background-color: rgb(114, 114, 213);
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 25px;
+  border:5px solid #6f8695;
+  align-items: center;
+}
+
+.cc-photo-preview {
+  position: fixed;
+  top:0;
+  margin-top: 75px;
+  width: 460px;
+  height: 400px;
+  background-color: #ECEEE4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 25px;
+  border:3px solid #D9BCB6;
+  margin-left: 91px;
+  box-shadow: 0 0 5px 1px rgba(0, 140, 186, 0.5)
+}
+

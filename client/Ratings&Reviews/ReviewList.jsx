@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import ReviewListEntry from './ReviewListEntry.jsx'
 import SortDropDown from './SortDropDown.jsx'
 import ModalAddReview from './ModalAddReview.jsx'
+import SearchBar from '../../client/QA/SearchBar.jsx';
 import {AppContext } from '../context.js';
 
 const ReviewList = ((props) => {
@@ -9,11 +10,16 @@ const ReviewList = ((props) => {
   // console.log('REVIEWSLIST', props)
   const [index, setIndex] = useState(2)
   const [moreReview, setMoreReview] = useState(true)
+  // const [resultSearch, setResultSearch] = useState([]);
+  // const [highLightedWord, updateHighlightedWords] = useState(null)
   // const [moreReview, setMoreReview] = useState(true)
+
   const results = product.results && product.results.length ? product.results : [];
+
   // console.log('PRODUCT RESULTS FROM REVIEW LIST', productresults)
   // console.log('RESULTS FROM REVIEW LIST', results)
-  // console.log('.......RESULTS FROM REVIEW LIST', results.length)
+
+  // console.log('.......RESULTS FROM REVIEW LIST', results)
   const moreReviewButton = () => {
     if ((results.length - index) < 2) {
       setMoreReview(false)
@@ -31,9 +37,10 @@ const ReviewList = ((props) => {
       <p>{results.length} reviews, sorted by </p>
       <SortDropDown sort={props.sort} setSort={props.setSort}/>
       </div>
+      {/* {results.length > 0 && <SearchBar UpdateQlist={setResultSearch} qList={resultSearch} baseList={results} updateHighlightedWords={updateHighlightedWords} />} */}
       <div className='cc-reviewlist'>
       {productresults.slice(0, index).map((product, i) => {
-        return <ReviewListEntry product={product} key={i} updateHelpfulness={props.updateHelpfulness} updateReport={props.updateReport}/>
+        return <ReviewListEntry product={product} key={i} rHelpful={props.rHelpful} setRHelpful={props.setRHelpful} reported={props.reported} setReported={props.setReported}/>
       })}
       </div>
       {moreReview && <button onClick={moreReviewButton}>MORE REVIEWS</button>}

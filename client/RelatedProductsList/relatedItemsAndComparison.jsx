@@ -1,13 +1,16 @@
 import React from "react";
 import RelatedProductsList from './relatedProductsList.jsx';
 import YourOutfit from './yourOutfit.jsx';
-import '../src/relatedProductsListStyles.css';
 
 const RelatedItemsAndComparison = () => {
-  return (<div>
-    <h2 className="productMat">Related Products</h2>
+  return (<div className="relatedProductsAndComparison">
+    <br></br>
+    <h2 className="bSectionTitle">RELATED PRODUCTS</h2>
+    <br></br>
     <RelatedProductsList />
-    <h2 className="productMat">Your Outfits</h2>
+    <br></br>
+    <h2 className="bSectionTitle">YOUR OUTFITS</h2>
+    <br></br>
     <YourOutfit />
   </div>
   );
