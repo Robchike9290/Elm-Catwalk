@@ -232,3 +232,36 @@ app.put("/answers/:answer_id/report", (req, res) => {
     });
 });
 
+app.put("/reviews/:review_id", (req, res) => {
+  axios({
+    method: "put",
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${Number(
+      req.params.review_id
+    )}/helpful`,
+    headers: { Authorization: TOKEN },
+  })
+    .then((apiresponse) => {
+      res.status(200).send(apiresponse.data);
+    })
+    .catch((err) => {
+      console.error(err);
+      console.log("failed in server GET");
+    });
+});
+
+app.put("/reviews/:review_id", (req, res) => {
+  axios({
+    method: "put",
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${Number(
+      req.params.review_id
+    )}/report`,
+    headers: { Authorization: TOKEN },
+  })
+    .then((apiresponse) => {
+      res.status(200).send(apiresponse.data);
+    })
+    .catch((err) => {
+      console.error(err);
+      console.log("failed in server GET");
+    });
+});
