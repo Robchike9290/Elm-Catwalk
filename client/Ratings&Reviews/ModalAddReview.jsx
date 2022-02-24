@@ -84,7 +84,6 @@ const ModalAddReview = ((props) => {
           Upload Product Photos Here (5 max)
           <button onClick={(e)=>handleUploadClick(e)}>Upload Photos</button>
           <PhotoUpload setUploadPhoto={setUploadPhoto} uploadPhoto={uploadPhoto}/>
-          {/* <p>Upload Photos, need upload program</p> */}
         </label>
         <br/>
         <br/>
