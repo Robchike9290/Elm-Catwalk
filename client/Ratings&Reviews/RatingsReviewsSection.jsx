@@ -10,23 +10,27 @@ import {AppContext } from '../context.js';
 // console.log(Token, '<--token', Token.TOKEN)
 
 const RatingsReviewsSection = (props) => {
-  const {currentProductId, meta, setMeta, product, setProduct, selectedratings, setSelectedRatings, productresults, setProductResults} = useContext(AppContext);
+  const {currentProductId, meta, setMeta, product, setProduct, productresults, setProductResults} = useContext(AppContext);
   // console.log('CURRENTID', currentProductId)
   const {id} = props;
   const[sort, setSort] = useState('relevant');
   const [addreview, setAddReview] = useState(false)
   const [total, setTotal] = useState({totalEntries: 100, totalPoints: 1});
   const [starpoint, setStarPoint] = useState([]);
-
+  const [rHelpful, setRHelpful] = useState(false)
+  const [reported, setReported] = useState(false);
+  const [selectedratings, setSelectedRatings] = useState([])
+  const [selectedLength, setSelectedLength] = useState(0)
+  console.log('OUTSIDE---SELECTED RATINGS FROM R&R', selectedLength)
   useEffect(() => {
     axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews?product_id=${currentProductId}&count=${total.totalEntries}&sort=${sort}&page=1`, {headers: {'Authorization': Token.TOKEN}})
 
     .then((data)=>{
       // console.log("fromratingsreviews", data.data)
-      // console.log("RESULTS", data.data.results.helpfulness)
+      // console.log("RESULTS", data.data.results)
       setProduct(data.data)
     })
-  },[currentProductId, sort, total.totalEntries]);
+  },[currentProductId, sort, total.totalEntries, rHelpful, reported]);
 
   useEffect(() => {
     axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/meta?product_id=${currentProductId}`, {headers: {'Authorization': Token.TOKEN}})
@@ -47,12 +51,13 @@ const RatingsReviewsSection = (props) => {
 
   // console.log('PRODUCT--->FILTER', product)
   useEffect(() => {
-    // console.log('PRODUCT HERE', product)
+    console.log('selectedratings.length', selectedLength)
     if (!selectedratings.length && product.results) {
       return setProductResults(product.results)
     }
     // console.log('PRODUCT--->FILTER', product)
     const filteredProduct = product?.results?.filter((item, i) => {
+      // console.log('SELECTED RATINGS FROM R&R', selectedratings)
       // console.log('PRODUCT--->ITEM', item)
       return selectedratings.some((element)=> {
         return element === item.rating
@@ -62,44 +67,21 @@ const RatingsReviewsSection = (props) => {
     const results = filteredProduct || []
     setProductResults(results)
     // console.log('FILTERED PRODUCT     ', filteredProduct)
-  },[selectedratings, product])
+  },[selectedLength, product])
   // console.log('TOTAL---->', starpoint)
 
-  const updateHelpfulness = ((e, review_id) => {
-    console.log('FIRSTupdateHelpfulness token', Token.TOKEN)
 
-    axios.put(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${review_id}/helpful`, {headers: {'Authorization': Token.TOKEN}})
-    console.log('SECONDupdateHelpfulness token', Token.TOKEN)
-    .then(() => {
-      console.log(SUCCESS)
-    })
-    .catch((err) => {
-      console.log('updateHelpfulness error', err)
-    })
-  })
-
-  const updateReport = ((e, review_id) => {
-    axios.put(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${review_id}/report`, {headers: {'Authorization': Token.TOKEN}})
-    .then(() => {
-      console.log(SUCCESS)
-    })
-    .catch((err)=> {
-      console.log(('uspdateReport', err))
-    })
-  })
-
-  // const addReviewModal = ((e) => {
-  //   axios.post('https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews')
-  // })
   return (
     // console.log('PRODUCT', product);
     <div className='cc-R-R-parent'>
-      <h3>Ratings & Reviews</h3>
+      <p className='cc-heading'>RATINGS & REVIEWS</p>
+      <div className='cc-modalContainer'>
       <ModalAddReview addreview={addreview} setAddReview={setAddReview}/>
+      </div>
       <div className='cc-container'>
-       <ReviewBreakdown total={total} setTotal={setTotal} starpoint={starpoint}/>
-       <ReviewList sort={sort} setSort={setSort} addreview={addreview} setAddReview={setAddReview} updateHelpfulness={updateHelpfulness} updateReport={updateReport}/>
-       {/* <ReviewList sort={sort} setSort={setSort} addreview={addreview} setAddReview={setAddReview} /> */}
+       <ReviewBreakdown total={total} setTotal={setTotal} starpoint={starpoint} selectedratings={selectedratings} setSelectedRatings={setSelectedRatings} setSelectedLength={setSelectedLength}/>
+       <ReviewList sort={sort} setSort={setSort} addreview={addreview} setAddReview={setAddReview} rHelpful={rHelpful} setRHelpful={setRHelpful} reported={reported} setReported={setReported}/>
+      {/* <p className='cc-elm-street'>Produced by Elm Street Style Crowd</p> */}
       </div>
     </div>
   )

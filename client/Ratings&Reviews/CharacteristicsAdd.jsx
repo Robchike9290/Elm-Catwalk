@@ -21,8 +21,9 @@ const CharacteristicsAdd = ((props) => {
   })
 
   return(
-    <div>{props.characteristic}
-      <div>{select ? select : 'None Selected'}
+    <div>
+      <div className='cc-modal-characteristics'>{props.characteristic}</div>
+      <div className='cc-modal-selcharacteristics'>{select ? select : 'None Selected'}
       <table>
         <thead>
         <tr>

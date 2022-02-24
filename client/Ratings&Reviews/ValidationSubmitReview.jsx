@@ -18,8 +18,7 @@ const ValidationSubmitReview = ((props)=> {
       return true
     }
     console.log('false')
-    return 'Please complete all mandatory fields for submission'
-    console.log(addreview)
+    alert('Please complete all mandatory fields for submission')
   })
 
   return (

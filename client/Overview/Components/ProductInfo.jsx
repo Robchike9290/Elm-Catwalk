@@ -2,16 +2,11 @@
 import React, { useEffect, useContext } from 'react';
 import ExpandedInfo from './ProductInfoComponents/ExpandedInfo.jsx';
 import Socials from './ProductInfoComponents/Socials.jsx';
-import StarRating from './ProductInfoComponents/StarRating.jsx';
+// import StarRating from './ProductInfoComponents/StarRating.jsx';
+import RatingIcon from '../../../client/Ratings&Reviews/RatingIcon.jsx'
 import { AppContext } from '../../context.js';
 
-import RatingIcon from '../../../client/Ratings&Reviews/RatingIcon.jsx'
-
-
-
-
-
-
+// client/Ratings&Reviews/RatingIcon.jsx
 const ProductInfo = () =>  {
   const { average } = useContext(AppContext)
 

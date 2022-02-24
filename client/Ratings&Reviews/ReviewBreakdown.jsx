@@ -5,7 +5,7 @@ import Gauge from './Gauge.jsx'
 import {AppContext } from '../context.js';
 
 const ReviewBreakdown = ((props) => {
-  const {meta, selectedratings, average, setAverage} = useContext(AppContext)
+  const {meta, average, setAverage} = useContext(AppContext)
   const ratings = meta.ratings ? meta.ratings : {};
   const recommended = meta.recommended ? meta.recommended : {};
   const characteristicBreakdown = meta.characteristics ? meta.characteristics : {}
@@ -25,8 +25,6 @@ const ReviewBreakdown = ((props) => {
 
   // console.log('AVERAGE', average)
 
-  //!tie the rating or if still causing warning, rename variable setCurrentStar(rating)
-
   // console.log('characteristicBreakdown', characteristicBreakdown)
   const characteristicBreakdownArray= []
   for (var key in characteristicBreakdown) {
@@ -36,7 +34,7 @@ const ReviewBreakdown = ((props) => {
   // console.log('ARRAY', characteristicBreakdownArray)
 
   // console.log('CURRENT----type', charTypes)
-
+  console.log('SELECTED RATINGS FROM PROGRESS BAR', props.selectedratings)
   return (
     <div className='cc-breakdown'>
       <div className='cc-average'>
@@ -51,10 +49,12 @@ const ReviewBreakdown = ((props) => {
             )
           })}
         </div>
+      <br/>
+      <br/>
       </div>
-      <p> {avgRecommended}% of reviews recommend this product</p>
-      <p>{selectedratings} (SELECTED RATINGS GO HERE)</p>
-      <BreakdownBar ratings={meta.ratings} totalEntries={props.total.totalEntries} starpoint={props.starpoint}/>
+      <p className='cc-averageRecommended'> {avgRecommended}% of reviews recommend this product</p>
+      <p className='cc-selected-ratings'>(Filter results below)</p>
+      <BreakdownBar ratings={meta.ratings} totalEntries={props.total.totalEntries} starpoint={props.starpoint} selectedratings={props.selectedratings} setSelectedRatings={props.setSelectedRatings} setSelectedLength={props.setSelectedLength}/>
       <p>{props.total.totalEntries} ratings</p>
       <div>
         {characteristicBreakdownArray.map((type, idx)=> {
