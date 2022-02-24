@@ -192,7 +192,6 @@
   color: aliceblue;
   font-size: 18px;
   transition: 0.6s ease;
-  /* user-select: none; */
 }
 
 .rl-expand-view-button:hover {
@@ -202,16 +201,12 @@
 
 .rl-carousel {
   overflow: hidden;
-  /* border: 3px solid grey; */
-
   object-fit: cover;
 }
 
 .rl-inner {
   white-space: nowrap;
   object-fit: cover;
-  /* cursor: pointer; */
-
   transition: transform 0.3s
 }
 
@@ -219,10 +214,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-
   height: 515px;
-  /* color: #fff; */
 }
 
 .rl-carousel-item img {
@@ -241,13 +233,11 @@
   top: 55%;
   width: auto;
   margin-top: -22px;
-  /* padding: 5px; */
   background-color:rgb(0, 0, 0, 0.2);
    color: white;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
-
   user-select: none;
 
 }

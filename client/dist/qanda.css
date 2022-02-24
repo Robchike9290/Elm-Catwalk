@@ -1,4 +1,19 @@
 /* These CSS rules apply to the <html>, <body>, and <div id="app"> HTML elements in index.html */
+[data-theme="light"] {
+  --background-color: #E0E5E8;
+  --window-color: #ECEBE4;
+  --component-color: #D9BCB6;
+  --box-shadow-color: grey;
+}
+
+[data-theme="dark"] {
+  color: #ECEBE4;
+  --background-color: #373F51;
+  --window-color: #9E788F;
+  /*  #ECEBE4*/
+  --component-color: #61988E;
+  --box-shadow-color: black;
+}
 
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,700,900");
 html,
@@ -163,7 +178,6 @@ table {
 .a_search__input {
   width: 100%;
   padding: 12px 24px;
-
   background-color: transparent;
   transition: transform 250ms ease-in-out;
   font-size: 14px;
@@ -171,8 +185,6 @@ table {
 
   color: #575756;
   background-color: transparent;
-/*         background-image: url(http://mihaeltomic.com/codepen/input-search/ic_search_black_24px.svg); */
-
 background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-size: 18px 18px;
@@ -337,11 +349,6 @@ align-items: center;
 }
 
 
-
-.a_button:focus {
-  color: #171e29;
-}
-
 .a_button:hover {
   border-color: #06f;
   color: #06f;
@@ -397,8 +404,8 @@ align-items: center;
   box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 
-input,
-textarea {
+.a_input,
+.a_textarea {
   background: none;
   color: black;
   font-size: 18px;
@@ -423,11 +430,11 @@ textarea {
   width: $width;
 } */
 
-input[type="password"] {
+.a_input[type="password"] {
   letter-spacing: 0.3em;
 }
 
-label {
+.a_label {
   color: black;
   font-size: 16px;
   font-weight: normal;
