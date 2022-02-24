@@ -86,6 +86,7 @@ const AppProvider = (props) => {
 }
 
 function App() {
+   document.documentElement.setAttribute('data-theme', 'light');
    return (
       <AppProvider>
          <Overview />

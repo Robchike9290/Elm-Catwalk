@@ -7,7 +7,7 @@
 
 }
 
-:root {
+[data-theme="light"] {
   --background-color: #E0E5E8;
   --window-color: #ECEBE4;
   --component-color: #D9BCB6;
