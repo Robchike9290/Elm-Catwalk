@@ -5,13 +5,12 @@ const path = require("path");
 const port = process.env.PORT || 3000;
 const baseURL = "https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/";
 const baseURLQA = "https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa";
-
 const { TOKEN } = require("../config.js");
 
 app.listen(port, () => {
   console.log(`The app server is running on port: ${port}`);
 });
-
+// http://example.com/page?parameter=value&also=another
 const DIST_DIR = path.join(__dirname, "dist");
 const HTML_FILE = path.join(DIST_DIR, "index.html");
 
@@ -58,11 +57,22 @@ app.get("/products/:product_id/styles", (req, res) => {
   //  })
 
 
+app.get("/products/:product_id", (req,res) => {
+   axios.get(`${baseURL}${req.params.product_id}`, {headers: {Authorization: TOKEN}})
+      .then((receivedProduct) => {
+         res.status(200).send(receivedProduct.data)
+      })
+      .catch ((err) => {
+         console.error('failed in server GET');
+      });
+
+})
+
 app.get("/products/:product_id/styles", (req,res) => {
-   // console.log(req.params);
+   //console.log("Product ID", req.params.product_id);
    axios.get(`${baseURL}${req.params.product_id}/styles`, {headers: {Authorization: TOKEN}})
       .then((receivedStylesList) => {
-         // console.log(data.data);
+         //console.log("Data for productID", receivedStylesList.data);
          res.status(200).send(receivedStylesList.data)
       })
       .catch ((err) => {
@@ -73,7 +83,7 @@ app.get("/products/:product_id/styles", (req,res) => {
 })
 
 app.get("/products/:product_id", (req,res) => {
-   console.log(req.params);
+  //  console.log(req.params);
    axios.get(`${baseURL}${req.params.product_id}`, {headers: {Authorization: TOKEN}})
       .then((receivedFeaturesList) => {
          // console.log(data.data);
@@ -84,6 +94,17 @@ app.get("/products/:product_id", (req,res) => {
            console.error('failed in server features GET');
          });
 
+})
+
+app.get("/products/:product_id/related", (req,res) => {
+   axios.get(`${baseURL}${req.params.product_id}/related`, {headers: {Authorization: TOKEN}})
+      .then((receivedRelatedProductsList) => {
+         res.status(200).send(receivedRelatedProductsList.data);
+      })
+      .catch ((err) => {
+         console.error('failed in server GET');
+         res.sendStatus(500);
+      });
 })
 
 app.get("/", (req, res) => {

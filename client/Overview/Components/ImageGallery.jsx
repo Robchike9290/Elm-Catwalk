@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect, useContext } from 'react';
 import { AppContext } from '../../context.js';
 import Carousel, { CarouselItem } from "../richardCarousel.jsx";
@@ -18,7 +19,7 @@ const ImageGallery = () => {
 
   return (
     <div className="ImageGallery" >
-      <div className="carousel-holder" >
+      <div className="rl-carousel-holder" >
 
         <Carousel>
           {currentStyle.photos?.map((image, key) => (

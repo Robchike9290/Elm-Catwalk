@@ -13,13 +13,13 @@ const RatingIcons=((props) => {
   const fill = useMemo(() => {
     if (Number.isInteger(props.rating)) {
       if (props.rating >= props.index) {
-        return 'grad100'
+        return 'url(#grad100)'
       }
     } else {
       const wholeNum = Math.floor(props.rating)
       const decimalNum = props.rating - Math.floor(props.rating)
       if (wholeNum >= props.index) {
-        return 'grad100'
+        return 'url(#grad100)'
       }
       if ((props.index - props.rating) > 1) {
         return 'none'
@@ -36,7 +36,7 @@ const RatingIcons=((props) => {
           return 'url(#grad50)'
         }
         if ((decimalNum >= .75) && (decimalNum <= .9)) {
-          console.log ('in memo', (decimalNum < .25 && decimalNum > .0), 'index', props.index,)
+          // console.log ('in memo', (decimalNum < .25 && decimalNum > .0), 'index', props.index,)
           return 'url(#grad75)'
         }
       }
