@@ -2,9 +2,9 @@ import React, { useState, useContext } from 'react';
 import RelatedProduct from './relatedProduct.jsx';
 import {AppContext} from '../context.js';
 
-export const RelatedProductsCarouselItem = (props, { children, width }) => {
+export const RelatedProductsCarouselItem = (props, { width }) => {
   return (
-    <div className="carouselItem" style={{ width: width }}>
+    <span className="carouselItem" style={{ width: width }}>
       <RelatedProduct
       name={props.name}
       category={props.category}
@@ -14,7 +14,7 @@ export const RelatedProductsCarouselItem = (props, { children, width }) => {
       image={props.image}
       ratings={props.ratings}
       />
-    </div>
+    </span>
   );
 };
 

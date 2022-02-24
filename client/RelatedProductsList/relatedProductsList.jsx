@@ -84,9 +84,6 @@ const RelatedProductsList = () => {
 
     return function () {
       firstController.abort();
-      // secondController.abort();
-      // thirdController.abort();
-      // fourthController.abort();
     }
 
   }, [context.currentProductId]);
@@ -95,17 +92,17 @@ const RelatedProductsList = () => {
     <div className="productInnerMat">
       <RelatedProductsCarousel>
         {context.relatedProductsInfo.map((product, index) => (
-          <RelatedProductsCarouselItem
-          category={product.category}
-          features={product.features}
-          image={product.image}
-          key={index}
-          name={product.name}
-          price={product.default_price}
-          ratings={product.ratings}
-          salesPrice={product.sale_price}
-          >
-          </RelatedProductsCarouselItem>
+            <RelatedProductsCarouselItem
+            category={product.category}
+            features={product.features}
+            image={product.image}
+            key={index}
+            name={product.name}
+            price={product.default_price}
+            ratings={product.ratings}
+            salesPrice={product.sale_price}
+            >
+            </RelatedProductsCarouselItem>
         ))}
       </RelatedProductsCarousel>
     </div>

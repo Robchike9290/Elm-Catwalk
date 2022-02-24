@@ -18,7 +18,6 @@ const OutfitItems = () => {
         price={context.currentProduct.default_price}
         averageRating={context.average}
         salesPrice={context.styleList.results[0].sale_price}
-        width='25%'
         >
         </OutfitItem>
       </span>
@@ -52,13 +51,11 @@ const OutfitItems = () => {
           Add the currently<br></br> displyed item<br></br> to your outfit
         </button>
       </span>
-      <span>
-        <OutfitItemsCarousel>
-          {context.outfitProducts.map((product, index) => (
-            <span key={index}>{context.outfitProducts[index]}</span>
-          ))}
-        </OutfitItemsCarousel>
-      </span>
+      <OutfitItemsCarousel>
+        {context.outfitProducts.map((product, index) => (
+          <span key={index}>{context.outfitProducts[index]}</span>
+        ))}
+      </OutfitItemsCarousel>
     </div>
   )
 }
