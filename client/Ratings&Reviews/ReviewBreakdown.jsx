@@ -34,7 +34,11 @@ const ReviewBreakdown = ((props) => {
   // console.log('ARRAY', characteristicBreakdownArray)
 
   // console.log('CURRENT----type', charTypes)
+<<<<<<< HEAD
 
+=======
+  // console.log('SELECTED RATINGS FROM PROGRESS BAR', props.selectedratings)
+>>>>>>> 81bbf2502499c0907f3f69c144aef811a82c3ee2
   return (
     <div className='cc-breakdown'>
       <div className='cc-average'>
@@ -55,7 +59,7 @@ const ReviewBreakdown = ((props) => {
       <p className='cc-averageRecommended'> {avgRecommended}% of reviews recommend this product</p>
       <p className='cc-selected-ratings'>(Filter results below)</p>
       <BreakdownBar ratings={meta.ratings} totalEntries={props.total.totalEntries} starpoint={props.starpoint} selectedratings={props.selectedratings} setSelectedRatings={props.setSelectedRatings} setSelectedLength={props.setSelectedLength}/>
-      <p>{props.total.totalEntries} ratings</p>
+      <p className='cc-totalEntries'>{props.total.totalEntries} total ratings</p>
       <div>
         {characteristicBreakdownArray.map((type, idx)=> {
           return <Gauge type={type} key={idx}/>

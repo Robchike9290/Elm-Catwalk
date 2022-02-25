@@ -13,6 +13,7 @@ const ModalAddReview = ((props) => {
   const [characterCountdown, setCharacterCountdown] = useState(50)
   const characteristics = meta.characteristics ? meta.characteristics : {}
   const [uploadPhoto, setUploadPhoto] = useState(false);
+
   // console.log('RECOMMEND', recommend)
   // console.log('SUMMARY', summary)
   // console.log('BODY', body)
@@ -55,8 +56,16 @@ const ModalAddReview = ((props) => {
         <br/>
         <label>
           Do you recommend this product? *
-          <input type='radio' value='Yes' name='recommend' onClick={()=>setRecommend(true)}/>Yes
-          <input type='radio' value='No' name='recommend'onClick={()=>setRecommend(false)}/>No
+          <input
+          id='RVRecommend'
+          type='radio'
+          value='Yes'
+          name='recommend' onClick={()=>setRecommend(true)}/>Yes
+          <input
+          id='RVRecommend'
+          type='radio'
+          value='No'
+          name='recommend'onClick={()=>setRecommend(false)}/>No
         </label>
         <br/>
         <br/>
@@ -69,7 +78,11 @@ const ModalAddReview = ((props) => {
         <br/>
         <label>
           Review Summary max 60 Char
-          <input id='modalsummary' name="modal-summary" rows="5" cols="70" type='text'placeholder='Example: Best purchase ever!' maxLength={60} onChange={(e)=>setSummary(e.target.value)}/>
+          <input
+          type='text'
+          id='modalsummary'
+          name='modal-summary'
+          placeholder='Example: Best purchase ever!' maxLength={60} onChange={(e)=>setSummary(e.target.value)}/>
         </label>
         <br/>
         <label>
@@ -77,33 +90,48 @@ const ModalAddReview = ((props) => {
           <p className='character-counter'>
             Min Characters: {countdown}
           </p>
-          <textarea id='modalbody' name="modal-body" rows="5" cols="70" type='text'placeholder='Why did you like the product or not?' maxLength={1000} onChange={(e)=>handleBody(e.target.value)}/>
+          <textarea
+          id='modalbody'
+          name="modal-body"
+          rows="5"
+          cols="70"
+          type='text'
+          placeholder='Why did you like the product or not?' maxLength={1000} onChange={(e)=>handleBody(e.target.value)}/>
         </label>
         <br/>
         <label>
           Upload Product Photos Here (5 max)
-          <button onClick={(e)=>handleUploadClick(e)}>Upload Photos</button>
+          <button className='cc-button' onClick={(e)=>handleUploadClick(e)}>Upload Photos</button>
           <PhotoUpload setUploadPhoto={setUploadPhoto} uploadPhoto={uploadPhoto}/>
         </label>
         <br/>
         <br/>
         <label>
           What is your nickname*
-          <input type='text' placeholder='Example: jackson11!' maxLength={60} onChange={(e)=>setName(e.target.value)}/>
+          <input type='text'
+          id='ReviewName'
+          name='RVName'
+          placeholder='Example: jackson11!' maxLength={60} onChange={(e)=>setName(e.target.value)}/>
           <br/>
           “For privacy reasons, do not use your full name or email address”
         </label>
         <br/>
         <label>
           Your email*
-          <input type='text' placeholder='Example: jackson11@email.com' maxLength={60} onChange={(e)=>setEmail(e.target.value)}/>
+          <input
+          type='text'
+          id='ReviewEmail'
+          name='RVEmail'
+          placeholder='Example: jackson11@email.com'
+          maxLength={60}
+          onChange={(e)=>setEmail(e.target.value)}/>
           <br/>
           “For authentication reasons, you will not be emailed”
         </label>
         <br/>
         <label className='cc-modalFooter'>
-        {/* <button onClick={()=>props.setAddReview(false)}>SUBMIT</button> */}
         <ValidationSubmitReview addreview={props.addreview} setAddReview={props.setAddReview} />
+        <button className='cc-button' onClick={()=>props.setAddReview(false)}>Cancel</button>
         </label>
       </form>
     </div>

@@ -6,7 +6,7 @@ const StarForModal = () => {
   const {rating, setRating} = useContext(AppContext)
   // const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
-  console.log('ADDSTARRATING', rating)
+  // console.log('ADDSTARRATING', rating)
   // const starValues = ['Poor', 'Fair', 'Average', 'Good', 'Great']
   // const handleStar - ((starValue) => {
   // })
