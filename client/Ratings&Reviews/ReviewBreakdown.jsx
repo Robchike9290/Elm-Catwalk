@@ -55,7 +55,7 @@ const ReviewBreakdown = ((props) => {
       <p className='cc-averageRecommended'> {avgRecommended}% of reviews recommend this product</p>
       <p className='cc-selected-ratings'>(Filter results below)</p>
       <BreakdownBar ratings={meta.ratings} totalEntries={props.total.totalEntries} starpoint={props.starpoint} selectedratings={props.selectedratings} setSelectedRatings={props.setSelectedRatings} setSelectedLength={props.setSelectedLength}/>
-      <p>{props.total.totalEntries} ratings</p>
+      <p className='cc-totalEntries'>{props.total.totalEntries} total ratings</p>
       <div>
         {characteristicBreakdownArray.map((type, idx)=> {
           return <Gauge type={type} key={idx}/>

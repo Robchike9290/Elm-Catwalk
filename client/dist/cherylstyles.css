@@ -103,11 +103,16 @@
 .cc-selected-ratings {
   margin-bottom: 10px;
   margin-top: 10px;
+  font-size: small;
 }
 
 .cc-averageRecommended {
   margin-bottom: 10px;
   margin-top: 10px;
+}
+
+.cc-totalEntries {
+  font-size: small;
 }
 
 /* ReviewList */

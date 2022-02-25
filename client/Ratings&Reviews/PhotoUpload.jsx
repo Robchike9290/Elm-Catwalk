@@ -28,7 +28,7 @@ import React, {useEffect, useState, Component} from 'react';
       setSelectedFile(e.target.files[0])
   }
 
-  console.log(props.uploadPhoto)
+  // console.log(props.uploadPhoto)
 
   if (!props.uploadPhoto) {
     return null

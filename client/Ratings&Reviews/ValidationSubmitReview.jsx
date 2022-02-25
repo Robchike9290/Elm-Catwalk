@@ -11,28 +11,24 @@ const ValidationSubmitReview = ((props)=> {
         rating: rating,
         body: body,
         recommend: recommend,
-        name: name,
+        reviewer_name: name,
         email: email,
         characteristics: characteristic,
         product_id: currentProductId,
       })
   }
 
-  const validate = ((e)=> {
-    e.preventDefault()
-    e.stopPropagation()
-
-    props.setAddReview(false)
+  const validate = (()=> {
+    // props.setAddReview(false)
     const charObjCount = Object.keys(characteristic);
-    if (!(rating && recommend && (charObjCount.length) && (body.length >= 50) && (name.length >= 1) && (email.includes('@') && email.includes('.com')))) {
-      alert('Submission canceled, please complete all mandatory fields for submission')
+    if (rating && recommend && (charObjCount.length) && (body.length >= 50) && (name.length >= 1) && (email.includes('@') && email.includes('.com'))) {
       addNewReview()
     } else {
-      addNewReview()
+      alert('Submission canceled, please complete all mandatory fields for submission')
     }
   })
 
-  console.log({'rating': rating}, {'recomment': recommend}, {'body':body}, {'name':name}, {'email': email}, characteristic)
+  // console.log({'rating': rating}, {'recomment': recommend}, {'body':body}, {'name':name}, {'email': email}, characteristic)
 
   // console.log(rating, recommend, characteristic, body, name, email)
   // function myFunc() {

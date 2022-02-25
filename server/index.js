@@ -116,7 +116,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/questions/:product_id", (req, res) => {
-   console.log('in server', req.params);
+  //  console.log('in server', req.params);
 
   axios({
     method: "get",
@@ -154,7 +154,7 @@ app.get("/questions/:question_id/answers", (req, res) => {
 });
 
 app.post("/questions", (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   axios({
     method: "post",
     url: "https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions",
@@ -176,7 +176,7 @@ app.post("/questions", (req, res) => {
 });
 
 app.post("/answers", (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   axios({
     method: "post",
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions/${req.body.id}/answers`,
@@ -284,7 +284,7 @@ app.put("/reviews/:review_id", (req, res) => {
 });
 
 app.post("/reviews", (req, res) => {
-  console.log('in server', req.params);
+  // console.log('in server', req.params);
 
  axios({
    method: "post",
