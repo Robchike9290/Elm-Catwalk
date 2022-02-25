@@ -210,14 +210,18 @@ table {
 .a_modal.exit {
 	opacity: 0;
 }
+#modal_title {
+	font-size: 20px;
+	font-weight: bold;
+}
 
 .a_modal-content {
 	width: 60rem;
 	padding: 4rem 2rem;
 	border-radius: 0.8rem;
-	height: 30%;
+	height: 40%;
 
-	color: grey;
+
 	background: white;
 	box-shadow: var(--m-shadow, 0.4rem 0.4rem 10.2rem 0.2rem) var(--shadow-1);
 	position: relative;
@@ -237,6 +241,16 @@ table {
 .a_modal-header,
 .a_modal-footer {
 	padding: 10px;
+	display: flex;
+	justify-content: space-around;
+	font-size: 20px;
+	font-weight: bold;
+
+}
+
+.url_container {
+	display: flex;
+	flex-direction: row;
 }
 
 #a_modal-body {
@@ -260,7 +274,9 @@ table {
 	background-color: var(--window-color);
 }
 #UserQuestion {
-  height: 300px;
+  height: 100px;
+	text-align: bottom;
+	/* text-align: center; */
 }
 .question_header {
 	padding: 10px;
@@ -410,15 +426,28 @@ table {
 	border-radius: 4px;
 	padding: 5px;
 	width: 150px;
+	height: 100px;
+}
+.thumb_in_modal {
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 5px;
+	width: 100%;
+	height: 100%;
 }
 
 .thumb:hover {
 	box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 
+#label_text {
+	padding: 10px;
+}
+
 .a_input,
 .a_textarea {
 	background: none;
+
 	color: black;
 	font-size: 18px;
 	padding: 10px 10px 10px 5px;
@@ -426,7 +455,7 @@ table {
 	width: 100%;
 	border: none;
 	border-radius: 0;
-	border-bottom: 1px solid white;
+	border-bottom: 2px solid black;
   text-align: center;
   padding-top: 20px;
 }
