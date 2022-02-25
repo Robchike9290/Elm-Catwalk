@@ -9,7 +9,6 @@ import { AppContext } from "../../context.js";
 const QuestionPopUp = ({ togglePopUp }) => {
 	const productID = useContext(productIdContext);
   const productName = useContext(AppContext)
-  console.log(productName)
 
 	const submitQuestion = () => {
 
@@ -47,7 +46,7 @@ const QuestionPopUp = ({ togglePopUp }) => {
 		<div className="a_modal" onClick={togglePopUp}>
 			<div className="a_modal-content" onClick={(e) => e.stopPropagation()}>
 				<div className="a_modal.header">
-					<h3>Ask a question about </h3>
+					<h3>Ask a question about {productName.currentProduct.name} </h3>
 					<button onClick={togglePopUp}>exit</button>
 				</div>
 				{/* <form action="/" method="get"> */}

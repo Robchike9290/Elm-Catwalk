@@ -30,9 +30,7 @@ const QuestionList = ({ togglePopUp, QpopUp }) => {
   sortQuestions();
   useEffect(() => {
     async function fetchQList() {
-      console.log('productID in qList', productID)
       const questionListData = await axios.get(`/questions/${productID}`);
-      await console.log('async')
       UpdateQlist(questionListData.data.results);
       UpdateBaseList(questionListData.data.results);
     }
@@ -43,9 +41,7 @@ const QuestionList = ({ togglePopUp, QpopUp }) => {
 
   useEffect(() => {
     async function fetchQList() {
-      console.log('productID in qList1')
       const questionListData = await axios.get(`/questions/${37311}`);
-      await console.log('async2')
       UpdateQlist(questionListData.data.results);
       UpdateBaseList(questionListData.data.results);
     }
