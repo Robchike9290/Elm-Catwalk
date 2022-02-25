@@ -282,3 +282,23 @@ app.put("/reviews/:review_id", (req, res) => {
       console.log("failed in server GET");
     });
 });
+
+app.post("/reviews", (req, res) => {
+  console.log('in server', req.params);
+
+ axios({
+   method: "post",
+   url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews`,
+  //  params: {
+
+  //  },
+   headers: { Authorization: TOKEN },
+ })
+   .then((reviewDataNew) => {
+     res.status(200).send(reviewDataNew);
+   })
+   .catch((err) => {
+     console.error(err);
+     console.log("reviewDataNew failed in server GET");
+   });
+});
