@@ -23,7 +23,7 @@ const ProductInfo = () =>  {
             </div>
             )
           })}
-          <span id='read-all-reviews'>Read all reviews</span>
+          <a id='read-all-reviews' href="#ReviewAnchor">Read all reviews</a>
       </div>
       <ExpandedInfo />
       {/* // <StarRating/> */}
