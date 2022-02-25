@@ -8,9 +8,9 @@ const PhotoModal = ((props) => {
 
   return(
     <div className='cc-photo-modal'>
-      <img src={props.photourl} height="300" width="400"/>
+      <img src={props.photourl} height="300" width="450"/>
       <br/>
-      <button onClick={()=>props.setFullPhoto(false)}>Close</button>
+      <button className='cc-button' onClick={()=>props.setFullPhoto(false)}>Close</button>
     </div>
   )
 })

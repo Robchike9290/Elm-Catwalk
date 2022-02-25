@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, {useEffect, useState, useContext} from 'react';
 import axios from 'axios';
 import Token from '../../config.js';
@@ -21,7 +22,7 @@ const RatingsReviewsSection = (props) => {
   const [reported, setReported] = useState(false);
   const [selectedratings, setSelectedRatings] = useState([])
   const [selectedLength, setSelectedLength] = useState(0)
-  console.log('OUTSIDE---SELECTED RATINGS FROM R&R', selectedLength)
+  // console.log('OUTSIDE---SELECTED RATINGS FROM R&R', selectedLength)
   useEffect(() => {
     axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews?product_id=${currentProductId}&count=${total.totalEntries}&sort=${sort}&page=1`, {headers: {'Authorization': Token.TOKEN}})
 
@@ -51,7 +52,7 @@ const RatingsReviewsSection = (props) => {
 
   // console.log('PRODUCT--->FILTER', product)
   useEffect(() => {
-    console.log('selectedratings.length', selectedLength)
+    // console.log('selectedratings.length', selectedLength)
     if (!selectedratings.length && product.results) {
       return setProductResults(product.results)
     }
@@ -74,7 +75,7 @@ const RatingsReviewsSection = (props) => {
   return (
     // console.log('PRODUCT', product);
     <div className='cc-R-R-parent'>
-      <p className='cc-heading'>RATINGS & REVIEWS</p>
+      <p className='cc-heading' id="ReviewAnchor">RATINGS & REVIEWS</p>
       <div className='cc-modalContainer'>
       <ModalAddReview addreview={addreview} setAddReview={setAddReview}/>
       </div>

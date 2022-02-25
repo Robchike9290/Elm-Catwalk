@@ -19,14 +19,10 @@ const Answer = ({ answer, changeAlist, id }) => {
     if (!Ahelpful) {
       async function markAasHelpful() {
         const serverResponse = await axios.put(`/answers/${answer.id}`);
-        // changeAhelpful(true);
-        // changehelpfullness(helpfulness + 1);
         const newAList = await axios.get(`/questions/${id}/answers`)
-        await changeAlist(newAList.data.results)
-
+        await changeAlist(newAList.data.results);
       }
       markAasHelpful();
-
     }
   };
 
