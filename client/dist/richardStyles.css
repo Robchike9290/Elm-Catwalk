@@ -1,11 +1,5 @@
-#app {
-  /* background-color: #373F51; */
-  /* background-color: #6F8695; */
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: var(--background-color);
+/* font-family: 'Playfair Display', serif; */
 
-
-}
 
 [data-theme="light"] {
   --background-color: #E0E5E8;
@@ -23,7 +17,19 @@
   --box-shadow-color: black;
 }
 
+#app {
+  /* background-color: #373F51; */
+  /* background-color: #6F8695; */
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background-color);
+
+
+}
+
+
 .rl-masthead {
+  font-family: 'Bitter', serif;  /* font-style: italic; */
+
   background-color: var(--background-color);
   height: 50px;
   display: grid;
@@ -42,10 +48,10 @@
 }
 
 .rl-masthead h1 {
-  font-family: Arial, Helvetica, sans-serif;
+
   font-size: 35px;
-  font-weight: 700;
-  /* padding: 0 40px 0 40px; */
+  font-weight: 800;
+  padding: 0 0 0 20px;
   /* text-shadow: -2px 2.5px 0 var(--box-shadow-color); */
   width: 100%;
 }

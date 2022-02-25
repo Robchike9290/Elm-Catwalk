@@ -89,7 +89,7 @@ const Overview = () => {
   return (
     <div >
 
-      <MastHead />
+      {/* <MastHead /> */}
 
       {(!context.bigGallery) ? <div className="Overview"> <ImageGallery />
         <StyleSelector />

@@ -8,7 +8,7 @@ export const VerticalCarouselItem = ({ children, height }) => {
 
   return (
     <div className="vertical-carousel-item" style={{ height: height }} >
-    <img width="65" height="65" src={children}/>
+    <img alt='weeeee' width="65" height="65" src={children}/>
     </div>
   );
 }
