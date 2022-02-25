@@ -7,7 +7,7 @@ import { AppContext } from '../context.js';
 export const CarouselItem = ({ children, width }) => {
   return (
     <div className="rl-carousel-item" style={{ width: width }}>
-    <img height="515" width="470" src={children}/>
+    <img alt='Large Clothing' height="515" width="470" src={children}/>
     </div>
   );
 }

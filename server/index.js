@@ -116,7 +116,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/questions/:product_id", (req, res) => {
-   console.log('in server', req.params);
+  //  console.log('in server', req.params);
 
   axios({
     method: "get",

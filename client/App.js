@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-
+import MastHead from './Overview/Components/MastHead.jsx';
 import QA from "./QA/index.js"
 import React, { useContext, useState } from "react";
 import Token from '../config.js'
@@ -8,6 +8,7 @@ import axios from 'axios';
 import Overview from "./Overview/Overview.jsx";
 import RelatedItemsAndComparison from "./RelatedProductsList/relatedItemsAndComparison.jsx";
 import { AppContext } from "./context.js";
+
 
 const AppProvider = (props) => {
    const [test, testUpdater] = useState(5);
@@ -79,6 +80,7 @@ function App() {
    document.documentElement.setAttribute('data-theme', 'light');
    return (
       <AppProvider>
+         <MastHead />
          <Overview />
          <RelatedItemsAndComparison/>
          <QA/>
