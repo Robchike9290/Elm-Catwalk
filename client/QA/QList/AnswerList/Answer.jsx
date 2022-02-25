@@ -46,7 +46,7 @@ const Answer = ({ answer, changeAlist, id }) => {
     <div className="question">
       <div className="quetion_body">{answer.body}</div>
       {answer.photos.map((photo, key) =>{
-        return <a ><img key={key}  className="thumb" src={photo} onClick={e => {return expandThumbnail(e)}} ></img></a>
+        return <a key={key}><img key={key}  className="thumb" src={photo} onClick={e => {return expandThumbnail(e)}} ></img></a>
       })}
       <div className="answer_info">
         <div id="leftA">by {answer.answerer_name},{dateFormat(answer.date, "dddd, mmmm dS, yyyy")} |  Helpful? <u onClick={toggleAhelpful}>Yes</u> ({helpfulness})  | <u onClick={toggleReport}>{Areport}</u></div>
