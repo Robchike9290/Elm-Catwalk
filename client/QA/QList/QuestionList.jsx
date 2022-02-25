@@ -11,7 +11,7 @@ const QuestionList = ({ togglePopUp, QpopUp }) => {
   const [highlightedWords, updateHighlightedWords] = useState(null)
   const [qList, UpdateQlist] = useState([]);
   const [baseList, UpdateBaseList] = useState([]);
-  const productID = useContext(productIdContext);
+  const productID = useContext(productIdContext) || 37311;
   const [listLength, changeListLength] = useState(4);
   const [listBool, changeListBool] = useState(false);
   const [listButtonTitle, changelistButtonTitle] = useState(
@@ -30,7 +30,6 @@ const QuestionList = ({ togglePopUp, QpopUp }) => {
   sortQuestions();
   useEffect(() => {
     async function fetchQList() {
-      console.log('productID in qList', productID)
       const questionListData = await axios.get(`/questions/${productID}`);
       UpdateQlist(questionListData.data.results);
       UpdateBaseList(questionListData.data.results);
@@ -39,6 +38,17 @@ const QuestionList = ({ togglePopUp, QpopUp }) => {
     fetchQList();
     }
   }, [productID, QpopUp]);
+
+  useEffect(() => {
+    async function fetchQList() {
+      const questionListData = await axios.get(`/questions/${37311}`);
+      UpdateQlist(questionListData.data.results);
+      UpdateBaseList(questionListData.data.results);
+    }
+    if(productID){
+    fetchQList();
+    }
+  }, []);
 
   const toggleList = () => {
     if (!listBool) {
