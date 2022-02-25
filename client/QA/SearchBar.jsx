@@ -8,7 +8,6 @@ const SearchBar = ({UpdateQlist, qList, baseList, updateHighlightedWords}) => {
   const handleChange = (e) =>{
     if(e.target.value.length > 2){
     UpdateQlist(_.filter(baseList, (listItem) =>{
-      console.log(baseList, 'ALEX')
       if(listItem.question_body.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1){
         updateHighlightedWords(e.target.value)
         return listItem

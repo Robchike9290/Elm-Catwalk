@@ -34,7 +34,7 @@ const ReviewBreakdown = ((props) => {
   // console.log('ARRAY', characteristicBreakdownArray)
 
   // console.log('CURRENT----type', charTypes)
-  console.log('SELECTED RATINGS FROM PROGRESS BAR', props.selectedratings)
+
   return (
     <div className='cc-breakdown'>
       <div className='cc-average'>
