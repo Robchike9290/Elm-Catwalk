@@ -3,6 +3,7 @@ import React, { useState, useEffect, useContext } from 'react';
 
 const MastHead = () => {
   const [theme, setTheme] = useState(false);
+  const names = ['Elm Rags', 'CSS Simps', 'Cheryl\s Magical WonderStore', 'The Fighting Mongooses', 'Elmwood Designs', 'Elm Swag', 'Fashion Kitty']
 
   const handleThemeChange = () => {
     if (!theme) {
@@ -19,7 +20,7 @@ const MastHead = () => {
 
     <div className="rl-masthead">
       <div className='title-holder'>
-      <h1>Tech Forward Fashions</h1>
+      <h1>{names[Math.floor(Math.random() * 7)]}</h1>
       </div>
       <div className="theme-switch-wrapper">
         {!theme
