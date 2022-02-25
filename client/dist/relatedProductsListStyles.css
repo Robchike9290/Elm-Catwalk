@@ -148,7 +148,7 @@
 	display: inline-block;
 	vertical-align: top;
 	text-align: center;
-	box-shadow: 0 2px 25px -3px var(--box-shadow-color);
+	box-shadow: 0 2px 25px -3px var(--background-color);
 }
 
 .outfitItemAction {
