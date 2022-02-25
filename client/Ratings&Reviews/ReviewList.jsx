@@ -1,8 +1,6 @@
 import React, { useState, useContext } from 'react';
 import ReviewListEntry from './ReviewListEntry.jsx'
 import SortDropDown from './SortDropDown.jsx'
-import ModalAddReview from './ModalAddReview.jsx'
-import SearchBar from '../../client/QA/SearchBar.jsx';
 import {AppContext } from '../context.js';
 
 const ReviewList = ((props) => {
@@ -43,8 +41,10 @@ const ReviewList = ((props) => {
         return <ReviewListEntry product={product} key={i} rHelpful={props.rHelpful} setRHelpful={props.setRHelpful} reported={props.reported} setReported={props.setReported}/>
       })}
       </div>
-      {moreReview && <button onClick={moreReviewButton}>MORE REVIEWS</button>}
-      <button onClick={()=>props.setAddReview(true)}>ADD A REVIEW</button>
+      <div className='cc-reviewbuttons'>
+      {moreReview && <button className='cc-button' onClick={moreReviewButton}>MORE REVIEWS</button>}
+      <button className='cc-button' onClick={()=>props.setAddReview(true)}>ADD A REVIEW</button>
+      </div>
     </div>
   )
 })
