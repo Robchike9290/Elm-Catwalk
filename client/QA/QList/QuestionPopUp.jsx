@@ -8,10 +8,9 @@ import { AppContext } from "../../context.js";
 
 const QuestionPopUp = ({ togglePopUp }) => {
 	const productID = useContext(productIdContext);
-  const productName = useContext(AppContext)
+	const productName = useContext(AppContext);
 
 	const submitQuestion = () => {
-
 		const email = document.getElementById("UserEmail").value;
 		const nickName = document.getElementById("UserNickname").value;
 		const question = document.getElementById("UserQuestion").value;
@@ -46,49 +45,58 @@ const QuestionPopUp = ({ togglePopUp }) => {
 		<div className="a_modal" onClick={togglePopUp}>
 			<div className="a_modal-content" onClick={(e) => e.stopPropagation()}>
 				<div className="a_modal.header">
-					<h3>Ask a question about {productName.currentProduct.name} </h3>
-					<button onClick={togglePopUp}>exit</button>
+					<h3 id="modal_title">
+						Ask a question about the {productName.currentProduct.name}{" "}
+					</h3>
 				</div>
-				{/* <form action="/" method="get"> */}
 				<div id="a_modal-body">
+					<input
+						className="a_input"
+						type="text"
+						id="UserQuestion"
+						placeholder="Ask Your Question Here"
+						name="submit question"
+					/>
 
+					<h4 id="label_text"> Maxium 1000 characters</h4>
 
-						<input
-							className="a_input"
-							type="text"
-							id="UserQuestion"
-							placeholder="Ask Your Question Here"
-							name="submit question"
-						/>
-            <h4> For privacy reasons, do not use your full name or email address</h4>
+					<input
+						className="a_input"
+						type="text"
+						id="UserNickname"
+						placeholder="What's your NickName?"
+						name="nickName"
+					/>
 
+					<h4 id="label_text">
+						{" "}
+						For privacy reasons, do not use your full name or email address
+					</h4>
 
-						<input
-							className="a_input"
-							type="text"
-							id="UserNickname"
-							placeholder="What's your NickName?"
-							name="nickName"
-						/>
-
-
-						<input
-              className="a_input"
-							type="text"
-							id="UserEmail"
-							placeholder="What's your Email?"
-							name="Email"
-						/>
-
+					<input
+						className="a_input"
+						type="text"
+						id="UserEmail"
+						placeholder="What's your Email?"
+						name="Email"
+					/>
+					<h4 id="label_text">
+						{" "}
+						For authentication reasons, you will not be emailed
+					</h4>
 				</div>
-				{/* </form> */}
+
 				<div className="a_modal-footer">
 					<button
+						className="a_button"
 						onClick={(e) => {
 							submitQuestion();
 						}}
 					>
 						SubmitQuestion
+					</button>
+					<button className="a_button" onClick={togglePopUp}>
+						Close
 					</button>
 				</div>
 			</div>

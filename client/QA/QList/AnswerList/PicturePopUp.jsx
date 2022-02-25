@@ -10,10 +10,10 @@ const PicturePopUp = ({ currentPicture, changeTogglePicture }) => {
   return (
     <div className="a_modal" onClick={() =>{ return changeTogglePicture(false)}} >
       <div className="a_modal-content" onClick={(e) => e.stopPropagation()}>
-        <div className="a_modal-header">
-        <img className="thumb" src={currentPicture} ></img>
+
+        <img className="thumb_in_modal" src={currentPicture} ></img>
        <button onClick={() =>{ return changeTogglePicture(false)}}>exit</button>
-        </div>
+
 
 
       </div>

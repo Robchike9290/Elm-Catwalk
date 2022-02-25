@@ -7,6 +7,8 @@ import { productIdContext } from "../../../../client/QA/createContext.js";
 const AnswerPopUp = ({ togglePopUp, id, changeAlist }) => {
   const UpdateQlist = useContext(qListContext);
   const productID = useContext(productIdContext);
+	const [photos, UpdatePhotos] = useState([])
+	const [counter, updateCounter] = useState(0)
   // const togglePopUp = () => {
   //   changeApopUp(false);
   // };
@@ -31,60 +33,109 @@ const AnswerPopUp = ({ togglePopUp, id, changeAlist }) => {
             body: answer,
             name: nickName,
             email: email,
-            photos: [],
+            photos: photos,
             id: id,
           },
-
         });
         const newAList = await axios.get(`/questions/${id}/answers`)
-        console.log('serverresponse', newAList)
-        await changeAlist(newAList.data.results)
+
         await togglePopUp();
+        await changeAlist(newAList.data.results)
       }
       postQuestion();
     }
   };
 
+	const addPhoto = () =>{
+		console.log(photos)
+		if(photos.length < 4){
+		const url = document.getElementById("url").value;
+		photos.push(url)
+
+		document.getElementById("url").value = ''
+		console.log('photos', photos)
+		updateCounter(counter+1)
+		}else{
+			alert('reach maxium photos')
+		}
+	}
+
   return (
-    <div className="a_modal" onClick={togglePopUp}>
-      <div className="a_modal-content" onClick={(e) => e.stopPropagation()}>
-        <div className="a_modal-header">
-          <h3>Ask a question about (add product name)</h3>
-          <button onClick={togglePopUp}>exit</button>
-        </div>
-        <div className="a_modal-body">
-          <form action="/" method="get">
-            <input
-              type="text"
-              id="UserQuestion"
-              placeholder="Ask Your Question Here"
-              name="submit question"
-            />
-            <input
-              type="text"
-              id="UserNickname"
-              placeholder="What's your NickName?"
-              name="nickName"
-            />
-            <input
-              type="text"
-              id="UserEmail"
-              placeholder="What's your Email?"
-              name="Email"
-            />
-          </form>
-          <div className="a_modal-footer">
-            <button
-              onClick={(e) => {
-                submitQuestion();
-              }}
-            >
-              SubmitQuestion
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+		<div className="a_modal" onClick={togglePopUp}>
+			<div className="a_modal-content" onClick={(e) => e.stopPropagation()}>
+				<div className="a_modal.header">
+					<h3 id="modal_title">
+						Provide an Answer
+					</h3>
+				</div>
+				<div id="a_modal-body">
+					<input
+						className="a_input"
+						type="text"
+						id="UserQuestion"
+						placeholder="Provide Your Answer Here"
+						name="submit question"
+					/>
+
+					<h4 id="label_text"> Maxium 1000 characters</h4>
+
+					<input
+						className="a_input"
+						type="text"
+						id="UserNickname"
+						placeholder="What's your NickName?"
+						name="nickName"
+					/>
+
+					<h4 id="label_text">
+						{" "}
+						For privacy reasons, do not use your full name or email address
+					</h4>
+
+					<input
+						className="a_input"
+						type="text"
+						id="UserEmail"
+						placeholder="What's your Email?"
+						name="Email"
+					/>
+					<h4 id="label_text">
+						{" "}
+						For authentication reasons, you will not be emailed
+					</h4>
+					<div className="url_container">
+					<input
+						className="a_input"
+						type="text"
+						id="url"
+						placeholder="enter url here"
+						name="url"
+					/>
+					<button onClick={addPhoto}>submit url</button>
+
+					</div>
+					<h4 id="label_text">
+						{" "}
+						you can submit up to 4, {4-counter} remaining
+					</h4>
+				</div>
+
+				<div className="a_modal-footer">
+					<button
+						className="a_button"
+						onClick={(e) => {
+							submitQuestion();
+						}}
+					>
+						SubmitQuestion
+					</button>
+					<button className="a_button" onClick={togglePopUp}>
+						Close
+					</button>
+
+				</div>
+			</div>
+		</div>
   );
 };
 
