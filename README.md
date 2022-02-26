@@ -1,4 +1,5 @@
 # Elm-Catwalk
+
 Team Elm's FEC Project Repo
 
 =================================================
@@ -8,8 +9,7 @@ Bo Czajka
 Alex Nahas
 Terri Gobble
 Richard Linley -test
- -- Richard branch test
-
+-- Richard branch test
 
 ==================================================
 INSTALLATION INSTRUCTIONS:
@@ -20,3 +20,5 @@ NPM run watch will allow for transpilation
 NPM run start will boot up the server
 
 ==================================================
+
+![test](http://g.recordit.co/MWQYuY7bfn.gif)
