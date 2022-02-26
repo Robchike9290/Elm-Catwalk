@@ -21,6 +21,6 @@ NPM run start will boot up the server
 
 ==================================================
 
-!['q&a'](http://g.recordit.co/hvR0nW7XYI.gif | width = 100)
+!['q&a'](http://g.recordit.co/hvR0nW7XYI.gif | width=100)
 
 
