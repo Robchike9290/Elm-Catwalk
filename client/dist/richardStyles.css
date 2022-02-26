@@ -284,7 +284,7 @@
 
   border: 2px solid #000;
   box-sizing: border-box;
-  color: #000;
+  /* color: #000; */
   cursor: pointer;
   display: inline-flex;
   fill: #000;
@@ -314,7 +314,7 @@
 
   border: 2px solid #000;
   box-sizing: border-box;
-  color: #000;
+  /* color: #000; */
   cursor: pointer;
   display: inline-flex;
   fill: #000;
@@ -352,7 +352,7 @@
 
   border: 2px solid #000;
   box-sizing: border-box;
-  color: #000;
+  /* color: #000; */
   cursor: pointer;
   display: inline-flex;
   fill: #000;

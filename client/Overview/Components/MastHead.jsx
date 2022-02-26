@@ -16,6 +16,14 @@ const MastHead = () => {
 
   }
 
+  useEffect ( () => {
+    console.log('hi allie')
+
+    return () => {
+      console.log('this will happen on unmount')
+    }
+  }, [theme])
+
   return (
 
     <div className="rl-masthead">
@@ -29,7 +37,7 @@ const MastHead = () => {
 
         }
 
-
+          <Child theme={theme, setTheme} />
 
       </div>
 
