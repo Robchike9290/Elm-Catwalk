@@ -14,8 +14,8 @@ Richard Linley -test
 ==================================================
  Overview Example:
 
-
- ![Image](http://g.recordit.co/oy74auuewz.gif)
+  Main and vertical Carousel Demo:
+ ![Image](http://g.recordit.co/TBnhpI5XG5.gif)
 
 
 
