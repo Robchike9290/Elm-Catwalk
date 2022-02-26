@@ -20,3 +20,7 @@ NPM run watch will allow for transpilation
 NPM run start will boot up the server
 
 ==================================================
+
+!['q&a'](http://g.recordit.co/FJ3ywKHmTP.gif)
+
+
