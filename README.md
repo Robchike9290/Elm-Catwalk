@@ -24,7 +24,7 @@ NPM run start will boot up the server
 
 Ratings & Review
 
-*Note: Each gif features varying products, and the Characteristic range bars (lower left) change dynamically per product.  Additionally, the star ratings average located in Overview, Related Products and Ratings & Reviews change dynamically to a quarter of a point.
+*Note: Each gif below features varying products. The star progression bars, characteristic range bars (lower left) change dynamically per product (characteristics only pertinent to the product appear).  Additionally, the star ratings average located in Overview, Related Products and Ratings & Reviews change dynamically per product to a quarter of a point.
 
 Hyperlink from Overview to Ratings & Review Section
 ![test](http://g.recordit.co/1LLgeJmkUH.gif)
@@ -43,6 +43,18 @@ Photo Modal pops up when thumbnail is clicked, Sort list based on relevance, hel
  ![test](http://g.recordit.co/WzBCajlA9V.gif)
 
 Modal
-![test](http://g.recordit.co/5FAcxj43nV.gif)
+*Only pertinant characteristic features appear per product type
+
+"Add A Review" button opens the modal.  The star rating selection features hover, onMouseEnter/OnMouseLeave and Tooltips to distinguish the rating.
+![test](http://g.recordit.co/ueFapJpnC9.gif)
+
+Radio Buttons are used in both helpfulness and characteristic sections.  The selected choice per characteristic is featured under the specified heading.
+![test](http://g.recordit.co/NxYhGbNMXE.gif)
+
+Input and textarea fields, character counter and a nested photo modal popup feature finishes out the 'Add A Review' modal display
+![test](http://g.recordit.co/AdTMwuhlUL.gif)
+
+
+
 
 
