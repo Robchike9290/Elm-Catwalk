@@ -40,7 +40,7 @@ Clicking to the left and the right on this carousel allows the user to scroll th
 ![Comparison modal between currently selected product and related product](https://imgur.com/dsiHo4w.jpg)
 The star icon at the top right corner of a product card can be clicked on to open a comparison between the currently selected and related product of interest. All characteristics applicable to either product are displayed in a center columnm, with the characteristics related to the current product on the left column and those related to the realted product on the right. Characteristics not held by a particular product are left block. The 'X' button in the lower right corner of the modal can be clicked to close the modal and return the the related products view.
 
-![Deletion of items from outfit itmes carousel](https://imgur.com/Fq4eT6c.gif)
+![Deletion of items from outfit itmes carousel](https://imgur.com/GialhVf.gif)
 The red 'X' button in the top right corner of any product in the "Your Outfits"" carousel can be clicked to remove a product from the carousel.
 
 ![Addition of items to the outfit itmes carousel](https://imgur.com/rQrxM2Y.gif)
