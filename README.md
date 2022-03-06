@@ -43,7 +43,7 @@ The star icon at the top right corner of a product card can be clicked on to ope
 ![Addition of items to the outfit itmes carousel](https://i.imgur.com/jle1MmZ.gif)
 A button on the left side of the carousel in the "Your Outfits" section will add the currently selected product in the overview section to this carousel. Two of the same product cannout be added to the carousel at any time.
 
-![Deletion of items from outfit itmes carousel](https://i.imgur.com/Fq4eT6c.gif)
+![Deletion of items from outfit itmes carousel](https://i.imgur.com/DQQK2Tp.gif)
 The red 'X' button in the top right corner of any product in the "Your Outfits"" carousel can be clicked to remove a product from the carousel.
 
 =================================================
