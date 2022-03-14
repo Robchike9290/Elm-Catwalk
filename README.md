@@ -54,7 +54,38 @@ The red 'X' button in the top right corner of any product in the "Your Outfits""
 
 ## RATINGS AND REVIEWS SECTION
 
-![test](http://g.recordit.co/LrqGWOA9lV.gif)
+Ratings & Review
+
+*Note: Each gif below features varying products. The star progression bars, characteristic range bars (lower left) change dynamically per product (characteristics only pertinent to the product appear).  Additionally, the star ratings average located in Overview, Related Products and Ratings & Reviews change dynamically per product to a quarter of a point.
+
+Hyperlink from Overview to Ratings & Review Section
+![test](http://g.recordit.co/1LLgeJmkUH.gif)
+
+Color Theme & Masthead Team Change per Toggle Button
+![test](http://g.recordit.co/mrJ6YAOzHn.gif)
+
+Initial Value of Two Review Items, "Add Review" button increments list two at a time initiating scroll feature, "Add Review" button disappears once list is fully rendered
+![test](http://g.recordit.co/rUXA9P51B4.gif)
+
+Photo Modal pops up when thumbnail is clicked, Sort list based on relevance, helpfulness, and newest, Filter based on individual star rating
+![test](http://g.recordit.co/W0hEyGAY2j.gif)
+
+"Helpful" increments count by one, "Report" removes that review from user's list (but not from API, so it is still available for other users)
+ ![test](http://g.recordit.co/x6X9WjsN5I.gif)
+ ![test](http://g.recordit.co/WzBCajlA9V.gif)
+
+Modal
+*Only pertinant characteristic features appear per product type
+
+"Add A Review" button opens the modal.  The star rating selection features hover, onMouseEnter/OnMouseLeave and Tooltips to distinguish the rating.
+![test](http://g.recordit.co/ueFapJpnC9.gif)
+
+Radio Buttons are used in both helpfulness and characteristic sections.  The selected choice per characteristic is featured under the specified heading.
+![test](http://g.recordit.co/NxYhGbNMXE.gif)
+
+Input and textarea fields, character counter and a nested photo modal popup feature finishes out the 'Add A Review' modal display
+![test](http://g.recordit.co/AdTMwuhlUL.gif)
+
 
 =================================================
 
@@ -99,49 +130,8 @@ The red 'X' button in the top right corner of any product in the "Your Outfits""
 
 ## AUTHORS:
 
-<<<<<<< HEAD
 ==================================================
-
-
-Ratings & Review
-
-*Note: Each gif below features varying products. The star progression bars, characteristic range bars (lower left) change dynamically per product (characteristics only pertinent to the product appear).  Additionally, the star ratings average located in Overview, Related Products and Ratings & Reviews change dynamically per product to a quarter of a point.
-
-Hyperlink from Overview to Ratings & Review Section
-![test](http://g.recordit.co/1LLgeJmkUH.gif)
-
-Color Theme & Masthead Team Change per Toggle Button
-![test](http://g.recordit.co/mrJ6YAOzHn.gif)
-
-Initial Value of Two Review Items, "Add Review" button increments list two at a time initiating scroll feature, "Add Review" button disappears once list is fully rendered
-![test](http://g.recordit.co/rUXA9P51B4.gif)
-
-Photo Modal pops up when thumbnail is clicked, Sort list based on relevance, helpfulness, and newest, Filter based on individual star rating
-![test](http://g.recordit.co/W0hEyGAY2j.gif)
-
-"Helpful" increments count by one, "Report" removes that review from user's list (but not from API, so it is still available for other users)
- ![test](http://g.recordit.co/x6X9WjsN5I.gif)
- ![test](http://g.recordit.co/WzBCajlA9V.gif)
-
-Modal
-*Only pertinant characteristic features appear per product type
-
-"Add A Review" button opens the modal.  The star rating selection features hover, onMouseEnter/OnMouseLeave and Tooltips to distinguish the rating.
-![test](http://g.recordit.co/ueFapJpnC9.gif)
-
-Radio Buttons are used in both helpfulness and characteristic sections.  The selected choice per characteristic is featured under the specified heading.
-![test](http://g.recordit.co/NxYhGbNMXE.gif)
-
-Input and textarea fields, character counter and a nested photo modal popup feature finishes out the 'Add A Review' modal display
-![test](http://g.recordit.co/AdTMwuhlUL.gif)
-
-
-
-
-
-=======
 - Cheryl Casas
 - Robert "Bo" Czajka
 - Richard Linley
 - Alex Nahas
->>>>>>> 7f180e9e057eb40b6315ce5c5b1e25f1645e7b4a
