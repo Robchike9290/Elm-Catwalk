@@ -65,13 +65,14 @@ Hyperlink from Overview to Ratings & Review Section. *Note: The star rating in t
 Color Theme & Masthead Team Change per Toggle Button switch in upper right screen.
 
 ![test](http://g.recordit.co/rUXA9P51B4.gif)
-Initial Value of Two Review Items, "Add Review" button increments list two at a time initiating scroll feature, "Add Review" button disappears once list is fully rendered. *Note: Star Rating Type Progression bars & Characteristics Ranges within the left breakdown column dynamically change per product change.
+Initial Value of two Review Items. "Add Review" button increments list two at a time initiating scroll feature. "Add Review" button disappears once list is fully rendered. *Note: Star Rating Type Progression bars & Characteristics Ranges within the left breakdown column dynamically change per product change.
 
 ![test](http://g.recordit.co/W0hEyGAY2j.gif)
 Photo Modal pops up when thumbnail is clicked within the list column, and closes with button click. Sort list renders the list results based on dropdown with relevance, helpfulness, and newest categories. Additional filtering based on individual star rating is also available in the breakdown column. Filtered choices toggled between selected and visible with highlight to unselected per click.
 
  ![test](http://g.recordit.co/x6X9WjsN5I.gif)
-Hover over "Helpful" in list section switches color to green indicating a user actionable item, which upon click increments count by one. As seen below, hovering has a similar feature with "Report", which changes the font color to red and upon click removes that review from that user's list rendering.  This does not delete the report off the API.
+Hovering over "Helpful" in the list section switches color to green indicating a user actionable item. Upon click increments count by one. As seen below, hovering has a similar feature with "Report". The font color to red and upon click removes that review from that user's list rendering. This does not delete the report off the API.
+
  ![test](http://g.recordit.co/WzBCajlA9V.gif)
 
 
