@@ -7,10 +7,10 @@ Team Elm's FEC Project Repo
 ## AUTHORS:
 
 ==================================================
-- Richard Linley: Overview
-- Robert "Bo" Czajka: Related Products
-- Alex Nahas: Questions & Answers 
-- Cheryl Casas: Ratings & Reviews 
+- Richard Linley: Overview, https://github.com/rjLinley
+- Robert "Bo" Czajka: Related Products, https://github.com/Robchike9290
+- Alex Nahas: Questions & Answers, https://github.com/MiguelsPizza
+- Cheryl Casas: Ratings & Reviews, https://github.com/Cherylcc227
 
 ==================================================
 ## GENERAL INFORMATION:
