@@ -28,6 +28,12 @@ Data is rendered dymanically from this API based upon client input. No actual eC
 
 ## OVERVIEW SECTION
 
+![Overview Features](https://imgur.com/DN94YiN)
+
+Nested image carousels to allow user to browse images, clicking vertical one will change the image in the main. Different styles can be selected from the styles box on the right.
+
+Expanded view opens a larger image gallery to let the user see photos more claerly.
+
 =================================================
 
 ## RELATED PRODUCTS SECTION
