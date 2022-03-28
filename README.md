@@ -28,6 +28,24 @@ Data is rendered dymanically from this API based upon client input. No actual eC
 
 ## OVERVIEW SECTION
 
+<img src='https://i.imgur.com/NapAEuT.gif' alt='Product Overview'/>
+
+Nested image carousels to allow user to browse images, clicking vertical one will change the image in the main. Different styles can be selected from the styles box on the right.
+
+Expanded view opens a larger image gallery to let the user see photos more clearly.
+
+<img src='https://i.imgur.com/w0MuWyV.gif' alt='Product Overview'/>
+
+Adding item to cart will alert the user that their cart has been updated. Available sizes and quantities will dynamically render based on what product and style have been selected.
+
+<img src='https://i.imgur.com/NqraGhM.gif' alt='Product Overview'/>
+
+Dark mode toggle is also available, and the entire site will change themes.
+
+
+
+
+
 =================================================
 
 ## RELATED PRODUCTS SECTION
