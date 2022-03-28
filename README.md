@@ -28,7 +28,7 @@ Data is rendered dymanically from this API based upon client input. No actual eC
 
 ## OVERVIEW SECTION
 
-<img src='https://imgur.com/edB3dOz' alt='Product Overview'/>
+<img src='https://i.imgur.com/NizmpQB.gif' alt='Product Overview'/>
 
 Testing
 
