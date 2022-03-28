@@ -28,7 +28,9 @@ Data is rendered dymanically from this API based upon client input. No actual eC
 
 ## OVERVIEW SECTION
 
-<img src='https://imgur.com/DN94YiN' alt='Product Overview'/>
+<img src='https://imgur.com/edB3dOz' alt='Product Overview'/>
+
+Testing
 
 Nested image carousels to allow user to browse images, clicking vertical one will change the image in the main. Different styles can be selected from the styles box on the right.
 
