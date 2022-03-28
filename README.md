@@ -38,7 +38,7 @@ Expanded view opens a larger image gallery to let the user see photos more clear
 
 Adding item to cart will alert the user that their cart has been updated. Available sizes and quantities will dynamically render based on what product and style have been selected.
 
-<img src='https://i.imgur.com/oUblEoW.gif' alt='Product Overview'/>
+<img src='https://i.imgur.com/NqraGhM.gif' alt='Product Overview'/>
 
 Dark mode toggle is also available, and the entire site will change themes.
 
