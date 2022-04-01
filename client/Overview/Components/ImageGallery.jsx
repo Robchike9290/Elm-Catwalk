@@ -11,7 +11,6 @@ const ImageGallery = () => {
   const { currentStyle, currentStylePhoto, setCurrentStylePhoto, currentStyleThumbnails, activeIndex, setActiveIndex, bigGallery, setBigGallery } = useContext(AppContext);
 
   const handleClick = () => {
-    // console.log('hello');
     setBigGallery(true);
 
   }
@@ -42,20 +41,7 @@ const ImageGallery = () => {
 
         </VerticalCarousel>
 
-
-        {/* <img  src={currentStylePhoto} height="515" width="470" id="mainImage" alt='frick'/> */}
       </div>
-
-      {/* <ul id="mainImageThumbs">
-        {currentStyleThumbnails.map((style, key) => {
-          return <MainImageThumbnail style={style} key={key}/>
-
-        })}
-
-        </ul> */}
-
-
-
 
 
     </div>

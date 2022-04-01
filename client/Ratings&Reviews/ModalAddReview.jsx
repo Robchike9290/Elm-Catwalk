@@ -14,13 +14,6 @@ const ModalAddReview = ((props) => {
   const characteristics = meta.characteristics ? meta.characteristics : {}
   const [uploadPhoto, setUploadPhoto] = useState(false);
 
-  // console.log('RECOMMEND', recommend)
-  // console.log('SUMMARY', summary)
-  // console.log('BODY', body)
-  // console.log('NAME', name)
-  // console.log('EMAIL', email)
-  // console.log('CHARACTER---COUNT', characterCount)
-
   const charKeys = Object.keys(characteristics)
 
   let countdown = characterCountdown-characterCount
@@ -39,7 +32,7 @@ const ModalAddReview = ((props) => {
   if (countdown <= 0) {
     countdown = 'Min Reached'
   }
-  // console.log('COUNTDOWN', countdown)
+
   if (props.addreview === false) {
     return null
   }

@@ -4,12 +4,8 @@ import {AppContext } from '../context.js';
 
 const StarForModal = () => {
   const {rating, setRating} = useContext(AppContext)
-  // const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
-  // console.log('ADDSTARRATING', rating)
-  // const starValues = ['Poor', 'Fair', 'Average', 'Good', 'Great']
-  // const handleStar - ((starValue) => {
-  // })
+
   return (
     <div className="add-star-rating"> Overall Rating*
       {[...Array(5)].map((star, starIndex) => {
@@ -28,7 +24,6 @@ const StarForModal = () => {
           </button>
           <ToolTipStarModal starIndex={starIndex}/>
           </div>
-          // <{starValue}
         );
       })}
     </div>

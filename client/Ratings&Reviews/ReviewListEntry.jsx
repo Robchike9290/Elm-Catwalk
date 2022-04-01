@@ -6,23 +6,16 @@ import RatingIcon from './RatingIcon.jsx'
 import axios from 'axios'
 
 const ReviewListEntry = ((props) => {
-  // console.log('REVIEWLISTENTRY', props)
-  // console.log('time', moment(props.product.date).format('LL'))
   let date = moment(props.product.date).format('LL')
   const strSum = props.product.summary
   const summary = strSum.substring(0, 59);
   // console.log('SUMMARY', summary)
   const strBody = props.product.body
   const photos = props.product.photos && props.product.photos.length ? props.product.photos : []
-  // console.log(props.product.helpfulness)
 
   const updateHelpfulness = async () => {
-    // if(!props.rHelpful) {
-      // async function markAsHelpful() {
     const serverResponse = await
     axios.put(`reviews/${props.product.review_id}`); console.log(serverResponse)
-      // }
-      // markAsHelpful()
     props.setRHelpful(true)
   }
 

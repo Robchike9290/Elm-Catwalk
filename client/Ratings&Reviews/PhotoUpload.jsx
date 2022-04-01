@@ -13,7 +13,6 @@ import React, {useEffect, useState, Component} from 'react';
       const objectUrl = URL.createObjectURL(selectedFile)
       setPreview(objectUrl)
 
-      // free memory when ever this component is unmounted
       return () => URL.revokeObjectURL(objectUrl)
     }, [selectedFile])
 
@@ -24,7 +23,6 @@ import React, {useEffect, useState, Component} from 'react';
         return
       }
 
-      // I've kept this example simple by using the first image instead of multiple
       setSelectedFile(e.target.files[0])
   }
 

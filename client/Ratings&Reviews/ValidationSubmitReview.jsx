@@ -19,7 +19,6 @@ const ValidationSubmitReview = ((props)=> {
   }
 
   const validate = (()=> {
-    // props.setAddReview(false)
     const charObjCount = Object.keys(characteristic);
     if (rating && recommend && (charObjCount.length) && (body.length >= 50) && (name.length >= 1) && (email.includes('@') && email.includes('.com'))) {
       addNewReview()
@@ -27,14 +26,6 @@ const ValidationSubmitReview = ((props)=> {
       alert('Submission canceled, please complete all mandatory fields for submission')
     }
   })
-
-  // console.log({'rating': rating}, {'recomment': recommend}, {'body':body}, {'name':name}, {'email': email}, characteristic)
-
-  // console.log(rating, recommend, characteristic, body, name, email)
-  // function myFunc() {
-    // let char = document.getElementByType('radio').value
-  // }
-  // console.log(myFunc())
 
   return (
     <div>

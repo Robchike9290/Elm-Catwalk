@@ -2,7 +2,6 @@ import React from 'react';
 import ProgressBar from './ProgressBar.jsx';
 
 const BreakdownBar = ((props) => {
-  // console.log('BREAKDOWNBAR', props.starpoint)
   const barRatings = props.ratings ? props.ratings : {}
 
   return (
