@@ -128,7 +128,7 @@ Modal
 ![test](http://g.recordit.co/ueFapJpnC9.gif)
 "Add A Review" button opens the modal.  The star rating selection features hover, onMouseEnter/OnMouseLeave and Tooltips to distinguish the rating.
 
-![test](http://g.recordit.co/NxYhGbNMXE.gif)
+![test](http://g.recordit.co/Y4szNeUCBW.gif)
 Radio Buttons are used in both helpfulness and characteristic sections.  The selected choice per characteristic is featured under the specified heading.
 
 ![test](http://g.recordit.co/AdTMwuhlUL.gif)
