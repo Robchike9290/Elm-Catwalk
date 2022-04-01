@@ -282,21 +282,3 @@ Input and textarea fields, character counter and a nested photo modal popup feat
 - Execute 'npm run start' to the Express server connection to the app.
 
 =================================================
-
-## AUTHORS:
-
-==================================================
-- Cheryl Casas
-- Robert "Bo" Czajka
-- Richard Linley
-- Alex Nahas
-=======
-
-- Exectue 'npm install' to install all of the above dependencies and development dependencies for this repo.
-
-- Execute 'npm run watch' to allow for transpilation with updating on each save.
-- Execute 'npm run start' to the Express server connection to the app.
-
-=================================================
-
-
