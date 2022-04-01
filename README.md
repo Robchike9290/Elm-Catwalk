@@ -142,6 +142,23 @@ The red 'X' button in the top right corner of any product in the "Your Outfits""
 
 ## QUESTIONS AND ANSWERS SECTION
 
+![searchbar](http://g.recordit.co/wBJuq22Kkk.gif)
+Search bar dynamically rendering questions and answer matching input criteria per keystroke
+
+![Helpful button and reported](http://g.recordit.co/7mJPZtOboH.gif)
+Answers and Questions user finds helpful or offensive dynamically aggregates the helpful count and if reported, will remove it from the list
+
+![Add a Question](http://g.recordit.co/33gWwTSm8e.gif)
+Users are able to add a question through a modal pop up, which renders on the list once submitted
+
+![Add an Answer](http://g.recordit.co/fuo6k5QKH1.gif)
+Users are able to add an answer through a modal pop up, which renders on the list once submitted
+
+
+![Expand or decrease list](http://g.recordit.co/LxbwdPJGhg.gif)
+Users are able to expand or decrease list
+
+
 =================================================
 
 ## RATINGS AND REVIEWS SECTION
