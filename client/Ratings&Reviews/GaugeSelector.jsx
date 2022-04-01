@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 const GaugeSelector= ((props) => {
-  // console.log('FROM FILLER', props)
+
   const [slider, setSlider] = useState({
     max: 5,
     min: 1,

@@ -2,10 +2,13 @@ const express = require("express");
 const axios = require("axios");
 const app = express();
 const path = require("path");
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3007;
 const baseURL = "https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/";
 const baseURLQA = "https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa";
 const { TOKEN } = require("../config.js");
+const compression = require("compression");
+
+app.use(compression());
 
 app.listen(port, () => {
   console.log(`The app server is running on port: ${port}`);
@@ -17,6 +20,8 @@ const HTML_FILE = path.join(DIST_DIR, "index.html");
 app.use(express.json());
 // app.use(express.static("public"));
 app.use(express.static(__dirname + "/../client/dist"));
+// compress all responses
+
 
 app.get("/products", (req, res) => {
   axios

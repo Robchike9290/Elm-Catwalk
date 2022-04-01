@@ -2,8 +2,6 @@ import React, {useState} from 'react';
 import PhotoModal from './PhotoModal.jsx'
 
 const ReviewListPhotos = ((props) => {
-  // console.log('!!!!PHOTOS', props)
-  // console.log('!url---!!!PHOTOS', props.photos)
   const url = [];
   const [fullphoto, setFullPhoto] = useState(false)
   const [photourl, setUrl] = useState('')

@@ -17,9 +17,6 @@ const QuestionList = ({ togglePopUp, QpopUp }) => {
   const [listButtonTitle, changelistButtonTitle] = useState(
     "Show More Questions"
   );
-  // console.log('at the top', qList);
-
-
 
   const sortQuestions = (answers) => {
     qList.sort((a, b) => {

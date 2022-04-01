@@ -41,20 +41,10 @@ const Overview = () => {
   }, [])
 
   useEffect(() => {
-    // console.log(context.currentProductID)
     getStyles(context.currentProductId);
 
 
   }, [context.currentProductId])
-
-
-  // const getFeatures = (currentProductID) => {
-
-  //     .catch((err) => {
-  //       console.error(err);
-  //       console.error('failed in front end feature GET');
-  //     })
-  // }
 
 
   const getStyles = (currentProduct) => {
@@ -63,7 +53,6 @@ const Overview = () => {
 
     axios.get(`products/${currentProduct}/styles`)
       .then((receivedStyles) => {
-        // console.log('inside getproducts request');
         context.setStyleList(receivedStyles.data);
         context.setCurrentStyle(receivedStyles.data.results[0]);
         context.setCurrentStylePhoto(receivedStyles.data.results[0].photos[0].url);
@@ -89,8 +78,6 @@ const Overview = () => {
   return (
     <div >
 
-      {/* <MastHead /> */}
-
       {(!context.bigGallery) ? <div className="Overview"> <ImageGallery />
         <StyleSelector />
         <ProductInfo />
@@ -111,28 +98,3 @@ const Overview = () => {
 
 export default Overview;
 
-
-
-// ==========================Garbage Heap
-/*
-// constructor(props) {
-//   super(props)
-//   this.state = {
-//     price: 0,
-//     productList: [],
-//     currentProduct: {},
-//     currentProductId: 0,
-//     currentStyle: {},
-//     currentStylePhoto: '',
-//     currentStyleThumbnails: [],
-//     styleList: []
-
-
-//   }
-
-   // console.log();
-    this.handleMainPhotoChange = this.handleMainPhotoChange.bind(this);
-    this.handleProductChange = this.handleProductChange.bind(this);
-    this.getStyles = this.getStyles.bind(this)
-  }
-*/

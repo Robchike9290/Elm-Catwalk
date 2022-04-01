@@ -6,9 +6,6 @@ const StyleSelector = () =>  {
 
   const { styleList } = useContext(AppContext);
 
-  // console.log(styleList);
-
-
   return (
     <div className="style-selector-holder">
     <div className="StyleSelector">

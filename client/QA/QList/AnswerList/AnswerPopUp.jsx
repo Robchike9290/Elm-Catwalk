@@ -9,9 +9,7 @@ const AnswerPopUp = ({ togglePopUp, id, changeAlist }) => {
   const productID = useContext(productIdContext);
 	const [photos, UpdatePhotos] = useState([])
 	const [counter, updateCounter] = useState(0)
-  // const togglePopUp = () => {
-  //   changeApopUp(false);
-  // };
+
   const submitQuestion = () => {
     const email = document.getElementById("UserEmail").value;
     const nickName = document.getElementById("UserNickname").value;

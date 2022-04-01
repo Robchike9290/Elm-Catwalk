@@ -1,7 +1,7 @@
 import React from'react';
 
 const PhotoModal = ((props) => {
-  // console.log('PHOTO-MODAL', props)
+
   if (!props.fullphoto) {
     return null
   }

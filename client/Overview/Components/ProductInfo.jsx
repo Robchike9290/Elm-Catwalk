@@ -26,7 +26,6 @@ const ProductInfo = () =>  {
           <a id='read-all-reviews' href="#ReviewAnchor">Read all reviews</a>
       </div>
       <ExpandedInfo />
-      {/* // <StarRating/> */}
       <Socials/>
 
 

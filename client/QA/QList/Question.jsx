@@ -32,26 +32,6 @@ const Question = ({question, highlightedWords}) => {
     changeApopUp(!ApopUp);
   };
 
-  // axios.get(`/questions/${question.question_id}/answers`)
-  // .then((res)=>{
-  //   return res.data.results
-  // })
-  // .then((res)=>{console.log('list', res)})
-
-  // useEffect(() => {
-  //   async function fetchAList() {
-  //     const answerListData = await axios.get(`/questions/${question.question_id}/answers`);
-  //     console.log('answerListData', answerListData)
-  //     changeAList(answerListData.data.results);
-  //   }
-  //   if(question){
-  //   fetchAList();
-  //   }
-  // }, [question]);
-
-
-
-
   return (
     <div className="question">
       <div className="question_header">
