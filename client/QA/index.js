@@ -1,14 +1,11 @@
 import React, { useEffect, useState , useContext} from "react";
 import axios from "axios";
-
 import QuestionList from "./QList/QuestionList.jsx";
 import QuestionPopUp from "./QList/QuestionPopUp.jsx";
 import { productIdContext } from "./createContext.js";
 import { AppContext } from "../context.js";
 
-
 const QA = () => {
-
   const productID = useContext(AppContext)
   const [QpopUp, changeQpopUp] = useState(false);
   const togglePopUp = () => {
@@ -22,14 +19,12 @@ const QA = () => {
         {QpopUp && (
           <QuestionPopUp togglePopUp={togglePopUp} />
         ) }
-          <div>
-            <QuestionList togglePopUp={togglePopUp} QpopUp={QpopUp} />
-          </div>
-
+        <div>
+          <QuestionList togglePopUp={togglePopUp} QpopUp={QpopUp} />
+        </div>
       </productIdContext.Provider>
     </div>
   );
 };
 
 export default QA;
-

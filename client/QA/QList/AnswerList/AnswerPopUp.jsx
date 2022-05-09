@@ -36,7 +36,6 @@ const AnswerPopUp = ({ togglePopUp, id, changeAlist }) => {
           },
         });
         const newAList = await axios.get(`/questions/${id}/answers`)
-
         await togglePopUp();
         await changeAlist(newAList.data.results)
       }
@@ -44,17 +43,14 @@ const AnswerPopUp = ({ togglePopUp, id, changeAlist }) => {
     }
   };
 
-	const addPhoto = () =>{
-		console.log(photos)
-		if(photos.length < 4){
-		const url = document.getElementById("url").value;
-		photos.push(url)
-
-		document.getElementById("url").value = ''
-		console.log('photos', photos)
-		updateCounter(counter+1)
-		}else{
-			alert('reach maxium photos')
+	const addPhoto = () => {
+		if (photos.length < 4) {
+			const url = document.getElementById("url").value;
+			photos.push(url);
+			document.getElementById("url").value = '';
+			updateCounter(counter+1)
+		} else {
+			alert('The maximum allowed number of photos has been reached.')
 		}
 	}
 
@@ -74,9 +70,7 @@ const AnswerPopUp = ({ togglePopUp, id, changeAlist }) => {
 						placeholder="Provide Your Answer Here"
 						name="submit question"
 					/>
-
 					<h4 id="label_text"> Maxium 1000 characters</h4>
-
 					<input
 						className="a_input"
 						type="text"
@@ -84,12 +78,10 @@ const AnswerPopUp = ({ togglePopUp, id, changeAlist }) => {
 						placeholder="What's your NickName?"
 						name="nickName"
 					/>
-
 					<h4 id="label_text">
 						{" "}
 						For privacy reasons, do not use your full name or email address
 					</h4>
-
 					<input
 						className="a_input"
 						type="text"
@@ -110,14 +102,12 @@ const AnswerPopUp = ({ togglePopUp, id, changeAlist }) => {
 						name="url"
 					/>
 					<button onClick={addPhoto}>submit url</button>
-
 					</div>
 					<h4 id="label_text">
 						{" "}
 						you can submit up to 4, {4-counter} remaining
 					</h4>
 				</div>
-
 				<div className="a_modal-footer">
 					<button
 						className="a_button"
@@ -130,7 +120,6 @@ const AnswerPopUp = ({ togglePopUp, id, changeAlist }) => {
 					<button className="a_button" onClick={togglePopUp}>
 						Close
 					</button>
-
 				</div>
 			</div>
 		</div>

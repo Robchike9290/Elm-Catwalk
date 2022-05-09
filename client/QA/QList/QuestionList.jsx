@@ -14,15 +14,11 @@ const QuestionList = ({ togglePopUp, QpopUp }) => {
   const productID = useContext(productIdContext) || 37311;
   const [listLength, changeListLength] = useState(4);
   const [listBool, changeListBool] = useState(false);
-  const [listButtonTitle, changelistButtonTitle] = useState(
-    "Show More Questions"
-  );
-
+  const [listButtonTitle, changelistButtonTitle] = useState("Show More Questions");
   const sortQuestions = (answers) => {
     qList.sort((a, b) => {
       return b.helpfulness - a.helpfulness;
     });
-
   };
   sortQuestions();
   useEffect(() => {
@@ -31,8 +27,8 @@ const QuestionList = ({ togglePopUp, QpopUp }) => {
       UpdateQlist(questionListData.data.results);
       UpdateBaseList(questionListData.data.results);
     }
-    if(productID){
-    fetchQList();
+    if (productID) {
+      fetchQList();
     }
   }, [productID, QpopUp]);
 
@@ -43,7 +39,7 @@ const QuestionList = ({ togglePopUp, QpopUp }) => {
       UpdateBaseList(questionListData.data.results);
     }
     if(productID){
-    fetchQList();
+      fetchQList();
     }
   }, []);
 
@@ -63,13 +59,16 @@ const QuestionList = ({ togglePopUp, QpopUp }) => {
     <div>
       <qListContext.Provider value={UpdateQlist}>
       {baseList.length > 0 && <SearchBar UpdateQlist={UpdateQlist} qList={qList} baseList={baseList} updateHighlightedWords={updateHighlightedWords} />}
-    <ul className="list" id="scrollable">
-      {qList.map((question) => {
-        if (count < listLength) {
-          count++;
-          return <li  className ="qList" key = {question.question_id}  > <Question question={question} highlightedWords={highlightedWords} /></li>;
-        }
-      })}
+      <ul className="list" id="scrollable">
+        {qList.map((question) => {
+          if (count < listLength) {
+            count++;
+            return
+              <li className ="qList" key = {question.question_id}  >
+                <Question question={question} highlightedWords={highlightedWords}/>
+              </li>;
+          }
+        })}
       </ul>
       <button className="a_button" onClick={togglePopUp}>Ask a question</button>
       {qList.length > 2 && (
@@ -82,4 +81,5 @@ const QuestionList = ({ togglePopUp, QpopUp }) => {
     </div>
   );
 };
+
 export default QuestionList;

@@ -57,7 +57,7 @@ const Answer = ({ answer, changeAlist, id }) => {
 							></img>
 						</a>
 					);
-				}else{
+				} else {
           return (
 						<a key={key}>
 							<img

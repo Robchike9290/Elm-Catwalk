@@ -1,5 +1,3 @@
-/* eslint-disable no-inner-declarations */
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import Token from "../../../config.js";
@@ -14,6 +12,7 @@ const QuestionPopUp = ({ togglePopUp }) => {
 		const email = document.getElementById("UserEmail").value;
 		const nickName = document.getElementById("UserNickname").value;
 		const question = document.getElementById("UserQuestion").value;
+
 		if (!question) {
 			alert("Question Field cannot be blank");
 			return;
@@ -57,9 +56,7 @@ const QuestionPopUp = ({ togglePopUp }) => {
 						placeholder="Ask Your Question Here"
 						name="submit question"
 					/>
-
 					<h4 id="label_text"> Maxium 1000 characters</h4>
-
 					<input
 						className="a_input"
 						type="text"
@@ -67,12 +64,10 @@ const QuestionPopUp = ({ togglePopUp }) => {
 						placeholder="What's your NickName?"
 						name="nickName"
 					/>
-
 					<h4 id="label_text">
 						{" "}
 						For privacy reasons, do not use your full name or email address
 					</h4>
-
 					<input
 						className="a_input"
 						type="text"
@@ -85,7 +80,6 @@ const QuestionPopUp = ({ togglePopUp }) => {
 						For authentication reasons, you will not be emailed
 					</h4>
 				</div>
-
 				<div className="a_modal-footer">
 					<button
 						className="a_button"

@@ -6,26 +6,23 @@ import { productIdContext } from "../../../client/QA/createContext.js";
 import axios from 'axios'
 import Highlighter from "react-highlight-words";
 
-
 const Question = ({question, highlightedWords}) => {
-
   const UpdateQlist = useContext(qListContext);
   const [aList, changeAList] = useState(Object.values(question.answers))
   const productID = useContext(productIdContext);
   const [Qhelpful, changeQhelpful] = useState(false)
   const [ApopUp, changeApopUp] = useState(false);
   const[testBool, changeTestBool] = useState(false)
-
-  const toggleQhelpful = () =>{// need to make a database for persisent data
+  const toggleQhelpful = () =>{
     changeQhelpful(true)
-    if(!Qhelpful){
-    async function markasHelpful() {
-      const serverResponse = await axios.put(`/questions/${question.question_id}`);
-      const newQlist = await axios.get(`/questions/${productID}`);
-      UpdateQlist(newQlist.data.results);
-    }
+    if (!Qhelpful) {
+      async function markasHelpful() {
+        const serverResponse = await axios.put(`/questions/${question.question_id}`);
+        const newQlist = await axios.get(`/questions/${productID}`);
+        UpdateQlist(newQlist.data.results);
+      }
     markasHelpful();
-  }
+    }
   }
 
   const togglePopUp = () => {
@@ -35,20 +32,22 @@ const Question = ({question, highlightedWords}) => {
   return (
     <div className="question">
       <div className="question_header">
-      <Highlighter
-      id="left"
-      className="question_body"
-    highlightClassName="YourHighlightClass"
-    searchWords={[highlightedWords]}
-    autoEscape={true}
-    textToHighlight={question.question_body}
-  />
-      <div id="middle" >Helpful? <u onClick ={toggleQhelpful}>Yes</u> ({question.question_helpfulness})  | <u onClick={togglePopUp}>Add Answer</u></div>
+        <Highlighter
+          id="left"
+          className="question_body"
+          highlightClassName="YourHighlightClass"
+          searchWords={[highlightedWords]}
+          autoEscape={true}
+          textToHighlight={question.question_body}
+        />
+      <div id="middle" >Helpful?
+        <u onClick ={toggleQhelpful}>Yes</u> ({question.question_helpfulness})  |
+        <u onClick={togglePopUp}>Add Answer</u>
       </div>
-     <AnswerList answers = {aList}  id={question.question_id} togglePopUp={togglePopUp} ApopUp={ApopUp}/>
-
+    </div>
+     <AnswerList answers={aList} id={question.question_id} togglePopUp={togglePopUp} ApopUp={ApopUp}/>
     </div>
   )
 }
 
-export default Question
+export default Question;
