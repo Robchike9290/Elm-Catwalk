@@ -13,116 +13,91 @@ app.use(compression());
 app.listen(port, () => {
   console.log(`The app server is running on port: ${port}`);
 });
-// http://example.com/page?parameter=value&also=another
+
 const DIST_DIR = path.join(__dirname, "dist");
 const HTML_FILE = path.join(DIST_DIR, "index.html");
 
 app.use(express.json());
-// app.use(express.static("public"));
 app.use(express.static(__dirname + "/../client/dist"));
-// compress all responses
-
 
 app.get("/products", (req, res) => {
-  axios
-    .get(baseURL, { headers: { Authorization: TOKEN } })
-    .then((receivedProductList) => {
-      //   console.log(receivedProductList.data);
-      res.status(200).send(receivedProductList.data);
-    })
-    .catch((err) => {
-      //   console.error(err);
-      console.error("failed in server GET");
-    });
+  axios.get(baseURL, { headers: { Authorization: TOKEN } })
+  .then((receivedProductList) => {
+    res.status(200).send(receivedProductList.data);
+  })
+  .catch((err) => {
+    console.error(err);
+    res.sendStatus(500);
+  });
 });
 
 app.get("/products/:product_id/styles", (req, res) => {
-  // console.log(req.params);
-  axios
-    .get(`${baseURL}${req.params.product_id}/styles`, {
-      headers: { Authorization: TOKEN },
-    })
-    .then((receivedStylesList) => {
-      // console.log(data.data);
-      res.status(200).send(receivedStylesList.data);
-    })
-    .catch((err) => {
-      console.error(err);
-      console.error("failed in server GET");
-    });
+  axios.get(`${baseURL}${req.params.product_id}/styles`, {
+    headers: { Authorization: TOKEN },
+  })
+  .then((receivedStylesList) => {
+    res.status(200).send(receivedStylesList.data);
+  })
+  .catch((err) => {
+    console.error(err);
+    res.sendStatus(500);
+  });
 });
-  //  axios.get(`${baseURL}?count=7`, {headers: {Authorization: TOKEN}})
-  //  .then((receivedProductList) => {
-  //  //   console.log(receivedProductList.data);
-  //    res.status(200).send(receivedProductList.data);
-  //  })
-  //  .catch ((err) => {
-  //    console.error(err);
-  //    console.error('failed in server GET');
-  //  })
-
 
 app.get("/products/:product_id", (req,res) => {
-   axios.get(`${baseURL}${req.params.product_id}`, {headers: {Authorization: TOKEN}})
-      .then((receivedProduct) => {
-         res.status(200).send(receivedProduct.data)
-      })
-      .catch ((err) => {
-         console.error('failed in server GET');
-      });
-
+  axios.get(`${baseURL}${req.params.product_id}`, {headers: {Authorization: TOKEN}})
+  .then((receivedProduct) => {
+      res.status(200).send(receivedProduct.data)
+  })
+  .catch ((err) => {
+      console.error(err);
+      res.sendStatus(500);
+  });
 })
 
 app.get("/products/:product_id/styles", (req,res) => {
-   //console.log("Product ID", req.params.product_id);
-   axios.get(`${baseURL}${req.params.product_id}/styles`, {headers: {Authorization: TOKEN}})
-      .then((receivedStylesList) => {
-         //console.log("Data for productID", receivedStylesList.data);
-         res.status(200).send(receivedStylesList.data)
-      })
-      .catch ((err) => {
-         //   console.error(err);
-         //   console.error('failed in server GET');
-         });
-
+  axios.get(`${baseURL}${req.params.product_id}/styles`, {headers: {Authorization: TOKEN}})
+  .then((receivedStylesList) => {
+      res.status(200).send(receivedStylesList.data)
+  })
+  .catch ((err) => {
+    console.error(err);
+    res.sendStatus(500);
+  });
 })
 
 app.get("/products/:product_id", (req,res) => {
-  //  console.log(req.params);
-   axios.get(`${baseURL}${req.params.product_id}`, {headers: {Authorization: TOKEN}})
-      .then((receivedFeaturesList) => {
-         // console.log(data.data);
-         res.status(200).send(receivedFeaturesList.data)
-      })
-      .catch ((err) => {
-         //   console.error(err);
-           console.error('failed in server features GET');
-         });
-
+  axios.get(`${baseURL}${req.params.product_id}`, {headers: {Authorization: TOKEN}})
+  .then((receivedFeaturesList) => {
+    res.status(200).send(receivedFeaturesList.data)
+  })
+  .catch ((err) => {
+    console.error(err);
+    res.sendStatus(500);
+  });
 })
 
 app.get("/products/:product_id/related", (req,res) => {
-   axios.get(`${baseURL}${req.params.product_id}/related`, {headers: {Authorization: TOKEN}})
-      .then((receivedRelatedProductsList) => {
-         res.status(200).send(receivedRelatedProductsList.data);
-      })
-      .catch ((err) => {
-         console.error('failed in server GET');
-         res.sendStatus(500);
-      });
+  axios.get(`${baseURL}${req.params.product_id}/related`, {headers: {Authorization: TOKEN}})
+  .then((receivedRelatedProductsList) => {
+      res.status(200).send(receivedRelatedProductsList.data);
+  })
+  .catch ((err) => {
+      console.error(err);
+      res.sendStatus(500);
+  });
 })
 
 app.get("/", (req, res) => {
   res.sendFile(HTML_FILE, function (err) {
     if (err) {
       res.status(500).send(err);
+      res.sendStatus(500);
     }
   });
 });
 
 app.get("/questions/:product_id", (req, res) => {
-  //  console.log('in server', req.params);
-
   axios({
     method: "get",
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions`,
@@ -132,34 +107,31 @@ app.get("/questions/:product_id", (req, res) => {
     },
     headers: { Authorization: TOKEN },
   })
-    .then((questionListData) => {
-      res.status(200).send(questionListData.data);
-    })
-    .catch((err) => {
-      console.error(err);
-      console.log("failed in server GET");
-    });
+  .then((questionListData) => {
+    res.status(200).send(questionListData.data);
+  })
+  .catch((err) => {
+    console.error(err);
+    res.sendStatus(500);
+  });
 });
 
 app.get("/questions/:question_id/answers", (req, res) => {
-  // console.log(req.params);
-
   axios({
     method: "get",
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions/${req.params.question_id}/answers`,
     headers: { Authorization: TOKEN },
   })
-    .then((questionListData) => {
-      res.status(200).send(questionListData.data);
-    })
-    .catch((err) => {
-      console.error(err);
-      console.log("failed in server GET");
-    });
+  .then((questionListData) => {
+    res.status(200).send(questionListData.data);
+  })
+  .catch((err) => {
+    console.error(err);
+    res.sendStatus(500);
+  });
 });
 
 app.post("/questions", (req, res) => {
-  // console.log(req.body);
   axios({
     method: "post",
     url: "https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions",
@@ -171,17 +143,16 @@ app.post("/questions", (req, res) => {
     },
     headers: { Authorization: TOKEN },
   })
-    .then((err, apiResponse) => {
-      res.send(apiResponse);
-    })
-    .catch((err) => {
-      console.error(err);
-      console.log("failed in server GET");
-    });
+  .then((err, apiResponse) => {
+    res.status(201).send(apiResponse);
+  })
+  .catch((err) => {
+    console.error(err);
+    res.sendStatus(500);
+  });
 });
 
 app.post("/answers", (req, res) => {
-  // console.log(req.body);
   axios({
     method: "post",
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions/${req.body.id}/answers`,
@@ -193,13 +164,13 @@ app.post("/answers", (req, res) => {
     },
     headers: { Authorization: TOKEN },
   })
-    .then((err, apiResponse) => {
-      res.send(apiResponse);
-    })
-    .catch((err) => {
-      console.error(err);
-      console.log("failed in server GET");
-    });
+  .then((err, apiResponse) => {
+    res.status(201).send(apiResponse);
+  })
+  .catch((err) => {
+    console.error(err);
+    res.sendStatus(500);
+  });
 });
 
 app.put("/questions/:question_id", (req, res) => {
@@ -210,13 +181,13 @@ app.put("/questions/:question_id", (req, res) => {
     )}/helpful`,
     headers: { Authorization: TOKEN },
   })
-    .then((apiresponse) => {
-      res.status(200).send(apiresponse.data);
-    })
-    .catch((err) => {
-      console.error(err);
-      console.log("failed in server GET");
-    });
+  .then((apiresponse) => {
+    res.status(201).send(apiresponse.data);
+  })
+  .catch((err) => {
+    console.error(err);
+    res.sendStatus(500);
+  });
 });
 
 app.put("/answers/:answer_id", (req, res) => {
@@ -227,13 +198,13 @@ app.put("/answers/:answer_id", (req, res) => {
     )}/helpful`,
     headers: { Authorization: TOKEN },
   })
-    .then((apiresponse) => {
-      res.status(200).send(apiresponse.data);
-    })
-    .catch((err) => {
-      console.error(err);
-      console.log("failed in server GET");
-    });
+  .then((apiresponse) => {
+    res.status(201).send(apiresponse.data);
+  })
+  .catch((err) => {
+    console.error(err);
+    res.sendStatus(500);
+  });
 });
 
 app.put("/answers/:answer_id/report", (req, res) => {
@@ -244,14 +215,13 @@ app.put("/answers/:answer_id/report", (req, res) => {
     )}/report`,
     headers: { Authorization: TOKEN },
   })
-    .then((apiresponse) => {
-      console.log('apiresponse')
-      res.status(200).send(apiresponse.data);
-    })
-    .catch((err) => {
-      console.error(err);
-      console.log("failed in server GET");
-    });
+  .then((apiresponse) => {
+    res.status(201).send(apiresponse.data);
+  })
+  .catch((err) => {
+    console.error(err);
+    res.sendStatus(500);
+  });
 });
 
 app.put("/reviews/:review_id", (req, res) => {
@@ -262,13 +232,13 @@ app.put("/reviews/:review_id", (req, res) => {
     )}/helpful`,
     headers: { Authorization: TOKEN },
   })
-    .then((apiresponse) => {
-      res.status(200).send(apiresponse.data);
-    })
-    .catch((err) => {
-      console.error(err);
-      console.log("failed in server GET");
-    });
+  .then((apiresponse) => {
+    res.status(201).send(apiresponse.data);
+  })
+  .catch((err) => {
+    console.error(err);
+    res.sendStatus(500);
+  });
 });
 
 app.put("/reviews/:review_id", (req, res) => {
@@ -279,31 +249,26 @@ app.put("/reviews/:review_id", (req, res) => {
     )}/report`,
     headers: { Authorization: TOKEN },
   })
-    .then((apiresponse) => {
-      res.status(200).send(apiresponse.data);
-    })
-    .catch((err) => {
-      console.error(err);
-      console.log("failed in server GET");
-    });
+  .then((apiresponse) => {
+    res.status(201).send(apiresponse.data);
+  })
+  .catch((err) => {
+    console.error(err);
+    res.sendStatus(500);
+  });
 });
 
 app.post("/reviews", (req, res) => {
-  // console.log('in server', req.params);
-
  axios({
    method: "post",
    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews`,
-  //  params: {
-
-  //  },
    headers: { Authorization: TOKEN },
  })
-   .then((reviewDataNew) => {
-     res.status(200).send(reviewDataNew);
-   })
-   .catch((err) => {
-     console.error(err);
-     console.log("reviewDataNew failed in server GET");
-   });
+  .then((reviewDataNew) => {
+    res.status(201).send(reviewDataNew);
+  })
+  .catch((err) => {
+    console.error(err);
+    res.sendStatus(500);
+  });
 });

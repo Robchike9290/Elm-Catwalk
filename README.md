@@ -4,11 +4,10 @@ Team Elm's FEC Project Repo
 
 ==================================================
 
-
-=======
 ## AUTHORS:
 
 ==================================================
+
 - Richard Linley: Overview, https://github.com/rjLinley
 - Robert "Bo" Czajka: Related Products, https://github.com/Robchike9290
 - Alex Nahas: Questions & Answers, https://github.com/MiguelsPizza
@@ -27,9 +26,6 @@ This is a demo eCommerce website hosted on a database of mock data that it split
 
 Data is rendered dymanically from this API based upon client input. No actual eCommerce transactions are executable from the site.
 
-
-=================================================
-=======
 =================================================
 
 ## OVERVIEW SECTION
@@ -91,10 +87,8 @@ Users are able to add a question through a modal pop up, which renders on the li
 ![Add an Answer](http://g.recordit.co/fuo6k5QKH1.gif)
 Users are able to add an answer through a modal pop up, which renders on the list once submitted
 
-
 ![Expand or decrease list](http://g.recordit.co/LxbwdPJGhg.gif)
 Users are able to expand or decrease list
-
 
 =================================================
 
@@ -102,38 +96,36 @@ Users are able to expand or decrease list
 
 Ratings & Review
 
-*Note: Each gif below features varying products. The star progression bars, characteristic range bars (lower left) change dynamically per product (characteristics only pertinent to the product appear).  Additionally, the star ratings average located in Overview, Related Products and Ratings & Reviews change dynamically per product to a quarter of a point.
+\*Note: Each gif below features varying products. The star progression bars, characteristic range bars (lower left) change dynamically per product (characteristics only pertinent to the product appear). Additionally, the star ratings average located in Overview, Related Products and Ratings & Reviews change dynamically per product to a quarter of a point.
 
 ![test](http://g.recordit.co/1LLgeJmkUH.gif)
-Hyperlink from Overview to Ratings & Review Section. *Note: The star rating in the Overview section matches the Reviews section and dynamically changes per product change.
+Hyperlink from Overview to Ratings & Review Section. \*Note: The star rating in the Overview section matches the Reviews section and dynamically changes per product change.
 
 ![test](http://g.recordit.co/mrJ6YAOzHn.gif)
 Color Theme & Masthead Team Change per Toggle Button switch in upper right screen.
 
 ![test](http://g.recordit.co/rUXA9P51B4.gif)
-Initial Value of two Review Items. "Add Review" button increments list two at a time initiating scroll feature. "Add Review" button disappears once list is fully rendered. *Note: Star Rating Type Progression bars & Characteristics Ranges within the left breakdown column dynamically change per product change.
+Initial Value of two Review Items. "Add Review" button increments list two at a time initiating scroll feature. "Add Review" button disappears once list is fully rendered. \*Note: Star Rating Type Progression bars & Characteristics Ranges within the left breakdown column dynamically change per product change.
 
 ![test](http://g.recordit.co/W0hEyGAY2j.gif)
 Photo Modal pops up when thumbnail is clicked within the list column, and closes with button click. Sort list renders the list results based on dropdown with relevance, helpfulness, and newest categories. Additional filtering based on individual star rating is also available in the breakdown column. Filtered choices toggled between selected and visible with highlight to unselected per click.
 
- ![test](http://g.recordit.co/x6X9WjsN5I.gif)
+![test](http://g.recordit.co/x6X9WjsN5I.gif)
 Hovering over "Helpful" in the list section switches color to green indicating a user actionable item. Upon click increments count by one. As seen below, hovering has a similar feature with "Report". The font color to red and upon click removes that review from that user's list rendering. This does not delete the report off the API.
 
- ![test](http://g.recordit.co/WzBCajlA9V.gif)
-
+![test](http://g.recordit.co/WzBCajlA9V.gif)
 
 Modal
-*Only pertinant characteristic features appear per product type
+\*Only pertinant characteristic features appear per product type
 
 ![test](http://g.recordit.co/ueFapJpnC9.gif)
-"Add A Review" button opens the modal.  The star rating selection features hover, onMouseEnter/OnMouseLeave and Tooltips to distinguish the rating.
+"Add A Review" button opens the modal. The star rating selection features hover, onMouseEnter/OnMouseLeave and Tooltips to distinguish the rating.
 
 ![test](http://g.recordit.co/Y4szNeUCBW.gif)
-Radio Buttons are used in both helpfulness and characteristic sections.  The selected choice per characteristic is featured under the specified heading.
+Radio Buttons are used in both helpfulness and characteristic sections. The selected choice per characteristic is featured under the specified heading.
 
 ![test](http://g.recordit.co/AdTMwuhlUL.gif)
 Input and textarea fields, character counter and a nested photo modal popup feature finishes out the 'Add A Review' modal display
-
 
 =================================================
 
@@ -143,6 +135,7 @@ Input and textarea fields, character counter and a nested photo modal popup feat
 
     - Axios: Version 0.25.0,
     - Bootstrap: Version 5.1.3,
+    - Compression: Version 1.7.4,
     - Dateformat: Version 5.0.3,
     - Express: Version 4.17.2,
     - File-loader: Version 6.2.0,
@@ -168,7 +161,6 @@ Input and textarea fields, character counter and a nested photo modal popup feat
 ==================================================
 
 ## INSTALLATION INSTRUCTIONS:
-
 
 - Exectue 'npm install' to install all of the above dependencies and development dependencies for this repo.
 

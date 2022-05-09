@@ -5,15 +5,5 @@ client/dist/bundle.js
 styles.css
 package-lock.json
 client/dist/styles.css
-# styles.css
-
-
-
-# client/dist/styles.css
 client/dist/APIToken.js
-# client/Overview
-# client/dist/clear.css
-# client/App.js
-# client/Overview
-# testing
-#  after you pull, you must uncomment your testing git ignore.
+
