@@ -1,41 +1,55 @@
 import React, { useState, useContext} from 'react';
-import StarForModal from './StarForModal.jsx'
-import CharacteristicsAdd from './CharacteristicsAdd.jsx'
-import ValidationSubmitReview from './ValidationSubmitReview.jsx'
-import PhotoUpload from './PhotoUpload.jsx'
+import StarForModal from './StarForModal.jsx';
+import CharacteristicsAdd from './CharacteristicsAdd.jsx';
+import ValidationSubmitReview from './ValidationSubmitReview.jsx';
+import PhotoUpload from './PhotoUpload.jsx';
 import filestack from 'filestack-js';
 import {AppContext } from '../context.js';
 
 
 const ModalAddReview = ((props) => {
-  const {currentProduct, recommend, setRecommend, meta, summary, setSummary, body, setBody, name, setName, email, setEmail} = useContext(AppContext)
-  const [characterCount, setCharacterCount] = useState(0)
-  const [characterCountdown, setCharacterCountdown] = useState(50)
-  const characteristics = meta.characteristics ? meta.characteristics : {}
+  const {
+    currentProduct,
+    recommend,
+    setRecommend,
+    meta,
+    summary,
+    setSummary,
+    body,
+    setBody,
+    name,
+    setName,
+    email,
+    setEmail
+  } = useContext(AppContext);
+  const [characterCount, setCharacterCount] = useState(0);
+  const [characterCountdown, setCharacterCountdown] = useState(50);
+  const characteristics = meta.characteristics ? meta.characteristics : {};
   const [uploadPhoto, setUploadPhoto] = useState(false);
 
-  const charKeys = Object.keys(characteristics)
+  const charKeys = Object.keys(characteristics);
 
-  let countdown = characterCountdown-characterCount
+  let countdown = characterCountdown - characterCount;
 
   const handleBody = ((value) => {
-    setCharacterCount(value.length)
-    setBody(value)
+    setCharacterCount(value.length);
+    setBody(value);
   })
 
   const handleUploadClick = ((e) => {
-    e.preventDefault()
-    e.stopPropagation()
-    setUploadPhoto(true)
+    e.preventDefault();
+    e.stopPropagation();
+    setUploadPhoto(true);
   })
 
   if (countdown <= 0) {
-    countdown = 'Min Reached'
+    countdown = 'Min Reached';
   }
 
   if (props.addreview === false) {
-    return null
+    return null;
   }
+
   return (
     <div className='cc-modal'>
       <h3 className='cc-modalHeader'>WE LOVE HEARING FROM YOU!</h3>
@@ -50,15 +64,19 @@ const ModalAddReview = ((props) => {
         <label>
           Do you recommend this product? *
           <input
-          id='RVRecommend'
-          type='radio'
-          value='Yes'
-          name='recommend' onClick={()=>setRecommend(true)}/>Yes
+            id='RVRecommend'
+            type='radio'
+            value='Yes'
+            name='recommend' onClick={()=>setRecommend(true)}
+          />
+          Yes
           <input
-          id='RVRecommend'
-          type='radio'
-          value='No'
-          name='recommend'onClick={()=>setRecommend(false)}/>No
+            id='RVRecommend'
+            type='radio'
+            value='No'
+            name='recommend'onClick={()=>setRecommend(false)}
+          />
+          No
         </label>
         <br/>
         <br/>
@@ -72,10 +90,11 @@ const ModalAddReview = ((props) => {
         <label>
           Review Summary max 60 Char
           <input
-          type='text'
-          id='modalsummary'
-          name='modal-summary'
-          placeholder='Example: Best purchase ever!' maxLength={60} onChange={(e)=>setSummary(e.target.value)}/>
+            type='text'
+            id='modalsummary'
+            name='modal-summary'
+            placeholder='Example: Best purchase ever!' maxLength={60} onChange={(e)=>setSummary(e.target.value)}
+          />
         </label>
         <br/>
         <label>
@@ -84,12 +103,13 @@ const ModalAddReview = ((props) => {
             Min Characters: {countdown}
           </p>
           <textarea
-          id='modalbody'
-          name="modal-body"
-          rows="5"
-          cols="70"
-          type='text'
-          placeholder='Why did you like the product or not?' maxLength={1000} onChange={(e)=>handleBody(e.target.value)}/>
+            id='modalbody'
+            name="modal-body"
+            rows="5"
+            cols="70"
+            type='text'
+            placeholder='Why did you like the product or not?' maxLength={1000} onChange={(e)=>handleBody(e.target.value)}
+          />
         </label>
         <br/>
         <label>
@@ -101,10 +121,12 @@ const ModalAddReview = ((props) => {
         <br/>
         <label>
           What is your nickname*
-          <input type='text'
-          id='ReviewName'
-          name='RVName'
-          placeholder='Example: jackson11!' maxLength={60} onChange={(e)=>setName(e.target.value)}/>
+          <input
+            type='text'
+            id='ReviewName'
+            name='RVName'
+            placeholder='Example: jackson11!' maxLength={60} onChange={(e)=>setName(e.target.value)}
+          />
           <br/>
           “For privacy reasons, do not use your full name or email address”
         </label>
@@ -112,19 +134,20 @@ const ModalAddReview = ((props) => {
         <label>
           Your email*
           <input
-          type='text'
-          id='ReviewEmail'
-          name='RVEmail'
-          placeholder='Example: jackson11@email.com'
-          maxLength={60}
-          onChange={(e)=>setEmail(e.target.value)}/>
+            type='text'
+            id='ReviewEmail'
+            name='RVEmail'
+            placeholder='Example: jackson11@email.com'
+            maxLength={60}
+            onChange={(e)=>setEmail(e.target.value)}
+          />
           <br/>
           “For authentication reasons, you will not be emailed”
         </label>
         <br/>
         <label className='cc-modalFooter'>
-        <ValidationSubmitReview addreview={props.addreview} setAddReview={props.setAddReview} />
-        <button className='cc-button' onClick={()=>props.setAddReview(false)}>Cancel</button>
+          <ValidationSubmitReview addreview={props.addreview} setAddReview={props.setAddReview} />
+          <button className='cc-button' onClick={()=>props.setAddReview(false)}>Cancel</button>
         </label>
       </form>
     </div>

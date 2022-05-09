@@ -6,21 +6,22 @@ const SortDropDown = ((props) => {
     relevant: 'relevance',
     helpful: 'most helpful',
     newest: 'newest'
-  }
+  };
   const handleSort = (sortType) => {
     props.setSort(sortType),
-    setIsOpen(false)
+    setIsOpen(false);
   }
 
-  return(
+  return (
     <div className='cc-sortmenu'>
-      {isOpen?
+      {isOpen
+      ?
       <div>
         <p onClick={()=>handleSort('relevant')}>relevance</p>
         <p onClick={()=>handleSort('helpful')}>most helpful</p>
         <p onClick={()=>handleSort('newest')}>newest</p>
-      </div>:
-
+      </div>
+      :
       <div>
         <div onClick={()=>setIsOpen(!isOpen)} className='sort-trigger'>{sortTypes[props.sort]}⌵</div>
       </div>

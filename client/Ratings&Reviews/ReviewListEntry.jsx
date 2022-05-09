@@ -1,28 +1,27 @@
 import React, {useState} from 'react';
 import moment from 'moment';
-import ReviewListEntryBody from './ReviewListEntryBody.jsx'
-import ReviewListPhotos from './ReviewListPhotos.jsx'
-import RatingIcon from './RatingIcon.jsx'
-import axios from 'axios'
+import ReviewListEntryBody from './ReviewListEntryBody.jsx';
+import ReviewListPhotos from './ReviewListPhotos.jsx';
+import RatingIcon from './RatingIcon.jsx';
+import axios from 'axios';
 
 const ReviewListEntry = ((props) => {
-  let date = moment(props.product.date).format('LL')
-  const strSum = props.product.summary
+  let date = moment(props.product.date).format('LL');
+  const strSum = props.product.summary;
   const summary = strSum.substring(0, 59);
-  // console.log('SUMMARY', summary)
-  const strBody = props.product.body
-  const photos = props.product.photos && props.product.photos.length ? props.product.photos : []
+  const strBody = props.product.body;
+  const photos = props.product.photos && props.product.photos.length ? props.product.photos : [];
 
   const updateHelpfulness = async () => {
     const serverResponse = await
-    axios.put(`reviews/${props.product.review_id}`); console.log(serverResponse)
-    props.setRHelpful(true)
+    axios.put(`reviews/${props.product.review_id}`);
+    props.setRHelpful(true);
   }
 
    const updateReport = async() => {
     const serverResponse = await
-    axios.put(`reviews/${props.product.review_id}`); console.log(serverResponse)
-    props.setReported(true)
+    axios.put(`reviews/${props.product.review_id}`);
+    props.setReported(true);
   }
 
   return (
@@ -33,14 +32,14 @@ const ReviewListEntry = ((props) => {
             index += 1
             return (
               <div key={index}>
-              <RatingIcon rating={props.product.rating} index={index}/>
+                <RatingIcon rating={props.product.rating} index={index}/>
               </div>
             )
           })}
         </div>
         <div>{props.product.reviewer_name}, {date}</div>
       </div>
-        <p className='cc-summary'>{summary}</p>
+      <p className='cc-summary'>{summary}</p>
       <div>
         <ReviewListEntryBody body={props.product.body}/>
         <div>
@@ -63,7 +62,6 @@ const ReviewListEntry = ((props) => {
       <hr className='cc-space'/>
     </div>
   )
-
 })
 
 export default ReviewListEntry;

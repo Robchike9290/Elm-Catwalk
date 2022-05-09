@@ -3,17 +3,17 @@ import PhotoModal from './PhotoModal.jsx'
 
 const ReviewListPhotos = ((props) => {
   const url = [];
-  const [fullphoto, setFullPhoto] = useState(false)
-  const [photourl, setUrl] = useState('')
+  const [fullphoto, setFullPhoto] = useState(false);
+  const [photourl, setUrl] = useState('');
 
   const handleClick = (photo) => {
-    setFullPhoto(true)
-    setUrl(photo)
+    setFullPhoto(true);
+    setUrl(photo);
   }
   if (props.photos.length === 0) {
-    return null
+    return null;
   }
-  return(
+  return (
     <div className='cc-list-thumbnail'>
       {props.photos.map((photo, i) => {
         return (

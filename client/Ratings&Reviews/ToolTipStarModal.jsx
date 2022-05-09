@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const ToolTipStarModal = ((props) => {
   const starValues = ['Poor', 'Fair', 'Average', 'Good', 'Great']
   return (

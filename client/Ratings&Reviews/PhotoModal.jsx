@@ -1,9 +1,8 @@
 import React from'react';
 
 const PhotoModal = ((props) => {
-
   if (!props.fullphoto) {
-    return null
+    return null;
   }
 
   return(
@@ -14,8 +13,5 @@ const PhotoModal = ((props) => {
     </div>
   )
 })
-
-
-
 
 export default PhotoModal;

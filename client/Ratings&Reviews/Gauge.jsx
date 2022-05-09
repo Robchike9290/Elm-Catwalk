@@ -1,10 +1,9 @@
 import React, {useState, useContext} from 'react';
 import GaugeSelector from './GaugeSelector.jsx';
-// import FillerProgressBar from './FillerProgressBar.jsx'
 import {AppContext } from '../context.js';
 
 const Gauge = ((props)=> {
-  const {meta, charMeaning} = useContext(AppContext)
+  const {meta, charMeaning} = useContext(AppContext);
   let type = '';
   let typeRating = 0;
   const charMeaningGauge = {
@@ -15,9 +14,10 @@ const Gauge = ((props)=> {
     'Length': ['Runs Short', 'Perfect', 'Runs long'],
     'Fit': ['Runs tight', 'Perfect', 'Runs long']
   }
+
   for (var key in props.type) {
-    type = key
-    typeRating = props.type[key].value
+    type = key;
+    typeRating = props.type[key].value;
   }
 
   return (
