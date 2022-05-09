@@ -1,20 +1,17 @@
-/* eslint-disable no-unused-vars */
 import React, { useContext } from 'react';
 import Product from './Product.jsx'
 import { AppContext } from '../../../context.js';
 
 const ProductList = ({watcher, setWatcher}) => {
+const { productList } = useContext(AppContext);
 
-  const { productList } = useContext(AppContext);
-
-
-  return (<div className='rl-ProductList'>
-  <span>Products:</span>
-
+return (
+  <div className='rl-ProductList'>
+    <span>Products:</span>
     {productList?.map((product, key) => (
-      <Product  product={product} key={key}/>
+      <Product product={product} key={key}/>
     ))}
-    </div>
+  </div>
   )
 }
 

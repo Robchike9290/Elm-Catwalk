@@ -1,13 +1,10 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect, useContext } from 'react';
 import { AppContext } from '../context.js';
-// import "../dist/richardCarousel.css";
-
 
 export const CarouselItem = ({ children, width }) => {
   return (
     <div className="rl-carousel-item" style={{ width: width }}>
-    <img alt='Large Clothing' height="515" width="470" src={children}/>
+      <img alt='Large Clothing' height="515" width="470" src={children}/>
     </div>
   );
 }
@@ -17,11 +14,8 @@ const Carousel = ( { children }) => {
   const { currentStyle, currentProduct } = useContext(AppContext);
 
   useEffect ( () => {
-
     setActiveIndex(0);
-  }
-
-  , [currentProduct])
+  }, [currentProduct])
 
   const updateIndex = (newIndex) => {
     if (newIndex < 0) {
@@ -29,7 +23,6 @@ const Carousel = ( { children }) => {
     } else if (newIndex >= React.Children.count(children)) {
       newIndex = React.Children.count(children) - 1;
     }
-
     setActiveIndex(newIndex);
   }
 
@@ -48,17 +41,15 @@ const Carousel = ( { children }) => {
             updateIndex(activeIndex - 1);
           }}
         >
-          	&#10094;
-          </button>
-          <button className="rl-next"
+        &#10094;
+        </button>
+        <button className="rl-next"
           onClick={() => {
             updateIndex(activeIndex + 1);
           }}
         >
-          &#10095;
-          </button>
-
-
+        &#10095;
+        </button>
       </div>
     </div>
   )
