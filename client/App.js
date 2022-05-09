@@ -1,14 +1,12 @@
-/* eslint-disable no-unused-vars */
 import MastHead from './Overview/Components/MastHead.jsx';
 import QA from "./QA/index.js"
 import React, { useContext, useState } from "react";
-import Token from '../config.js'
-import RatingsReviewsSection from './Ratings&Reviews/RatingsReviewsSection.jsx'
+import Token from '../config.js';
+import RatingsReviewsSection from './Ratings&Reviews/RatingsReviewsSection.jsx';
 import axios from 'axios';
 import Overview from "./Overview/Overview.jsx";
 import RelatedItemsAndComparison from "./RelatedProductsList/relatedItemsAndComparison.jsx";
 import { AppContext } from "./context.js";
-
 
 const AppProvider = (props) => {
    const [test, testUpdater] = useState(5);
@@ -21,7 +19,7 @@ const AppProvider = (props) => {
    const [styleList, setStyleList] = useState([]);
    const [user, setUser] = useState({});
    const [activeIndex, setActiveIndex] = useState(0);
-   const [currentProductFeatures, setCurrentProductFeatures] = useState({})
+   const [currentProductFeatures, setCurrentProductFeatures] = useState({});
    const [relatedProductsInfo, setRelatedProductsInfo] = useState([]);
    const [bigGallery, setBigGallery] = useState(false);
 
@@ -37,7 +35,7 @@ const AppProvider = (props) => {
    const [name, setName] = useState('');
    const [email, setEmail] = useState('');
    const [characteristic, setCharacteristic] = useState({});
-   const [productresults, setProductResults] = useState([])
+   const [productresults, setProductResults] = useState([]);
    const [average, setAverage] = useState(0);
 
    return (
@@ -55,8 +53,6 @@ const AppProvider = (props) => {
          user, setUser,
          relatedProductsInfo, setRelatedProductsInfo,
          bigGallery, setBigGallery,
-
-         // ! Cheryl
          outfitProducts, setOutfitProducts,
          relatedProductsActiveIndex, setRelatedProductsActiveIndex,
          recommend, setRecommend,
@@ -90,5 +86,3 @@ function App() {
 }
 
 export default App;
-
-

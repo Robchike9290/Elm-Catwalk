@@ -39,7 +39,8 @@ const RelatedProductsCarousel = ({ children }) => {
         })}
       </div>
       <div>
-        <span>{context.relatedProductsActiveIndex > 0 ?
+        <span>{context.relatedProductsActiveIndex > 0
+          ?
           <button className="carouselButtonLeft"
             onClick={() => {
               updateIndex(context.relatedProductsActiveIndex - 1);
@@ -51,7 +52,8 @@ const RelatedProductsCarousel = ({ children }) => {
           null
           }
         </span>
-        <span> {context.relatedProductsActiveIndex < React.Children.count(children) - 1 ?
+        <span> {context.relatedProductsActiveIndex < React.Children.count(children) - 1
+          ?
           <button className="carouselButtonRight"
             onClick={() => {
               updateIndex(context.relatedProductsActiveIndex + 1);

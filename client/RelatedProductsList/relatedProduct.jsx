@@ -67,7 +67,9 @@ const RelatedProduct = (props) => {
   return (
     <span className="product">
       <div>
-        {isModalShown ?
+        {
+        isModalShown
+        ?
         <div className="modalMat" style={{ transform: `translateX(${context.relatedProductsActiveIndex * 340}px)` }}>
           <ComparisonModal
           comparedProductValues={comparedProductValues}
@@ -76,8 +78,10 @@ const RelatedProduct = (props) => {
           isModalShown={isModalShown}
           modalProperties={modalProperties}
           />
-        </div> :
-        null}
+        </div>
+        :
+        null
+        }
       </div>
       <div className="productAction">
         <StarButton isModalShown={isModalShown} showModal={showModal}/>

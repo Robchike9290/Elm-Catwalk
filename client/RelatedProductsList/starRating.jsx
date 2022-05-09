@@ -42,7 +42,7 @@ const StarRating = (props) => {
         index += 1
         return (
         <div key={index}>
-        <RatingIcon rating={averageStarRating} index={index}/>
+          <RatingIcon rating={averageStarRating} index={index}/>
         </div>
         )
         })}
